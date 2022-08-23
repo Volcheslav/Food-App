@@ -82,7 +82,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="wPT-PM-msh" kind="push" id="m3X-6K-86g"/>
+                                    <segue destination="wPT-PM-msh" kind="show" id="m3X-6K-86g"/>
                                 </connections>
                             </button>
                         </subviews>

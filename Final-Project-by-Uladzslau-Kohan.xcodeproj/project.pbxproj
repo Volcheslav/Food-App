@@ -11,6 +11,7 @@
 		531C99A628B4F5610039C9A0 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C99A528B4F5610039C9A0 /* ProfileInfoViewController.swift */; };
 		531C99A928B4FB120039C9A0 /* ProfileInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */; };
 		531C99AD28B501560039C9A0 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C99AC28B501560039C9A0 /* ProfileData.swift */; };
+		531C99C228B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */; };
 		533630CA28AE89BA00DB692C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533630C928AE89BA00DB692C /* Profile.storyboard */; };
 		533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533630CC28AE8A1D00DB692C /* ProfileViewController.swift */; };
 		53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D83289ABD6D002755A4 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		531C99A528B4F5610039C9A0 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
 		531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileInfo.storyboard; path = "Final-Project-by-Uladzslau-Kohan/Screens/Profile Information/View/ProfileInfo.storyboard"; sourceTree = SOURCE_ROOT; };
 		531C99AC28B501560039C9A0 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
 		533630C928AE89BA00DB692C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		533630CC28AE8A1D00DB692C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		53D99D80289ABD6D002755A4 /* Final-Project-by-Uladzslau-Kohan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final-Project-by-Uladzslau-Kohan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */,
+				531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				531C99A628B4F5610039C9A0 /* ProfileInfoViewController.swift in Sources */,
+				531C99C228B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift in Sources */,
 				53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */,
 				531C99AD28B501560039C9A0 /* ProfileData.swift in Sources */,
 				53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */,

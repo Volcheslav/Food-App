@@ -11,9 +11,9 @@ struct ProfileData {
     
     var name: String
     var surname: String
-    var email: String
     var age: UInt
     var gender: Gender
+    var email: String
     var phoneNumber: String?
     var address: Addres
     
