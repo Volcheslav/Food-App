@@ -14,6 +14,10 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginTextField: UITextField!
     
+//    @IBAction private func goToProfileInfo(_ sender: Any) {
+//        loadProfileInfoScreen()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeHideKeyboard()
@@ -24,16 +28,30 @@ final class ProfileViewController: UIViewController {
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self
     }
-    /*
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+   
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
+//    private func loadProfileInfoScreen() {
+//       let storybord = UIStoryboard(name: "ProfileInformation", bundle: nil)
+//        guard let vc = storybord.instantiateViewController(identifier: "profInfo") as? ProfileInfoViewController else {
+//            return
+//        }
+//        show(vc, sender: self)
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//    }
     // MARK: Hiding keybord functions
 
     private func initializeHideKeyboard() {
