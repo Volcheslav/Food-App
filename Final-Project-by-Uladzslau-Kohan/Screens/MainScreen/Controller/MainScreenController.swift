@@ -9,23 +9,15 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
 
+    @IBOutlet private weak var mainFirstCollection: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainFirstCollection.delegate = self
+        mainFirstCollection.dataSource = self
+        mainFirstCollection.backgroundColor = .clear
       
         // Do any additional setup after loading the view.
     }
 
-}
-
-extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-        return cell
-    }
-    
-    
 }

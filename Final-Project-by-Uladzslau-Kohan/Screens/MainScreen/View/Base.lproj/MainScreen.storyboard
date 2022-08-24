@@ -23,25 +23,59 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0X-mu-Xwn" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0Q-2Q-CvA">
-                                                <rect key="frame" x="0.0" y="8" width="414" height="179"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0Q-2Q-CvA">
+                                                <rect key="frame" x="0.0" y="10" width="414" height="218"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8h1-6X-zMT">
-                                                    <size key="itemSize" width="128" height="128"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="218" id="6ZZ-Nx-h1N"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7L-Vq-b74">
+                                                    <size key="itemSize" width="128" height="170"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCell" id="P30-QE-Trn" customClass="MainScreenCollectionViewCell" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                        <rect key="frame" x="0.0" y="24" width="128" height="170"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pkw-NK-Det">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1x-pP-DSh">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="130"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
+                                                                    <rect key="frame" x="43.5" y="144.5" width="41.5" height="20.5"/>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-Is-jca">
+                                                                    <rect key="frame" x="51.5" y="116" width="25" height="24"/>
+                                                                </button>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="Gjy-Is-jca" firstAttribute="centerX" secondItem="pkw-NK-Det" secondAttribute="centerX" id="Dad-Lv-5wG"/>
+                                                                <constraint firstItem="Z1x-pP-DSh" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" id="ECZ-cj-9gQ"/>
+                                                                <constraint firstItem="Z1x-pP-DSh" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" id="FJd-Lh-WCs"/>
+                                                                <constraint firstItem="moP-7u-C72" firstAttribute="centerX" secondItem="pkw-NK-Det" secondAttribute="centerX" id="iNB-10-bXL"/>
+                                                                <constraint firstAttribute="bottom" secondItem="moP-7u-C72" secondAttribute="bottom" constant="5" id="l2D-ld-mU3"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Z1x-pP-DSh" secondAttribute="trailing" id="rCc-S4-u8s"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Z1x-pP-DSh" secondAttribute="bottom" constant="40" id="ud9-3y-8AW"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Gjy-Is-jca" secondAttribute="bottom" constant="30" id="vPJ-oQ-fLF"/>
+                                                            </constraints>
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <size key="customSize" width="128" height="170"/>
+                                                        <connections>
+                                                            <outlet property="addButton" destination="Gjy-Is-jca" id="2ra-3C-r7Z"/>
+                                                            <outlet property="cellImage" destination="Z1x-pP-DSh" id="alx-4C-wuE"/>
+                                                            <outlet property="cellView" destination="pkw-NK-Det" id="dnU-bA-ROb"/>
+                                                            <outlet property="nameLabel" destination="moP-7u-C72" id="KpO-KW-BNt"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                                 <connections>
@@ -52,7 +86,10 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <constraints>
+                                            <constraint firstItem="c0Q-2Q-CvA" firstAttribute="leading" secondItem="j0X-mu-Xwn" secondAttribute="leading" id="ePk-ju-euZ"/>
                                             <constraint firstAttribute="height" constant="1000" id="hIB-Nv-4Vw"/>
+                                            <constraint firstItem="c0Q-2Q-CvA" firstAttribute="top" secondItem="j0X-mu-Xwn" secondAttribute="top" constant="10" id="hfz-PI-gjY"/>
+                                            <constraint firstAttribute="trailing" secondItem="c0Q-2Q-CvA" secondAttribute="trailing" id="vM8-ne-axU"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -79,6 +116,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="star" catalog="system" selectedImage="star.fill" id="h5V-3u-8eY"/>
                     <size key="freeformSize" width="414" height="1100"/>
+                    <connections>
+                        <outlet property="mainFirstCollection" destination="c0Q-2Q-CvA" id="bzi-LI-BaX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
