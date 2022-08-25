@@ -12,11 +12,13 @@ class CartTableViewCell: UITableViewCell {
     var name: String? {
         didSet {
             self.nameLabel.text = self.name
+            self.nameLabel.sizeToFit()
         }
     }
     var price: String? {
         didSet {
             self.priceLabel.text = self.price
+            self.priceLabel.sizeToFit()
         }
     }
     var imageName: String? {

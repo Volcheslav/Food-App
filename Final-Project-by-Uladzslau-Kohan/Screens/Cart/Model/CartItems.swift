@@ -10,6 +10,9 @@ import Foundation
 class CartItems {
     
     var cartItems:[CartItem] = []
+    var totalPrice: Double {
+        CartItems.shared.cartItems.map { $0.price }.reduce(0, +)
+    }
     
     static let shared = CartItems()
     private init() {}

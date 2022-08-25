@@ -7,9 +7,10 @@
 
 import UIKit
 
-class CartViewController: UIViewController {
+final class CartViewController: UIViewController {
 
     @IBOutlet private weak var cartTableView: UITableView!
+    @IBOutlet private weak var priceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,10 @@ class CartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.cartTableView.reloadData()
+        self.priceLabel.text = String(format: "%.2f", CartItems.shared.totalPrice)
+        self.priceLabel.sizeToFit()
     }
-        
+    
     /*
     // MARK: - Navigation
 
@@ -46,5 +49,21 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         cell.imageName = CartItems.shared.cartItems[indexPath.row].imageName
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            CartItems.shared.cartItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.priceLabel.text = String(format: "%.2f", CartItems.shared.totalPrice)
+            self.priceLabel.sizeToFit()
+        }
+    }
         
+}
+
+extension UIAlertController {
+    func addCancelAction () {
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        self.addAction(cancelAction)
+    }
 }
