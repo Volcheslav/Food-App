@@ -9,12 +9,19 @@ import UIKit
 
 class CartViewController: UIViewController {
 
+    @IBOutlet private weak var cartTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.cartTableView.reloadData()
+    }
+        
     /*
     // MARK: - Navigation
 
@@ -29,11 +36,15 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return CartItems.shared.cartItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return .init()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell else { return .init() }
+        cell.name = CartItems.shared.cartItems[indexPath.row].name
+        cell.price = String(CartItems.shared.cartItems[indexPath.row].price)
+        cell.imageName = CartItems.shared.cartItems[indexPath.row].imageName
+        return cell
     }
         
 }

@@ -19,6 +19,7 @@
 		5347F56D28B79C2A00995448 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5347F56C28B79C2A00995448 /* Cart.storyboard */; };
 		5347F57128B79EE500995448 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57028B79EE500995448 /* CartViewController.swift */; };
 		5347F57428B7A1FD00995448 /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57328B7A1FD00995448 /* CartItems.swift */; };
+		5347F57728B7B8FA00995448 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57628B7B8FA00995448 /* CartTableViewCell.swift */; };
 		53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D83289ABD6D002755A4 /* AppDelegate.swift */; };
 		53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D85289ABD6D002755A4 /* SceneDelegate.swift */; };
 		53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D87289ABD6D002755A4 /* MainScreenController.swift */; };
@@ -41,6 +42,7 @@
 		5347F56C28B79C2A00995448 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		5347F57028B79EE500995448 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		5347F57328B7A1FD00995448 /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
+		5347F57628B7B8FA00995448 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		53D99D80289ABD6D002755A4 /* Final-Project-by-Uladzslau-Kohan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final-Project-by-Uladzslau-Kohan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D99D83289ABD6D002755A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D99D85289ABD6D002755A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				5347F56C28B79C2A00995448 /* Cart.storyboard */,
+				5347F57628B7B8FA00995448 /* CartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				5347F57428B7A1FD00995448 /* CartItems.swift in Sources */,
 				533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */,
 				5347F57128B79EE500995448 /* CartViewController.swift in Sources */,
+				5347F57728B7B8FA00995448 /* CartTableViewCell.swift in Sources */,
 				53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */,
 				5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */,
 				531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */,
