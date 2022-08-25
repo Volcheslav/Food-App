@@ -52,15 +52,9 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.name = item.name
         cell.price = item.price
         cell.nameImage = item.imageName
-        cell.cellImage.image = UIImage(named: item.imageName)
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
         cell.backgroundColor = .darkGray
-        cell.nameLabel.text = "\(item.name)\n\(item.price)"
-        cell.nameLabel.textColor = .white
-        cell.addButton.layer.cornerRadius = cell.addButton.frame.height / 2
-        cell.addButton.backgroundColor = .black
-        cell.addButton.tintColor = .white
         return cell
     }
 

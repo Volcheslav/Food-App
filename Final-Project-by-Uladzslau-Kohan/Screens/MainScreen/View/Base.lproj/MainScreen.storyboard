@@ -44,15 +44,26 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1x-pP-DSh">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="130"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="120"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
-                                                                    <rect key="frame" x="0.0" y="144.5" width="128" height="20.5"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-gK-NS0">
+                                                                    <rect key="frame" x="10" y="113.5" width="108" height="51.5"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atx-oh-Hjh">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="27.5"/>
+                                                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
+                                                                            <rect key="frame" x="0.0" y="25.5" width="108" height="26"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="16"/>
+                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-Is-jca">
                                                                     <rect key="frame" x="93" y="10" width="25" height="24"/>
                                                                     <connections>
@@ -63,13 +74,13 @@
                                                             <constraints>
                                                                 <constraint firstItem="Z1x-pP-DSh" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" id="ECZ-cj-9gQ"/>
                                                                 <constraint firstItem="Z1x-pP-DSh" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" id="FJd-Lh-WCs"/>
+                                                                <constraint firstItem="bkq-gK-NS0" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" constant="10" id="KuY-mx-zKu"/>
                                                                 <constraint firstItem="Gjy-Is-jca" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" constant="10" id="Qwz-Uq-ISB"/>
-                                                                <constraint firstItem="moP-7u-C72" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" id="iBv-pP-fFY"/>
-                                                                <constraint firstAttribute="bottom" secondItem="moP-7u-C72" secondAttribute="bottom" constant="5" id="l2D-ld-mU3"/>
+                                                                <constraint firstAttribute="bottom" secondItem="bkq-gK-NS0" secondAttribute="bottom" constant="5" id="akL-ih-YRS"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bkq-gK-NS0" secondAttribute="trailing" constant="10" id="n8c-ZH-uPA"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Z1x-pP-DSh" secondAttribute="trailing" id="rCc-S4-u8s"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Gjy-Is-jca" secondAttribute="trailing" constant="10" id="rRY-VV-g9v"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Z1x-pP-DSh" secondAttribute="bottom" constant="40" id="ud9-3y-8AW"/>
-                                                                <constraint firstAttribute="trailing" secondItem="moP-7u-C72" secondAttribute="trailing" id="xVb-n8-m1H"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Z1x-pP-DSh" secondAttribute="bottom" constant="50" id="ud9-3y-8AW"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,6 +90,7 @@
                                                             <outlet property="cellImage" destination="Z1x-pP-DSh" id="alx-4C-wuE"/>
                                                             <outlet property="cellView" destination="pkw-NK-Det" id="dnU-bA-ROb"/>
                                                             <outlet property="nameLabel" destination="moP-7u-C72" id="KpO-KW-BNt"/>
+                                                            <outlet property="priceLabel" destination="atx-oh-Hjh" id="zFE-VQ-ouT"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>

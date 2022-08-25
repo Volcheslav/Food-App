@@ -9,14 +9,14 @@ import Foundation
 
 class CartItems {
     
-    var cartItems:[CartItem]?
+    var cartItems:[CartItem] = []
     
     static let shared = CartItems()
     private init() {}
-    
-    struct CartItem {
-        var name: String?
-        var price: Double?
-        var imageName: String?
-    }
+}
+
+struct CartItem {
+    var name: String
+    var price: Double
+    var imageName: String
 }
