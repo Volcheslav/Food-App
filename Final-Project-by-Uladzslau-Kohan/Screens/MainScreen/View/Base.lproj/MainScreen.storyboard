@@ -55,6 +55,9 @@
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-Is-jca">
                                                                     <rect key="frame" x="93" y="10" width="25" height="24"/>
+                                                                    <connections>
+                                                                        <action selector="addToCart:" destination="P30-QE-Trn" eventType="touchUpInside" id="HIE-YJ-3jM"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>

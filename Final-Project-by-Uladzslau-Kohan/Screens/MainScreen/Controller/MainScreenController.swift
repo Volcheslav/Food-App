@@ -49,6 +49,9 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+        cell.name = item.name
+        cell.price = item.price
+        cell.nameImage = item.imageName
         cell.cellImage.image = UIImage(named: item.imageName)
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true

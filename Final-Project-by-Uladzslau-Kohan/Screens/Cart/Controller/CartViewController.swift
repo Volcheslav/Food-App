@@ -15,7 +15,6 @@ class CartViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -26,4 +25,16 @@ class CartViewController: UIViewController {
     }
     */
 
+}
+
+extension CartViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return .init()
+    }
+    
+    
 }
