@@ -16,3 +16,7 @@ class SecondMainScreenCollectionViewCell: UICollectionViewCell {
 }
 
 // swiftlint:enable private_outlet
+
+extension SecondMainScreenCollectionViewCell: CellInMainCollection {
+    
+}

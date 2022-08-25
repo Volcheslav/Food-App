@@ -73,7 +73,7 @@
                                                         <connections>
                                                             <outlet property="addButton" destination="Gjy-Is-jca" id="2ra-3C-r7Z"/>
                                                             <outlet property="cellImage" destination="Z1x-pP-DSh" id="alx-4C-wuE"/>
-                                                            <outlet property="cellView" destination="pkw-NK-Det" id="dnU-bA-ROb"/>
+                                                            <outlet property="mainCell" destination="pkw-NK-Det" id="Xc7-36-myu"/>
                                                             <outlet property="nameLabel" destination="moP-7u-C72" id="KpO-KW-BNt"/>
                                                         </connections>
                                                     </collectionViewCell>

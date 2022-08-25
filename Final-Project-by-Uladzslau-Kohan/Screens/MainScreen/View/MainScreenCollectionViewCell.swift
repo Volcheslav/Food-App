@@ -10,7 +10,11 @@ import UIKit
 class MainScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
-    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var mainCell: UIView!
     @IBOutlet weak var addButton: UIButton!
 }
 //  swiftlint:enable private_outlet
+
+extension MainScreenCollectionViewCell:CellInMainCollection {
+    
+}
