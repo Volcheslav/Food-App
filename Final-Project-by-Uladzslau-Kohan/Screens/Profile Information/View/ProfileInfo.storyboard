@@ -63,7 +63,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BE8-XA-vQO"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="nEM-qq-v6j" firstAttribute="centerX" secondItem="fgE-zb-Pe6" secondAttribute="centerX" id="ShR-hH-Ovm"/>
                             <constraint firstItem="nEM-qq-v6j" firstAttribute="trailing" secondItem="BE8-XA-vQO" secondAttribute="trailing" id="bEv-Ng-zES"/>
@@ -84,8 +84,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

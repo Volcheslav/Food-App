@@ -87,7 +87,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xNr-AB-H0M"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="xNr-AB-H0M" firstAttribute="trailing" secondItem="QpP-8L-nZJ" secondAttribute="trailing" constant="20" id="3ph-fp-0Hm"/>
                             <constraint firstItem="EZO-hk-p2c" firstAttribute="centerX" secondItem="RX3-8H-ySb" secondAttribute="centerX" id="5sH-Q3-sHi"/>
@@ -159,8 +159,8 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
         <image name="person.fill.questionmark" catalog="system" width="128" height="104"/>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

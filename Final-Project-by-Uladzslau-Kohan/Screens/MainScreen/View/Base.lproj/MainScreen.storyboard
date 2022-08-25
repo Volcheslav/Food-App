@@ -148,6 +148,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FY6-3S-qMA"/>
                         <segue destination="VSN-Rb-GVr" kind="relationship" relationship="viewControllers" id="cI9-h5-Pgw"/>
+                        <segue destination="3lD-rx-ZYx" kind="relationship" relationship="viewControllers" id="v9d-nd-GU3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J1-rc-ygs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -163,6 +164,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOy-t9-Q2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197" y="518"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="FfB-rh-L0o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cart" id="3lD-rx-ZYx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="MVU-fX-Va9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCU-XW-q82" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1166" y="508"/>
         </scene>
     </scenes>
     <resources>
