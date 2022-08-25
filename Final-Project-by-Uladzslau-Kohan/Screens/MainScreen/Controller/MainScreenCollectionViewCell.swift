@@ -42,12 +42,9 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
         guard let name = self.name,
               let imageName = self.nameImage,
               let price = self.price else {
-            print("cant")
             return
         }
         let cartItem = CartItem(name: name, price: price, imageName: imageName)
         cart.cartItems.append(cartItem)
-        print(cart.cartItems.last?.name ?? "no name")
-        print(CartItems.shared.cartItems.last?.name ?? "no name")
     }
 }

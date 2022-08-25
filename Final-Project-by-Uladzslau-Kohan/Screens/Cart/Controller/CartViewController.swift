@@ -8,14 +8,14 @@
 import UIKit
 
 final class CartViewController: UIViewController {
+    
+    // MARK: - Outlets
 
     @IBOutlet private weak var cartTableView: UITableView!
     @IBOutlet private weak var priceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +23,21 @@ final class CartViewController: UIViewController {
         self.cartTableView.reloadData()
         self.priceLabel.text = String(format: "%.2f", CartItems.shared.totalPrice)
         self.priceLabel.sizeToFit()
+    }
+    
+    // MARK: - Alert windows
+    
+    func showDeleteAlert(tableView: UITableView, indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Alert!", message: "You want to delete a position on your order, are you sure?", preferredStyle: .alert)
+        alert.addCancelAction()
+        let ok = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
+            CartItems.shared.cartItems.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self?.priceLabel.text = String(format: "%.2f", CartItems.shared.totalPrice)
+            self?.priceLabel.sizeToFit()
+        })
+        alert.addAction(ok)
+        self.present(alert, animated: true)
     }
     
     /*
@@ -36,6 +51,7 @@ final class CartViewController: UIViewController {
     */
 
 }
+// MARK: - Extension table control
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,14 +68,13 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            CartItems.shared.cartItems.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            self.priceLabel.text = String(format: "%.2f", CartItems.shared.totalPrice)
-            self.priceLabel.sizeToFit()
+            self.showDeleteAlert(tableView: tableView, indexPath: indexPath)
         }
     }
         
 }
+
+// MARK: - Extension alert controller
 
 extension UIAlertController {
     func addCancelAction () {

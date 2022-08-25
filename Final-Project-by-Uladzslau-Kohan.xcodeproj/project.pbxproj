@@ -90,6 +90,7 @@
 		531C999F28B4F5010039C9A0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */,
 				531C99A528B4F5610039C9A0 /* ProfileInfoViewController.swift */,
 			);
 			path = Controller;
@@ -99,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */,
-				531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +179,7 @@
 		533630B628AE7F3900DB692C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */,
 				53D99D87289ABD6D002755A4 /* MainScreenController.swift */,
 			);
 			path = Controller;
@@ -188,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				53D99D89289ABD6D002755A4 /* MainScreen.storyboard */,
-				5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +255,7 @@
 		5347F56828B79BD500995448 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5347F57628B7B8FA00995448 /* CartTableViewCell.swift */,
 				5347F57028B79EE500995448 /* CartViewController.swift */,
 			);
 			path = Controller;
@@ -264,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				5347F56C28B79C2A00995448 /* Cart.storyboard */,
-				5347F57628B7B8FA00995448 /* CartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
