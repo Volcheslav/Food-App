@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		533630CA28AE89BA00DB692C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533630C928AE89BA00DB692C /* Profile.storyboard */; };
 		533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533630CC28AE8A1D00DB692C /* ProfileViewController.swift */; };
 		5344CE1C28B64F200079C8F7 /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */; };
+		5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F56428B786CB00995448 /* MenuRealmModel.swift */; };
 		53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D83289ABD6D002755A4 /* AppDelegate.swift */; };
 		53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D85289ABD6D002755A4 /* SceneDelegate.swift */; };
 		53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D87289ABD6D002755A4 /* MainScreenController.swift */; };
@@ -33,6 +34,7 @@
 		533630C928AE89BA00DB692C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		533630CC28AE8A1D00DB692C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		5347F56428B786CB00995448 /* MenuRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRealmModel.swift; sourceTree = "<group>"; };
 		53D99D80289ABD6D002755A4 /* Final-Project-by-Uladzslau-Kohan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final-Project-by-Uladzslau-Kohan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D99D83289ABD6D002755A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D99D85289ABD6D002755A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5347F56328B7869700995448 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				5347F56428B786CB00995448 /* MenuRealmModel.swift */,
+			);
+			path = RealmModels;
+			sourceTree = "<group>";
+		};
 		53D99D77289ABD6D002755A4 = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +256,7 @@
 			children = (
 				533630AB28AE766500DB692C /* Application */,
 				533630B428AE7F0400DB692C /* Screens */,
+				5347F56328B7869700995448 /* RealmModels */,
 				533630AF28AE76A100DB692C /* Supporting Files */,
 			);
 			path = "Final-Project-by-Uladzslau-Kohan";
@@ -271,6 +282,7 @@
 				53D99D7D289ABD6D002755A4 /* Frameworks */,
 				53D99D7E289ABD6D002755A4 /* Resources */,
 				533630A928AE754700DB692C /* Swiftlint Run Script */,
+				1D0834301C137BD930F159DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -329,6 +341,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1D0834301C137BD930F159DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Final-Project-by-Uladzslau-Kohan/Pods-Final-Project-by-Uladzslau-Kohan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Final-Project-by-Uladzslau-Kohan/Pods-Final-Project-by-Uladzslau-Kohan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Final-Project-by-Uladzslau-Kohan/Pods-Final-Project-by-Uladzslau-Kohan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		533630A928AE754700DB692C /* Swiftlint Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,6 +413,7 @@
 				53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */,
 				533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */,
 				53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */,
+				5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */,
 				531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

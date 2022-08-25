@@ -46,26 +46,27 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1x-pP-DSh">
                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="130"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
-                                                                    <rect key="frame" x="43.5" y="144.5" width="41.5" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
+                                                                    <rect key="frame" x="0.0" y="144.5" width="128" height="20.5"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-Is-jca">
-                                                                    <rect key="frame" x="51.5" y="116" width="25" height="24"/>
+                                                                    <rect key="frame" x="93" y="10" width="25" height="24"/>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="Gjy-Is-jca" firstAttribute="centerX" secondItem="pkw-NK-Det" secondAttribute="centerX" id="Dad-Lv-5wG"/>
                                                                 <constraint firstItem="Z1x-pP-DSh" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" id="ECZ-cj-9gQ"/>
                                                                 <constraint firstItem="Z1x-pP-DSh" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" id="FJd-Lh-WCs"/>
-                                                                <constraint firstItem="moP-7u-C72" firstAttribute="centerX" secondItem="pkw-NK-Det" secondAttribute="centerX" id="iNB-10-bXL"/>
+                                                                <constraint firstItem="Gjy-Is-jca" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" constant="10" id="Qwz-Uq-ISB"/>
+                                                                <constraint firstItem="moP-7u-C72" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" id="iBv-pP-fFY"/>
                                                                 <constraint firstAttribute="bottom" secondItem="moP-7u-C72" secondAttribute="bottom" constant="5" id="l2D-ld-mU3"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Z1x-pP-DSh" secondAttribute="trailing" id="rCc-S4-u8s"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Gjy-Is-jca" secondAttribute="trailing" constant="10" id="rRY-VV-g9v"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Z1x-pP-DSh" secondAttribute="bottom" constant="40" id="ud9-3y-8AW"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Gjy-Is-jca" secondAttribute="bottom" constant="30" id="vPJ-oQ-fLF"/>
+                                                                <constraint firstAttribute="trailing" secondItem="moP-7u-C72" secondAttribute="trailing" id="xVb-n8-m1H"/>
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
