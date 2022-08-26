@@ -4,24 +4,15 @@
 //
 //  Created by VironIT on 8/3/22.
 //  swiftlint:disable all
-import RealmSwift
 import UIKit
 
 class MainScreenViewController: UIViewController {
-    let realm = try! Realm()
-    var items: Results<Burgers>!
-    let burgerNames = ["Hamburger", "CheesBurger", "BigBurger", "SteakHouse", "Classic", "OldBurger", "BlackHourse"]
-    let burgerPrice = [1.49, 2.49, 3.59, 4.29, 7.99, 2.49, 5.29]
-
+  
     @IBOutlet private weak var sectionNameLabel: UILabel!
     @IBOutlet private weak var mainFirstCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        items = realm.objects(Burgers.self)
-        let realm = try! Realm()
-        print("Realm is located at:", realm.configuration.fileURL!)
-
 
 //swiftlint:enable all
         self.mainFirstCollection.delegate = self
@@ -36,26 +27,23 @@ class MainScreenViewController: UIViewController {
         self.sectionNameLabel.textColor = .white
         self.sectionNameLabel.adjustsFontSizeToFitWidth = true
                 
-        // Do any additional setup after loading the view.
     }
-
 }
 
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard !items.isEmpty else {
+        guard !Menu.shared.getBurgers().isEmpty else {
             return 0
         }
-        return items.count
+        return Menu.shared.getBurgers().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = items[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
-        cell.name = item.name
-        cell.price = item.price
-        cell.nameImage = item.imageName
+        cell.name = Menu.shared.getBurgers()[indexPath.row].name
+        cell.price = Menu.shared.getBurgers()[indexPath.row].price
+        cell.nameImage = Menu.shared.getBurgers()[indexPath.row].imageName
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
         cell.backgroundColor = .darkGray

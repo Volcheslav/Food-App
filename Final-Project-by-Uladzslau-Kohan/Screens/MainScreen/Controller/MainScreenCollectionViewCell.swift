@@ -3,11 +3,13 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/24/22.
-//
-
+// swiftlint:disable force_try
+import RealmSwift
 import UIKit
 
 class MainScreenCollectionViewCell: UICollectionViewCell {
+    let realm = try! Realm()
+    var items: Results<CartItem>!
     
     var name: String? {
         didSet {
@@ -38,13 +40,19 @@ class MainScreenCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var priceLabel: UILabel!
     
     @IBAction private func addToCart(_ sender: Any) {
-        let cart = CartItems.shared
+        items = realm.objects(CartItem.self)
         guard let name = self.name,
               let imageName = self.nameImage,
               let price = self.price else {
             return
         }
-        let cartItem = CartItem(name: name, price: price, imageName: imageName)
-        cart.cartItems.append(cartItem)
+        let cartItem = CartItem()
+        cartItem.name = name
+        cartItem.imageName = imageName
+        cartItem.price = price
+        try! realm.write {
+            realm.add(cartItem)
+        }
+    
     }
 }
