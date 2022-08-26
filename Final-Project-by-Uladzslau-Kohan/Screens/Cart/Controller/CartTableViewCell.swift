@@ -26,7 +26,19 @@ class CartTableViewCell: UITableViewCell {
             self.imageImView.image = UIImage(named: self.imageName ?? "no name")
         }
     }
+    var numberOfOrders: Int = 1 {
+        didSet {
+            guard self.numberOfOrders > 1  else {
+                self.numberOfOrdersLabel.isHidden = true
+                return
+            }
+            self.numberOfOrdersLabel.isHidden = false
+            self.numberOfOrdersLabel.text = "x\(self.numberOfOrders)"
+            
+        }
+    }
     
+    @IBOutlet private weak var numberOfOrdersLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var imageImView: UIImageView!

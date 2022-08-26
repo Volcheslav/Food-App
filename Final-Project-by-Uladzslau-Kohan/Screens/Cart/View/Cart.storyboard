@@ -45,6 +45,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwD-mp-qfS">
+                                                    <rect key="frame" x="302" y="11" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
@@ -52,6 +59,7 @@
                                         <connections>
                                             <outlet property="imageImView" destination="Pjy-rc-Jxb" id="fh8-WY-qgQ"/>
                                             <outlet property="nameLabel" destination="dzI-UP-jST" id="SJI-Ky-gwQ"/>
+                                            <outlet property="numberOfOrdersLabel" destination="QwD-mp-qfS" id="4lk-I3-UTq"/>
                                             <outlet property="priceLabel" destination="VLG-Pi-eGc" id="IRW-A2-OnL"/>
                                         </connections>
                                     </tableViewCell>

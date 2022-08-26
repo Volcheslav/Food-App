@@ -10,7 +10,7 @@ import UIKit
 final class CartViewController: UIViewController {
     let realm = try! Realm()
     var items: Results<CartItem>!
-    
+    var order: [(CartItem, Int)]?
     // MARK: - Outlets
 
     @IBOutlet private weak var cartTableView: UITableView!
@@ -23,18 +23,28 @@ final class CartViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        getCartArray()
         self.cartTableView.reloadData()
         self.priceLabel.text = String(format: "%.2f", self.items.map { $0.price }.reduce(0, +))
         self.priceLabel.sizeToFit()
+        // print("\(order)\n")
+    }
+    
+    func getCartArray() {
+        let uniqNames = Array(Set(items.map { $0.name })).sorted()
+        let count = uniqNames.map { name in
+            ( items.first(where: { $0.name == name })!, items.filter { $0.name == name }.count)
+        }
+        self.order = count
     }
     
     // MARK: - Alert windows
     
-    func showDeleteAlert(tableView: UITableView, indexPath: IndexPath) {
+    func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String) {
         let alert = UIAlertController(title: "Alert!", message: "You want to delete a position on your order, are you sure?", preferredStyle: .alert)
         alert.addCancelAction()
         let ok = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
-            self?.deleteFromRealm(indexPath)
+            self?.deleteFromRealm(indexPath, name)
             tableView.deleteRows(at: [indexPath], with: .fade)
             self?.priceLabel.text = String(format: "%.2f", self?.items.map { $0.price }.reduce(0, +) ?? 0)
             self?.priceLabel.sizeToFit()
@@ -43,10 +53,12 @@ final class CartViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func deleteFromRealm(_ indexPath: IndexPath) {
+    func deleteFromRealm(_ indexPath: IndexPath, _ name: String) {
         try! realm.write {
-            realm.delete(items[indexPath.row])
+            //  realm.delete(items[indexPath.row])
+            realm.delete(items.filter { $0.name == name })
         }
+        getCartArray()
     }
     
     /*
@@ -64,20 +76,26 @@ final class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return order?.count ?? items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell else { return .init() }
-        cell.name = self.items[indexPath.row].name
-        cell.price = String(self.items[indexPath.row].price)
-        cell.imageName = self.items[indexPath.row].imageName
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell,
+              let cellOrder = order else { return .init() }
+        cell.name = cellOrder[indexPath.row].0.name
+        cell.price = String(format: "%.2f", cellOrder[indexPath.row].0.price * Double(cellOrder[indexPath.row].1))
+        cell.imageName = cellOrder[indexPath.row].0.imageName
+        cell.numberOfOrders = cellOrder[indexPath.row].1
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? CartTableViewCell,
+              let name = cell.name else { return }
+        
         if editingStyle == .delete {
-            self.showDeleteAlert(tableView: tableView, indexPath: indexPath)
+            self.showDeleteAlert(tableView: tableView, indexPath: indexPath, name: name)
+            
         }
     }
     

@@ -13,3 +13,6 @@ class CartItem: Object {
     @objc dynamic var price: Double = 0
     @objc dynamic var imageName: String = ""
 }
+
+class Order: Object {
+}
