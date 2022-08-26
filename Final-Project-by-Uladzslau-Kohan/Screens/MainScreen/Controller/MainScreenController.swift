@@ -19,6 +19,10 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         items = realm.objects(Burgers.self)
+        let realm = try! Realm()
+        print("Realm is located at:", realm.configuration.fileURL!)
+
+
 //swiftlint:enable all
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self

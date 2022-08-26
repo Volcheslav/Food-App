@@ -71,6 +71,14 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             self.showDeleteAlert(tableView: tableView, indexPath: indexPath)
         }
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Your order"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(50)
+    }
         
 }
 
