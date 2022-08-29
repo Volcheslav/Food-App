@@ -42,10 +42,16 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-ug-QCI">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
                                                                     <state key="normal" image="plus.circle" catalog="system"/>
+                                                                    <connections>
+                                                                        <action selector="addOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="Fqb-F7-e74"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-d1-Flh">
                                                                     <rect key="frame" x="28" y="0.0" width="20" height="22"/>
                                                                     <state key="normal" image="minus.circle" catalog="system"/>
+                                                                    <connections>
+                                                                        <action selector="removeOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="PYX-Hk-dYO"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>

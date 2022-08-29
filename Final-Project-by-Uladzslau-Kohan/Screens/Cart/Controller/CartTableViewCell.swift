@@ -3,11 +3,15 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/25/22.
-//
-
+// swiftlint: disable force_try
+import RealmSwift
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
+    let realm = try! Realm()
+    var items: Results<CartItem>!
+    
+    var cellDelegate: MyCellDelegate?
 
     var name: String? {
         didSet {
@@ -36,6 +40,25 @@ class CartTableViewCell: UITableViewCell {
             self.numberOfOrdersLabel.text = "x\(self.numberOfOrders)"
             
         }
+    }
+    
+    @IBAction func addOneAction(_ sender: Any) {
+        items = realm.objects(CartItem.self)
+        guard let name = self.name,
+              let imageName = self.imageName,
+              let price = self.price else {
+            return
+        }
+        let cartItem = CartItem()
+        cartItem.name = name
+        cartItem.imageName = imageName
+        cartItem.price = Double(price)!
+        try! realm.write {
+            realm.add(cartItem)
+        }
+    }
+    
+    @IBAction func removeOneAction(_ sender: Any) {
     }
     
     @IBOutlet private weak var numberOfOrdersLabel: UILabel!

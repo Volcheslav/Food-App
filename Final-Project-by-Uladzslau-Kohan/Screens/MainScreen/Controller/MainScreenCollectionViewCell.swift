@@ -7,7 +7,7 @@
 import RealmSwift
 import UIKit
 
-class MainScreenCollectionViewCell: UICollectionViewCell {
+final class MainScreenCollectionViewCell: UICollectionViewCell {
     let realm = try! Realm()
     var items: Results<CartItem>!
     
