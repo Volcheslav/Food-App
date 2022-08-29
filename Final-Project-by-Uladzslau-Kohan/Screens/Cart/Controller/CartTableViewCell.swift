@@ -68,7 +68,7 @@ class CartTableViewCell: UITableViewCell {
         cellDelegate?.didPressButtonAdd(sender.tag, name: name, price: price, imageName: imageName)
     }
     
-    @IBAction func removeOneAction(_ sender: UIButton) {
+    @IBAction private func removeOneAction(_ sender: UIButton) {
         guard let name = self.name else { return }
         cellDelegate?.didPressButtonRemove(sender.tag, name: name)
     }

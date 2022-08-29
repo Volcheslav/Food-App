@@ -17,6 +17,8 @@ final class CartViewController: UIViewController {
             self.priceLabel.sizeToFit()
         }
     }
+    
+//    var order2: [((String, Double, String), Int)]?
     var wholePrice: Double?
     // MARK: - Outlets
 
@@ -31,6 +33,7 @@ final class CartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         getCartArray()
+     //   getNewCartarray()
         self.cartTableView.reloadData()
     }
     
@@ -40,6 +43,7 @@ final class CartViewController: UIViewController {
             ( items.first(where: { $0.name == name })!, items.filter { $0.name == name }.count)
         }
         self.order = count
+//        print(order)
     }
     
     // MARK: - Alert windows
@@ -60,14 +64,15 @@ final class CartViewController: UIViewController {
             realm.delete(items.filter { $0.name == name })
         }
         getCartArray()
+//        getNewCartarray()
     }
     
     func deleteFromRealmOne( _ name: String) {
-        guard let firstItem = items.first(where: { $0.name == name }) else { return }
+        guard let firstItem = items.last(where: { $0.name == name }) else { return }
         try! realm.write {
             realm.delete(firstItem)
         }
-        getCartArray()
+        
     }
     
     /*
@@ -86,6 +91,10 @@ final class CartViewController: UIViewController {
 extension CartViewController: UITableViewDelegate, UITableViewDataSource, MyCellDelegate {
     func didPressButtonRemove(_ tag: Int, name: String) {
         deleteFromRealmOne(name)
+        getCartArray()
+  //      getNewCartarray()
+        self.cartTableView.reloadData()
+        print(items.count)
     }
     
     func didPressButtonAdd(_ tag: Int, name: String, price: String, imageName: String) {
@@ -97,7 +106,9 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource, MyCell
             realm.add(cartItem)
         }
         getCartArray()
+    //    getNewCartarray()
         self.cartTableView.reloadData()
+        print(items.count)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
