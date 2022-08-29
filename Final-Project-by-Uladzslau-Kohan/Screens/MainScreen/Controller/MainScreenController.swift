@@ -8,13 +8,17 @@ import UIKit
 
 class MainScreenViewController: UIViewController {
   
+    // MARK: Outlets
+    
     @IBOutlet private weak var sectionNameLabel: UILabel!
     @IBOutlet private weak var mainFirstCollection: UICollectionView!
+    
+    // MARK: LoadFunctions
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//swiftlint:enable all
+// swiftlint:enable all
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self
         self.mainFirstCollection.backgroundColor = .lightGray
@@ -29,6 +33,8 @@ class MainScreenViewController: UIViewController {
                 
     }
 }
+
+// MARK: Cells configure
 
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -52,26 +58,28 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
 
 }
 
+// MARK: Layoyt
+
 extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemsInHeigt: CGFloat = 3
-        let paddingsHeight: CGFloat = (itemsInHeigt + 1) * 20 + 1
+        let paddingsHeight: CGFloat = (itemsInHeigt + 1) * 10 + 1
         let avalibalHeight: CGFloat = collectionView.frame.width - paddingsHeight
         let itemWidth = avalibalHeight / itemsInHeigt
         return CGSize(width: itemWidth, height: itemWidth + 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 20
+        return 10
     }
     
 }
