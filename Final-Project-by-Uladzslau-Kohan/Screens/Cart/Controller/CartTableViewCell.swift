@@ -11,7 +11,7 @@ class CartTableViewCell: UITableViewCell {
     let realm = try! Realm()
     var items: Results<CartItem>!
     
-    var cellDelegate: MyCellDelegate?
+    weak var cellDelegate: MyCellDelegate?
 
     var name: String? {
         didSet {
@@ -42,29 +42,37 @@ class CartTableViewCell: UITableViewCell {
         }
     }
     
-    @IBAction func addOneAction(_ sender: Any) {
-        items = realm.objects(CartItem.self)
-        guard let name = self.name,
-              let imageName = self.imageName,
-              let price = self.price else {
-            return
-        }
-        let cartItem = CartItem()
-        cartItem.name = name
-        cartItem.imageName = imageName
-        cartItem.price = Double(price)!
-        try! realm.write {
-            realm.add(cartItem)
+    var tagButtonAdd: Int = 0 {
+        didSet {
+            self.addButton.tag = tagButtonAdd
         }
     }
     
-    @IBAction func removeOneAction(_ sender: Any) {
+    var tagButtonRemove: Int = 0 {
+        didSet {
+            self.removeButton.tag = tagButtonRemove
+        }
     }
     
+    @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private weak var removeButton: UIButton!
     @IBOutlet private weak var numberOfOrdersLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var imageImView: UIImageView!
+    
+    @IBAction private func addOneAction(_ sender: UIButton) {
+        guard let name = self.name,
+              let price = self.price,
+              let imageName = self.imageName else { return }
+        cellDelegate?.didPressButtonAdd(sender.tag, name: name, price: price, imageName: imageName)
+    }
+    
+    @IBAction func removeOneAction(_ sender: UIButton) {
+        guard let name = self.name else { return }
+        cellDelegate?.didPressButtonRemove(sender.tag, name: name)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

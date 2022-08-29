@@ -43,14 +43,14 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
                                                                     <state key="normal" image="plus.circle" catalog="system"/>
                                                                     <connections>
-                                                                        <action selector="addOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="Fqb-F7-e74"/>
+                                                                        <action selector="addOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="ruP-he-M90"/>
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-d1-Flh">
                                                                     <rect key="frame" x="28" y="0.0" width="20" height="22"/>
                                                                     <state key="normal" image="minus.circle" catalog="system"/>
                                                                     <connections>
-                                                                        <action selector="removeOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="PYX-Hk-dYO"/>
+                                                                        <action selector="removeOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="WzQ-vO-E19"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
@@ -94,10 +94,12 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="addButton" destination="I7T-ug-QCI" id="OPU-SK-Y1p"/>
                                             <outlet property="imageImView" destination="Pjy-rc-Jxb" id="fh8-WY-qgQ"/>
                                             <outlet property="nameLabel" destination="dzI-UP-jST" id="SJI-Ky-gwQ"/>
                                             <outlet property="numberOfOrdersLabel" destination="QwD-mp-qfS" id="4lk-I3-UTq"/>
                                             <outlet property="priceLabel" destination="VLG-Pi-eGc" id="IRW-A2-OnL"/>
+                                            <outlet property="removeButton" destination="vbk-d1-Flh" id="kJ7-Yn-vWT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

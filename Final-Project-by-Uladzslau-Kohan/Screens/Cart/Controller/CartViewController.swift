@@ -10,7 +10,14 @@ import UIKit
 final class CartViewController: UIViewController {
     let realm = try! Realm()
     var items: Results<CartItem>!
-    var order: [(CartItem, Int)]?
+    var order: [(CartItem, Int)]? {
+        didSet {
+            guard let whPrice = order.map({ $0.map { $0.0.price * Double($0.1) } })?.reduce(0, +) else { return }
+            self.priceLabel.text = String(format: "%.2f", whPrice)
+            self.priceLabel.sizeToFit()
+        }
+    }
+    var wholePrice: Double?
     // MARK: - Outlets
 
     @IBOutlet private weak var cartTableView: UITableView!
@@ -25,9 +32,6 @@ final class CartViewController: UIViewController {
         super.viewWillAppear(true)
         getCartArray()
         self.cartTableView.reloadData()
-        self.priceLabel.text = String(format: "%.2f", self.items.map { $0.price }.reduce(0, +))
-        self.priceLabel.sizeToFit()
-        // print("\(order)\n")
     }
     
     func getCartArray() {
@@ -44,19 +48,24 @@ final class CartViewController: UIViewController {
         let alert = UIAlertController(title: "Alert!", message: "You want to delete a position on your order, are you sure?", preferredStyle: .alert)
         alert.addCancelAction()
         let ok = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
-            self?.deleteFromRealm(indexPath, name)
+            self?.deleteFromRealmByName(name)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            self?.priceLabel.text = String(format: "%.2f", self?.items.map { $0.price }.reduce(0, +) ?? 0)
-            self?.priceLabel.sizeToFit()
         })
         alert.addAction(ok)
         self.present(alert, animated: true)
     }
     
-    func deleteFromRealm(_ indexPath: IndexPath, _ name: String) {
+    func deleteFromRealmByName(_ name: String) {
         try! realm.write {
-            //  realm.delete(items[indexPath.row])
             realm.delete(items.filter { $0.name == name })
+        }
+        getCartArray()
+    }
+    
+    func deleteFromRealmOne( _ name: String) {
+        guard let firstItem = items.first(where: { $0.name == name }) else { return }
+        try! realm.write {
+            realm.delete(firstItem)
         }
         getCartArray()
     }
@@ -74,7 +83,23 @@ final class CartViewController: UIViewController {
 }
 // MARK: - Extension table control
 
-extension CartViewController: UITableViewDelegate, UITableViewDataSource {
+extension CartViewController: UITableViewDelegate, UITableViewDataSource, MyCellDelegate {
+    func didPressButtonRemove(_ tag: Int, name: String) {
+        deleteFromRealmOne(name)
+    }
+    
+    func didPressButtonAdd(_ tag: Int, name: String, price: String, imageName: String) {
+        let cartItem = CartItem()
+        cartItem.name = name
+        cartItem.imageName = imageName
+        cartItem.price = Double(price)!
+        try! realm.write {
+            realm.add(cartItem)
+        }
+        getCartArray()
+        self.cartTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return order?.count ?? items.count
     }
@@ -86,6 +111,9 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         cell.price = String(format: "%.2f", cellOrder[indexPath.row].0.price * Double(cellOrder[indexPath.row].1))
         cell.imageName = cellOrder[indexPath.row].0.imageName
         cell.numberOfOrders = cellOrder[indexPath.row].1
+        cell.cellDelegate = self
+        cell.tagButtonAdd = indexPath.row
+        cell.tagButtonRemove = -indexPath.row
         return cell
     }
     
@@ -98,7 +126,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let height = (tableView.frame.height - tableView.sectionHeaderHeight) / 8

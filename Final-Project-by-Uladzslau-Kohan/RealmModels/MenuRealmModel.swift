@@ -16,4 +16,3 @@ class CartItem: Object {
 
 class Order: Object {
 }
-
