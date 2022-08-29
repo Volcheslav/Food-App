@@ -8,6 +8,7 @@ import RealmSwift
 import UIKit
 
 final class CartViewController: UIViewController {
+    private let cellsOnView: CGFloat = 7
     let realm = try! Realm()
     var items: Results<CartItem>!
     var order: [(CartItem, Int)]? {
@@ -19,7 +20,7 @@ final class CartViewController: UIViewController {
     }
     var wholePrice: Double?
     // MARK: - Outlets
-
+    
     @IBOutlet private weak var cartTableView: UITableView!
     @IBOutlet private weak var priceLabel: UILabel!
     
@@ -71,38 +72,19 @@ final class CartViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 // MARK: - Extension table control
 
-extension CartViewController: UITableViewDelegate, UITableViewDataSource, MyCellDelegate {
-    func didPressButtonRemove(_ tag: Int, name: String) {
-        deleteFromRealmOne(name)
-        getCartArray()
-        self.cartTableView.reloadData()
-      
-    }
-    
-    func didPressButtonAdd(_ tag: Int, name: String, price: String, imageName: String) {
-        let cartItem = CartItem()
-        cartItem.name = name
-        cartItem.imageName = imageName
-        cartItem.price = Double(price)!
-        try! realm.write {
-            realm.add(cartItem)
-        }
-        getCartArray()
-        self.cartTableView.reloadData()
-    }
-    
+extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return order?.count ?? items.count
     }
@@ -131,7 +113,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource, MyCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = (tableView.frame.height - tableView.sectionHeaderHeight) / 8
+        let height = (tableView.frame.height - tableView.sectionHeaderHeight - tableView.sectionFooterHeight) / cellsOnView
         return height
     }
     
@@ -142,7 +124,28 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource, MyCell
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return CGFloat(50)
     }
+    
+}
+
+extension CartViewController: MyCellDelegate {
+    func didPressButtonRemove(_ tag: Int, name: String) {
+        deleteFromRealmOne(name)
+        getCartArray()
+        self.cartTableView.reloadData()
         
+    }
+    
+    func didPressButtonAdd(_ tag: Int, name: String, price: String, imageName: String) {
+        let cartItem = CartItem()
+        cartItem.name = name
+        cartItem.imageName = imageName
+        cartItem.price = Double(price)!
+        try! realm.write {
+            realm.add(cartItem)
+        }
+        getCartArray()
+        self.cartTableView.reloadData()
+    }
 }
 
 // MARK: - Extension alert controller

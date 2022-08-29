@@ -3,13 +3,11 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/25/22.
-// swiftlint: disable force_try
-import RealmSwift
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
-    let realm = try! Realm()
-    var items: Results<CartItem>!
+    
+    // MARK: Variables
     
     weak var cellDelegate: MyCellDelegate?
 
@@ -54,12 +52,16 @@ class CartTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: Outlets
+    
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private weak var removeButton: UIButton!
     @IBOutlet private weak var numberOfOrdersLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var imageImView: UIImageView!
+    
+    // MARK: Actions
     
     @IBAction private func addOneAction(_ sender: UIButton) {
         guard let name = self.name,
@@ -72,6 +74,8 @@ class CartTableViewCell: UITableViewCell {
         guard let name = self.name else { return }
         cellDelegate?.didPressButtonRemove(sender.tag, name: name)
     }
+    
+    // MARK: LoadFunctions
     
     override func awakeFromNib() {
         super.awakeFromNib()
