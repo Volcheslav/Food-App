@@ -63,11 +63,11 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
 extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsInHeigt: CGFloat = 3
+        let itemsInHeigt: CGFloat = 2
         let paddingsHeight: CGFloat = (itemsInHeigt + 1) * 10 + 1
         let avalibalHeight: CGFloat = collectionView.frame.width - paddingsHeight
         let itemWidth = avalibalHeight / itemsInHeigt
-        return CGSize(width: itemWidth, height: itemWidth + 50)
+        return CGSize(width: itemWidth, height: itemWidth * 1.5)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

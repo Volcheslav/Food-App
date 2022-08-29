@@ -26,10 +26,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0Q-2Q-CvA">
                                                 <rect key="frame" x="0.0" y="70" width="414" height="380"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="380" id="6ZZ-Nx-h1N"/>
-                                                </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7L-Vq-b74">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7L-Vq-b74">
                                                     <size key="itemSize" width="128" height="170"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -108,6 +105,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="c0Q-2Q-CvA" secondAttribute="bottom" constant="550" id="NPg-GX-UXP"/>
                                             <constraint firstItem="c0Q-2Q-CvA" firstAttribute="leading" secondItem="j0X-mu-Xwn" secondAttribute="leading" id="ePk-ju-euZ"/>
                                             <constraint firstItem="Htl-L5-8Rl" firstAttribute="top" secondItem="j0X-mu-Xwn" secondAttribute="top" constant="25" id="gmR-zX-Znd"/>
                                             <constraint firstAttribute="height" constant="1000" id="hIB-Nv-4Vw"/>

@@ -14,9 +14,9 @@ protocol Food {
 }
 
 struct Menu {
-    private let burgerNames = ["Hanburger", "CheeseBurger", "BigBurger", "SteakHouse", "Classic", "OldBurger", "BlackHourse"]
-    private let burgerPrice = [1.00, 2.49, 3.59, 4.29, 7.99, 2.49, 5.29]
-    private let burgerCalories = [1320, 2340, 2500, 1020, 1234, 1068, 2500]
+    private let burgerNames = ["Hanburger", "CheeseBurger", "BigBurger", "SteakHouse", "Classic", "OldBurger", "BlackHourse", "CheeseKing"]
+    private let burgerPrice = [1.00, 2.49, 3.59, 4.29, 7.99, 2.49, 5.29, 3.33]
+    private let burgerCalories = [1320, 2340, 2500, 1020, 1234, 1068, 2500, 1700]
     static let shared = Menu()
     func getBurgers() -> [Burger] {
         guard burgerNames.count == burgerPrice.count, burgerNames.count == burgerCalories.count else { return [] }
