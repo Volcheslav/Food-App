@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "007-eR-Ded"; */
+"007-eR-Ded.text" = "Label";
+
+/* Class = "UILabel"; text = "Total price:"; ObjectID = "102-eS-0SG"; */
+"102-eS-0SG.text" = "Total price:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QwD-mp-qfS"; */
+"QwD-mp-qfS.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Cart"; ObjectID = "UTh-YH-K8k"; */
+"UTh-YH-K8k.title" = "Cart";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VLG-Pi-eGc"; */
+"VLG-Pi-eGc.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dzI-UP-jST"; */
+"dzI-UP-jST.text" = "Label";

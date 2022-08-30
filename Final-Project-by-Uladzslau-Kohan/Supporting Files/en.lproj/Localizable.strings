@@ -34,3 +34,10 @@
 "LOGIN" = "Login";
 "SIGN_UP" = "Sing up";
 
+// MARK: Cart view
+
+"ALERT" = "Alert!";
+"DELETE_ALERT_MESSAGE" = "You want to delete a position on your order, are you sure?";
+"YOUR_ORDER" = "Your order";
+"OK" = "OK";
+"CANCEL" = "Cancel";

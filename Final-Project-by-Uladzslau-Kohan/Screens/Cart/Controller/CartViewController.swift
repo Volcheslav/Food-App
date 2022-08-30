@@ -46,9 +46,9 @@ final class CartViewController: UIViewController {
     // MARK: - Alert windows
     
     func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String) {
-        let alert = UIAlertController(title: "Alert!", message: "You want to delete a position on your order, are you sure?", preferredStyle: .alert)
+        let alert = UIAlertController(title: ("ALERT")§, message: ("DELETE_ALERT_MESSAGE")§, preferredStyle: .alert)
         alert.addCancelAction()
-        let ok = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
+        let ok = UIAlertAction(title: ("OK")§, style: .default, handler: {[weak self] _ in
             self?.deleteFromRealmByName(name)
             tableView.deleteRows(at: [indexPath], with: .fade)
         })
@@ -118,7 +118,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Your order"
+        return ("YOUR_ORDER")§
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -152,7 +152,7 @@ extension CartViewController: MyCellDelegate {
 
 extension UIAlertController {
     func addCancelAction () {
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: ("CANCEL")§, style: .cancel)
         self.addAction(cancelAction)
     }
 }

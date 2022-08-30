@@ -34,3 +34,11 @@
 "ENTER_YOUR_LOGIN" = "Введите логин";
 "LOGIN" = "Логин";
 "SIGN_UP" = "Регестрация";
+
+// MARK: Cart view
+
+"ALERT" = "Внимание!";
+"DELETE_ALERT_MESSAGE" = "Вы уверены что хотите удалить заказ?";
+"YOUR_ORDER" = "Ваш заказ";
+"OK" = "OK";
+"CANCEL" = "Отмена";

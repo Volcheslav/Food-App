@@ -7,14 +7,15 @@ protocol Food {
 }
 
 struct Menu {
-    private let burgerNames = [("HANBURGER")§,
-                               ("CHEESEBURGER")§,
-                               ("BIGBURGER")§,
-                               ("STEAKHOUSE")§,
-                               ("CLASSIC")§,
-                               ("OLDBURGER")§,
-                               ("BLACKHOURSE")§,
-                               ("CHEESEKING")§
+    private let burgerNames = [
+        ("HANBURGER")§,
+        ("CHEESEBURGER")§,
+        ("BIGBURGER")§,
+        ("STEAKHOUSE")§,
+        ("CLASSIC")§,
+        ("OLDBURGER")§,
+        ("BLACKHOURSE")§,
+        ("CHEESEKING")§
     ]
     private let burgerPrice = [1.00, 2.49, 3.59, 4.29, 7.99, 2.49, 5.29, 3.33]
     private let burgerCalories = [1320, 2340, 2500, 1020, 1234, 1068, 2500, 1700]

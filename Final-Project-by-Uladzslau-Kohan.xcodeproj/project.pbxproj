@@ -15,10 +15,10 @@
 		533630CA28AE89BA00DB692C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533630C928AE89BA00DB692C /* Profile.storyboard */; };
 		533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533630CC28AE8A1D00DB692C /* ProfileViewController.swift */; };
 		5339A99128BE20D80079DD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5339A99328BE20D80079DD3D /* Localizable.strings */; };
+		5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9A028BE24A90079DD3D /* Cart.storyboard */; };
 		533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D1D0828B8ECBF00217919 /* MenuData.swift */; };
 		5344CE1C28B64F200079C8F7 /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */; };
 		5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F56428B786CB00995448 /* MenuRealmModel.swift */; };
-		5347F56D28B79C2A00995448 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5347F56C28B79C2A00995448 /* Cart.storyboard */; };
 		5347F57128B79EE500995448 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57028B79EE500995448 /* CartViewController.swift */; };
 		5347F57728B7B8FA00995448 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57628B7B8FA00995448 /* CartTableViewCell.swift */; };
 		534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */; };
@@ -43,10 +43,12 @@
 		5339A98C28BE208D0079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainScreen.strings; sourceTree = "<group>"; };
 		5339A99228BE20D80079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5339A99428BE20DC0079DD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5339A99F28BE24A90079DD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cart.storyboard; sourceTree = "<group>"; };
+		5339A9A228BE24B30079DD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Cart.strings; sourceTree = "<group>"; };
+		5339A9A428BE24E60079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Cart.strings; sourceTree = "<group>"; };
 		533D1D0828B8ECBF00217919 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		5347F56428B786CB00995448 /* MenuRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRealmModel.swift; sourceTree = "<group>"; };
-		5347F56C28B79C2A00995448 /* Cart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = "<group>"; };
 		5347F57028B79EE500995448 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		5347F57628B7B8FA00995448 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCellDelegateProtocol.swift; sourceTree = "<group>"; };
@@ -274,7 +276,7 @@
 		5347F56928B79BE600995448 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5347F56C28B79C2A00995448 /* Cart.storyboard */,
+				5339A9A028BE24A90079DD3D /* Cart.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -389,7 +391,7 @@
 				533630CA28AE89BA00DB692C /* Profile.storyboard in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,
 				53D99D8B289ABD6D002755A4 /* MainScreen.storyboard in Resources */,
-				5347F56D28B79C2A00995448 /* Cart.storyboard in Resources */,
+				5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */,
 				531C99A928B4FB120039C9A0 /* ProfileInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +490,16 @@
 				5339A99428BE20DC0079DD3D /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5339A9A028BE24A90079DD3D /* Cart.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5339A99F28BE24A90079DD3D /* Base */,
+				5339A9A228BE24B30079DD3D /* en */,
+				5339A9A428BE24E60079DD3D /* ru */,
+			);
+			name = Cart.storyboard;
 			sourceTree = "<group>";
 		};
 		53D99D89289ABD6D002755A4 /* MainScreen.storyboard */ = {
