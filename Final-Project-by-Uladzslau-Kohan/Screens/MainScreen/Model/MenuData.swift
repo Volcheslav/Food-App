@@ -1,10 +1,3 @@
-//
-//  MenuData.swift
-//  Final-Project-by-Uladzslau-Kohan
-//
-//  Created by VironIT on 8/26/22.
-//
-
 import Foundation
 
 protocol Food {
@@ -14,7 +7,15 @@ protocol Food {
 }
 
 struct Menu {
-    private let burgerNames = ["Hanburger", "CheeseBurger", "BigBurger", "SteakHouse", "Classic", "OldBurger", "BlackHourse", "CheeseKing"]
+    private let burgerNames = [("HANBURGER")§,
+                               ("CHEESEBURGER")§,
+                               ("BIGBURGER")§,
+                               ("STEAKHOUSE")§,
+                               ("CLASSIC")§,
+                               ("OLDBURGER")§,
+                               ("BLACKHOURSE")§,
+                               ("CHEESEKING")§
+    ]
     private let burgerPrice = [1.00, 2.49, 3.59, 4.29, 7.99, 2.49, 5.29, 3.33]
     private let burgerCalories = [1320, 2340, 2500, 1020, 1234, 1068, 2500, 1700]
     static let shared = Menu()
@@ -38,4 +39,9 @@ struct Drink: Food {
     var price: Double
     var imageName: String
     var volume: Double
+}
+// swiftlint:disable all
+postfix operator §
+postfix func § (string: String) -> String {
+    return NSLocalizedString(string, comment: "")
 }

@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Final-Project-by-Uladzslau-Kohan
+
+  Created by VironIT on 8/30/22.
+  
+*/
+
+// MARK: Main screen
+
+"MAIN_MENU_SECTION" = "Menu";
+
+// MARK: Menu data Burgers
+
+"HANBURGER" = "Hanburger";
+"CHEESEBURGER" = "CheeseBurger";
+"BIGBURGER" = "BigBurger";
+"STEAKHOUSE" = "SteakHouse";
+"CLASSIC" = "Classic";
+"OLDBURGER" = "OldBurger";
+"BLACKHOURSE" = "BlackHourse";
+"CHEESEKING" = "CheeseKing";
+
+// MARK: Profile info
+
+"MAIN" = "Main";
+"CONTACTS" = "Contacts";
+"ADDRESS" = "Address";
+
+// MARK: Profile view
+
+"ENTER_YOUR_PASSWORD" = "Enter your login";
+"ENTER_YOUR_LOGIN" = "Enter your login";
+"LOGIN" = "Login";
+"SIGN_UP" = "Sing up";
+

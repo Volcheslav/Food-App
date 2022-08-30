@@ -27,7 +27,7 @@ class MainScreenViewController: UIViewController {
         self.sectionNameLabel.layer.cornerRadius = 10
         self.sectionNameLabel.layer.masksToBounds = true
         self.sectionNameLabel.backgroundColor = .black
-        self.sectionNameLabel.text = "Menu"
+        self.sectionNameLabel.text = ("MAIN_MENU_SECTION")§
         self.sectionNameLabel.textColor = .white
         self.sectionNameLabel.adjustsFontSizeToFitWidth = true
                 

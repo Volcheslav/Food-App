@@ -1,0 +1,18 @@
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "9xz-Bi-rB7"; */
+"9xz-Bi-rB7.title" = "Объект";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Htl-L5-8Rl"; */
+"Htl-L5-8Rl.text" = "Метка";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "MVU-fX-Va9"; */
+"MVU-fX-Va9.title" = "Объект";
+
+/* Class = "UILabel"; text = "price"; ObjectID = "atx-oh-Hjh"; */
+"atx-oh-Hjh.text" = "Цена";
+
+/* Class = "UITabBarItem"; title = "Main"; ObjectID = "h5V-3u-8eY"; */
+"h5V-3u-8eY.title" = "Главная";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "moP-7u-C72"; */
+"moP-7u-C72.text" = "Имя";
