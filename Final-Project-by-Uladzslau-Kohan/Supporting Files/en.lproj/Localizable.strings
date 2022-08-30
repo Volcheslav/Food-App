@@ -9,6 +9,8 @@
 // MARK: Main screen
 
 "MAIN_MENU_SECTION" = "Menu";
+"MAIN_ALERT_TITLE" = "added to cart";
+"MAIN_ALERT_MESSAGE" = "Success";
 
 // MARK: Menu data Burgers
 

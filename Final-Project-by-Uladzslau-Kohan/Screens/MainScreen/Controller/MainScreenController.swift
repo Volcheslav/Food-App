@@ -10,7 +10,7 @@ import UIKit
 final class MainScreenViewController: UIViewController {
     let realm = try! Realm()
     var items: Results<CartItem>!
-  
+    
     // MARK: Outlets
     
     @IBOutlet private weak var sectionNameLabel: UILabel!
@@ -32,7 +32,18 @@ final class MainScreenViewController: UIViewController {
         self.sectionNameLabel.text = ("MAIN_MENU_SECTION")§
         self.sectionNameLabel.textColor = .white
         self.sectionNameLabel.adjustsFontSizeToFitWidth = true
-                
+        
+    }
+    
+    // MARK: AlertFunctions
+    
+    func showAlert(added: String) {
+        let alert = UIAlertController(title: "\(added) \(("MAIN_ALERT_TITLE")§)", message: nil, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        let when = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+          alert.dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -59,7 +70,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.tagButtonAdd = indexPath.row
         return cell
     }
-
+    
 }
 
 // MARK: Layoyt
@@ -77,11 +88,11 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
@@ -99,5 +110,6 @@ extension MainScreenViewController: MainScreenCellDelegate {
         try! realm.write {
             realm.add(cartItem)
         }
+        showAlert(added: name)
     }
 }

@@ -10,6 +10,8 @@
 // MARK: Main screen
 
 "MAIN_MENU_SECTION" = "Меню";
+"MAIN_ALERT_TITLE" = "добавлено в заказ";
+"MAIN_ALERT_MESSAGE" = "Спасибо";
 
 // MARK: Menu data Burgers
 
