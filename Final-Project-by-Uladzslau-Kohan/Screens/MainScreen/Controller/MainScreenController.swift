@@ -3,10 +3,13 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/3/22.
-//  swiftlint:disable all
+//  swiftlint:disable force_try
+import RealmSwift
 import UIKit
 
-class MainScreenViewController: UIViewController {
+final class MainScreenViewController: UIViewController {
+    let realm = try! Realm()
+    var items: Results<CartItem>!
   
     // MARK: Outlets
     
@@ -17,8 +20,7 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-// swiftlint:enable all
+        items = realm.objects(CartItem.self)
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self
         self.mainFirstCollection.backgroundColor = .lightGray
@@ -47,12 +49,14 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+        cell.cellDelegate = self
         cell.name = Menu.shared.getBurgers()[indexPath.row].name
         cell.price = Menu.shared.getBurgers()[indexPath.row].price
         cell.nameImage = Menu.shared.getBurgers()[indexPath.row].imageName
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
         cell.backgroundColor = .darkGray
+        cell.tagButtonAdd = indexPath.row
         return cell
     }
 
@@ -82,4 +86,18 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
         return 10
     }
     
+}
+
+// MARK: CellDelegate protocol
+
+extension MainScreenViewController: MainScreenCellDelegate {
+    func didPressButtonAdd(_ tag: Int, name: String, price: Double, imageName: String) {
+        let cartItem = CartItem()
+        cartItem.name = name
+        cartItem.imageName = imageName
+        cartItem.price = price
+        try! realm.write {
+            realm.add(cartItem)
+        }
+    }
 }

@@ -5,7 +5,7 @@
 //  Created by VironIT on 8/29/22.
 //
 
-import UIKit
+import Foundation
 
 protocol MyCellDelegate : class {
     func didPressButtonAdd(_ tag: Int, name: String, price: String, imageName: String)
