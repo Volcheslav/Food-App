@@ -18,6 +18,7 @@
 "MODAL_MAIN_NAME" = "Название продукта:";
 "MODAL_MAIN_PRICE" = "Цена:";
 "MODAL_MAIN_CALORIES" = "Каллорийность:";
+"MODAL_MAIN_ADD_TO_CART" = "Добавить в заказ";
 
 // MARK: Menu data Burgers
 

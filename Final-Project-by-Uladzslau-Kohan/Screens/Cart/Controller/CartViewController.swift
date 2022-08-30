@@ -147,12 +147,3 @@ extension CartViewController: MyCellDelegate {
         self.cartTableView.reloadData()
     }
 }
-
-// MARK: - Extension alert controller
-
-extension UIAlertController {
-    func addCancelAction () {
-        let cancelAction = UIAlertAction(title: ("CANCEL")§, style: .cancel)
-        self.addAction(cancelAction)
-    }
-}

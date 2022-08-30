@@ -9,6 +9,7 @@ import UIKit
 
 final class MainModalInfoViewController: UIViewController {
     
+    weak var controllerDelegate: MainScreenCellDelegate?
     var name: String = ""
     var price: Double = 0
     var caloreis: Int = 0
@@ -22,6 +23,12 @@ final class MainModalInfoViewController: UIViewController {
     @IBOutlet private weak var productCaloriesLabel: UILabel!
     @IBOutlet private weak var productImageView: UIImageView!
     @IBOutlet private weak var modalView: UIView!
+    @IBOutlet private weak var addToCartButton: UICustomButton!
+    
+    @IBAction private func addToCart(_ sender: UICustomButton) {
+        controllerDelegate?.didPressModalButtonAdd(sender.tag, name: self.name, price: self.price, imageName: self.imageName)
+        ShowAlerts.showAddAlert(name: self.name, viewController: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +43,8 @@ final class MainModalInfoViewController: UIViewController {
         self.nameLabel.text = ("MODAL_MAIN_NAME")§
         self.priceLabel.text = ("MODAL_MAIN_PRICE")§
         self.caloriesLabel.text = ("MODAL_MAIN_CALORIES")§
-        // Do any additional setup after loading the view.
+        self.addToCartButton.setTitle(("MODAL_MAIN_ADD_TO_CART")§, for: .normal) 
     }
-    
     /*
     // MARK: - Navigation
 

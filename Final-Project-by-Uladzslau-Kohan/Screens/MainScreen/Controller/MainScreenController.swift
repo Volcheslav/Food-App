@@ -35,22 +35,26 @@ final class MainScreenViewController: UIViewController {
         
     }
     
-    // MARK: AlertFunctions
+    // MARK: RealmFunctions
     
-    func showAlert(added: String) {
-        let alert = UIAlertController(title: "\(added) \(("MAIN_ALERT_TITLE")§)", message: nil, preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
-        let when = DispatchTime.now() + 0.5
-        DispatchQueue.main.asyncAfter(deadline: when) {
-          alert.dismiss(animated: true, completion: nil)
+    func addToRealm(name: String, imageName: String, price: Double ) {
+        let cartItem = CartItem()
+        cartItem.name = name
+        cartItem.imageName = imageName
+        cartItem.price = price
+        try! realm.write {
+            realm.add(cartItem)
         }
     }
+    
+    // MARK: ShowModal view controller
     
     func showModal(name:String, price: Double, calories: Int, imageName: String) {
         let storybord = UIStoryboard(name: "MainScreen", bundle: nil)
         guard let viewController = storybord.instantiateViewController(identifier: "mainModal") as? MainModalInfoViewController else {
             return
         }
+        viewController.controllerDelegate = self
         viewController.name = name
         viewController.price = price
         viewController.caloreis = calories
@@ -128,14 +132,12 @@ extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
 // MARK: CellDelegate protocol
 
 extension MainScreenViewController: MainScreenCellDelegate {
+    func didPressModalButtonAdd(_ tag: Int, name: String, price: Double, imageName: String) {
+       addToRealm(name: name, imageName: imageName, price: price)
+    }
+    
     func didPressButtonAdd(_ tag: Int, name: String, price: Double, imageName: String) {
-        let cartItem = CartItem()
-        cartItem.name = name
-        cartItem.imageName = imageName
-        cartItem.price = price
-        try! realm.write {
-            realm.add(cartItem)
-        }
-        showAlert(added: name)
+        addToRealm(name: name, imageName: imageName, price: price)
+        ShowAlerts.showAddAlert(name: name, viewController: self)
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol MainScreenCellDelegate : class {
     func didPressButtonAdd(_ tag: Int, name: String, price: Double, imageName: String)
+    func didPressModalButtonAdd(_ tag: Int, name: String, price: Double, imageName: String)
 }

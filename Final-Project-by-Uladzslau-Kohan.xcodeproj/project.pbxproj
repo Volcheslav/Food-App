@@ -30,6 +30,7 @@
 		53D99D8D289ABD6F002755A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D99D8C289ABD6F002755A4 /* Assets.xcassets */; };
 		53D99D90289ABD6F002755A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D99D8E289ABD6F002755A4 /* LaunchScreen.storyboard */; };
 		53E9ED2528BE4B3F0028EEAA /* MainModalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9ED2428BE4B3F0028EEAA /* MainModalInfoViewController.swift */; };
+		53E9ED3028BE653E0028EEAA /* MainAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */; };
 		6B46694E67E2E404B3BC0D74 /* Pods_Final_Project_by_Uladzslau_Kohan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 540ABA2FF314FEF7079C652F /* Pods_Final_Project_by_Uladzslau_Kohan.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		53D99D8F289ABD6F002755A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53D99D91289ABD6F002755A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53E9ED2428BE4B3F0028EEAA /* MainModalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModalInfoViewController.swift; sourceTree = "<group>"; };
+		53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlerts.swift; sourceTree = "<group>"; };
 		540ABA2FF314FEF7079C652F /* Pods_Final_Project_by_Uladzslau_Kohan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project_by_Uladzslau_Kohan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF685E048CBF5C7B2BDC39E /* Pods-Final-Project-by-Uladzslau-Kohan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final-Project-by-Uladzslau-Kohan.release.xcconfig"; path = "Target Support Files/Pods-Final-Project-by-Uladzslau-Kohan/Pods-Final-Project-by-Uladzslau-Kohan.release.xcconfig"; sourceTree = "<group>"; };
 		8B4FD4E0D730AA577B92BD60 /* Pods-Final-Project-by-Uladzslau-Kohan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final-Project-by-Uladzslau-Kohan.debug.xcconfig"; path = "Target Support Files/Pods-Final-Project-by-Uladzslau-Kohan/Pods-Final-Project-by-Uladzslau-Kohan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,9 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */,
+				53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */,
 				53D99D87289ABD6D002755A4 /* MainScreenController.swift */,
-				5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */,
 				53E9ED2428BE4B3F0028EEAA /* MainModalInfoViewController.swift */,
+				5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -255,12 +258,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		5347F56328B7869700995448 /* RealmModels */ = {
+		5347F56328B7869700995448 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
 				5347F56428B786CB00995448 /* MenuRealmModel.swift */,
 			);
-			path = RealmModels;
+			path = Realm;
 			sourceTree = "<group>";
 		};
 		5347F56728B79BCD00995448 /* Cart */ = {
@@ -321,7 +324,7 @@
 			children = (
 				533630AB28AE766500DB692C /* Application */,
 				533630B428AE7F0400DB692C /* Screens */,
-				5347F56328B7869700995448 /* RealmModels */,
+				5347F56328B7869700995448 /* Realm */,
 				533630AF28AE76A100DB692C /* Supporting Files */,
 			);
 			path = "Final-Project-by-Uladzslau-Kohan";
@@ -473,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E9ED3028BE653E0028EEAA /* MainAlerts.swift in Sources */,
 				531C99A628B4F5610039C9A0 /* ProfileInfoViewController.swift in Sources */,
 				531C99C228B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift in Sources */,
 				53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */,
