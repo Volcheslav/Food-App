@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileInfoTableViewCell: UITableViewCell {
+final class ProfileInfoTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var nameCellLabel: UILabel!
     

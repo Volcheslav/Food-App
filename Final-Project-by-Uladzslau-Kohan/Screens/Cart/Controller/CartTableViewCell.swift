@@ -5,7 +5,7 @@
 //  Created by VironIT on 8/25/22.
 import UIKit
 
-class CartTableViewCell: UITableViewCell {
+final class CartTableViewCell: UITableViewCell {
     
     // MARK: Variables
     

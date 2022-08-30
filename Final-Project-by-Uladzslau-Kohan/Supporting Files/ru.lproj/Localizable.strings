@@ -13,6 +13,12 @@
 "MAIN_ALERT_TITLE" = "добавлено в заказ";
 "MAIN_ALERT_MESSAGE" = "Спасибо";
 
+// MARK: Main modal
+
+"MODAL_MAIN_NAME" = "Название продукта:";
+"MODAL_MAIN_PRICE" = "Цена:";
+"MODAL_MAIN_CALORIES" = "Каллорийность:";
+
 // MARK: Menu data Burgers
 
 "HANBURGER" = "Гамбургер";

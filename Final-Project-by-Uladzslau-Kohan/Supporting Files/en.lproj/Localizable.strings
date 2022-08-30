@@ -12,6 +12,12 @@
 "MAIN_ALERT_TITLE" = "added to cart";
 "MAIN_ALERT_MESSAGE" = "Success";
 
+// MARK: Main modal
+
+"MODAL_MAIN_NAME" = "Product name:";
+"MODAL_MAIN_PRICE" = "Price:";
+"MODAL_MAIN_CALORIES" = "Calories";
+
 // MARK: Menu data Burgers
 
 "HANBURGER" = "Hanburger";

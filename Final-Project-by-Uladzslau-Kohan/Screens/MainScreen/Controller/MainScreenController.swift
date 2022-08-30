@@ -45,6 +45,24 @@ final class MainScreenViewController: UIViewController {
           alert.dismiss(animated: true, completion: nil)
         }
     }
+    
+    func showModal(name:String, price: Double, calories: Int, imageName: String) {
+        let storybord = UIStoryboard(name: "MainScreen", bundle: nil)
+        guard let viewController = storybord.instantiateViewController(identifier: "mainModal") as? MainModalInfoViewController else {
+            return
+        }
+        viewController.name = name
+        viewController.price = price
+        viewController.caloreis = calories
+        viewController.imageName = imageName
+        viewController.modalPresentationStyle = .overCurrentContext
+        show(viewController, sender: nil)
+    }
+    
+    // MARK: Navigtion
+    
+    @IBAction private func goMainScreen(_ sender: UIStoryboardSegue) {
+    }
 }
 
 // MARK: Cells configure
@@ -69,6 +87,14 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.backgroundColor = .darkGray
         cell.tagButtonAdd = indexPath.row
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let name = Menu.shared.getBurgers()[indexPath.row].name
+        let price = Menu.shared.getBurgers()[indexPath.row].price
+        let calories = Menu.shared.getBurgers()[indexPath.row].calories
+        let imageName = Menu.shared.getBurgers()[indexPath.row].imageName
+        showModal(name: name, price: price, calories: calories, imageName: imageName)
     }
     
 }
