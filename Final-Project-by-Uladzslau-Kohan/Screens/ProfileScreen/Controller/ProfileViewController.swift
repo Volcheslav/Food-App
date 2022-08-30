@@ -21,9 +21,11 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeHideKeyboard()
-        self.passwordTextField.placeholder = "Enter your password"
-        self.loginTextField.placeholder = "Enter your login"
+        self.passwordTextField.placeholder = ("ENTER_YOUR_PASSWORD")§
+        self.loginTextField.placeholder = ("ENTER_YOUR_LOGIN")§
         self.loginTextField.keyboardType = .emailAddress
+        self.loginButton.titleLabel?.text = ("LOGIN")§
+        self.signUpButton.titleLabel?.text = ("SIGN_UP")§
         self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self

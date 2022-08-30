@@ -42,3 +42,9 @@
 "YOUR_ORDER" = "Ваш заказ";
 "OK" = "OK";
 "CANCEL" = "Отмена";
+
+// MARK: Profile Info
+
+"MAIN" = "Главная";
+"CONTACTS" = "Контакты";
+"ADDRESS" = "Адрес";

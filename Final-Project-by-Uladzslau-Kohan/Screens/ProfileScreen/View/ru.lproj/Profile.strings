@@ -1,0 +1,9 @@
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "Dpb-A8-9cx"; */
+"Dpb-A8-9cx.title" = "Профиль";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "QpP-8L-nZJ"; */
+"QpP-8L-nZJ.normalTitle" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "hkY-XA-1HO"; */
+"hkY-XA-1HO.normalTitle" = "Регестрация";

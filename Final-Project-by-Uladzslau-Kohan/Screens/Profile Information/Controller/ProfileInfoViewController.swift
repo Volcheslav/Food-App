@@ -49,11 +49,11 @@ extension ProfileInfoViewController: UITableViewDataSource, UITableViewDelegate 
         let sectionHeaderTitle: String
         switch section {
         case 0:
-            sectionHeaderTitle = "Main"
+            sectionHeaderTitle = ("MAIN")§
         case 1:
-            sectionHeaderTitle = "Contacts"
+            sectionHeaderTitle = ("CONTACTS")§
         case 2:
-            sectionHeaderTitle = "Address"
+            sectionHeaderTitle = ("ADDRESS")§
         default:
             sectionHeaderTitle = ""
         }

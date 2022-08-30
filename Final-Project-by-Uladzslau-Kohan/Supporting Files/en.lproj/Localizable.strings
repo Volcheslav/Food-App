@@ -41,3 +41,10 @@
 "YOUR_ORDER" = "Your order";
 "OK" = "OK";
 "CANCEL" = "Cancel";
+
+// MARK: Profile Info
+
+"MAIN" = "Main";
+"CONTACTS" = "Contacts";
+"ADDRESS" = "Address";
+

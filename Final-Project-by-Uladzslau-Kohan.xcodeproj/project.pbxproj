@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C999928B4EDC00039C9A0 /* CustomButton.swift */; };
 		531C99A628B4F5610039C9A0 /* ProfileInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C99A528B4F5610039C9A0 /* ProfileInfoViewController.swift */; };
-		531C99A928B4FB120039C9A0 /* ProfileInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */; };
 		531C99AD28B501560039C9A0 /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C99AC28B501560039C9A0 /* ProfileData.swift */; };
 		531C99C228B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */; };
-		533630CA28AE89BA00DB692C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533630C928AE89BA00DB692C /* Profile.storyboard */; };
 		533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533630CC28AE8A1D00DB692C /* ProfileViewController.swift */; };
 		5339A99128BE20D80079DD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5339A99328BE20D80079DD3D /* Localizable.strings */; };
 		5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9A028BE24A90079DD3D /* Cart.storyboard */; };
+		5339A9A628BE270B0079DD3D /* ProfileInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9A828BE270B0079DD3D /* ProfileInfo.storyboard */; };
+		5339A9AF28BE290D0079DD3D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9B128BE290D0079DD3D /* Profile.storyboard */; };
 		533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D1D0828B8ECBF00217919 /* MenuData.swift */; };
 		5344CE1C28B64F200079C8F7 /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */; };
 		5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F56428B786CB00995448 /* MenuRealmModel.swift */; };
@@ -34,10 +34,8 @@
 /* Begin PBXFileReference section */
 		531C999928B4EDC00039C9A0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		531C99A528B4F5610039C9A0 /* ProfileInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewController.swift; sourceTree = "<group>"; };
-		531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProfileInfo.storyboard; path = "Final-Project-by-Uladzslau-Kohan/Screens/Profile Information/View/ProfileInfo.storyboard"; sourceTree = SOURCE_ROOT; };
 		531C99AC28B501560039C9A0 /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		531C99C028B50EEB0039C9A0 /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
-		533630C928AE89BA00DB692C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		533630CC28AE8A1D00DB692C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5339A98B28BE208C0079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5339A98C28BE208D0079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainScreen.strings; sourceTree = "<group>"; };
@@ -46,6 +44,12 @@
 		5339A99F28BE24A90079DD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Cart.storyboard; sourceTree = "<group>"; };
 		5339A9A228BE24B30079DD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Cart.strings; sourceTree = "<group>"; };
 		5339A9A428BE24E60079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Cart.strings; sourceTree = "<group>"; };
+		5339A9A728BE270B0079DD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ProfileInfo.storyboard; sourceTree = "<group>"; };
+		5339A9AB28BE270F0079DD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ProfileInfo.strings; sourceTree = "<group>"; };
+		5339A9AD28BE273D0079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ProfileInfo.strings; sourceTree = "<group>"; };
+		5339A9B028BE290D0079DD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		5339A9B328BE29110079DD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Profile.strings; sourceTree = "<group>"; };
+		5339A9B528BE29460079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Profile.strings; sourceTree = "<group>"; };
 		533D1D0828B8ECBF00217919 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		5347F56428B786CB00995448 /* MenuRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRealmModel.swift; sourceTree = "<group>"; };
@@ -108,7 +112,7 @@
 		531C99A028B4F5090039C9A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				531C99A828B4FB120039C9A0 /* ProfileInfo.storyboard */,
+				5339A9A828BE270B0079DD3D /* ProfileInfo.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,7 +236,7 @@
 		533630BD28AE837200DB692C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				533630C928AE89BA00DB692C /* Profile.storyboard */,
+				5339A9B128BE290D0079DD3D /* Profile.storyboard */,
 				531C999928B4EDC00039C9A0 /* CustomButton.swift */,
 			);
 			path = View;
@@ -388,11 +392,11 @@
 			files = (
 				53D99D90289ABD6F002755A4 /* LaunchScreen.storyboard in Resources */,
 				53D99D8D289ABD6F002755A4 /* Assets.xcassets in Resources */,
-				533630CA28AE89BA00DB692C /* Profile.storyboard in Resources */,
+				5339A9AF28BE290D0079DD3D /* Profile.storyboard in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,
 				53D99D8B289ABD6D002755A4 /* MainScreen.storyboard in Resources */,
 				5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */,
-				531C99A928B4FB120039C9A0 /* ProfileInfo.storyboard in Resources */,
+				5339A9A628BE270B0079DD3D /* ProfileInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +504,27 @@
 				5339A9A428BE24E60079DD3D /* ru */,
 			);
 			name = Cart.storyboard;
+			sourceTree = "<group>";
+		};
+		5339A9A828BE270B0079DD3D /* ProfileInfo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5339A9A728BE270B0079DD3D /* Base */,
+				5339A9AB28BE270F0079DD3D /* en */,
+				5339A9AD28BE273D0079DD3D /* ru */,
+			);
+			name = ProfileInfo.storyboard;
+			path = "Final-Project-by-Uladzslau-Kohan/Screens/Profile Information/View";
+			sourceTree = SOURCE_ROOT;
+		};
+		5339A9B128BE290D0079DD3D /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5339A9B028BE290D0079DD3D /* Base */,
+				5339A9B328BE29110079DD3D /* en */,
+				5339A9B528BE29460079DD3D /* ru */,
+			);
+			name = Profile.storyboard;
 			sourceTree = "<group>";
 		};
 		53D99D89289ABD6D002755A4 /* MainScreen.storyboard */ = {
