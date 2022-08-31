@@ -16,9 +16,24 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
 
     @IBAction private func sighUpNewUser(_ sender: UICustomButton) {
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in
-            self?.emailTextField.isHidden = false
-        })
+//        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+//            self?.emailTextField.isHidden = false
+//        })
+        guard loginTextField.hasText,
+              emailTextField.hasText,
+              passwordTextField.hasText else {
+            showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
+            return
+        }
+        guard let login = loginTextField.text,
+              let password = passwordTextField.text,
+              let email = emailTextField.text,
+              email.isValidEmail() else {
+            showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
+            return
+        }
+        signUp(login: login, email: email, password: password)
+        
     }
     //    @IBAction private func goToProfileInfo(_ sender: Any) {
 //        loadProfileInfoScreen()
@@ -37,7 +52,7 @@ final class ProfileViewController: UIViewController {
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self
         self.emailTextField.delegate = self
-        self.emailTextField.isHidden = true
+        // self.emailTextField.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +64,32 @@ final class ProfileViewController: UIViewController {
         super.viewWillDisappear(true)
         self.navigationController?.isNavigationBarHidden = false
     }
-   
+    
+    // MARK: Sign Up Functions
+    
+    private func signUp(login: String, email: String?, password: String) {
+        let newUser = ParseUserData(username: login, email: email, password: password)
+        newUser.signup {[weak self] result in
+            switch result {
+            case .success(let signedUpUser):
+                self?.showAlertMessage(title: "Success", message: "\(signedUpUser)")
+                self?.emailTextField.text = nil
+                self?.loginTextField.text = nil
+                self?.passwordTextField.text = nil
+            case .failure(let error):
+                self?.showAlertMessage(title: "Error", message: "\(error)")
+            }
+        }
+    }
+    
+    // MARK: Alert functions
+    
+    private func showAlertMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addCancelAction()
+        self.present(alert, animated: true)
+    }
+
     // MARK: - Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        // Get the new view controller using segue.destination.
@@ -75,5 +115,15 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+// MARK: - Email valid check
+
+extension String {
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: self)
     }
 }

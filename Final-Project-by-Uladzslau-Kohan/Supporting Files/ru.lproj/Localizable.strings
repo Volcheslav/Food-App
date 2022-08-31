@@ -44,6 +44,8 @@
 "ENTER_YOUR_EMAIL" = "Введите свой email";
 "LOGIN" = "Логин";
 "SIGN_UP" = "Регестрация";
+"PROFILE_NOT_VALID_DATA" = "Ошибка!";
+"PROFILE_NOT_VALID_MESSAGE" = "Проверьте введенные данные";
 
 // MARK: Cart view
 

@@ -43,6 +43,8 @@
 "ENTER_YOUR_EMAIL" = "Enter your email";
 "LOGIN" = "Login";
 "SIGN_UP" = "Sing up";
+"PROFILE_NOT_VALID_DATA" = "Error";
+"PROFILE_NOT_VALID_MESSAGE" = "Check your data";
 
 // MARK: Cart view
 
