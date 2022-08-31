@@ -1,4 +1,5 @@
 PODS:
+  - ParseSwift (4.9.2)
   - Realm (10.0.0):
     - Realm/Headers (= 10.0.0)
   - Realm/Headers (10.0.0)
@@ -7,20 +8,23 @@ PODS:
   - SwiftLint (0.48.0)
 
 DEPENDENCIES:
+  - ParseSwift (= 4.9.2)
   - RealmSwift (= 10.0.0)
   - SwiftLint (= 0.48.0)
 
 SPEC REPOS:
   trunk:
+    - ParseSwift
     - Realm
     - RealmSwift
     - SwiftLint
 
 SPEC CHECKSUMS:
+  ParseSwift: f640eeea47682f6b4bd03bf3587d5eaf9dba6ee1
   Realm: 5654b8e5e45034d07b219e089034be2ef7d1e7bf
   RealmSwift: 5b4c8c85be4c14ff52054a4d80a8d338167dd79c
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
 
-PODFILE CHECKSUM: 6b297db559e5130aaad4fe3c1732eaef9b7734d2
+PODFILE CHECKSUM: ff970020637f58812e2d185f872b5a447df8182c
 
 COCOAPODS: 1.8.4

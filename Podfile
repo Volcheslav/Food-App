@@ -6,6 +6,7 @@ target 'Final-Project-by-Uladzslau-Kohan' do
   use_frameworks!
 
   # Pods for Final-Project-by-Uladzslau-Kohan
+  pod 'ParseSwift', '4.9.2'
   pod 'RealmSwift','10.0.0'
   pod 'SwiftLint', '0.48.0'
 

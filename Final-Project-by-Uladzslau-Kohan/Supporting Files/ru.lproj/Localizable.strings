@@ -41,6 +41,7 @@
 
 "ENTER_YOUR_PASSWORD" = "Введите пароль";
 "ENTER_YOUR_LOGIN" = "Введите логин";
+"ENTER_YOUR_EMAIL" = "Введите свой email";
 "LOGIN" = "Логин";
 "SIGN_UP" = "Регестрация";
 

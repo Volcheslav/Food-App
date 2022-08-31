@@ -38,8 +38,9 @@
 
 // MARK: Profile view
 
-"ENTER_YOUR_PASSWORD" = "Enter your login";
+"ENTER_YOUR_PASSWORD" = "Enter your password";
 "ENTER_YOUR_LOGIN" = "Enter your login";
+"ENTER_YOUR_EMAIL" = "Enter your email";
 "LOGIN" = "Login";
 "SIGN_UP" = "Sing up";
 

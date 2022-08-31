@@ -18,6 +18,8 @@
 		5339A9AF28BE290D0079DD3D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9B128BE290D0079DD3D /* Profile.storyboard */; };
 		5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */; };
 		533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D1D0828B8ECBF00217919 /* MenuData.swift */; };
+		5340FEDD28BF7AF4001F967D /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEDC28BF7AF4001F967D /* ParseKeys.swift */; };
+		5340FEE128BF7E0A001F967D /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEE028BF7E0A001F967D /* ParseUserData.swift */; };
 		5344CE1C28B64F200079C8F7 /* MainScreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */; };
 		5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F56428B786CB00995448 /* MenuRealmModel.swift */; };
 		5347F57128B79EE500995448 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57028B79EE500995448 /* CartViewController.swift */; };
@@ -55,6 +57,8 @@
 		5339A9B528BE29460079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Profile.strings; sourceTree = "<group>"; };
 		5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCellDelegateProtocol.swift; sourceTree = "<group>"; };
 		533D1D0828B8ECBF00217919 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
+		5340FEDC28BF7AF4001F967D /* ParseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
+		5340FEE028BF7E0A001F967D /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
 		5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCollectionViewCell.swift; sourceTree = "<group>"; };
 		5347F56428B786CB00995448 /* MenuRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRealmModel.swift; sourceTree = "<group>"; };
 		5347F57028B79EE500995448 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 		533630AE28AE768200DB692C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5340FEDC28BF7AF4001F967D /* ParseKeys.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -258,6 +263,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5340FEDF28BF7DEC001F967D /* ParseUser */ = {
+			isa = PBXGroup;
+			children = (
+				5340FEE028BF7E0A001F967D /* ParseUserData.swift */,
+			);
+			path = ParseUser;
+			sourceTree = "<group>";
+		};
 		5347F56328B7869700995448 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,6 +337,7 @@
 			children = (
 				533630AB28AE766500DB692C /* Application */,
 				533630B428AE7F0400DB692C /* Screens */,
+				5340FEDF28BF7DEC001F967D /* ParseUser */,
 				5347F56328B7869700995448 /* Realm */,
 				533630AF28AE76A100DB692C /* Supporting Files */,
 			);
@@ -483,6 +497,7 @@
 				5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */,
 				5344CE1C28B64F200079C8F7 /* MainScreenCollectionViewCell.swift in Sources */,
 				531C99AD28B501560039C9A0 /* ProfileData.swift in Sources */,
+				5340FEDD28BF7AF4001F967D /* ParseKeys.swift in Sources */,
 				53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */,
 				533630CD28AE8A1D00DB692C /* ProfileViewController.swift in Sources */,
 				5347F57128B79EE500995448 /* CartViewController.swift in Sources */,
@@ -493,6 +508,7 @@
 				533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */,
 				534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */,
 				531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */,
+				5340FEE128BF7E0A001F967D /* ParseUserData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

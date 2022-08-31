@@ -4,7 +4,7 @@
 //
 //  Created by VironIT on 8/3/22.
 //
-
+import ParseSwift
 import UIKit
 
 @main
@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ParseSwift.initialize(applicationId: ParseKeys.appID.rawValue, clientKey: ParseKeys.clientKey.rawValue, serverURL: URL(string: "https://parseapi.back4app.com")!)
         return true
     }
 

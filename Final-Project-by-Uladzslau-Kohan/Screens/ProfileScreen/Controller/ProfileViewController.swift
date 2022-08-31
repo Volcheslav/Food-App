@@ -13,8 +13,14 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var signUpButton: UIButton!
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginTextField: UITextField!
-    
-//    @IBAction private func goToProfileInfo(_ sender: Any) {
+    @IBOutlet private weak var emailTextField: UITextField!
+
+    @IBAction private func sighUpNewUser(_ sender: UICustomButton) {
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            self?.emailTextField.isHidden = false
+        })
+    }
+    //    @IBAction private func goToProfileInfo(_ sender: Any) {
 //        loadProfileInfoScreen()
 //    }
     
@@ -23,12 +29,15 @@ final class ProfileViewController: UIViewController {
         self.initializeHideKeyboard()
         self.passwordTextField.placeholder = ("ENTER_YOUR_PASSWORD")§
         self.loginTextField.placeholder = ("ENTER_YOUR_LOGIN")§
-        self.loginTextField.keyboardType = .emailAddress
+        self.emailTextField.placeholder = ("ENTER_YOUR_EMAIL")§
+        self.emailTextField.keyboardType = .emailAddress
         self.loginButton.titleLabel?.text = ("LOGIN")§
         self.signUpButton.titleLabel?.text = ("SIGN_UP")§
-        self.passwordTextField.isSecureTextEntry = true
+     //  self.passwordTextField.isSecureTextEntry = true
         self.passwordTextField.delegate = self
         self.loginTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.emailTextField.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +51,6 @@ final class ProfileViewController: UIViewController {
     }
    
     // MARK: - Navigation
-
-//    private func loadProfileInfoScreen() {
-//       let storybord = UIStoryboard(name: "ProfileInformation", bundle: nil)
-//        guard let vc = storybord.instantiateViewController(identifier: "profInfo") as? ProfileInfoViewController else {
-//            return
-//        }
-//        show(vc, sender: self)
-//    }
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        // Get the new view controller using segue.destination.
 //        // Pass the selected object to the new view controller.
