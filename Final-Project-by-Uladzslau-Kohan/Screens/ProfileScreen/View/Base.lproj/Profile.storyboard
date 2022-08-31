@@ -101,25 +101,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-lk-QmF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-lk-QmF">
                                 <rect key="frame" x="173" y="338" width="68" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="username"/>
                                 <connections>
                                     <action selector="getMessage:" destination="Zp5-UX-xFe" eventType="touchUpInside" id="eZ8-Hr-dPI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8b-zI-t6r">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8b-zI-t6r">
                                 <rect key="frame" x="185" y="376" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="logout"/>
                                 <connections>
                                     <action selector="logout:" destination="Zp5-UX-xFe" eventType="touchUpInside" id="6pI-o4-wae"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-I8-9qm">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnq-I8-9qm">
                                 <rect key="frame" x="191" y="414" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="login"/>
                                 <connections>
                                     <action selector="login:" destination="Zp5-UX-xFe" eventType="touchUpInside" id="ofp-sX-wTQ"/>
@@ -131,10 +128,22 @@
                         <constraints>
                             <constraint firstItem="xNr-AB-H0M" firstAttribute="trailing" secondItem="eNv-tW-6yE" secondAttribute="trailing" constant="20" id="6If-re-rG3"/>
                             <constraint firstItem="mki-4I-c94" firstAttribute="leading" secondItem="xNr-AB-H0M" secondAttribute="leading" constant="20" id="818-i2-RJ5"/>
+                            <constraint firstItem="Tnq-I8-9qm" firstAttribute="top" secondItem="u8b-zI-t6r" secondAttribute="bottom" constant="8" symbolic="YES" id="9fw-De-gIp"/>
+                            <constraint firstItem="ogz-lk-QmF" firstAttribute="top" secondItem="eNv-tW-6yE" secondAttribute="bottom" constant="8" symbolic="YES" id="GWq-d0-R5X"/>
+                            <constraint firstItem="u8b-zI-t6r" firstAttribute="leading" secondItem="xNr-AB-H0M" secondAttribute="leading" constant="185" id="Ib3-hy-P4Q"/>
+                            <constraint firstItem="xNr-AB-H0M" firstAttribute="trailing" secondItem="u8b-zI-t6r" secondAttribute="trailing" constant="185" id="Lpi-AU-EwA"/>
+                            <constraint firstItem="Tnq-I8-9qm" firstAttribute="leading" secondItem="xNr-AB-H0M" secondAttribute="leading" constant="191" id="PDo-nx-ncQ"/>
                             <constraint firstItem="xNr-AB-H0M" firstAttribute="trailing" secondItem="mki-4I-c94" secondAttribute="trailing" constant="20" id="SKn-Dz-Kb5"/>
                             <constraint firstItem="eNv-tW-6yE" firstAttribute="leading" secondItem="xNr-AB-H0M" secondAttribute="leading" constant="20" id="XGG-e4-CwV"/>
+                            <constraint firstItem="xNr-AB-H0M" firstAttribute="trailing" secondItem="Tnq-I8-9qm" secondAttribute="trailing" constant="189" id="XbZ-Yp-3r5"/>
+                            <constraint firstItem="xNr-AB-H0M" firstAttribute="trailing" secondItem="ogz-lk-QmF" secondAttribute="trailing" constant="173" id="eBj-GD-UhH"/>
+                            <constraint firstItem="u8b-zI-t6r" firstAttribute="top" secondItem="ogz-lk-QmF" secondAttribute="bottom" constant="8" symbolic="YES" id="hNU-kf-6h4"/>
                             <constraint firstItem="mki-4I-c94" firstAttribute="top" secondItem="xNr-AB-H0M" secondAttribute="top" constant="40" id="kOq-dD-4Dn"/>
+                            <constraint firstItem="u8b-zI-t6r" firstAttribute="top" secondItem="ogz-lk-QmF" secondAttribute="bottom" constant="8" symbolic="YES" id="lD3-Bz-fKt"/>
+                            <constraint firstItem="xNr-AB-H0M" firstAttribute="bottom" secondItem="Tnq-I8-9qm" secondAttribute="bottom" constant="418" id="lnJ-Yv-yTv"/>
+                            <constraint firstItem="ogz-lk-QmF" firstAttribute="leading" secondItem="xNr-AB-H0M" secondAttribute="leading" constant="173" id="qNN-Bs-HIr"/>
                             <constraint firstItem="eNv-tW-6yE" firstAttribute="top" secondItem="mki-4I-c94" secondAttribute="bottom" constant="20" id="rmm-kg-Sko"/>
+                            <constraint firstItem="Tnq-I8-9qm" firstAttribute="top" secondItem="u8b-zI-t6r" secondAttribute="bottom" constant="8" symbolic="YES" id="uFX-R9-dJH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AwT-yt-UfD"/>

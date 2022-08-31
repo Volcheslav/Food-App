@@ -45,6 +45,12 @@
 "SIGN_UP" = "Sing up";
 "PROFILE_NOT_VALID_DATA" = "Error";
 "PROFILE_NOT_VALID_MESSAGE" = "Check your data";
+"PROFILE_NOT_VALID_EMIAL" = "Check your email";
+"PROFILE_NOT_VALID_REGISTRATION" = "Check your data or sing up";
+"PROFILE_BACK_TO_LOGIN" = "Back to login";
+"SUCCESS" = "Success!";
+"ERROR" = "Error!";
+"LOGGED_IN" = "entered";
 
 // MARK: Cart view
 

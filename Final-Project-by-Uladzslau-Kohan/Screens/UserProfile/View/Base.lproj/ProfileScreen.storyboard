@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eSe-wv-ky0">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile-->
+        <scene sceneID="K7X-5Y-ZaP">
+            <objects>
+                <viewController id="eSe-wv-ky0" customClass="UserProfileViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P8b-hN-aKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mcj-LL-7df">
+                                <rect key="frame" x="25" y="338" width="378" height="250"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wKC-DF-W6R" userLabel="Textfields">
+                                        <rect key="frame" x="20" y="20" width="338" height="142"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-Tc-ccS">
+                                                <rect key="frame" x="0.0" y="0.0" width="338" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-fH-gUb">
+                                                <rect key="frame" x="0.0" y="54" width="338" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ML8-uI-7B5">
+                                                <rect key="frame" x="0.0" y="108" width="338" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7gR-kn-wHV" userLabel="buttons">
+                                        <rect key="frame" x="20" y="182" width="338" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hae-Fn-8N1" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="U6J-QL-I9o"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button" image="person.fill.badge.plus" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                        <color key="value" red="1" green="0.099215630785282394" blue="0.12701407139253384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                        <color key="value" red="0.5" green="0.10772907008674598" blue="0.11676286645282441" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="signUpAction:" destination="eSe-wv-ky0" eventType="touchUpInside" id="Cnd-QU-mNB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-HB-U9w" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                                <rect key="frame" x="127" y="0.0" width="79.333333333333314" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button" image="backward" catalog="system">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                        <color key="value" red="1" green="0.21545814020000001" blue="0.2335257329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                        <color key="value" red="0.5" green="0.1077290701" blue="0.11676286650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="goBackToLogin:" destination="eSe-wv-ky0" eventType="touchUpInside" id="wCT-rv-MRY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zww-jr-lcm" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                                <rect key="frame" x="261.66666666666669" y="0.0" width="76.333333333333314" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button" image="person.fill.checkmark" catalog="system"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                        <color key="value" red="1" green="0.21545814020000001" blue="0.2335257329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                        <color key="value" red="0.5" green="0.1077290701" blue="0.11676286650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginAction:" destination="eSe-wv-ky0" eventType="touchUpInside" id="gPg-Zf-IVz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstItem="7gR-kn-wHV" firstAttribute="top" secondItem="wKC-DF-W6R" secondAttribute="bottom" constant="20" id="78k-mG-k0j"/>
+                                    <constraint firstAttribute="trailing" secondItem="7gR-kn-wHV" secondAttribute="trailing" constant="20" id="I9H-No-94i"/>
+                                    <constraint firstItem="7gR-kn-wHV" firstAttribute="leading" secondItem="Mcj-LL-7df" secondAttribute="leading" constant="20" id="LDp-W9-Qpv"/>
+                                    <constraint firstItem="wKC-DF-W6R" firstAttribute="leading" secondItem="Mcj-LL-7df" secondAttribute="leading" constant="20" id="M98-R7-lZG"/>
+                                    <constraint firstAttribute="trailing" secondItem="wKC-DF-W6R" secondAttribute="trailing" constant="20" id="PMg-1L-tl2"/>
+                                    <constraint firstAttribute="height" constant="250" id="aDV-J1-7wF"/>
+                                    <constraint firstItem="wKC-DF-W6R" firstAttribute="top" secondItem="Mcj-LL-7df" secondAttribute="top" constant="20" id="pFT-nj-GqO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z6O-Mo-aaE"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="Mcj-LL-7df" firstAttribute="leading" secondItem="Z6O-Mo-aaE" secondAttribute="leading" constant="25" id="00u-6H-mha"/>
+                            <constraint firstItem="Mcj-LL-7df" firstAttribute="centerY" secondItem="P8b-hN-aKJ" secondAttribute="centerY" id="gMZ-iu-03l"/>
+                            <constraint firstItem="Z6O-Mo-aaE" firstAttribute="trailing" secondItem="Mcj-LL-7df" secondAttribute="trailing" constant="25" id="hXm-gS-74E"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="D4t-bt-r0g"/>
+                    <connections>
+                        <outlet property="backTologinButton" destination="Cya-HB-U9w" id="TrX-GB-J7S"/>
+                        <outlet property="emailTextField" destination="ML8-uI-7B5" id="ARQ-Ui-Auk"/>
+                        <outlet property="loginButton" destination="zww-jr-lcm" id="fl8-MD-Nrd"/>
+                        <outlet property="loginPasswordView" destination="Mcj-LL-7df" id="gV5-zZ-y3k"/>
+                        <outlet property="passwordTextField" destination="GRF-fH-gUb" id="eGE-78-PlC"/>
+                        <outlet property="signUpButton" destination="hae-Fn-8N1" id="b8z-8I-ZAl"/>
+                        <outlet property="usernameTextField" destination="gtq-Tc-ccS" id="0xo-JF-ELV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Pj-I0-cud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1126.0869565217392" y="370.98214285714283"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Cya-HB-U9w">
+            <size key="intrinsicContentSize" width="79.333333333333329" height="22"/>
+        </designable>
+        <designable name="hae-Fn-8N1">
+            <size key="intrinsicContentSize" width="71.666666666666671" height="25.333333333333332"/>
+        </designable>
+        <designable name="zww-jr-lcm">
+            <size key="intrinsicContentSize" width="76.333333333333329" height="21.333333333333332"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="backward" catalog="system" width="128" height="79"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
+        <image name="person.fill.checkmark" catalog="system" width="128" height="88"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

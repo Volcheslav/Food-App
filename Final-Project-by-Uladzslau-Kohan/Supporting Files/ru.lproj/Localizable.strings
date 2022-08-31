@@ -42,10 +42,16 @@
 "ENTER_YOUR_PASSWORD" = "Введите пароль";
 "ENTER_YOUR_LOGIN" = "Введите логин";
 "ENTER_YOUR_EMAIL" = "Введите свой email";
-"LOGIN" = "Логин";
-"SIGN_UP" = "Регестрация";
+"LOGIN" = "Войти";
+"SIGN_UP" = "Регистрация";
 "PROFILE_NOT_VALID_DATA" = "Ошибка!";
 "PROFILE_NOT_VALID_MESSAGE" = "Проверьте введенные данные";
+"PROFILE_NOT_VALID_EMIAL" = "Проверьте email";
+"PROFILE_NOT_VALID_REGISTRATION" = "Проверьте данные или зарегистрируйтесь";
+"PROFILE_BACK_TO_LOGIN" = "Назад к входу";
+"SUCCESS" = "Успешно!";
+"ERROR" = "Ошибка!";
+"LOGGED_IN" = "вошел";
 
 // MARK: Cart view
 

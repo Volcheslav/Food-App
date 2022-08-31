@@ -3,7 +3,7 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/18/22.
-//
+// swiftlint:disable all
 
 import UIKit
 
@@ -44,7 +44,7 @@ final class ProfileViewController: UIViewController {
             return
         }
         
-        print(user.username)
+        print(user.username ?? "no name")
         
     }
     @IBAction private func sighUpNewUser(_ sender: UICustomButton) {
@@ -81,9 +81,9 @@ final class ProfileViewController: UIViewController {
         self.loginButton.titleLabel?.text = ("LOGIN")§
         self.signUpButton.titleLabel?.text = ("SIGN_UP")§
         //  self.passwordTextField.isSecureTextEntry = true
-        self.passwordTextField.delegate = self
-        self.loginTextField.delegate = self
-        self.emailTextField.delegate = self
+//        self.passwordTextField.delegate = self
+//        self.loginTextField.delegate = self
+//        self.emailTextField.delegate = self
         // self.emailTextField.isHidden = true
     }
     
@@ -143,19 +143,19 @@ final class ProfileViewController: UIViewController {
     
 }
 
-extension ProfileViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}
+//extension ProfileViewController: UITextFieldDelegate {
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//}
 
 // MARK: - Email valid check
 
-extension String {
-    func isValidEmail() -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: self)
-    }
-}
+//extension String {
+//    func isValidEmail() -> Bool {
+//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+//        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//        return emailPred.evaluate(with: self)
+//    }
+//}
