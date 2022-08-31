@@ -10,10 +10,10 @@
 - English and Russian localization
 - Swiftlint used
 - Realm for storing used data
-
+- back4app (ParseSwift) as Firebase alternative
 
 ## Tech Stack
 
-**Pods:** Realm, SwiftLint
+**Pods:** Realm, SwiftLint, ParseSwift
 
 **Patterns:** Delegation, Singleton
