@@ -10,7 +10,7 @@ import UIKit
 final class MainScreenViewController: UIViewController {
     let realm = try! Realm()
     var items: Results<CartItem>!
-    
+   
     // MARK: Outlets
     
     @IBOutlet private weak var sectionNameLabel: UILabel!
@@ -137,6 +137,10 @@ extension MainScreenViewController: MainScreenCellDelegate {
     }
     
     func didPressButtonAdd(_ tag: Int, name: String, price: Double, imageName: String) {
+        guard ParseUserData.current != nil else {
+            ShowAlerts.showLoginAlert(title: ("ALERT")§, message: ("REGISTR_ALERT")§, viewController: self)
+            return
+        }
         addToRealm(name: name, imageName: imageName, price: price)
         ShowAlerts.showAddAlert(name: name, viewController: self)
     }

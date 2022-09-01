@@ -12,6 +12,7 @@
 "MAIN_MENU_SECTION" = "Меню";
 "MAIN_ALERT_TITLE" = "добавлено в заказ";
 "MAIN_ALERT_MESSAGE" = "Спасибо";
+"REGISTR_ALERT" = "Вы должны зарегистрироваться, чтобы сделать заказ. Перейти на вкладку регистрации?";
 
 // MARK: Main modal
 

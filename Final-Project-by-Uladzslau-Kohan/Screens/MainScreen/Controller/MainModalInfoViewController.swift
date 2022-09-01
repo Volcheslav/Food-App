@@ -45,6 +45,11 @@ final class MainModalInfoViewController: UIViewController {
         self.caloriesLabel.text = ("MODAL_MAIN_CALORIES")§
         self.addToCartButton.setTitle(("MODAL_MAIN_ADD_TO_CART")§, for: .normal) 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.addToCartButton.isHidden = ParseUserData.current == nil
+    }
     /*
     // MARK: - Navigation
 

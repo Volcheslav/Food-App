@@ -17,6 +17,16 @@ class ShowAlerts {
             
         }
     }
+    
+    static func showLoginAlert(title: String, message: String, viewController: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addCancelAction()
+        let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: {_ in
+            viewController.tabBarController?.selectedIndex = 3
+        })
+        alert.addAction(okAction)
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Extension alert controller

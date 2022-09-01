@@ -57,6 +57,7 @@ final class UserProfileViewController: UIViewController {
         self.loginPasswordView.isHidden = true
         self.loginPasswordView.layer.cornerRadius = 20
         self.loginPasswordView.layer.masksToBounds = true
+        
         self.passwordTextField.placeholder = ("ENTER_YOUR_PASSWORD")§
         self.usernameTextField.placeholder = ("ENTER_YOUR_LOGIN")§
         self.emailTextField.placeholder = ("ENTER_YOUR_EMAIL")§
@@ -64,11 +65,10 @@ final class UserProfileViewController: UIViewController {
         self.loginButton.setTitle(("LOGIN")§, for: .normal)
         self.signUpButton.setTitle(("SIGN_UP")§, for: .normal)
         self.backTologinButton.setTitle(("PROFILE_BACK_TO_LOGIN")§, for: .normal)
-        //  self.passwordTextField.isSecureTextEntry = true
+       
         self.passwordTextField.delegate = self
         self.usernameTextField.delegate = self
         self.emailTextField.delegate = self
-        // self.emailTextField.isHidden = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
