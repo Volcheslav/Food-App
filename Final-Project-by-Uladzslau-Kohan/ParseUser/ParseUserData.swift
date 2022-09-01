@@ -32,5 +32,6 @@ struct ParseUserData: ParseUser {
     var surname: String?
     var age: UInt?
     var phoneNumber: String?
+    var creditCardnumder: String?
     
 }

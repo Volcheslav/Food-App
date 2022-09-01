@@ -10,7 +10,7 @@ import UIKit
 final class UserProfileViewController: UIViewController {
     
     // MARK: Outlets
-
+    
     @IBOutlet private weak var signUpButton: UICustomButton!
     @IBOutlet private weak var loginButton: UICustomButton!
     @IBOutlet private weak var backTologinButton: UICustomButton!
@@ -18,7 +18,7 @@ final class UserProfileViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var loginPasswordView: UIView!
-    
+    @IBOutlet private weak var profileInfoView: UIView!
     // MARK: Actions
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
@@ -29,20 +29,22 @@ final class UserProfileViewController: UIViewController {
             self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
             return
         }
+        self.dismissMyKeyboard()
         self.loginUser(login: usernameTextField.text!, password: passwordTextField.text!)
     }
     
     @IBAction private func signUpAction(_ sender: UICustomButton) {
         
         if self.loginButton.isHidden {
-        guard usernameTextField.hasText, passwordTextField.hasText, emailTextField.hasText else {
-            self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
-            return
-        }
-        guard emailTextField.text!.isValidEmail() else {
-            self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_EMIAL")§)
-            return
-        }
+            guard usernameTextField.hasText, passwordTextField.hasText, emailTextField.hasText else {
+                self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
+                return
+            }
+            guard emailTextField.text!.isValidEmail() else {
+                self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_EMIAL")§)
+                return
+            }
+            self.dismissMyKeyboard()
             self.signUp(login: usernameTextField.text!.lowercased(), email: emailTextField.text!, password: passwordTextField.text!)
         } else {
             animateEmailTextfield()
@@ -65,7 +67,7 @@ final class UserProfileViewController: UIViewController {
         self.loginButton.setTitle(("LOGIN")§, for: .normal)
         self.signUpButton.setTitle(("SIGN_UP")§, for: .normal)
         self.backTologinButton.setTitle(("PROFILE_BACK_TO_LOGIN")§, for: .normal)
-       
+        
         self.passwordTextField.delegate = self
         self.usernameTextField.delegate = self
         self.emailTextField.delegate = self
@@ -79,6 +81,7 @@ final class UserProfileViewController: UIViewController {
         super.viewWillAppear(true)
         let user: ParseUserData? = ParseUserData.current
         self.loginPasswordView.isHidden = user != nil
+        self.profileInfoView.isHidden = user == nil
         self.loginButton.isHidden = false
         self.emailTextField.isHidden = true
         self.backTologinButton.isHidden = true
@@ -109,11 +112,13 @@ final class UserProfileViewController: UIViewController {
     }
     
     private func successEnter() {
-        self.showAlertMessage(title: ("SUCCESS")§, message: ("LOGGED_IN")§)
         self.emailTextField.text = nil
         self.usernameTextField.text = nil
         self.passwordTextField.text = nil
         self.loginPasswordView.isHidden = true
+        self.profileInfoView.isHidden = false
+        self.showSuccessAlert(title: "\(("SUCCESS")§) \(ParseUserData.current?.username ?? "John Doe") \(("LOGGED_IN")§)", viewController: self)
+        
     }
     
     private func successSignUp() {
@@ -153,7 +158,16 @@ final class UserProfileViewController: UIViewController {
         alert.addCancelAction()
         self.present(alert, animated: true)
     }
-
+    
+    private func showSuccessAlert(title: String, viewController: UIViewController) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        viewController.present(alert, animated: true, completion: nil)
+        let when = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     // MARK: Keybord functions
     
     private func initializeHideKeyboard() {
@@ -174,10 +188,12 @@ final class UserProfileViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-      self.view.frame.origin.y = 0
+        self.view.frame.origin.y = 0
     }
     
 }
+
+// MARK: Keyboard extension
 
 extension UserProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -186,6 +202,56 @@ extension UserProfileViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: Table extensions
+
+extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionNumber: Int
+        switch section {
+        case 0:
+            sectionNumber = 4
+        case 1:
+            sectionNumber = 2
+        case 2:
+            sectionNumber = 5
+        default:
+            sectionNumber = 0
+        }
+        return sectionNumber
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionHeaderTitle: String
+        switch section {
+        case 0:
+            sectionHeaderTitle = ("MAIN")§
+        case 1:
+            sectionHeaderTitle = ("CONTACTS")§
+        case 2:
+            sectionHeaderTitle = ("ADDRESS")§
+        default:
+            sectionHeaderTitle = ""
+        }
+        
+        return sectionHeaderTitle
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "profileCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserProfileTableViewCell else { return .init() }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 120
+    }
+    
+}
 // MARK: - Email valid check
 
 extension String {
