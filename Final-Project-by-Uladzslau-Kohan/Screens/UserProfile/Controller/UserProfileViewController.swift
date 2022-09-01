@@ -12,7 +12,16 @@ final class UserProfileViewController: UIViewController {
     private let tableNameHeaderHeigt: CGFloat = 100
     private let tableInfoHeaderHeigh: CGFloat = 60
     private let tableRowHeight: CGFloat = 70
-    
+    private let cellsNames = [
+        "P_CELL_USERNAME",
+        "P_CELL_EMIAL",
+        "P_CELL_NAME",
+        "P_CELL_SURNAME",
+        "P_CELL_AGE",
+        "P_CELL_PHONE",
+        "P_CELL_CARD_NUMBER"
+    ]
+
     // MARK: Outlets
     
     @IBOutlet private weak var profileInfoTable: UITableView!
@@ -109,12 +118,12 @@ final class UserProfileViewController: UIViewController {
     // swiftlint: disable: empty_enum_arguments
     private func logout() {
         ParseUserData.logout(completion: {[weak self] result in
-                                switch result {
-                                case .success():
-                                    self?.showSuccessAlert(title: ("LOGGED_OUT")§, viewController: self!)
-                                case .failure(let error):
-                                    self?.showAlertMessage(title: ("ERROR")§, message: "\(error)")
-                                }
+            switch result {
+            case .success():
+                self?.showSuccessAlert(title: ("LOGGED_OUT")§, viewController: self!)
+            case .failure(let error):
+                self?.showAlertMessage(title: ("ERROR")§, message: "\(error)")
+            }
         })
         self.profileInfoView.isHidden = true
         self.loginPasswordView.isHidden = false
@@ -302,7 +311,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             return .init()
         }
     }
-   
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let headerHeight: CGFloat
         switch section {
@@ -320,9 +329,19 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         return 2
     }
     
+    // MARK: - Cell
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "profileCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserProfileTableViewCell else { return .init() }
+        switch indexPath.section {
+        case 0:
+            cell.cellName = (cellsNames[indexPath.row])§
+        case 1:
+            cell.cellName = (cellsNames[indexPath.row + 2])§
+        default:
+            break
+        }
         return cell
     }
     

@@ -8,7 +8,17 @@
 import UIKit
 
 final class UserProfileTableViewCell: UITableViewCell {
-
+   
+    var cellName: String? {
+        didSet {
+            self.cellNameLabel.text = cellName
+        }
+    }
+    var cellValue: String?
+    
+    @IBOutlet private weak var cellNameLabel: UILabel!
+    @IBOutlet private weak var cellValueLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

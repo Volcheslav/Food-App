@@ -59,6 +59,16 @@
 "LOGGED_OUT" = "Пользователь вышел";
 "LOG_OUT" = "Выйти";
 
+// MARK: Profile view cell
+
+"P_CELL_USERNAME" = "Логин";
+"P_CELL_EMIAL" = "Email";
+"P_CELL_NAME" = "Имя";
+"P_CELL_SURNAME" = "Фамилия";
+"P_CELL_AGE" = "Возраст";
+"P_CELL_PHONE" = "Номер телефона";
+"P_CELL_CARD_NUMBER" = "Номер карты";
+
 // MARK: Cart view
 
 "ALERT" = "Внимание!";

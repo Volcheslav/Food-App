@@ -58,6 +58,16 @@
 "LOGGED_OUT" = "Logged out";
 "LOG_OUT" = "Log out";
 
+// MARK: Profile view cell
+
+"P_CELL_USERNAME" = "Username";
+"P_CELL_EMIAL" = "Email";
+"P_CELL_NAME" = "Name";
+"P_CELL_SURNAME" = "Surname";
+"P_CELL_AGE" = "Age";
+"P_CELL_PHONE" = "Phone number";
+"P_CELL_CARD_NUMBER" = "Card number";
+
 // MARK: Cart view
 
 "ALERT" = "Alert!";
