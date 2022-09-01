@@ -24,6 +24,8 @@ final class CartViewController: UIViewController {
     @IBOutlet private weak var cartTableView: UITableView!
     @IBOutlet private weak var priceLabel: UILabel!
     
+    // MARK: - ViewLoad functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         items = realm.objects(CartItem.self)

@@ -54,6 +54,8 @@
 "SUCCESS" = "Успешно!";
 "ERROR" = "Ошибка!";
 "LOGGED_IN" = "вошел";
+"HELLO" = "Привет";
+"USER_DATA" = "Данные пользователя";
 
 // MARK: Cart view
 

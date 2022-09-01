@@ -9,8 +9,13 @@ import UIKit
 
 final class UserProfileViewController: UIViewController {
     
+    private let tableNameHeaderHeigt: CGFloat = 100
+    private let tableInfoHeaderHeigh: CGFloat = 60
+    private let tableRowHeight: CGFloat = 70
+    
     // MARK: Outlets
     
+    @IBOutlet private weak var profileInfoTable: UITableView!
     @IBOutlet private weak var signUpButton: UICustomButton!
     @IBOutlet private weak var loginButton: UICustomButton!
     @IBOutlet private weak var backTologinButton: UICustomButton!
@@ -30,7 +35,10 @@ final class UserProfileViewController: UIViewController {
             return
         }
         self.dismissMyKeyboard()
-        self.loginUser(login: usernameTextField.text!, password: passwordTextField.text!)
+        self.loginUser(
+            login: usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines),
+            password: passwordTextField.text!
+        )
     }
     
     @IBAction private func signUpAction(_ sender: UICustomButton) {
@@ -45,7 +53,11 @@ final class UserProfileViewController: UIViewController {
                 return
             }
             self.dismissMyKeyboard()
-            self.signUp(login: usernameTextField.text!.lowercased(), email: emailTextField.text!, password: passwordTextField.text!)
+            self.signUp(
+                login: usernameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines),
+                email: emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines),
+                password: passwordTextField.text!
+            )
         } else {
             animateEmailTextfield()
         }
@@ -85,6 +97,7 @@ final class UserProfileViewController: UIViewController {
         self.loginButton.isHidden = false
         self.emailTextField.isHidden = true
         self.backTologinButton.isHidden = true
+        self.profileInfoTable.reloadData()
     }
     
     // MARK: Login, SignUp
@@ -112,6 +125,7 @@ final class UserProfileViewController: UIViewController {
     }
     
     private func successEnter() {
+        self.profileInfoTable.reloadData()
         self.emailTextField.text = nil
         self.usernameTextField.text = nil
         self.passwordTextField.text = nil
@@ -162,7 +176,7 @@ final class UserProfileViewController: UIViewController {
     private func showSuccessAlert(title: String, viewController: UIViewController) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         viewController.present(alert, animated: true, completion: nil)
-        let when = DispatchTime.now() + 0.5
+        let when = DispatchTime.now() + 1.0
         DispatchQueue.main.asyncAfter(deadline: when) {
             alert.dismiss(animated: true, completion: nil)
         }
@@ -193,7 +207,7 @@ final class UserProfileViewController: UIViewController {
     
 }
 
-// MARK: Keyboard extension
+// MARK: - Keyboard extension
 
 extension UserProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -202,7 +216,7 @@ extension UserProfileViewController: UITextFieldDelegate {
     }
 }
 
-// MARK: Table extensions
+// MARK: - Table extensions
 
 extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -210,10 +224,8 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         let sectionNumber: Int
         switch section {
         case 0:
-            sectionNumber = 4
-        case 1:
             sectionNumber = 2
-        case 2:
+        case 1:
             sectionNumber = 5
         default:
             sectionNumber = 0
@@ -233,11 +245,61 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         default:
             sectionHeaderTitle = ""
         }
-        
         return sectionHeaderTitle
     }
+    
+    // MARK: - Custom headers
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+            let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableNameHeaderHeigt))
+            let label = UILabel()
+            label.frame = .init(x: 0, y: 0, width: headerView.frame.width - 10, height: headerView.frame.height - 10)
+            DispatchQueue.main.async {
+                label.text = "\(("HELLO")§), \(ParseUserData.current?.username ?? "John Doe")"
+            }
+            label.font = .systemFont(ofSize: 44)
+            label.textColor = .white
+            label.textAlignment = .center
+            headerView.addSubview(label)
+            label.center = headerView.center
+            headerView.layer.cornerRadius = 45
+            headerView.layer.masksToBounds = true
+            headerView.backgroundColor = .systemGray2
+            return headerView
+            
+        case 1:
+            let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableInfoHeaderHeigh))
+            let label = UILabel(frame: .init(x: 0, y: 0, width: headerView.frame.width - 10, height: headerView.frame.width - 10))
+            label.text = "\(("USER_DATA")§)"
+            label.font = .systemFont(ofSize: 30)
+            label.textColor = .white
+            label.textAlignment = .center
+            headerView.addSubview(label)
+            label.center = headerView.center
+            headerView.backgroundColor = .systemGray2
+            return headerView
+        default:
+            return .init()
+        }
+    }
+   
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let headerHeight: CGFloat
+        switch section {
+        case 0:
+            headerHeight = self.tableNameHeaderHeigt
+        case 1:
+            headerHeight = self.tableInfoHeaderHeigh
+        default:
+            headerHeight = 0
+        }
+        return headerHeight
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -247,8 +309,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return 120
+        return self.tableRowHeight
     }
     
 }

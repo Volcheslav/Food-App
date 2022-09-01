@@ -53,6 +53,8 @@
 "SUCCESS" = "Success!";
 "ERROR" = "Error!";
 "LOGGED_IN" = "entered";
+"HELLO" = "Hello";
+"USER_DATA" = "User data";
 
 // MARK: Cart view
 

@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4L0-kf-dtu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <rect key="frame" x="0.0" y="10" width="414" height="798"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" id="cad-x9-Ud9" customClass="UserProfileTableViewCell" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
@@ -146,8 +146,8 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4L0-kf-dtu" secondAttribute="trailing" id="DwG-Y7-Uch"/>
                                     <constraint firstItem="4L0-kf-dtu" firstAttribute="leading" secondItem="9n0-hq-lwl" secondAttribute="leading" id="EEe-PW-yzo"/>
-                                    <constraint firstAttribute="bottom" secondItem="4L0-kf-dtu" secondAttribute="bottom" id="GPr-dE-DDb"/>
-                                    <constraint firstItem="4L0-kf-dtu" firstAttribute="top" secondItem="9n0-hq-lwl" secondAttribute="top" id="N5g-Lb-zWN"/>
+                                    <constraint firstAttribute="bottom" secondItem="4L0-kf-dtu" secondAttribute="bottom" constant="10" id="GPr-dE-DDb"/>
+                                    <constraint firstItem="4L0-kf-dtu" firstAttribute="top" secondItem="9n0-hq-lwl" secondAttribute="top" constant="10" id="N5g-Lb-zWN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -170,6 +170,7 @@
                         <outlet property="loginButton" destination="zww-jr-lcm" id="fl8-MD-Nrd"/>
                         <outlet property="loginPasswordView" destination="Mcj-LL-7df" id="gV5-zZ-y3k"/>
                         <outlet property="passwordTextField" destination="GRF-fH-gUb" id="eGE-78-PlC"/>
+                        <outlet property="profileInfoTable" destination="4L0-kf-dtu" id="j9R-pl-TbR"/>
                         <outlet property="profileInfoView" destination="9n0-hq-lwl" id="aMv-N9-ThU"/>
                         <outlet property="signUpButton" destination="hae-Fn-8N1" id="b8z-8I-ZAl"/>
                         <outlet property="usernameTextField" destination="gtq-Tc-ccS" id="0xo-JF-ELV"/>
