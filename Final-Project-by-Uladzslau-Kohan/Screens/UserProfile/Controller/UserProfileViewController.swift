@@ -3,7 +3,7 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/31/22.
-//
+// swiftlint: disable: implicit_getter
 
 import UIKit
 
@@ -12,16 +12,19 @@ final class UserProfileViewController: UIViewController {
     private let tableNameHeaderHeigt: CGFloat = 100
     private let tableInfoHeaderHeigh: CGFloat = 60
     private let tableRowHeight: CGFloat = 70
-    private let cellsNames = [
-        "P_CELL_USERNAME",
-        "P_CELL_EMIAL",
-        "P_CELL_NAME",
-        "P_CELL_SURNAME",
-        "P_CELL_AGE",
-        "P_CELL_PHONE",
-        "P_CELL_CARD_NUMBER"
-    ]
-
+    private var cellsNames: [(String, String?)] {
+        get {
+            [
+                ("P_CELL_USERNAME", ParseUserData.current?.username),
+                ("P_CELL_EMIAL", ParseUserData.current?.email),
+                ("P_CELL_NAME", ParseUserData.current?.name),
+                ("P_CELL_SURNAME", ParseUserData.current?.surname),
+                ("P_CELL_AGE", String(ParseUserData.current?.age ?? 0)),
+                ("P_CELL_PHONE", ParseUserData.current?.phoneNumber),
+                ("P_CELL_CARD_NUMBER", ParseUserData.current?.creditCardnumder)
+            ]
+        }
+    }
     // MARK: Outlets
     
     @IBOutlet private weak var profileInfoTable: UITableView!
@@ -105,6 +108,7 @@ final class UserProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+       // self.showEditAlert(title: "Edit name")
         let user: ParseUserData? = ParseUserData.current
         self.loginPasswordView.isHidden = user != nil
         self.profileInfoView.isHidden = user == nil
@@ -207,6 +211,28 @@ final class UserProfileViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: when) {
             alert.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    private func showEditAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addCancelAction()
+        alert.addTextField(configurationHandler: { $0.placeholder = "Enter data" })
+        var user = ParseUserData.current!
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {_ in
+            guard alert.textFields!.first!.hasText else { return }
+            user.name = alert.textFields!.first!.text
+            user.save(completion: { result in
+                switch result {
+                case .success(let succ):
+                    print(succ)
+                case .failure(let error):
+                    print(error.message)
+                }
+            })
+        })
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
     // MARK: Keybord functions
@@ -329,6 +355,30 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         return 2
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        switch indexPath.section {
+        case 0:
+            return false
+        case 1:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    // MARK: Table edit
+    
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//
+//        let edit = UIContextualAction(style: .normal, title: ("P_CELL_EDIT")§, handler: {
+//            let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+//             alert.addCancelAction()
+//        })
+//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadData()
+    }
+    
     // MARK: - Cell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -336,12 +386,18 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserProfileTableViewCell else { return .init() }
         switch indexPath.section {
         case 0:
-            cell.cellName = (cellsNames[indexPath.row])§
+            cell.cellName = (cellsNames[indexPath.row].0)§
+            cell.cellValue = cellsNames[indexPath.row].1
+            cell.editButtonState = true
+            cell.selectionStyle = .none
         case 1:
-            cell.cellName = (cellsNames[indexPath.row + 2])§
+            cell.cellName = (cellsNames[indexPath.row + 2].0)§
+            cell.cellValue = cellsNames[indexPath.row + 2].1
+            cell.editButtonState = true
         default:
             break
         }
+        cell.editButtonTitle = ("P_CELL_EDIT")§
         return cell
     }
     

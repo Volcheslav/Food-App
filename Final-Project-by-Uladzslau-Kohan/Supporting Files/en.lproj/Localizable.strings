@@ -67,6 +67,7 @@
 "P_CELL_AGE" = "Age";
 "P_CELL_PHONE" = "Phone number";
 "P_CELL_CARD_NUMBER" = "Card number";
+"P_CELL_EDIT" = "Edit";
 
 // MARK: Cart view
 

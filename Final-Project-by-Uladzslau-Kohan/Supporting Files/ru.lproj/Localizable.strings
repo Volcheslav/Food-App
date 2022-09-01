@@ -68,6 +68,7 @@
 "P_CELL_AGE" = "Возраст";
 "P_CELL_PHONE" = "Номер телефона";
 "P_CELL_CARD_NUMBER" = "Номер карты";
+"P_CELL_EDIT" = "Изменить";
 
 // MARK: Cart view
 
