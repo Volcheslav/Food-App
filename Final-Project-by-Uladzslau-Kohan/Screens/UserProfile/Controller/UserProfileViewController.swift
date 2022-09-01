@@ -16,6 +16,7 @@ final class UserProfileViewController: UIViewController {
     // MARK: Outlets
     
     @IBOutlet private weak var profileInfoTable: UITableView!
+    @IBOutlet private weak var logoutButton: UICustomButton!
     @IBOutlet private weak var signUpButton: UICustomButton!
     @IBOutlet private weak var loginButton: UICustomButton!
     @IBOutlet private weak var backTologinButton: UICustomButton!
@@ -63,6 +64,9 @@ final class UserProfileViewController: UIViewController {
         }
     }
     
+    @IBAction private func logoutAction(_ sender: UICustomButton) {
+        self.logout()
+    }
     // MARK: LoadView functions
     
     override func viewDidLoad() {
@@ -79,6 +83,7 @@ final class UserProfileViewController: UIViewController {
         self.loginButton.setTitle(("LOGIN")§, for: .normal)
         self.signUpButton.setTitle(("SIGN_UP")§, for: .normal)
         self.backTologinButton.setTitle(("PROFILE_BACK_TO_LOGIN")§, for: .normal)
+        self.logoutButton.setTitle(("LOG_OUT")§, for: .normal)
         
         self.passwordTextField.delegate = self
         self.usernameTextField.delegate = self
@@ -100,8 +105,21 @@ final class UserProfileViewController: UIViewController {
         self.profileInfoTable.reloadData()
     }
     
-    // MARK: Login, SignUp
+    // MARK: Login, SignUp, Logout
     // swiftlint: disable: empty_enum_arguments
+    private func logout() {
+        ParseUserData.logout(completion: {[weak self] result in
+                                switch result {
+                                case .success():
+                                    self?.showSuccessAlert(title: ("LOGGED_OUT")§, viewController: self!)
+                                case .failure(let error):
+                                    self?.showAlertMessage(title: ("ERROR")§, message: "\(error)")
+                                }
+        })
+        self.profileInfoView.isHidden = true
+        self.loginPasswordView.isHidden = false
+    }
+    
     private func signUp(login: String, email: String?, password: String) {
         let newUser = ParseUserData(username: login, email: email, password: password)
         newUser.signup {[weak self] result in
@@ -167,7 +185,7 @@ final class UserProfileViewController: UIViewController {
     
     // MARK: Alert functions
     
-    private func showAlertMessage(title: String, message: String) {
+    private func showAlertMessage(title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addCancelAction()
         self.present(alert, animated: true)

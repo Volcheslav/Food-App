@@ -123,7 +123,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4L0-kf-dtu">
-                                        <rect key="frame" x="0.0" y="10" width="414" height="798"/>
+                                        <rect key="frame" x="0.0" y="25" width="414" height="753"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" id="cad-x9-Ud9" customClass="UserProfileTableViewCell" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
@@ -141,13 +141,36 @@
                                             <outlet property="delegate" destination="eSe-wv-ky0" id="Rpt-A5-AfT"/>
                                         </connections>
                                     </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-Jx-zaP" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                        <rect key="frame" x="171" y="783" width="72" height="30"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="1" green="0.21545814020000001" blue="0.2335257329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.5" green="0.1077290701" blue="0.11676286650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="logoutAction:" destination="eSe-wv-ky0" eventType="touchUpInside" id="42B-Q3-yRH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="4L0-kf-dtu" secondAttribute="trailing" id="DwG-Y7-Uch"/>
-                                    <constraint firstItem="4L0-kf-dtu" firstAttribute="leading" secondItem="9n0-hq-lwl" secondAttribute="leading" id="EEe-PW-yzo"/>
-                                    <constraint firstAttribute="bottom" secondItem="4L0-kf-dtu" secondAttribute="bottom" constant="10" id="GPr-dE-DDb"/>
-                                    <constraint firstItem="4L0-kf-dtu" firstAttribute="top" secondItem="9n0-hq-lwl" secondAttribute="top" constant="10" id="N5g-Lb-zWN"/>
+                                    <constraint firstAttribute="trailing" secondItem="4L0-kf-dtu" secondAttribute="trailing" id="9a0-I9-0Uk"/>
+                                    <constraint firstAttribute="bottom" secondItem="TIu-Jx-zaP" secondAttribute="bottom" constant="5" id="bG9-Io-Rzo"/>
+                                    <constraint firstItem="TIu-Jx-zaP" firstAttribute="top" secondItem="4L0-kf-dtu" secondAttribute="bottom" constant="5" id="bxV-7f-N9k"/>
+                                    <constraint firstAttribute="bottom" secondItem="4L0-kf-dtu" secondAttribute="bottom" constant="40" id="eaE-8T-SBb"/>
+                                    <constraint firstItem="TIu-Jx-zaP" firstAttribute="centerX" secondItem="9n0-hq-lwl" secondAttribute="centerX" id="mm1-0m-YPM"/>
+                                    <constraint firstItem="4L0-kf-dtu" firstAttribute="top" secondItem="9n0-hq-lwl" secondAttribute="top" constant="25" id="rLr-nK-6Hu"/>
+                                    <constraint firstItem="4L0-kf-dtu" firstAttribute="leading" secondItem="9n0-hq-lwl" secondAttribute="leading" id="yae-sM-i9x"/>
+                                    <constraint firstAttribute="bottom" secondItem="TIu-Jx-zaP" secondAttribute="bottom" constant="5" id="zyn-ye-rGQ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -169,6 +192,7 @@
                         <outlet property="emailTextField" destination="ML8-uI-7B5" id="ARQ-Ui-Auk"/>
                         <outlet property="loginButton" destination="zww-jr-lcm" id="fl8-MD-Nrd"/>
                         <outlet property="loginPasswordView" destination="Mcj-LL-7df" id="gV5-zZ-y3k"/>
+                        <outlet property="logoutButton" destination="TIu-Jx-zaP" id="i4n-FT-r0a"/>
                         <outlet property="passwordTextField" destination="GRF-fH-gUb" id="eGE-78-PlC"/>
                         <outlet property="profileInfoTable" destination="4L0-kf-dtu" id="j9R-pl-TbR"/>
                         <outlet property="profileInfoView" destination="9n0-hq-lwl" id="aMv-N9-ThU"/>
@@ -185,6 +209,9 @@
         <designable name="Cya-HB-U9w">
             <size key="intrinsicContentSize" width="79" height="22"/>
         </designable>
+        <designable name="TIu-Jx-zaP">
+            <size key="intrinsicContentSize" width="72" height="21.5"/>
+        </designable>
         <designable name="hae-Fn-8N1">
             <size key="intrinsicContentSize" width="71.5" height="25.5"/>
         </designable>
@@ -193,6 +220,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="backward" catalog="system" width="128" height="79"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

@@ -56,6 +56,8 @@
 "LOGGED_IN" = "вошел";
 "HELLO" = "Привет";
 "USER_DATA" = "Данные пользователя";
+"LOGGED_OUT" = "Пользователь вышел";
+"LOG_OUT" = "Выйти";
 
 // MARK: Cart view
 
