@@ -21,7 +21,7 @@ class ShowAlerts {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addCancelAction()
         let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: {_ in
-            viewController.tabBarController?.selectedIndex = 3
+            viewController.tabBarController?.selectedIndex = 2
         })
         alert.addAction(okAction)
         viewController.present(alert, animated: true, completion: nil)

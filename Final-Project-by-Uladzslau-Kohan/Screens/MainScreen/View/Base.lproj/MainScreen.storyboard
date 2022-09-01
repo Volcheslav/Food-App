@@ -307,7 +307,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FY6-3S-qMA"/>
-                        <segue destination="VSN-Rb-GVr" kind="relationship" relationship="viewControllers" id="cI9-h5-Pgw"/>
                         <segue destination="3lD-rx-ZYx" kind="relationship" relationship="viewControllers" id="v9d-nd-GU3"/>
                         <segue destination="CLc-8j-Jsw" kind="relationship" relationship="viewControllers" id="Yrb-Wm-DOs"/>
                     </connections>
@@ -315,16 +314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J1-rc-ygs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-197.10144927536234" y="93.75"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="Dmh-oZ-dLP">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="VSN-Rb-GVr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9xz-Bi-rB7"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NOy-t9-Q2i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-197" y="518"/>
         </scene>
         <!--Cart-->
         <scene sceneID="FfB-rh-L0o">
