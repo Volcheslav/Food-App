@@ -44,6 +44,7 @@
 "ENTER_YOUR_EMAIL" = "Введите свой email";
 "LOGIN" = "Войти";
 "SIGN_UP" = "Регистрация";
+"SIGNED_UP" = "Зарегистрирован";
 "PROFILE_NOT_VALID_DATA" = "Ошибка!";
 "PROFILE_NOT_VALID_MESSAGE" = "Проверьте введенные данные";
 "PROFILE_NOT_VALID_EMIAL" = "Проверьте email";

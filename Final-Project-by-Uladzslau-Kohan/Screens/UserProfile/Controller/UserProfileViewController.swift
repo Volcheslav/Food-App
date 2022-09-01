@@ -43,7 +43,7 @@ final class UserProfileViewController: UIViewController {
             self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_EMIAL")§)
             return
         }
-        self.signUp(login: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
+            self.signUp(login: usernameTextField.text!.lowercased(), email: emailTextField.text!, password: passwordTextField.text!)
         } else {
             animateEmailTextfield()
         }
@@ -91,8 +91,7 @@ final class UserProfileViewController: UIViewController {
         newUser.signup {[weak self] result in
             switch result {
             case .success(_):
-                self?.successEnter()
-                self?.emailTextField.isHidden = true
+                self?.successSignUp()
             case .failure(let error):
                 self?.showAlertMessage(title: ("ERROR")§, message: "\(error.message)")
             }
@@ -115,6 +114,14 @@ final class UserProfileViewController: UIViewController {
         self.usernameTextField.text = nil
         self.passwordTextField.text = nil
         self.loginPasswordView.isHidden = true
+    }
+    
+    private func successSignUp() {
+        self.showAlertMessage(title: ("SUCCESS")§, message: ("SIGNED_UP")§)
+        self.emailTextField.text = nil
+        self.usernameTextField.text = nil
+        self.passwordTextField.text = nil
+        self.animateHideEmailTextfield()
     }
     
     private func animateEmailTextfield() {
