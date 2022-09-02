@@ -37,6 +37,7 @@ final class UserProfileViewController: UIViewController {
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var loginPasswordView: UIView!
     @IBOutlet private weak var profileInfoView: UIView!
+    
     // MARK: Actions
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
@@ -84,6 +85,12 @@ final class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initializeHideKeyboard()
+        
+        self.profileInfoTable.allowsSelection = true
+        self.profileInfoTable.isUserInteractionEnabled = true
+        self.profileInfoTable.delegate = self
+        self.profileInfoTable.dataSource = self
+        
         self.loginPasswordView.isHidden = true
         self.loginPasswordView.layer.cornerRadius = 20
         self.loginPasswordView.layer.masksToBounds = true
@@ -103,7 +110,6 @@ final class UserProfileViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -174,6 +180,8 @@ final class UserProfileViewController: UIViewController {
         self.animateHideEmailTextfield()
     }
     
+    // MARK: Textfield and button apear animations
+    
     private func animateEmailTextfield() {
         guard self.emailTextField.isHidden else {
             return
@@ -195,6 +203,8 @@ final class UserProfileViewController: UIViewController {
             self?.loginButton.isHidden = false
         })
     }
+    
+    // MARK: Edit user data
     
     private func editTableData(index: Int, editableData: String) {
         guard var user = ParseUserData.current else { return }
@@ -242,22 +252,14 @@ final class UserProfileViewController: UIViewController {
         }
     }
     
-    private func showEditAlert(title: String) {
+    private func showEditAlert(title: String, indexPath: Int) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         alert.addCancelAction()
         alert.addTextField(configurationHandler: { $0.placeholder = "Enter data" })
-        var user = ParseUserData.current!
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: {_ in
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
             guard alert.textFields!.first!.hasText else { return }
-            user.name = alert.textFields!.first!.text
-            user.save(completion: { result in
-                switch result {
-                case .success(let succ):
-                    print(succ)
-                case .failure(let error):
-                    print(error.message)
-                }
-            })
+            let info = alert.textFields!.first!.text!
+            self?.editTableData(index: indexPath, editableData: info)
         })
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
@@ -313,21 +315,6 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             sectionNumber = 0
         }
         return sectionNumber
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let sectionHeaderTitle: String
-        switch section {
-        case 0:
-            sectionHeaderTitle = ("MAIN")§
-        case 1:
-            sectionHeaderTitle = ("CONTACTS")§
-        case 2:
-            sectionHeaderTitle = ("ADDRESS")§
-        default:
-            sectionHeaderTitle = ""
-        }
-        return sectionHeaderTitle
     }
     
     // MARK: - Custom headers
@@ -394,18 +381,27 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             return false
         }
     }
-    
+
     // MARK: Table edit
+
+   // func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // guard indexPath.section == 1 else { return }
+     //   print("select \(indexPath.row)")
+       // showEditAlert(title: "\(("P_CELL_EDIT")§) \((cellsNames[indexPath.row + 2].0)§)", indexPath: indexPath.row)
+       // tableView.reloadData()
+   // }
     
-//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-//
-//        let edit = UIContextualAction(style: .normal, title: ("P_CELL_EDIT")§, handler: {
-//            let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-//             alert.addCancelAction()
-//        })
-//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadData()
+        print(indexPath.row)
+//        switch indexPath.section {
+//        case 0:
+//            print("select \(indexPath.row)")
+//        case 1:
+//            print("select \(indexPath.row)")
+//        default:
+//            break
+//        }
+//
     }
     
     // MARK: - Cell
@@ -417,12 +413,12 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         case 0:
             cell.cellName = (cellsNames[indexPath.row].0)§
             cell.cellValue = cellsNames[indexPath.row].1
-            cell.editButtonState = true
-            cell.selectionStyle = .none
+          //  cell.editButtonState = true
+        //    cell.selectionStyle = .none
         case 1:
             cell.cellName = (cellsNames[indexPath.row + 2].0)§
             cell.cellValue = cellsNames[indexPath.row + 2].1
-            cell.editButtonState = true
+         //   cell.editButtonState = true
         default:
             break
         }

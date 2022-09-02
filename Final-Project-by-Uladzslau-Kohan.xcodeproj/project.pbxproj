@@ -211,7 +211,6 @@
 			children = (
 				5340FEF528BFA4C9001F967D /* UserProfileViewController.swift */,
 				533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */,
-				533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +226,7 @@
 		5340FEF128BFA428001F967D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
