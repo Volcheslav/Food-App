@@ -4,7 +4,7 @@
 //
 //  Created by VironIT on 8/31/22.
 // swiftlint: disable: implicit_getter
-
+import RealmSwift
 import UIKit
 
 final class UserProfileViewController: UIViewController {
@@ -25,7 +25,7 @@ final class UserProfileViewController: UIViewController {
             ]
         }
     }
-    // MARK: Outlets
+    // MARK: - Outlets
     
     @IBOutlet private weak var profileInfoTable: UITableView!
     @IBOutlet private weak var logoutButton: UICustomButton!
@@ -38,7 +38,7 @@ final class UserProfileViewController: UIViewController {
     @IBOutlet private weak var loginPasswordView: UIView!
     @IBOutlet private weak var profileInfoView: UIView!
     
-    // MARK: Actions
+    // MARK: - Actions
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
         animateHideEmailTextfield()
@@ -76,15 +76,20 @@ final class UserProfileViewController: UIViewController {
             animateEmailTextfield()
         }
     }
-    
+    // swiftlint:disable force_try
     @IBAction private func logoutAction(_ sender: UICustomButton) {
         self.logout()
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
     }
-    // MARK: LoadView functions
+    // swiftlint:enable force_try
+    // MARK: - LoadView functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initializeHideKeyboard()
+        // self.initializeHideKeyboard()
         
         self.profileInfoTable.allowsSelection = true
         self.profileInfoTable.isUserInteractionEnabled = true
@@ -114,7 +119,6 @@ final class UserProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       // self.showEditAlert(title: "Edit name")
         let user: ParseUserData? = ParseUserData.current
         self.loginPasswordView.isHidden = user != nil
         self.profileInfoView.isHidden = user == nil
@@ -124,7 +128,7 @@ final class UserProfileViewController: UIViewController {
         self.profileInfoTable.reloadData()
     }
     
-    // MARK: Login, SignUp, Logout
+    // MARK: - Login, SignUp, Logout
     // swiftlint: disable: empty_enum_arguments
     private func logout() {
         ParseUserData.logout(completion: {[weak self] result in
@@ -180,7 +184,7 @@ final class UserProfileViewController: UIViewController {
         self.animateHideEmailTextfield()
     }
     
-    // MARK: Textfield and button apear animations
+    // MARK: - Textfield and button apear animations
     
     private func animateEmailTextfield() {
         guard self.emailTextField.isHidden else {
@@ -204,21 +208,41 @@ final class UserProfileViewController: UIViewController {
         })
     }
     
-    // MARK: Edit user data
+    // MARK: -  Edit user data
     
     private func editTableData(indexPath: IndexPath, editableData: String) {
         guard var user = ParseUserData.current else { return }
         switch indexPath.row {
         case 0:
-            user.name = editableData
+            if editableData.isValidNameSurname() {
+                user.name = editableData } else {
+                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    return
+                }
         case 1:
-            user.surname = editableData
+            if editableData.isValidNameSurname() {
+                user.surname = editableData } else {
+                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    return
+                }
         case 2:
-            user.age = UInt(editableData)
+            if editableData.isValidAge() {
+                user.age = UInt(editableData)! } else {
+                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    return
+                }
         case 3:
-            user.phoneNumber = editableData
+            if editableData.isValidPhoneNumber() {
+                user.phoneNumber = editableData } else {
+                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    return
+                }
         case 4:
-            user.creditCardnumder = editableData
+            if editableData.isValidCardNumber() {
+                user.creditCardnumder = editableData } else {
+                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    return
+                }
         default:
             break
         }
@@ -236,7 +260,7 @@ final class UserProfileViewController: UIViewController {
         
     }
     
-    // MARK: Alert functions
+    // MARK: - Alert functions
     
     private func showAlertMessage(title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -264,20 +288,24 @@ final class UserProfileViewController: UIViewController {
         })
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
-        
     }
     
-    // MARK: Keybord functions
-    
-    private func initializeHideKeyboard() {
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(dismissMyKeyboard)
-        )
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+    private func showIncorrectAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addCancelAction()
+        self.present(alert, animated: true, completion: nil)
     }
-    
+    // MARK: - Keybord functions
+    //
+    //    private func initializeHideKeyboard() {
+    //        let tap = UITapGestureRecognizer(
+    //            target: self,
+    //            action: #selector(dismissMyKeyboard)
+    //        )
+    //        tap.cancelsTouchesInView = false
+    //        view.addGestureRecognizer(tap)
+    //    }
+    //
     @objc private func dismissMyKeyboard() {
         view.endEditing(true)
     }
@@ -373,21 +401,10 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         return 2
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        switch indexPath.section {
-        case 0:
-            return false
-        case 1:
-            return true
-        default:
-            return false
-        }
-    }
-
     // MARK: Table edit
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         guard indexPath.section == 1 else { return }
+        guard indexPath.section == 1 else { return }
         showEditAlert(title: "\(("P_CELL_EDIT")§) \((cellsNames[indexPath.row + 2].0)§)", indexPath: indexPath)
     }
     
