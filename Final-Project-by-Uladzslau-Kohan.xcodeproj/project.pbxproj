@@ -13,6 +13,7 @@
 		5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */; };
 		533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D1D0828B8ECBF00217919 /* MenuData.swift */; };
 		533D44E528C0CC4500AF6619 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */; };
+		533FEB1228C215BA00FE88FC /* UserProfileStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */; };
 		5340FEDD28BF7AF4001F967D /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEDC28BF7AF4001F967D /* ParseKeys.swift */; };
 		5340FEE128BF7E0A001F967D /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEE028BF7E0A001F967D /* ParseUserData.swift */; };
 		5340FEF628BFA4C9001F967D /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEF528BFA4C9001F967D /* UserProfileViewController.swift */; };
@@ -45,6 +46,7 @@
 		5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCellDelegateProtocol.swift; sourceTree = "<group>"; };
 		533D1D0828B8ECBF00217919 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
+		533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStringExtensions.swift; sourceTree = "<group>"; };
 		5340FEDC28BF7AF4001F967D /* ParseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
 		5340FEE028BF7E0A001F967D /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
 		5340FEF528BFA4C9001F967D /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				5340FEF528BFA4C9001F967D /* UserProfileViewController.swift */,
 				533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */,
+				533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				5347F57128B79EE500995448 /* CartViewController.swift in Sources */,
 				5347F57728B7B8FA00995448 /* CartTableViewCell.swift in Sources */,
 				53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */,
+				533FEB1228C215BA00FE88FC /* UserProfileStringExtensions.swift in Sources */,
 				53E9ED2528BE4B3F0028EEAA /* MainModalInfoViewController.swift in Sources */,
 				5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */,
 				533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */,

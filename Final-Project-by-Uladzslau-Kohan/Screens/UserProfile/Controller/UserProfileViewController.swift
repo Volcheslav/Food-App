@@ -196,6 +196,35 @@ final class UserProfileViewController: UIViewController {
         })
     }
     
+    private func editTableData(index: Int, editableData: String) {
+        guard var user = ParseUserData.current else { return }
+        switch index {
+        case 0:
+            user.name = editableData
+        case 1:
+            user.surname = editableData
+        case 2:
+            user.age = UInt(editableData)
+        case 3:
+            user.phoneNumber = editableData
+        case 4:
+            user.creditCardnumder = editableData
+        default:
+            break
+        }
+        DispatchQueue.main.async {
+            user.save(completion: { result in
+                switch result {
+                case .success(let succ):
+                    print(succ)
+                case .failure(let error):
+                    print(error.message)
+                }
+            })
+        }
+        
+    }
+    
     // MARK: Alert functions
     
     private func showAlertMessage(title: String, message: String?) {
@@ -405,13 +434,4 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         return self.tableRowHeight
     }
     
-}
-// MARK: - Email valid check
-
-extension String {
-    func isValidEmail() -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPred.evaluate(with: self)
-    }
 }

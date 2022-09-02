@@ -20,6 +20,7 @@ final class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         items = realm.objects(CartItem.self)
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self
