@@ -19,24 +19,11 @@ final class UserProfileTableViewCell: UITableViewCell {
             self.cellValueLabel.text = cellValue
         }
     }
-    var editButtonTitle: String? {
-        didSet {
-            self.editButton.setTitle(editButtonTitle, for: .normal)
-        }
-    }
-    var editButtonState: Bool? {
-        didSet {
-            self.editButton.isHidden = editButtonState ?? true
-        }
-    }
-    
-    @IBOutlet private weak var editButton: UICustomButton!
+
     @IBOutlet private weak var cellNameLabel: UILabel!
     @IBOutlet private weak var cellValueLabel: UILabel!
     @IBOutlet private weak var cellView: UIView!
-    
-    @IBAction private func editAction(_ sender: UICustomButton) {
-    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

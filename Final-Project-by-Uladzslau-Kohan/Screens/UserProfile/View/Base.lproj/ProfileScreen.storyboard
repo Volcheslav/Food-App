@@ -134,37 +134,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-i4-Vsm">
-                                                            <rect key="frame" x="25" y="24" width="364" height="22"/>
+                                                            <rect key="frame" x="25" y="25" width="364" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-BX-gaC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Y9-R9-K4J" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                                    <rect key="frame" x="146.5" y="0.0" width="71.5" height="22"/>
-                                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <state key="normal" title="Button" image="pencil" catalog="system">
-                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </state>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                                                            <color key="value" red="1" green="0.21545814020000001" blue="0.2335257329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                                                            <color key="value" red="0.5" green="0.1077290701" blue="0.11676286650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                            <real key="value" value="8"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                    <connections>
-                                                                        <action selector="editAction:" destination="cad-x9-Ud9" eventType="touchUpInside" id="jz6-A9-xf6"/>
-                                                                    </connections>
-                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCX-ql-05z">
-                                                                    <rect key="frame" x="322.5" y="0.0" width="41.5" height="22"/>
+                                                                    <rect key="frame" x="322.5" y="0.0" width="41.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -192,7 +171,6 @@
                                                     <outlet property="cellNameLabel" destination="RoD-BX-gaC" id="8Mq-mc-rax"/>
                                                     <outlet property="cellValueLabel" destination="QCX-ql-05z" id="SmO-dw-ivr"/>
                                                     <outlet property="cellView" destination="jE8-LV-gDs" id="aOT-kY-LI9"/>
-                                                    <outlet property="editButton" destination="7Y9-R9-K4J" id="E6q-2A-aX5"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -267,9 +245,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="7Y9-R9-K4J">
-            <size key="intrinsicContentSize" width="71.5" height="22"/>
-        </designable>
         <designable name="Cya-HB-U9w">
             <size key="intrinsicContentSize" width="79" height="22"/>
         </designable>
@@ -286,7 +261,6 @@
     <resources>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="backward" catalog="system" width="128" height="79"/>
-        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>

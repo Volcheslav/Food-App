@@ -206,9 +206,9 @@ final class UserProfileViewController: UIViewController {
     
     // MARK: Edit user data
     
-    private func editTableData(index: Int, editableData: String) {
+    private func editTableData(indexPath: IndexPath, editableData: String) {
         guard var user = ParseUserData.current else { return }
-        switch index {
+        switch indexPath.row {
         case 0:
             user.name = editableData
         case 1:
@@ -223,13 +223,14 @@ final class UserProfileViewController: UIViewController {
             break
         }
         DispatchQueue.main.async {
-            user.save(completion: { result in
+            user.save(completion: {[weak self] result in
                 switch result {
-                case .success(let succ):
-                    print(succ)
+                case .success(_):
+                    self?.profileInfoTable.reloadRows(at: [indexPath], with: .automatic)
                 case .failure(let error):
                     print(error.message)
                 }
+                
             })
         }
         
@@ -252,14 +253,14 @@ final class UserProfileViewController: UIViewController {
         }
     }
     
-    private func showEditAlert(title: String, indexPath: Int) {
+    private func showEditAlert(title: String, indexPath: IndexPath) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         alert.addCancelAction()
         alert.addTextField(configurationHandler: { $0.placeholder = "Enter data" })
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
             guard alert.textFields!.first!.hasText else { return }
             let info = alert.textFields!.first!.text!
-            self?.editTableData(index: indexPath, editableData: info)
+            self?.editTableData(indexPath: indexPath, editableData: info)
         })
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
@@ -273,6 +274,7 @@ final class UserProfileViewController: UIViewController {
             target: self,
             action: #selector(dismissMyKeyboard)
         )
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     
@@ -384,24 +386,9 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
 
     // MARK: Table edit
 
-   // func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // guard indexPath.section == 1 else { return }
-     //   print("select \(indexPath.row)")
-       // showEditAlert(title: "\(("P_CELL_EDIT")§) \((cellsNames[indexPath.row + 2].0)§)", indexPath: indexPath.row)
-       // tableView.reloadData()
-   // }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-//        switch indexPath.section {
-//        case 0:
-//            print("select \(indexPath.row)")
-//        case 1:
-//            print("select \(indexPath.row)")
-//        default:
-//            break
-//        }
-//
+         guard indexPath.section == 1 else { return }
+        showEditAlert(title: "\(("P_CELL_EDIT")§) \((cellsNames[indexPath.row + 2].0)§)", indexPath: indexPath)
     }
     
     // MARK: - Cell
@@ -413,16 +400,13 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         case 0:
             cell.cellName = (cellsNames[indexPath.row].0)§
             cell.cellValue = cellsNames[indexPath.row].1
-          //  cell.editButtonState = true
-        //    cell.selectionStyle = .none
+            cell.selectionStyle = .none
         case 1:
             cell.cellName = (cellsNames[indexPath.row + 2].0)§
             cell.cellValue = cellsNames[indexPath.row + 2].1
-         //   cell.editButtonState = true
         default:
             break
         }
-        cell.editButtonTitle = ("P_CELL_EDIT")§
         return cell
     }
     
