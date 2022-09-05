@@ -24,7 +24,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c0Q-2Q-CvA">
-                                                <rect key="frame" x="0.0" y="70" width="414" height="380"/>
+                                                <rect key="frame" x="0.0" y="70" width="414" height="330"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7L-Vq-b74">
                                                     <size key="itemSize" width="128" height="170"/>
@@ -34,7 +34,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mainCell" id="P30-QE-Trn" customClass="MainScreenCollectionViewCell" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
+                                                        <rect key="frame" x="0.0" y="80" width="128" height="170"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pkw-NK-Det">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="170"/>
@@ -105,7 +105,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGrayColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="c0Q-2Q-CvA" secondAttribute="bottom" constant="550" id="NPg-GX-UXP"/>
+                                            <constraint firstAttribute="bottom" secondItem="c0Q-2Q-CvA" secondAttribute="bottom" constant="600" id="NPg-GX-UXP"/>
                                             <constraint firstItem="c0Q-2Q-CvA" firstAttribute="leading" secondItem="j0X-mu-Xwn" secondAttribute="leading" id="ePk-ju-euZ"/>
                                             <constraint firstItem="Htl-L5-8Rl" firstAttribute="top" secondItem="j0X-mu-Xwn" secondAttribute="top" constant="25" id="gmR-zX-Znd"/>
                                             <constraint firstAttribute="height" constant="1000" id="hIB-Nv-4Vw"/>

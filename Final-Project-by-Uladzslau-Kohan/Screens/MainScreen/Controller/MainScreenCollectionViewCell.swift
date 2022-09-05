@@ -27,8 +27,10 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
     }
     var nameImage: String? {
         didSet {
-            guard let img = UIImage(named: self.nameImage ?? "no name") else { return }
-            self.cellImage.image = img
+            DispatchQueue.main.async {
+                guard let img = UIImage(named: self.nameImage ?? "no name") else { return }
+                self.cellImage.image = img
+            }
         }
     }
     

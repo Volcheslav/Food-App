@@ -15,6 +15,7 @@ final class MainScreenViewController: UIViewController {
             self.readFromPlist()
         }
     }
+    // swiftlint:enable force_try
     // MARK: Outlets
     
     @IBOutlet private weak var sectionNameLabel: UILabel!
@@ -46,9 +47,11 @@ final class MainScreenViewController: UIViewController {
         cartItem.name = name
         cartItem.imageName = imageName
         cartItem.price = price
+        // swiftlint:disable force_try
         try! realm.write {
             realm.add(cartItem)
         }
+        // swiftlint:enable force_try
     }
     
     // MARK: - ShowModal view controller
@@ -77,6 +80,10 @@ final class MainScreenViewController: UIViewController {
 
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let items = self.plistItems else {
             return 0
@@ -85,7 +92,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as! MainScreenCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as? MainScreenCollectionViewCell else { return .init() }
         cell.cellDelegate = self
         guard let cellData = self.plistItems else { return .init() }
         cell.name = cellData[indexPath.row]["name"] as? String
@@ -152,6 +159,8 @@ extension MainScreenViewController: MainScreenCellDelegate {
         ShowAlerts.showAddAlert(name: name, viewController: self)
     }
 }
+// swiftlint:disable force_try
+// MARK: - Read from plist
 
 extension MainScreenViewController {
     func  readFromPlist() -> [[String:Any]] {
