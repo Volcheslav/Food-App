@@ -84,6 +84,16 @@
 			<key>calories</key>
 			<integer>990</integer>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>DEADINSIDE</string>
+			<key>price</key>
+			<real>9.93</real>
+			<key>imageName</key>
+			<string>burger8</string>
+			<key>calories</key>
+			<integer>1030</integer>
+		</dict>
 	</array>
 </dict>
 </plist>
