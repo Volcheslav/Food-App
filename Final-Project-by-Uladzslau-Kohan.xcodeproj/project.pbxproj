@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C999928B4EDC00039C9A0 /* CustomButton.swift */; };
+		5339718C28C613F000A61C22 /* MenuBurger.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5339718B28C613F000A61C22 /* MenuBurger.plist */; };
 		5339A99128BE20D80079DD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5339A99328BE20D80079DD3D /* Localizable.strings */; };
 		5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9A028BE24A90079DD3D /* Cart.storyboard */; };
 		5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		531C999928B4EDC00039C9A0 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5339718B28C613F000A61C22 /* MenuBurger.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MenuBurger.plist; sourceTree = "<group>"; };
 		5339A98B28BE208C0079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5339A98C28BE208D0079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainScreen.strings; sourceTree = "<group>"; };
 		5339A99228BE20D80079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				53D99D8C289ABD6F002755A4 /* Assets.xcassets */,
 				53D99D91289ABD6F002755A4 /* Info.plist */,
 				5339A99328BE20D80079DD3D /* Localizable.strings */,
+				5339718B28C613F000A61C22 /* MenuBurger.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5340FEF928BFC5D4001F967D /* ProfileScreen.storyboard in Resources */,
+				5339718C28C613F000A61C22 /* MenuBurger.plist in Resources */,
 				53D99D90289ABD6F002755A4 /* LaunchScreen.storyboard in Resources */,
 				53D99D8D289ABD6F002755A4 /* Assets.xcassets in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,

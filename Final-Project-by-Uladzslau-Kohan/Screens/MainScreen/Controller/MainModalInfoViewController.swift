@@ -34,7 +34,7 @@ final class MainModalInfoViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .clear
         view.isOpaque = false
-        self.productNameLabel.text = name
+        self.productNameLabel.text = (name)§
         self.productPriceLabel.text = String(price)
         self.productCaloriesLabel.text = String(caloreis)
         self.productImageView.image = UIImage(named: imageName)

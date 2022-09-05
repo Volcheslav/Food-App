@@ -12,7 +12,7 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
     weak var cellDelegate: MainScreenCellDelegate?
     var name: String? {
         didSet {
-            self.nameLabel.text = self.name
+            self.nameLabel.text = (self.name ?? "NONAME")§
             self.nameLabel.textColor = .white
             self.addButton.layer.cornerRadius = self.addButton.frame.height / 2
             self.addButton.backgroundColor = .black

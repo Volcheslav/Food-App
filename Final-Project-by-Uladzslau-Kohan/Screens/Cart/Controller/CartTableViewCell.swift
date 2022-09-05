@@ -13,7 +13,7 @@ final class CartTableViewCell: UITableViewCell {
 
     var name: String? {
         didSet {
-            self.nameLabel.text = self.name
+            self.nameLabel.text = (self.name ?? "noname")§
             self.nameLabel.sizeToFit()
         }
     }
