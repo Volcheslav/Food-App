@@ -1,11 +1,21 @@
-/* 
-  Localizable.strings
-  Final-Project-by-Uladzslau-Kohan
+// MARK: Menu data Burgers
 
-  Created by VironIT on 8/30/22.
-  
-*/
+"HANBURGER" = "Гамбургер";
+"CHEESEBURGER" = "Чизбургер";
+"BIGBURGER" = "БольшойБургер";
+"STEAKHOUSE" = "Стейкхаус";
+"CLASSIC" = "Классический";
+"OLDBURGER" = "Старбургер";
+"BLACKHOURSE" = "Черный Конь";
+"CHEESEKING" = "Сырный Царь";
+"DEADINSIDE" = "ДедВнутри";
 
+// MARK: Menu data Drinks
+
+"REDBULL" = "РедБулл";
+"PEPSI" = "Пепси";
+"MOJITO" = "Мохито";
+"COLA" = "Кока-кола";
 
 // MARK: Main screen
 
@@ -20,18 +30,6 @@
 "MODAL_MAIN_PRICE" = "Цена:";
 "MODAL_MAIN_CALORIES" = "Каллорийность:";
 "MODAL_MAIN_ADD_TO_CART" = "Добавить в заказ";
-
-// MARK: Menu data Burgers
-
-"HANBURGER" = "Гамбургер";
-"CHEESEBURGER" = "Чизбургер";
-"BIGBURGER" = "БольшойБургер";
-"STEAKHOUSE" = "Стейкхаус";
-"CLASSIC" = "Классический";
-"OLDBURGER" = "Старбургер";
-"BLACKHOURSE" = "Черный Конь";
-"CHEESEKING" = "Сырный Царь";
-"DEADINSIDE" = "ДедВнутри";
 
 // MARK: Profile info
 

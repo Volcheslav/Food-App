@@ -10,9 +10,14 @@ import UIKit
 final class MainScreenViewController: UIViewController {
     let realm = try! Realm()
     var items: Results<CartItem>!
-    var plistItems: [[String:Any]]? {
+    var plistBurgerItems: [[String:Any]]? {
         get {
-            self.readFromPlist()
+            self.readFromPlist(section: "Menu")
+        }
+    }
+    var plistDrinksItems: [[String:Any]]? {
+        get {
+            self.readFromPlist(section: "Drinks")
         }
     }
     // swiftlint:enable force_try
@@ -80,12 +85,12 @@ final class MainScreenViewController: UIViewController {
 
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
-    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 2
+//    }
+//
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let items = self.plistItems else {
+        guard let items = self.plistBurgerItems else {
             return 0
         }
         return items.count
@@ -94,7 +99,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as? MainScreenCollectionViewCell else { return .init() }
         cell.cellDelegate = self
-        guard let cellData = self.plistItems else { return .init() }
+        guard let cellData = self.plistBurgerItems else { return .init() }
         cell.name = cellData[indexPath.row]["name"] as? String
         cell.price = cellData[indexPath.row]["price"] as? Double
         cell.nameImage = cellData[indexPath.row]["imageName"] as? String
@@ -107,7 +112,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cellData = self.plistItems else { return }
+        guard let cellData = self.plistBurgerItems else { return }
         guard let name = cellData[indexPath.row]["name"] as? String,
               let price = cellData[indexPath.row]["price"] as? Double,
               let calories = cellData[indexPath.row]["calories"] as? Int,
@@ -163,13 +168,13 @@ extension MainScreenViewController: MainScreenCellDelegate {
 // MARK: - Read from plist
 
 extension MainScreenViewController {
-    func  readFromPlist() -> [[String:Any]] {
-        guard let path = Bundle.main.path(forResource: "MenuBurger", ofType: "plist") else { return [] }
+    func  readFromPlist(section: String) -> [[String:Any]] {
+        guard let path = Bundle.main.path(forResource: "Menu", ofType: "plist") else { return [] }
         let url = URL(fileURLWithPath: path)
         let data = try! Data(contentsOf: url)
         
         guard let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String:Any] else { return [] }
-        guard let menu = plist["Menu"] as? [[String:Any]] else { return [] }
+        guard let menu = plist[section] as? [[String:Any]] else { return [] }
         return menu
     }
 }

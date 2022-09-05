@@ -2,6 +2,49 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Drinks</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>REDBULL</string>
+			<key>price</key>
+			<real>1.29</real>
+			<key>imageName</key>
+			<string>drink0</string>
+			<key>calories</key>
+			<integer>250</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>PEPSI</string>
+			<key>price</key>
+			<real>0.99</real>
+			<key>imageName</key>
+			<string>drink1</string>
+			<key>calories</key>
+			<integer>300</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>MOJITO</string>
+			<key>price</key>
+			<real>2.53</real>
+			<key>imageName</key>
+			<string>drink2</string>
+			<key>calories</key>
+			<integer>170</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>COLA</string>
+			<key>price</key>
+			<real>0.99</real>
+			<key>imageName</key>
+			<string>drink3</string>
+			<key>calories</key>
+			<integer>300</integer>
+		</dict>
+	</array>
 	<key>Menu</key>
 	<array>
 		<dict>

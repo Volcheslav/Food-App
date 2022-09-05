@@ -6,6 +6,24 @@
   
 */
 
+// MARK: Menu data Burgers
+
+"HANBURGER" = "Hanburger";
+"CHEESEBURGER" = "CheeseBurger";
+"BIGBURGER" = "BigBurger";
+"STEAKHOUSE" = "SteakHouse";
+"CLASSIC" = "Classic";
+"OLDBURGER" = "OldBurger";
+"BLACKHOURSE" = "BlackHourse";
+"CHEESEKING" = "CheeseKing";
+"DEADINSIDE" = "DeadInside";
+
+// MARK: Menu data Drinks
+"REDBULL" = "RedBull";
+"PEPSI" = "Pepsi";
+"MOJITO" = "Mojito";
+"COLA" = "Coca-Cola";
+
 // MARK: Main screen
 
 "MAIN_MENU_SECTION" = "Menu";
@@ -19,18 +37,6 @@
 "MODAL_MAIN_PRICE" = "Price:";
 "MODAL_MAIN_CALORIES" = "Calories";
 "MODAL_MAIN_ADD_TO_CART" = "Add to cart";
-
-// MARK: Menu data Burgers
-
-"HANBURGER" = "Hanburger";
-"CHEESEBURGER" = "CheeseBurger";
-"BIGBURGER" = "BigBurger";
-"STEAKHOUSE" = "SteakHouse";
-"CLASSIC" = "Classic";
-"OLDBURGER" = "OldBurger";
-"BLACKHOURSE" = "BlackHourse";
-"CHEESEKING" = "CheeseKing";
-"DEADINSIDE" = "DeadInside";
 
 // MARK: Profile info
 
