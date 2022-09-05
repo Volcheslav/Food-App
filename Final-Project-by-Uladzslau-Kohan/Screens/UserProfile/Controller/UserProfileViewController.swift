@@ -78,7 +78,7 @@ final class UserProfileViewController: UIViewController {
     }
     // swiftlint:disable force_try
     @IBAction private func logoutAction(_ sender: UICustomButton) {
-        self.logout()
+        self.showLogoutAlert(title: ("LOGOUT_MESSAGE")§)
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
@@ -208,7 +208,7 @@ final class UserProfileViewController: UIViewController {
         })
     }
     
-    // MARK: -  Edit user data
+    // MARK: - Edit user data
     
     private func editTableData(indexPath: IndexPath, editableData: String) {
         guard var user = ParseUserData.current else { return }
@@ -261,6 +261,16 @@ final class UserProfileViewController: UIViewController {
     }
     
     // MARK: - Alert functions
+    
+    private func showLogoutAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        alert.addCancelAction()
+        let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: { [weak self] _ in
+            self?.logout()
+        })
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     private func showAlertMessage(title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

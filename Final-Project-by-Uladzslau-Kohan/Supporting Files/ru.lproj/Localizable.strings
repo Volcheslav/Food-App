@@ -58,6 +58,7 @@
 "USER_DATA" = "Данные пользователя";
 "LOGGED_OUT" = "Пользователь вышел";
 "LOG_OUT" = "Выйти";
+"LOGOUT_MESSAGE" = "Вы действительно хотите выйти?";
 
 // MARK: Profile view cell
 

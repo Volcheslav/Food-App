@@ -57,6 +57,7 @@
 "USER_DATA" = "User data";
 "LOGGED_OUT" = "Logged out";
 "LOG_OUT" = "Log out";
+"LOGOUT_MESSAGE" = "Do you want to logout?";
 
 // MARK: Profile view cell
 
