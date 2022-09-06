@@ -1,3 +1,11 @@
+// MARK: Menu headers
+
+"DRINKS" = "Напитки";
+"BURGERS" = "Бургеры";
+"ROLLS" = "Роллы";
+"SNACKS" = "Закуски";
+"OTHER" = "Разное";
+
 // MARK: Menu data Burgers
 
 "HANBURGER" = "Гамбургер";
@@ -9,6 +17,23 @@
 "BLACKHOURSE" = "Черный Конь";
 "CHEESEKING" = "Сырный Царь";
 "DEADINSIDE" = "ДедВнутри";
+
+// MARK: Menu data Rolls
+
+"SHAWARMA" = "Шаурма";
+"BEEFSHAWA" = "Шаурма говяжья";
+"LAMBSHAWARMA" = "Шаурма баранья";
+"GREATROLL" = "Ролл от Ахмеда";
+"PITASHAWA" = "Шаурма в пите";
+
+// MARK: Menu data Snacks
+
+"FRIES" = "Картофель свободы";
+"STRIPES" = "Куриные стрипсы";
+"BIGFRIES" = "Большая картоха";
+"CHICKENLEG" = "Куриная нога";
+"GREATMEAL" = "Великий ужин";
+"NUGGETS" = "Наггетсы";
 
 // MARK: Menu data Drinks
 

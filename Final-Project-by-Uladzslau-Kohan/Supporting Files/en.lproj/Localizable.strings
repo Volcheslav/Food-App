@@ -5,6 +5,13 @@
   Created by VironIT on 8/30/22.
   
 */
+// MARK: Menu headers
+
+"DRINKS" = "Drinks";
+"BURGERS" = "Burgers";
+"ROLLS" = "Rolls";
+"SNACKS" = "Snacks";
+"OTHER" = "Other";
 
 // MARK: Menu data Burgers
 
@@ -18,7 +25,25 @@
 "CHEESEKING" = "CheeseKing";
 "DEADINSIDE" = "DeadInside";
 
+// MARK: Menu data Rolls
+
+"SHAWARMA" = "Shawarma";
+"BEEFSHAWA" = "Beef kebab";
+"LAMBSHAWARMA" = "Lamb kebab";
+"GREATROLL" = "Big great tasty roll";
+"PITASHAWA" = "Pita kebab";
+
+// MARK: Menu data Snacks
+
+"FRIES" = "French fries";
+"STRIPES" = "Chicken strips";
+"BIGFRIES" = "Big french fries";
+"CHICKENLEG" = "Big chicken leg";
+"GREATMEAL" = "Great meal";
+"NUGGETS" = "Nuggets";
+
 // MARK: Menu data Drinks
+
 "REDBULL" = "RedBull";
 "PEPSI" = "Pepsi";
 "MOJITO" = "Mojito";

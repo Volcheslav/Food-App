@@ -20,6 +20,23 @@ final class MainScreenViewController: UIViewController {
             self.readFromPlist(section: "Drinks")
         }
     }
+    var plistRollItems: [[String:Any]]? {
+        get {
+            self.readFromPlist(section: "Rolls")
+        }
+    }
+    var plistSnacksItems: [[String:Any]]? {
+        get {
+            self.readFromPlist(section: "Snacks")
+        }
+    }
+    var plistHeaders: [String]? {
+        get {
+            self.readHeadersFromPlist()
+        }
+    }
+    
+    // MARK: - CompositionalLayout
     let compositionalLayout: UICollectionViewCompositionalLayout = {
         
         let fraction: CGFloat = 1 / 2
@@ -28,20 +45,20 @@ final class MainScreenViewController: UIViewController {
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset * 2, bottom: inset, trailing: inset * 2)
         // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(fraction))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
+        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: 0, bottom: inset, trailing: 0)
         section.orthogonalScrollingBehavior = .groupPaging
-
         
-//        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
-//        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
-//        section.boundarySupplementaryItems = [headerItem]
+        // Header
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
+        section.boundarySupplementaryItems = [headerItem]
 
         return UICollectionViewCompositionalLayout(section: section)
 
@@ -50,13 +67,13 @@ final class MainScreenViewController: UIViewController {
     // swiftlint:enable force_try
     // MARK: Outlets
     
-  //  @IBOutlet private weak var sectionNameLabel: UILabel!
     @IBOutlet private weak var mainFirstCollection: UICollectionView!
     
     // MARK: - LoadFunctions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       // print(readHeadersFromPlist())
         items = realm.objects(CartItem.self)
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self
@@ -64,13 +81,7 @@ final class MainScreenViewController: UIViewController {
         self.mainFirstCollection.layer.cornerRadius = 20
         self.mainFirstCollection.layer.masksToBounds = true
         self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
-//        self.sectionNameLabel.layer.cornerRadius = 10
-//        self.sectionNameLabel.layer.masksToBounds = true
-//        self.sectionNameLabel.backgroundColor = .black
-//        self.sectionNameLabel.text = ("MAIN_MENU_SECTION")§
-//        self.sectionNameLabel.textColor = .white
-//        self.sectionNameLabel.adjustsFontSizeToFitWidth = true
-        
+        self.mainFirstCollection.register(UINib(nibName: "HeaderSupplementaryView", bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: "HeaderSupplementaryView")
     }
     
     // MARK: - RealmFunctions
@@ -114,8 +125,21 @@ final class MainScreenViewController: UIViewController {
 extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        guard let sectionsNumber = self.plistHeaders?.count  else {
+            return 0
+        }
+        return sectionsNumber
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as? HeaderSupplementaryView else {
+                return HeaderSupplementaryView()
+            }
+            
+        headerView.name = (plistHeaders?[indexPath.section] ?? "noname")§
+            
+            return headerView
+        }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
@@ -123,6 +147,10 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             return self.plistBurgerItems?.count ?? 0
         case 1:
             return self.plistDrinksItems?.count ?? 0
+        case 2:
+            return self.plistRollItems?.count ?? 0
+        case 3:
+            return self.plistSnacksItems?.count ?? 0
         default:
             return 0
         }
@@ -137,6 +165,10 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             cellData = self.plistBurgerItems ?? []
         case 1:
              cellData = self.plistDrinksItems ?? []
+        case 2:
+            cellData = self.plistRollItems ?? []
+        case 3:
+            cellData = self.plistSnacksItems ?? []
         default:
             return .init()
         }
@@ -158,6 +190,10 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             cellData = self.plistBurgerItems ?? []
         case 1:
              cellData = self.plistDrinksItems ?? []
+        case 2:
+            cellData = self.plistRollItems ?? []
+        case 3:
+            cellData = self.plistSnacksItems ?? []
         default:
             break
         }
@@ -169,32 +205,6 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
 }
-
-// MARK: - Layoyt
-
-//extension MainScreenViewController: UICollectionViewDelegateFlowLayout {
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let itemsInHeigt: CGFloat = 2
-//        let paddingsHeight: CGFloat = (itemsInHeigt + 1) * 10 + 1
-//        let avalibalHeight: CGFloat = collectionView.frame.width - paddingsHeight
-//        let itemWidth = avalibalHeight / itemsInHeigt
-//        return CGSize(width: itemWidth, height: itemWidth * 1.5)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
-//    
-//}
 
 // MARK: - CellDelegate protocol
 
@@ -225,8 +235,14 @@ extension MainScreenViewController {
         guard let menu = plist[section] as? [[String:Any]] else { return [] }
         return menu
     }
-}
-
-extension MainScreenViewController {
     
+    func readHeadersFromPlist() -> [String] {
+        guard let path = Bundle.main.path(forResource: "Menu", ofType: "plist") else { return [] }
+        let url = URL(fileURLWithPath: path)
+        let data = try! Data(contentsOf: url)
+        
+        guard let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String:Any] else { return [] }
+        guard let headers = plist["MenuHeaders"] as? [String] else { return [] }
+        return headers
+    }
 }

@@ -1,14 +1,15 @@
 //
-//  CustomButton.swift
+//  CustomView.swift
 //  Final-Project-by-Uladzslau-Kohan
 //
-//  Created by VironIT on 8/23/22.
+//  Created by VironIT on 9/6/22.
 //
+
 //  swiftlint: disable all
 import UIKit
 
 @IBDesignable
-class UICustomButton: UIButton {
+class UICustomView: UIView {
     // button border colors
     @IBInspectable var borderColor: UIColor = UIColor.clear {
         didSet {

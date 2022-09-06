@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MenuHeaders</key>
+	<array>
+		<string>BURGERS</string>
+		<string>DRINKS</string>
+		<string>ROLLS</string>
+		<string>SNACKS</string>
+		<string>OTHER</string>
+	</array>
 	<key>Drinks</key>
 	<array>
 		<dict>
@@ -136,6 +144,122 @@
 			<string>burger8</string>
 			<key>calories</key>
 			<integer>1030</integer>
+		</dict>
+	</array>
+	<key>Rolls</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>SHAWARMA</string>
+			<key>price</key>
+			<real>3.49</real>
+			<key>imageName</key>
+			<string>roll0</string>
+			<key>calories</key>
+			<integer>1230</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>BEEFSHAWA</string>
+			<key>price</key>
+			<real>4.29</real>
+			<key>imageName</key>
+			<string>roll1</string>
+			<key>calories</key>
+			<integer>1340</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>LAMBSHAWARMA</string>
+			<key>price</key>
+			<real>4.29</real>
+			<key>imageName</key>
+			<string>roll2</string>
+			<key>calories</key>
+			<integer>1400</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>GREATROLL</string>
+			<key>price</key>
+			<real>3.99</real>
+			<key>imageName</key>
+			<string>roll3</string>
+			<key>calories</key>
+			<integer>990</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>PITASHAWA</string>
+			<key>price</key>
+			<real>2.17</real>
+			<key>imageName</key>
+			<string>roll4</string>
+			<key>calories</key>
+			<integer>980</integer>
+		</dict>
+	</array>
+	<key>Snacks</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>FRIES</string>
+			<key>price</key>
+			<real>0.99</real>
+			<key>imageName</key>
+			<string>snack0</string>
+			<key>calories</key>
+			<integer>600</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>STRIPES</string>
+			<key>price</key>
+			<real>1.59</real>
+			<key>imageName</key>
+			<string>snack1</string>
+			<key>calories</key>
+			<integer>800</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>BIGFRIES</string>
+			<key>price</key>
+			<real>2.99</real>
+			<key>imageName</key>
+			<string>snack2</string>
+			<key>calories</key>
+			<integer>1600</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>CHICKENLEG</string>
+			<key>price</key>
+			<real>2.53</real>
+			<key>imageName</key>
+			<string>snack3</string>
+			<key>calories</key>
+			<integer>1330</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>GREATMEAL</string>
+			<key>price</key>
+			<real>5.39</real>
+			<key>imageName</key>
+			<string>snack4</string>
+			<key>calories</key>
+			<integer>2000</integer>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>NUGGETS</string>
+			<key>price</key>
+			<real>1.49</real>
+			<key>imageName</key>
+			<string>snack5</string>
+			<key>calories</key>
+			<integer>760</integer>
 		</dict>
 	</array>
 </dict>

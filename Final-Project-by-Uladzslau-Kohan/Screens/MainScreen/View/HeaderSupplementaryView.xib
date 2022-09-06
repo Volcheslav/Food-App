@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderSupplementaryView" id="gTV-IL-0wX" customClass="HeaderSupplementaryView" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-7P-Rl8" customClass="UICustomView" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="352" height="50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                <color key="value" red="1" green="0.54333889289483739" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                <color key="value" red="0.5" green="0.19329747179507728" blue="0.016911814586388407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeQ-Rv-EPw">
+                        <rect key="frame" x="0.0" y="2" width="352" height="46"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ihZ-7P-Rl8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5ts-iK-nY9"/>
+                <constraint firstItem="yeQ-Rv-EPw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Bfu-p8-GeS"/>
+                <constraint firstAttribute="bottom" secondItem="yeQ-Rv-EPw" secondAttribute="bottom" constant="2" id="D6O-2d-aHD"/>
+                <constraint firstAttribute="trailing" secondItem="yeQ-Rv-EPw" secondAttribute="trailing" id="E92-hT-WTF"/>
+                <constraint firstAttribute="trailing" secondItem="ihZ-7P-Rl8" secondAttribute="trailing" id="OxM-G0-k7u"/>
+                <constraint firstAttribute="bottom" secondItem="ihZ-7P-Rl8" secondAttribute="bottom" id="dWr-kj-OOj"/>
+                <constraint firstItem="ihZ-7P-Rl8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="exT-XV-N4v"/>
+                <constraint firstItem="yeQ-Rv-EPw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="xLh-6h-oYL"/>
+            </constraints>
+            <size key="customSize" width="352" height="50"/>
+            <connections>
+                <outlet property="headerLabel" destination="yeQ-Rv-EPw" id="RwX-JT-IA9"/>
+            </connections>
+            <point key="canvasLocation" x="284" y="114"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
