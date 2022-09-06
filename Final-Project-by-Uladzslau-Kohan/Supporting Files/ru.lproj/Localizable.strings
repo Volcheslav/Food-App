@@ -112,6 +112,7 @@
 "YOUR_ORDER" = "Ваш заказ";
 "OK" = "OK";
 "CANCEL" = "Отмена";
+"DELETE_ALL" = "Очистить заказ";
 
 // MARK: Profile Info
 

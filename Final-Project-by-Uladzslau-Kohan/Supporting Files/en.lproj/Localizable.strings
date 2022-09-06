@@ -119,6 +119,7 @@
 "YOUR_ORDER" = "Your order";
 "OK" = "OK";
 "CANCEL" = "Cancel";
+"DELETE_ALL" = "Clear cart";
 
 // MARK: Profile Info
 

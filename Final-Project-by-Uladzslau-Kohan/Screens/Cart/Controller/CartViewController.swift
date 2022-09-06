@@ -8,7 +8,7 @@ import RealmSwift
 import UIKit
 
 final class CartViewController: UIViewController {
-    private let cellsOnView: CGFloat = 7
+    private let cellsOnView: CGFloat = 5
     let realm = try! Realm()
     var items: Results<CartItem>!
     var order: [(CartItem, Int)]? {
@@ -23,11 +23,22 @@ final class CartViewController: UIViewController {
     
     @IBOutlet private weak var cartTableView: UITableView!
     @IBOutlet private weak var priceLabel: UILabel!
+    @IBOutlet private weak var deleteButton: UICustomButton!
+    
+    // MARK: - Actions
+    @IBAction private func deleteAllAction(_ sender: UICustomButton) {
+        try! realm.write {
+            realm.deleteAll()
+        }
+        getCartArray()
+        cartTableView.reloadData()
+    }
     
     // MARK: - ViewLoad functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.deleteButton.setTitle(("DELETE_ALL")§, for: .normal)
         items = realm.objects(CartItem.self)
     }
     
