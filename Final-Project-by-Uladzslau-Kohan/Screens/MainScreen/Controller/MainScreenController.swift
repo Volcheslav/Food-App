@@ -60,6 +60,7 @@ final class MainScreenViewController: UIViewController {
     // swiftlint:enable force_try
     // MARK: Outlets
     
+    @IBOutlet private weak var greetingLabel: UILabel!
     @IBOutlet private weak var mainFirstCollection: UICollectionView!
     
     // MARK: - LoadFunctions
@@ -74,6 +75,12 @@ final class MainScreenViewController: UIViewController {
         self.mainFirstCollection.layer.masksToBounds = true
         self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
         self.mainFirstCollection.register(UINib(nibName: "HeaderSupplementaryView", bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: "HeaderSupplementaryView")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.greetingLabel.text = "\(("MAIN_HELLO")§) \(ParseUserData.current?.username ?? "")"
+        self.greetingLabel.textColor = .white
     }
     
     // MARK: - RealmFunctions

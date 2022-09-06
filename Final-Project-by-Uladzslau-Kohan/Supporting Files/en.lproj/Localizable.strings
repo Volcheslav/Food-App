@@ -64,6 +64,7 @@
 "MAIN_ALERT_TITLE" = "added to cart";
 "MAIN_ALERT_MESSAGE" = "Success";
 "REGISTR_ALERT" = "You must sign up to add your order to cart. Do you want to go to sign up page?";
+"MAIN_HELLO" = "Welcome to STOLOVKA";
 
 // MARK: Main modal
 
