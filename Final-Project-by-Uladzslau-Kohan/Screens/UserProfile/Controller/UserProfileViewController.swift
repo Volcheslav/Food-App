@@ -263,23 +263,31 @@ final class UserProfileViewController: UIViewController {
     // MARK: - Alert functions
     
     private func showLogoutAlert(title: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addCancelAction()
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
         let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: { [weak self] _ in
             self?.logout()
         })
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
     
     private func showAlertMessage(title: String, message: String?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: title, message: message, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
+        alert.setValue(attributes?.last, forKey: "attributedMessage")
+        
         alert.addCancelAction()
         self.present(alert, animated: true)
     }
     
     private func showSuccessAlert(title: String, viewController: UIViewController) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
         viewController.present(alert, animated: true, completion: nil)
         let when = DispatchTime.now() + 1.0
         DispatchQueue.main.asyncAfter(deadline: when) {
@@ -288,9 +296,11 @@ final class UserProfileViewController: UIViewController {
     }
     
     private func showEditAlert(title: String, indexPath: IndexPath) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
         alert.addCancelAction()
         alert.addTextField(configurationHandler: { $0.placeholder = "Enter data" })
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
             guard alert.textFields!.first!.hasText else {
                 self?.showEditAlert(title: title, indexPath: indexPath)
@@ -303,8 +313,10 @@ final class UserProfileViewController: UIViewController {
     }
     
     private func showIncorrectAlert(title: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
         alert.addCancelAction()
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
         self.present(alert, animated: true, completion: nil)
     }
     // MARK: - Keybord functions

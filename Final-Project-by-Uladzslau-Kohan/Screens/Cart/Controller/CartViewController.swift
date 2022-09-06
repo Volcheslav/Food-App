@@ -63,7 +63,10 @@ final class CartViewController: UIViewController {
     // MARK: - Alert windows
     
     func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String) {
-        let alert = UIAlertController(title: ("ALERT")§, message: ("DELETE_ALERT_MESSAGE")§, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: ("ALERT")§, message: ("DELETE_ALERT_MESSAGE")§, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
+        alert.setValue(attributes?.last, forKey: "attributedMessage")
         alert.addCancelAction()
         let ok = UIAlertAction(title: ("OK")§, style: .default, handler: {[weak self] _ in
             self?.deleteFromRealmByName(name)
@@ -74,7 +77,10 @@ final class CartViewController: UIViewController {
     }
     
     func showClearCartAlert(tableView: UITableView) {
-        let alert = UIAlertController(title: ("ALERT")§, message: ("DELETE_ALL_ALERT_MESSAGE")§, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: ("ALERT")§, message: ("DELETE_ALL_ALERT_MESSAGE")§, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
+        alert.setValue(attributes?.last, forKey: "attributedMessage")
         alert.addCancelAction()
         let ok = UIAlertAction(title: ("OK")§, style: .default, handler: {[unowned self] _ in
             self.deletAllRealm()
@@ -85,10 +91,15 @@ final class CartViewController: UIViewController {
     }
     
     func showEmptyCartAlert() {
-        let alert = UIAlertController(title: ("ALERT")§, message: ("CART_IS_EMPTY")§, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attributes = ShowAlerts.setAtributes(title: ("ALERT")§, message: ("CART_IS_EMPTY")§, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        alert.setValue(attributes?.first, forKey: "attributedTitle")
+        alert.setValue(attributes?.last, forKey: "attributedMessage")
         alert.addCancelAction()
         self.present(alert, animated: true)
     }
+    
+    // MARK: - Realm delete functions
     
     func deleteFromRealmByName(_ name: String) {
         try! realm.write {
