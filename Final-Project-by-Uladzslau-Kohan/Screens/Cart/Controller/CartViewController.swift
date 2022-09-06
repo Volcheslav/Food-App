@@ -21,13 +21,17 @@ final class CartViewController: UIViewController {
     var wholePrice: Double?
     // MARK: - Outlets
     
+    @IBOutlet private weak var greetLabel: UILabel!
     @IBOutlet private weak var cartTableView: UITableView!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var deleteButton: UICustomButton!
     
     // MARK: - Actions
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
-        showClearCartAlert(tableView: self.cartTableView)
+        if self.cartTableView.visibleCells.isEmpty {
+            self.showEmptyCartAlert()
+        } else {
+            self.showClearCartAlert(tableView: self.cartTableView) }
     }
     
     // MARK: - ViewLoad functions
@@ -40,7 +44,11 @@ final class CartViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        getCartArray()
+        if ParseUserData.current != nil {
+            self.greetLabel.text = "\(("ORDER")§) \(ParseUserData.current?.username ?? "")" } else {
+                self.greetLabel.text = ("LOGIN_CART")§
+            }
+        self.getCartArray()
         self.cartTableView.reloadData()
     }
     
@@ -76,11 +84,17 @@ final class CartViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func showEmptyCartAlert() {
+        let alert = UIAlertController(title: ("ALERT")§, message: ("CART_IS_EMPTY")§, preferredStyle: .alert)
+        alert.addCancelAction()
+        self.present(alert, animated: true)
+    }
+    
     func deleteFromRealmByName(_ name: String) {
         try! realm.write {
             realm.delete(items.filter { $0.name == name })
         }
-        getCartArray()
+        self.getCartArray()
     }
     
     func deleteFromRealmOne( _ name: String) {
@@ -144,8 +158,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension CartViewController: MyCellDelegate {
     func didPressButtonRemove(_ tag: Int, name: String) {
-        deleteFromRealmOne(name)
-        getCartArray()
+        self.deleteFromRealmOne(name)
+        self.getCartArray()
         self.cartTableView.reloadData()
         
     }
@@ -158,7 +172,7 @@ extension CartViewController: MyCellDelegate {
         try! realm.write {
             realm.add(cartItem)
         }
-        getCartArray()
+        self.getCartArray()
         self.cartTableView.reloadData()
     }
 }

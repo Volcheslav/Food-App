@@ -121,6 +121,9 @@
 "CANCEL" = "Cancel";
 "DELETE_ALL" = "Clear cart";
 "DELETE_ALL_ALERT_MESSAGE" = "Do you realy wand to remove all from your cart?";
+"ORDER" = "Have a good day";
+"LOGIN_CART" = "Log in to add something to your cart";
+"CART_IS_EMPTY" = "Your cart is empty!";
 
 // MARK: Profile Info
 
