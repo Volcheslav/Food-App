@@ -173,9 +173,6 @@
 		533630B628AE7F3900DB692C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */,
-				533DE12F28C762B9009DA2A9 /* HeaderViewCell.swift */,
-				53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */,
 				53D99D87289ABD6D002755A4 /* MainScreenController.swift */,
 				53E9ED2428BE4B3F0028EEAA /* MainModalInfoViewController.swift */,
 				5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */,
@@ -188,6 +185,8 @@
 			children = (
 				53D99D89289ABD6D002755A4 /* MainScreen.storyboard */,
 				533DE13028C762B9009DA2A9 /* HeaderSupplementaryView.xib */,
+				533DE12F28C762B9009DA2A9 /* HeaderViewCell.swift */,
+				5344CE1B28B64F200079C8F7 /* MainScreenCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				533D1D0828B8ECBF00217919 /* MenuData.swift */,
+				53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,7 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				5340FEF528BFA4C9001F967D /* UserProfileViewController.swift */,
-				533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +229,7 @@
 		5340FEF028BFA422001F967D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */,
 				5340FEFB28BFC5D4001F967D /* ProfileScreen.storyboard */,
 			);
 			path = View;
@@ -264,9 +264,7 @@
 		5347F56828B79BD500995448 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5347F57628B7B8FA00995448 /* CartTableViewCell.swift */,
 				5347F57028B79EE500995448 /* CartViewController.swift */,
-				534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,6 +272,7 @@
 		5347F56928B79BE600995448 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5347F57628B7B8FA00995448 /* CartTableViewCell.swift */,
 				5339A9A028BE24A90079DD3D /* Cart.storyboard */,
 			);
 			path = View;
@@ -282,6 +281,7 @@
 		5347F56A28B79BEE00995448 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

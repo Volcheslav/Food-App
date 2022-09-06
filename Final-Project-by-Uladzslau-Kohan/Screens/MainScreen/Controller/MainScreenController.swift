@@ -11,29 +11,22 @@ final class MainScreenViewController: UIViewController {
     let realm = try! Realm()
     var items: Results<CartItem>!
     var plistBurgerItems: [[String:Any]]? {
-        get {
-            self.readFromPlist(section: "Menu")
-        }
+        get { self.readFromPlist(section: "Menu") }
     }
     var plistDrinksItems: [[String:Any]]? {
-        get {
-            self.readFromPlist(section: "Drinks")
-        }
+        get { self.readFromPlist(section: "Drinks") }
     }
     var plistRollItems: [[String:Any]]? {
-        get {
-            self.readFromPlist(section: "Rolls")
-        }
+        get { self.readFromPlist(section: "Rolls") }
     }
     var plistSnacksItems: [[String:Any]]? {
-        get {
-            self.readFromPlist(section: "Snacks")
-        }
+        get { self.readFromPlist(section: "Snacks") }
+    }
+    var plistOtherItems: [[String:Any]]? {
+        get { self.readFromPlist(section: "Other") }
     }
     var plistHeaders: [String]? {
-        get {
-            self.readHeadersFromPlist()
-        }
+        get { self.readHeadersFromPlist() }
     }
     
     // MARK: - CompositionalLayout
@@ -73,7 +66,6 @@ final class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // print(readHeadersFromPlist())
         items = realm.objects(CartItem.self)
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self
@@ -100,7 +92,7 @@ final class MainScreenViewController: UIViewController {
     
     // MARK: - ShowModal view controller
     
-    func showModal(name:String, price: Double, calories: Int, imageName: String) {
+    func showModal(name:String, price: Double, calories: Int, imageName: String, state: Bool) {
         let storybord = UIStoryboard(name: "MainScreen", bundle: nil)
         guard let viewController = storybord.instantiateViewController(identifier: "mainModal") as? MainModalInfoViewController else {
             return
@@ -110,6 +102,7 @@ final class MainScreenViewController: UIViewController {
         viewController.price = price
         viewController.caloreis = calories
         viewController.imageName = imageName
+        viewController.caloriesLabelState = state
         viewController.modalPresentationStyle = .overCurrentContext
         show(viewController, sender: nil)
     }
@@ -151,6 +144,8 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             return self.plistRollItems?.count ?? 0
         case 3:
             return self.plistSnacksItems?.count ?? 0
+        case 4:
+            return self.plistOtherItems?.count ?? 0
         default:
             return 0
         }
@@ -169,6 +164,8 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             cellData = self.plistRollItems ?? []
         case 3:
             cellData = self.plistSnacksItems ?? []
+        case 4:
+            cellData = self.plistOtherItems ?? []
         default:
             return .init()
         }
@@ -194,14 +191,25 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             cellData = self.plistRollItems ?? []
         case 3:
             cellData = self.plistSnacksItems ?? []
+        case 4:
+            cellData = self.plistOtherItems ?? []
         default:
             break
         }
+        let calories: Int
+        let state:Bool
+        if indexPath.section == 4 {
+            calories = 0
+            state = true
+        } else {
+            guard let caloriesFrom = cellData[indexPath.row]["calories"] as? Int else { return }
+            calories = caloriesFrom
+            state = false
+        }
         guard let name = cellData[indexPath.row]["name"] as? String,
               let price = cellData[indexPath.row]["price"] as? Double,
-              let calories = cellData[indexPath.row]["calories"] as? Int,
               let imageName = cellData[indexPath.row]["imageName"] as? String else { return }
-        showModal(name: name, price: price, calories: calories, imageName: imageName)
+        showModal(name: name, price: price, calories: calories, imageName: imageName, state: state)
     }
     
 }

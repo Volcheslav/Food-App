@@ -49,6 +49,15 @@
 "MOJITO" = "Mojito";
 "COLA" = "Coca-Cola";
 
+// MARK: Menu data Other
+
+"GOLDCUTLERY" = "Golden cutlery";
+"CUTLERY" = "Cutlery";
+"BOX" = "Big box";
+"DINOTOY" = "Dino toy";
+"SALT" = "Salt";
+"LUNCHBOX" = "Lunchbox";
+
 // MARK: Main screen
 
 "MAIN_MENU_SECTION" = "Menu";

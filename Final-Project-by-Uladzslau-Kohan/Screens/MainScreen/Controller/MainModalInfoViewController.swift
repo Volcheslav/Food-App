@@ -14,6 +14,7 @@ final class MainModalInfoViewController: UIViewController {
     var price: Double = 0
     var caloreis: Int = 0
     var imageName: String = ""
+    var caloriesLabelState = false
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
@@ -43,7 +44,9 @@ final class MainModalInfoViewController: UIViewController {
         self.nameLabel.text = ("MODAL_MAIN_NAME")§
         self.priceLabel.text = ("MODAL_MAIN_PRICE")§
         self.caloriesLabel.text = ("MODAL_MAIN_CALORIES")§
-        self.addToCartButton.setTitle(("MODAL_MAIN_ADD_TO_CART")§, for: .normal) 
+        self.addToCartButton.setTitle(("MODAL_MAIN_ADD_TO_CART")§, for: .normal)
+        self.productCaloriesLabel.isHidden = caloriesLabelState
+        self.caloriesLabel.isHidden = caloriesLabelState
     }
     
     override func viewWillAppear(_ animated: Bool) {

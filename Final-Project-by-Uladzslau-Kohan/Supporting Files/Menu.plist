@@ -53,6 +53,57 @@
 			<integer>300</integer>
 		</dict>
 	</array>
+	<key>Other</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>GOLDCUTLERY</string>
+			<key>price</key>
+			<real>3.19</real>
+			<key>imageName</key>
+			<string>other0</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>CUTLERY</string>
+			<key>price</key>
+			<real>0.19</real>
+			<key>imageName</key>
+			<string>other1</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>BOX</string>
+			<key>price</key>
+			<real>0.39</real>
+			<key>imageName</key>
+			<string>other2</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>DINOTOY</string>
+			<key>price</key>
+			<real>5.39</real>
+			<key>imageName</key>
+			<string>other3</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>SALT</string>
+			<key>price</key>
+			<real>0.55</real>
+			<key>imageName</key>
+			<string>other4</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>LUNCHBOX</string>
+			<key>price</key>
+			<real>0.6899999999999999</real>
+			<key>imageName</key>
+			<string>other5</string>
+		</dict>
+	</array>
 	<key>Menu</key>
 	<array>
 		<dict>
