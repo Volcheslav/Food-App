@@ -68,7 +68,7 @@
 
 // MARK: Main modal
 
-"MODAL_MAIN_NAME" = "Product name:";
+"MODAL_MAIN_NAME" = "Name:";
 "MODAL_MAIN_PRICE" = "Price:";
 "MODAL_MAIN_CALORIES" = "Calories";
 "MODAL_MAIN_ADD_TO_CART" = "Add to cart";
