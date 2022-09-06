@@ -120,6 +120,7 @@
 "OK" = "OK";
 "CANCEL" = "Cancel";
 "DELETE_ALL" = "Clear cart";
+"DELETE_ALL_ALERT_MESSAGE" = "Do you realy wand to remove all from your cart?";
 
 // MARK: Profile Info
 

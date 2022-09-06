@@ -27,11 +27,7 @@ final class CartViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
-        try! realm.write {
-            realm.deleteAll()
-        }
-        getCartArray()
-        cartTableView.reloadData()
+        showClearCartAlert(tableView: self.cartTableView)
     }
     
     // MARK: - ViewLoad functions
@@ -69,6 +65,17 @@ final class CartViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func showClearCartAlert(tableView: UITableView) {
+        let alert = UIAlertController(title: ("ALERT")§, message: ("DELETE_ALL_ALERT_MESSAGE")§, preferredStyle: .alert)
+        alert.addCancelAction()
+        let ok = UIAlertAction(title: ("OK")§, style: .default, handler: {[unowned self] _ in
+            self.deletAllRealm()
+            tableView.reloadData()
+        })
+        alert.addAction(ok)
+        self.present(alert, animated: true)
+    }
+    
     func deleteFromRealmByName(_ name: String) {
         try! realm.write {
             realm.delete(items.filter { $0.name == name })
@@ -81,7 +88,13 @@ final class CartViewController: UIViewController {
         try! realm.write {
             realm.delete(firstItem)
         }
-        
+    }
+    
+    func deletAllRealm() {
+        try! self.realm.write {
+            self.realm.deleteAll()
+        }
+        self.getCartArray()
     }
 }
 // MARK: - Extension table control
