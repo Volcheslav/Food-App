@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Natasha.ttf">
+            <string>Natasha</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Profile-->
         <scene sceneID="K7X-5Y-ZaP">
@@ -25,17 +30,17 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-Tc-ccS">
                                                 <rect key="frame" x="0.0" y="0.0" width="324" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GRF-fH-gUb">
                                                 <rect key="frame" x="0.0" y="54" width="324" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ML8-uI-7B5">
                                                 <rect key="frame" x="0.0" y="108" width="324" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -44,10 +49,11 @@
                                         <rect key="frame" x="20" y="182" width="324" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hae-Fn-8N1" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="U6J-QL-I9o"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="person.fill.badge.plus" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
@@ -66,7 +72,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-HB-U9w" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="120" y="0.0" width="79" height="30"/>
+                                                <rect key="frame" x="115" y="0.0" width="89" height="30"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="backward" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -87,7 +94,8 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zww-jr-lcm" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="247.5" y="0.0" width="76.5" height="30"/>
+                                                <rect key="frame" x="229.5" y="0.0" width="94.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="person.fill.checkmark" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
@@ -134,17 +142,17 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-i4-Vsm">
-                                                            <rect key="frame" x="25" y="25" width="364" height="20.5"/>
+                                                            <rect key="frame" x="25" y="26.5" width="364" height="17"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-BX-gaC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="41.5" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCX-ql-05z">
-                                                                    <rect key="frame" x="322.5" y="0.0" width="41.5" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <rect key="frame" x="315" y="0.0" width="49" height="17"/>
+                                                                    <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -181,7 +189,8 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-Jx-zaP" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                        <rect key="frame" x="171" y="783" width="72" height="30"/>
+                                        <rect key="frame" x="156.5" y="783" width="101" height="30"/>
+                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button" image="arrowshape.turn.up.backward.fill" catalog="system"/>
                                         <userDefinedRuntimeAttributes>
@@ -246,16 +255,16 @@
     </scenes>
     <designables>
         <designable name="Cya-HB-U9w">
-            <size key="intrinsicContentSize" width="79" height="22"/>
+            <size key="intrinsicContentSize" width="89" height="18"/>
         </designable>
         <designable name="TIu-Jx-zaP">
-            <size key="intrinsicContentSize" width="72" height="21.5"/>
+            <size key="intrinsicContentSize" width="101" height="22"/>
         </designable>
         <designable name="hae-Fn-8N1">
-            <size key="intrinsicContentSize" width="71.5" height="25.5"/>
+            <size key="intrinsicContentSize" width="89.5" height="25.5"/>
         </designable>
         <designable name="zww-jr-lcm">
-            <size key="intrinsicContentSize" width="76.5" height="21.5"/>
+            <size key="intrinsicContentSize" width="94.5" height="21.5"/>
         </designable>
     </designables>
     <resources>

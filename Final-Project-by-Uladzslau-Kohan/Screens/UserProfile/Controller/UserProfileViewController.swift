@@ -292,7 +292,9 @@ final class UserProfileViewController: UIViewController {
         alert.addCancelAction()
         alert.addTextField(configurationHandler: { $0.placeholder = "Enter data" })
         let okAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
-            guard alert.textFields!.first!.hasText else { return }
+            guard alert.textFields!.first!.hasText else {
+                self?.showEditAlert(title: title, indexPath: indexPath)
+                return }
             let info = alert.textFields!.first!.text!
             self?.editTableData(indexPath: indexPath, editableData: info)
         })
@@ -368,7 +370,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             DispatchQueue.main.async {
                 label.text = "\(("HELLO")§), \(ParseUserData.current?.username ?? "John Doe")"
             }
-            label.font = .systemFont(ofSize: 44)
+            label.font = UIFont(name: "Buran USSR", size: 36)
             label.textColor = .white
             label.textAlignment = .center
             headerView.addSubview(label)
@@ -382,7 +384,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableInfoHeaderHeigh))
             let label = UILabel(frame: .init(x: 0, y: 0, width: headerView.frame.width - 10, height: headerView.frame.width - 10))
             label.text = "\(("USER_DATA")§)"
-            label.font = .systemFont(ofSize: 30)
+            label.font = UIFont(name: "Buran USSR", size: 30)
             label.textColor = .white
             label.textAlignment = .center
             headerView.addSubview(label)

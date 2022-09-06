@@ -27,7 +27,7 @@ extension String {
     
     func isValidAge() -> Bool {
         guard let age = Int(self) else { return false }
-        return age > 0 && age < 150
+        return age > 5 && age < 120
     }
     
     func isValidCardNumber() -> Bool {

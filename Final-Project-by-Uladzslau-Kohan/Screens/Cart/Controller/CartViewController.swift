@@ -146,12 +146,24 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         return height
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ("YOUR_ORDER")§
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        let label = UILabel()
+        label.frame = .init(x: 0, y: 0, width: headerView.frame.width - 10, height: headerView.frame.height - 10)
+        DispatchQueue.main.async {
+            label.text = ("YOUR_ORDER")§
+        }
+        label.font = UIFont(name: "Buran USSR", size: 25)
+        label.textColor = .black
+        label.textAlignment = .left
+        headerView.addSubview(label)
+        label.center = headerView.center
+        headerView.backgroundColor = .systemGray3
+        return headerView
     }
-    
+
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(50)
+        return CGFloat(60)
     }
     
 }

@@ -17,6 +17,8 @@
 		533DE13128C762B9009DA2A9 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533DE12F28C762B9009DA2A9 /* HeaderViewCell.swift */; };
 		533DE13228C762B9009DA2A9 /* HeaderSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533DE13028C762B9009DA2A9 /* HeaderSupplementaryView.xib */; };
 		533DE13728C7668B009DA2A9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533DE13628C7668B009DA2A9 /* CustomView.swift */; };
+		533DE14028C7A864009DA2A9 /* Natasha.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 533DE13F28C7A864009DA2A9 /* Natasha.ttf */; };
+		533DE14328C7A86C009DA2A9 /* Buran USSR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 533DE14228C7A86C009DA2A9 /* Buran USSR.ttf */; };
 		533FEB1228C215BA00FE88FC /* UserProfileStringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */; };
 		5340FEDD28BF7AF4001F967D /* ParseKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEDC28BF7AF4001F967D /* ParseKeys.swift */; };
 		5340FEE128BF7E0A001F967D /* ParseUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5340FEE028BF7E0A001F967D /* ParseUserData.swift */; };
@@ -54,6 +56,8 @@
 		533DE12F28C762B9009DA2A9 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		533DE13028C762B9009DA2A9 /* HeaderSupplementaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSupplementaryView.xib; sourceTree = "<group>"; };
 		533DE13628C7668B009DA2A9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		533DE13F28C7A864009DA2A9 /* Natasha.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Natasha.ttf; sourceTree = "<group>"; };
+		533DE14228C7A86C009DA2A9 /* Buran USSR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Buran USSR.ttf"; sourceTree = "<group>"; };
 		533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileStringExtensions.swift; sourceTree = "<group>"; };
 		5340FEDC28BF7AF4001F967D /* ParseKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseKeys.swift; sourceTree = "<group>"; };
 		5340FEE028BF7E0A001F967D /* ParseUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseUserData.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 		533630AF28AE76A100DB692C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				533DE13E28C7A857009DA2A9 /* Fonts */,
 				53D99D8C289ABD6F002755A4 /* Assets.xcassets */,
 				53D99D91289ABD6F002755A4 /* Info.plist */,
 				5339A99328BE20D80079DD3D /* Localizable.strings */,
@@ -198,6 +203,15 @@
 				53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		533DE13E28C7A857009DA2A9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				533DE13F28C7A864009DA2A9 /* Natasha.ttf */,
+				533DE14228C7A86C009DA2A9 /* Buran USSR.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		5340FEDF28BF7DEC001F967D /* ParseUser */ = {
@@ -388,9 +402,11 @@
 				5340FEF928BFC5D4001F967D /* ProfileScreen.storyboard in Resources */,
 				5339718C28C613F000A61C22 /* Menu.plist in Resources */,
 				53D99D90289ABD6F002755A4 /* LaunchScreen.storyboard in Resources */,
+				533DE14328C7A86C009DA2A9 /* Buran USSR.ttf in Resources */,
 				53D99D8D289ABD6F002755A4 /* Assets.xcassets in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,
 				53D99D8B289ABD6D002755A4 /* MainScreen.storyboard in Resources */,
+				533DE14028C7A864009DA2A9 /* Natasha.ttf in Resources */,
 				5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */,
 				533DE13228C762B9009DA2A9 /* HeaderSupplementaryView.xib in Resources */,
 			);
