@@ -30,6 +30,7 @@
 		5347F57728B7B8FA00995448 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57628B7B8FA00995448 /* CartTableViewCell.swift */; };
 		534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */; };
 		5366140128C8D09500716338 /* plusAdd.json in Resources */ = {isa = PBXBuildFile; fileRef = 5366140028C8D09400716338 /* plusAdd.json */; };
+		5366140A28C8DC8300716338 /* ParseOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366140928C8DC8300716338 /* ParseOrderData.swift */; };
 		53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D83289ABD6D002755A4 /* AppDelegate.swift */; };
 		53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D85289ABD6D002755A4 /* SceneDelegate.swift */; };
 		53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D87289ABD6D002755A4 /* MainScreenController.swift */; };
@@ -72,6 +73,7 @@
 		5347F57628B7B8FA00995448 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCellDelegateProtocol.swift; sourceTree = "<group>"; };
 		5366140028C8D09400716338 /* plusAdd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plusAdd.json; sourceTree = "<group>"; };
+		5366140928C8DC8300716338 /* ParseOrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseOrderData.swift; sourceTree = "<group>"; };
 		53D99D80289ABD6D002755A4 /* Final-Project-by-Uladzslau-Kohan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final-Project-by-Uladzslau-Kohan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D99D83289ABD6D002755A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D99D85289ABD6D002755A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,12 +219,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		5340FEDF28BF7DEC001F967D /* ParseUser */ = {
+		5340FEDF28BF7DEC001F967D /* User */ = {
 			isa = PBXGroup;
 			children = (
 				5340FEE028BF7E0A001F967D /* ParseUserData.swift */,
 			);
-			path = ParseUser;
+			path = User;
 			sourceTree = "<group>";
 		};
 		5340FEEE28BFA3DA001F967D /* UserProfile */ = {
@@ -311,6 +313,23 @@
 			path = Lottie;
 			sourceTree = "<group>";
 		};
+		5366140628C8DC3100716338 /* Parse */ = {
+			isa = PBXGroup;
+			children = (
+				5366140828C8DC5B00716338 /* Order */,
+				5340FEDF28BF7DEC001F967D /* User */,
+			);
+			path = Parse;
+			sourceTree = "<group>";
+		};
+		5366140828C8DC5B00716338 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				5366140928C8DC8300716338 /* ParseOrderData.swift */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		53D99D77289ABD6D002755A4 = {
 			isa = PBXGroup;
 			children = (
@@ -334,7 +353,7 @@
 			children = (
 				533630AB28AE766500DB692C /* Application */,
 				533630B428AE7F0400DB692C /* Screens */,
-				5340FEDF28BF7DEC001F967D /* ParseUser */,
+				5366140628C8DC3100716338 /* Parse */,
 				5347F56328B7869700995448 /* Realm */,
 				533630AF28AE76A100DB692C /* Supporting Files */,
 			);
@@ -509,6 +528,7 @@
 				533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */,
 				534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */,
 				531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */,
+				5366140A28C8DC8300716338 /* ParseOrderData.swift in Sources */,
 				533DE13128C762B9009DA2A9 /* HeaderViewCell.swift in Sources */,
 				5340FEE128BF7E0A001F967D /* ParseUserData.swift in Sources */,
 			);

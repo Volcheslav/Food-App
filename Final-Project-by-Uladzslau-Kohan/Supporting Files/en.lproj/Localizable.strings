@@ -125,6 +125,7 @@
 "ORDER" = "Have a good day";
 "LOGIN_CART" = "Log in to add something to your cart";
 "CART_IS_EMPTY" = "Your cart is empty!";
+"UPLOAD_ORDER" = "Send order";
 
 // MARK: Profile Info
 

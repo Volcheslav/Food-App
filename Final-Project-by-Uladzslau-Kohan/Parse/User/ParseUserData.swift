@@ -34,4 +34,6 @@ struct ParseUserData: ParseUser {
     var phoneNumber: String?
     var creditCardnumder: String?
     
+    var orders: [ParseOrder]?
+    
 }

@@ -36,21 +36,26 @@ final class CartViewController: UIViewController {
     @IBOutlet private weak var cartTableView: UITableView!
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var deleteButton: UICustomButton!
+    @IBOutlet private weak var uploarOrderButton: UICustomButton!
     
     // MARK: - Actions
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
-        self.animateButtonPush()
+        self.animateButtonPush(button: sender)
         if self.cartTableView.visibleCells.isEmpty {
             self.showEmptyCartAlert()
         } else {
             self.showClearCartAlert(tableView: self.cartTableView) }
     }
     
+    @IBAction private func uploadOrderAction(_ sender: UICustomButton) {
+        self.animateButtonPush(button: sender)
+    }
     // MARK: - ViewLoad functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.deleteButton.setTitle(("DELETE_ALL")§, for: .normal)
+        self.uploarOrderButton.setTitle(("UPLOAD_ORDER")§, for: .normal)
         items = realm.objects(CartItem.self)
     }
     
@@ -157,15 +162,11 @@ final class CartViewController: UIViewController {
     
     // MARK: - Button animate
 
-    private func animateButtonPush() {
+    private func animateButtonPush(button: UICustomButton) {
         UIView.animate(
             withDuration: 0.3,
-            animations: { [unowned self] in
-                self.deleteButton.transform = .init(scaleX: 0.9, y: 0.8)
-            },
-            completion: { [unowned self] _ in
-                self.deleteButton.transform = .identity
-            }
+            animations: { button.transform = .init(scaleX: 0.9, y: 0.8) },
+            completion: { _ in button.transform = .identity }
         )
     }
 }

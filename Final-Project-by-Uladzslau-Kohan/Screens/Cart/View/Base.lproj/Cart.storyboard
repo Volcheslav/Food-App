@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +36,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JH2-rv-FmD">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JH2-rv-FmD" userLabel="NameButtonsStack">
                                                     <rect key="frame" x="5" y="9" width="48" height="49.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzI-UP-jST">
@@ -44,7 +45,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="left" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="klE-Py-s1H">
+                                                        <stackView opaque="NO" contentMode="left" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="klE-Py-s1H" userLabel="ButtonsStack">
                                                             <rect key="frame" x="0.0" y="27.5" width="48" height="22"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-ug-QCI">
@@ -65,7 +66,7 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="topRight" distribution="fillProportionally" alignment="firstBaseline" spacing="21" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-AK-dTY">
+                                                <stackView opaque="NO" contentMode="topRight" distribution="fillProportionally" alignment="firstBaseline" spacing="21" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-AK-dTY" userLabel="PriceNumberStack">
                                                     <rect key="frame" x="296" y="22.5" width="110" height="22.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwD-mp-qfS">
@@ -132,32 +133,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPf-6D-Tr8" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                <rect key="frame" x="313" y="800.5" width="81" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="YfG-4c-DLz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="20"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="x.circle.fill" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                        <color key="value" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                                        <color key="value" red="0.32285057109999998" green="0.17637479510000001" blue="0.0041067471229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="deleteAllAction:" destination="YtO-fn-oM4" eventType="touchUpInside" id="pVW-Mx-KXJ"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twr-Hs-lFF" customClass="UICustomView" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Twr-Hs-lFF" userLabel="Header" customClass="UICustomView" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FpT-nD-nuD">
@@ -187,24 +163,76 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Etd-Jm-nxP" userLabel="Buttons Stack">
+                                <rect key="frame" x="10" y="802.5" width="394" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAC-dd-WA1" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="197" height="35"/>
+                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="arrow.up.circle.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="1" green="0.21545814020000001" blue="0.2335257329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.5" green="0.1077290701" blue="0.11676286650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="uploadOrderAction:" destination="YtO-fn-oM4" eventType="touchUpInside" id="nmq-Ag-G4b"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPf-6D-Tr8" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                        <rect key="frame" x="205" y="0.0" width="189" height="35"/>
+                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button" image="x.circle.fill" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="1" green="0.21545814020000001" blue="0.2335257329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.5" green="0.1077290701" blue="0.11676286650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteAllAction:" destination="YtO-fn-oM4" eventType="touchUpInside" id="pVW-Mx-KXJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="yGn-eD-H97"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZF1-G2-Jmn"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="Twr-Hs-lFF" firstAttribute="leading" secondItem="ZF1-G2-Jmn" secondAttribute="leading" id="1az-Tz-ayE"/>
+                            <constraint firstItem="ZF1-G2-Jmn" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Etd-Jm-nxP" secondAttribute="bottom" constant="10" id="2F6-Rq-r5E"/>
+                            <constraint firstItem="Etd-Jm-nxP" firstAttribute="top" secondItem="102-eS-0SG" secondAttribute="bottom" constant="12" id="3FL-sg-ECo"/>
                             <constraint firstItem="ZF1-G2-Jmn" firstAttribute="trailing" secondItem="007-eR-Ded" secondAttribute="trailing" constant="20" id="4se-mB-eRH"/>
-                            <constraint firstItem="JPf-6D-Tr8" firstAttribute="top" secondItem="007-eR-Ded" secondAttribute="bottom" constant="10" id="D5i-NP-tvP"/>
                             <constraint firstItem="007-eR-Ded" firstAttribute="top" secondItem="yLV-5G-DNH" secondAttribute="bottom" constant="5" id="GDg-e1-ZXj"/>
+                            <constraint firstItem="Etd-Jm-nxP" firstAttribute="leading" secondItem="ZF1-G2-Jmn" secondAttribute="leading" constant="10" id="HiT-Nq-9dJ"/>
+                            <constraint firstItem="ZF1-G2-Jmn" firstAttribute="trailing" secondItem="Etd-Jm-nxP" secondAttribute="trailing" constant="10" id="Nsm-LE-ScF"/>
                             <constraint firstItem="Twr-Hs-lFF" firstAttribute="trailing" secondItem="ZF1-G2-Jmn" secondAttribute="trailing" id="Ryh-ob-Naj"/>
                             <constraint firstItem="yLV-5G-DNH" firstAttribute="leading" secondItem="ZF1-G2-Jmn" secondAttribute="leading" id="Sng-pN-xEz"/>
-                            <constraint firstItem="ZF1-G2-Jmn" firstAttribute="trailing" secondItem="JPf-6D-Tr8" secondAttribute="trailing" constant="20" id="U0W-Y8-zhA"/>
                             <constraint firstItem="yLV-5G-DNH" firstAttribute="trailing" secondItem="ZF1-G2-Jmn" secondAttribute="trailing" id="aQ4-Xz-eIQ"/>
                             <constraint firstItem="007-eR-Ded" firstAttribute="leading" relation="lessThanOrEqual" secondItem="102-eS-0SG" secondAttribute="trailing" constant="258.5" id="eDd-3w-34g"/>
                             <constraint firstItem="ZF1-G2-Jmn" firstAttribute="bottom" secondItem="yLV-5G-DNH" secondAttribute="bottom" constant="100" id="fbQ-qZ-xmj"/>
                             <constraint firstItem="yLV-5G-DNH" firstAttribute="centerX" secondItem="sH2-RD-qN5" secondAttribute="centerX" id="g8a-0u-Jan"/>
-                            <constraint firstItem="JPf-6D-Tr8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZF1-G2-Jmn" secondAttribute="leading" constant="20" id="roQ-g1-VlQ"/>
                             <constraint firstItem="102-eS-0SG" firstAttribute="leading" secondItem="ZF1-G2-Jmn" secondAttribute="leading" constant="10" id="tYS-Zn-y5T"/>
-                            <constraint firstItem="ZF1-G2-Jmn" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JPf-6D-Tr8" secondAttribute="bottom" constant="5" id="uRf-8n-yas"/>
                             <constraint firstItem="yLV-5G-DNH" firstAttribute="top" secondItem="ZF1-G2-Jmn" secondAttribute="top" constant="100" id="wtc-dR-73Q"/>
                             <constraint firstItem="Twr-Hs-lFF" firstAttribute="top" secondItem="ZF1-G2-Jmn" secondAttribute="top" id="yjX-ae-MMM"/>
                             <constraint firstItem="102-eS-0SG" firstAttribute="top" secondItem="yLV-5G-DNH" secondAttribute="bottom" constant="5" id="ys2-lK-Q4B"/>
@@ -216,6 +244,7 @@
                         <outlet property="deleteButton" destination="JPf-6D-Tr8" id="FOT-FQ-hCA"/>
                         <outlet property="greetLabel" destination="FpT-nD-nuD" id="cAh-GU-pT9"/>
                         <outlet property="priceLabel" destination="007-eR-Ded" id="Co2-j0-dXe"/>
+                        <outlet property="uploarOrderButton" destination="xAC-dd-WA1" id="5Rg-kW-ChD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B28-O2-ul5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -225,10 +254,14 @@
     </scenes>
     <designables>
         <designable name="JPf-6D-Tr8">
-            <size key="intrinsicContentSize" width="81" height="24"/>
+            <size key="intrinsicContentSize" width="66" height="19"/>
+        </designable>
+        <designable name="xAC-dd-WA1">
+            <size key="intrinsicContentSize" width="66" height="19"/>
         </designable>
     </designables>
     <resources>
+        <image name="arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <image name="burger0" width="835" height="605"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
