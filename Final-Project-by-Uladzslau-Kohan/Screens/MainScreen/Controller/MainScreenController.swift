@@ -8,6 +8,21 @@ import RealmSwift
 import UIKit
 
 final class MainScreenViewController: UIViewController {
+    
+    private let cellIdentifier: String = "mainCell"
+    private let storyboardID: String = "MainScreen"
+    private let modalVCIdentifeir: String = "mainModal"
+    private let headerNibName: String = "HeaderSupplementaryView"
+    private let plistName: String = "Menu"
+    private let plistType: String = "plist"
+    private let plistHeadersName: String = "MenuHeaders"
+    private enum CellValuesName: String {
+        case name
+        case imageName
+        case price
+        case calories
+    }
+    
     let realm = try! Realm()
     var items: Results<CartItem>!
     var plistBurgerItems: [[String:Any]]? {
@@ -74,7 +89,7 @@ final class MainScreenViewController: UIViewController {
         self.mainFirstCollection.layer.cornerRadius = 20
         self.mainFirstCollection.layer.masksToBounds = true
         self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
-        self.mainFirstCollection.register(UINib(nibName: "HeaderSupplementaryView", bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: "HeaderSupplementaryView")
+        self.mainFirstCollection.register(UINib(nibName: self.headerNibName, bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: self.headerNibName)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,8 +115,8 @@ final class MainScreenViewController: UIViewController {
     // MARK: - ShowModal view controller
     
     func showModal(name:String, price: Double, calories: Int, imageName: String, state: Bool) {
-        let storybord = UIStoryboard(name: "MainScreen", bundle: nil)
-        guard let viewController = storybord.instantiateViewController(identifier: "mainModal") as? MainModalInfoViewController else {
+        let storybord = UIStoryboard(name: self.storyboardID, bundle: nil)
+        guard let viewController = storybord.instantiateViewController(identifier: self.modalVCIdentifeir) as? MainModalInfoViewController else {
             return
         }
         viewController.controllerDelegate = self
@@ -132,7 +147,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath) as? HeaderSupplementaryView else {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.headerNibName, for: indexPath) as? HeaderSupplementaryView else {
                 return HeaderSupplementaryView()
             }
             
@@ -159,7 +174,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "mainCell", for: indexPath) as? MainScreenCollectionViewCell else { return .init() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as? MainScreenCollectionViewCell else { return .init() }
         cell.cellDelegate = self
         let cellData: [[String:Any]]
         switch indexPath.section {
@@ -176,9 +191,9 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         default:
             return .init()
         }
-        cell.name = cellData[indexPath.row]["name"] as? String
-        cell.price = cellData[indexPath.row]["price"] as? Double
-        cell.nameImage = cellData[indexPath.row]["imageName"] as? String
+        cell.name = cellData[indexPath.row][MainScreenViewController.CellValuesName.name.rawValue] as? String
+        cell.price = cellData[indexPath.row][MainScreenViewController.CellValuesName.price.rawValue] as? Double
+        cell.nameImage = cellData[indexPath.row][MainScreenViewController.CellValuesName.imageName.rawValue] as? String
         
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
@@ -209,13 +224,13 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
             calories = 0
             state = true
         } else {
-            guard let caloriesFrom = cellData[indexPath.row]["calories"] as? Int else { return }
+            guard let caloriesFrom = cellData[indexPath.row][MainScreenViewController.CellValuesName.calories.rawValue] as? Int else { return }
             calories = caloriesFrom
             state = false
         }
-        guard let name = cellData[indexPath.row]["name"] as? String,
-              let price = cellData[indexPath.row]["price"] as? Double,
-              let imageName = cellData[indexPath.row]["imageName"] as? String else { return }
+        guard let name = cellData[indexPath.row][MainScreenViewController.CellValuesName.name.rawValue] as? String,
+              let price = cellData[indexPath.row][MainScreenViewController.CellValuesName.price.rawValue] as? Double,
+              let imageName = cellData[indexPath.row][MainScreenViewController.CellValuesName.imageName.rawValue] as? String else { return }
         showModal(name: name, price: price, calories: calories, imageName: imageName, state: state)
     }
     
@@ -249,12 +264,12 @@ extension MainScreenViewController {
     
     func readHeadersFromPlist() -> [String] {
         let plist = self.readBasePlist()
-        guard let headers = plist["MenuHeaders"] as? [String] else { return [] }
+        guard let headers = plist[self.plistHeadersName] as? [String] else { return [] }
         return headers
     }
     
     private func readBasePlist() -> [String:Any] {
-        guard let path = Bundle.main.path(forResource: "Menu", ofType: "plist") else { return [:] }
+        guard let path = Bundle.main.path(forResource: self.plistName, ofType: self.plistType) else { return [:] }
         let url = URL(fileURLWithPath: path)
         let data = try! Data(contentsOf: url)
         

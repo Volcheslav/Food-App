@@ -8,7 +8,18 @@ import RealmSwift
 import UIKit
 
 final class CartViewController: UIViewController {
+    
+    // MARK: - Table constants
+    
     private let cellsOnView: CGFloat = 5
+    private let alertFont: String = "Natasha"
+    private let alertTitleFontSize: CGFloat = 23
+    private let alertMessageFontSize: CGFloat = 20
+    private let cellIdentifier: String = "cartCell"
+    private let headerFont: String = "Buran USSR"
+    private let headerFontSize: CGFloat = 25
+    private let headerHeight: CGFloat = 60
+    
     let realm = try! Realm()
     var items: Results<CartItem>!
     var order: [(CartItem, Int)]? {
@@ -64,7 +75,14 @@ final class CartViewController: UIViewController {
     
     func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: ("ALERT")§, message: ("DELETE_ALERT_MESSAGE")§, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        let attributes = ShowAlerts.setAtributes(
+            title: ("ALERT")§,
+            message: ("DELETE_ALERT_MESSAGE")§,
+            titleFont: self.alertFont,
+            messageFont: self.alertFont,
+            titleFontSize: self.alertTitleFontSize,
+            messageFontSize: self.alertMessageFontSize
+        )
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         alert.setValue(attributes?.last, forKey: "attributedMessage")
         alert.addCancelAction()
@@ -78,7 +96,14 @@ final class CartViewController: UIViewController {
     
     func showClearCartAlert(tableView: UITableView) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: ("ALERT")§, message: ("DELETE_ALL_ALERT_MESSAGE")§, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        let attributes = ShowAlerts.setAtributes(
+            title: ("ALERT")§,
+            message: ("DELETE_ALL_ALERT_MESSAGE")§,
+            titleFont: self.alertFont,
+            messageFont: self.alertFont,
+            titleFontSize: self.alertTitleFontSize,
+            messageFontSize: self.alertMessageFontSize
+        )
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         alert.setValue(attributes?.last, forKey: "attributedMessage")
         alert.addCancelAction()
@@ -92,7 +117,14 @@ final class CartViewController: UIViewController {
     
     func showEmptyCartAlert() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: ("ALERT")§, message: ("CART_IS_EMPTY")§, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        let attributes = ShowAlerts.setAtributes(
+            title: ("ALERT")§,
+            message: ("CART_IS_EMPTY")§,
+            titleFont: self.alertFont,
+            messageFont: self.alertFont,
+            titleFontSize: self.alertTitleFontSize,
+            messageFontSize: self.alertMessageFontSize
+        )
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         alert.setValue(attributes?.last, forKey: "attributedMessage")
         alert.addCancelAction()
@@ -125,12 +157,13 @@ final class CartViewController: UIViewController {
 // MARK: - Extension table control
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return order?.count ?? items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell") as? CartTableViewCell,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) as? CartTableViewCell,
               let cellOrder = order else { return .init() }
         cell.name = cellOrder[indexPath.row].0.name
         cell.price = String(format: "%.2f", cellOrder[indexPath.row].0.price * Double(cellOrder[indexPath.row].1))
@@ -164,7 +197,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         DispatchQueue.main.async {
             label.text = ("YOUR_ORDER")§
         }
-        label.font = UIFont(name: "Buran USSR", size: 25)
+        label.font = UIFont(name: self.headerFont, size: self.headerFontSize)
         label.textColor = .black
         label.textAlignment = .left
         headerView.addSubview(label)
@@ -174,12 +207,15 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(60)
+        return self.headerHeight
     }
     
 }
 
+// MARK: - Cell delegate extension
+
 extension CartViewController: MyCellDelegate {
+    
     func didPressButtonRemove(_ tag: Int, name: String) {
         self.deleteFromRealmOne(name)
         self.getCartArray()

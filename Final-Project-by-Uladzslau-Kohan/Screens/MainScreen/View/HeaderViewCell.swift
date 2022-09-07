@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderSupplementaryView: UICollectionViewCell {
+final class HeaderSupplementaryView: UICollectionViewCell {
     
     var name: String? {
         didSet {

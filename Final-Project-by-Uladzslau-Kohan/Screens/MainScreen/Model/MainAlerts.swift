@@ -8,6 +8,7 @@
 import UIKit
 
 class ShowAlerts {
+    
     static func showAddAlert(name: String, viewController: UIViewController) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let attribure = setAtributes(title: "\((name)§) \(("MAIN_ALERT_TITLE")§)", message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 25, messageFontSize: nil)

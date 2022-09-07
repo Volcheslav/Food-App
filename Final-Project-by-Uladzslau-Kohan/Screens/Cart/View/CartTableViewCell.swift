@@ -74,18 +74,4 @@ final class CartTableViewCell: UITableViewCell {
         guard let name = self.name else { return }
         cellDelegate?.didPressButtonRemove(sender.tag, name: name)
     }
-    
-    // MARK: LoadFunctions
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

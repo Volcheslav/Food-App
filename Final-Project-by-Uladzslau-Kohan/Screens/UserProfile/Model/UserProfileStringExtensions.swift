@@ -20,7 +20,7 @@ extension String {
     // MARK: - NameSurname valid check
     
     func isValidNameSurname() -> Bool {
-        let nameRegEx = "[A-Za-zА-яа-я]{2,64}"
+        let nameRegEx = "[A-Za-zА-яа-я]{2,16}"
         let namePred = NSPredicate(format:"SELF MATCHES %@", nameRegEx)
         return namePred.evaluate(with: self)
     }
