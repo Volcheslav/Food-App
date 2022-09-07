@@ -9,34 +9,18 @@ import Foundation
 
 class CartUpload {
     
-    func uploadOrder(name: [String], price: Double, userName: String, cardNumber: Int, alert: @escaping (String, String) -> Void) -> Bool {
+    func uploadOrder(name: [String], price: Double, userName: String, cardNumber: Int) -> Bool {
         var ended = true
-        guard var user = ParseUserData.current else { return false }
-        let order = ParseOrder(name: name, price: price, userName: userName, cardNumber: cardNumber)
-        user.orders?.append(order)
-        DispatchQueue.global(qos: .background).async {
-            user.save(completion: { result in
+        guard let user = ParseUserData.current else { return false }
+        let order = ParseOrder(name: name, price: price, userName: userName, cardNumber: cardNumber, user: user)
+        order.save(completion: { result in
                 switch result {
                 case .success(_):
                     break
-                case .failure(let error):
-                    alert(("ALERT")§, error.message)
+                case .failure(_):
                     ended = false
                 }
             })
-        }
-        DispatchQueue.global(qos: .background).async {
-            order.save(completion: { result in
-                switch result {
-                case .success(_):
-                    break
-                case .failure(let error):
-                    alert(("ALERT")§, error.message)
-                    ended = false
-                }
-            })
-        }
         return ended
     }
-    
 }

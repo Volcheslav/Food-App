@@ -177,7 +177,7 @@ final class CartViewController: UIViewController {
         guard let cardNumber = Int(stringCardNumber),
               let whPrice = self.wholePrice else { return }
         let orderNames = self.order.map { $0.map { "\($0.0.name) \($0.1)" } }!
-        let result = cartUpload.uploadOrder(name: orderNames, price: whPrice, userName: ParseUserData.current!.username!, cardNumber: cardNumber, alert: self.showNoActionAlert)
+        let result = cartUpload.uploadOrder(name: orderNames, price: whPrice, userName: ParseUserData.current!.username!, cardNumber: cardNumber)
         if result {
             self.showNoActionAlert(title: ("SUCCESS")§, message: ("ORERD_SENT")§)
             self.deletAllRealm()

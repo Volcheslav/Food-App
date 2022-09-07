@@ -23,4 +23,5 @@ struct ParseOrder: ParseObject {
     var price: Double?
     var userName: String?
     var cardNumber: Int?
+    var user: ParseUserData?
 }
