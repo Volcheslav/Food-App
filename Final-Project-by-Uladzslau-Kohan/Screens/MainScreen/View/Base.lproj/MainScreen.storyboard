@@ -219,9 +219,9 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-rN-o13" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                        <rect key="frame" x="141" y="438" width="92.5" height="30"/>
+                                        <rect key="frame" x="148" y="428" width="78.5" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="mZ4-Nt-sO3"/>
+                                            <constraint firstAttribute="height" constant="40" id="mZ4-Nt-sO3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -347,7 +347,7 @@
     </scenes>
     <designables>
         <designable name="MLs-rN-o13">
-            <size key="intrinsicContentSize" width="92.5" height="23"/>
+            <size key="intrinsicContentSize" width="78.5" height="23"/>
         </designable>
     </designables>
     <resources>

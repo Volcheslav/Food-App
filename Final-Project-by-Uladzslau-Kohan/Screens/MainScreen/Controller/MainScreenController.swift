@@ -260,4 +260,13 @@ extension MainScreenViewController {
         guard let headers = plist["MenuHeaders"] as? [String] else { return [] }
         return headers
     }
+    
+    private func readBasePlist() -> [String:Any] {
+        guard let path = Bundle.main.path(forResource: "Menu", ofType: "plist") else { return [:] }
+        let url = URL(fileURLWithPath: path)
+        let data = try! Data(contentsOf: url)
+        
+        guard let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String:Any] else { return [:] }
+        return plist
+    }
 }
