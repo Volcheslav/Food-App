@@ -47,16 +47,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="120"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-gK-NS0">
-                                                    <rect key="frame" x="10" y="130" width="108" height="35"/>
+                                                    <rect key="frame" x="10" y="124" width="108" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atx-oh-Hjh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="20"/>
                                                             <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
-                                                            <rect key="frame" x="0.0" y="19" width="108" height="16"/>
+                                                            <rect key="frame" x="0.0" y="22" width="108" height="19"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -64,29 +64,34 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjy-Is-jca">
-                                                    <rect key="frame" x="93" y="10" width="25" height="24"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKZ-Js-DsR" customClass="AnimatedButton" customModule="Lottie">
+                                                    <rect key="frame" x="5" y="5" width="55" height="55"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="Chf-91-OuR"/>
+                                                        <constraint firstAttribute="width" constant="55" id="gC1-NC-d7Z"/>
+                                                    </constraints>
                                                     <connections>
-                                                        <action selector="addToCart:" destination="P30-QE-Trn" eventType="touchUpInside" id="HIE-YJ-3jM"/>
+                                                        <action selector="addInCart:" destination="P30-QE-Trn" eventType="touchUpInside" id="1ut-TL-ObD"/>
                                                     </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Z1x-pP-DSh" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" id="ECZ-cj-9gQ"/>
                                                 <constraint firstItem="Z1x-pP-DSh" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" id="FJd-Lh-WCs"/>
                                                 <constraint firstItem="bkq-gK-NS0" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" constant="10" id="KuY-mx-zKu"/>
-                                                <constraint firstItem="Gjy-Is-jca" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" constant="10" id="Qwz-Uq-ISB"/>
                                                 <constraint firstAttribute="bottom" secondItem="bkq-gK-NS0" secondAttribute="bottom" constant="5" id="akL-ih-YRS"/>
+                                                <constraint firstItem="kKZ-Js-DsR" firstAttribute="leading" secondItem="pkw-NK-Det" secondAttribute="leading" constant="5" id="bQ7-rd-b3H"/>
+                                                <constraint firstItem="kKZ-Js-DsR" firstAttribute="top" secondItem="pkw-NK-Det" secondAttribute="top" constant="5" id="eym-4n-MWL"/>
                                                 <constraint firstAttribute="trailing" secondItem="bkq-gK-NS0" secondAttribute="trailing" constant="10" id="n8c-ZH-uPA"/>
                                                 <constraint firstAttribute="trailing" secondItem="Z1x-pP-DSh" secondAttribute="trailing" id="rCc-S4-u8s"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gjy-Is-jca" secondAttribute="trailing" constant="10" id="rRY-VV-g9v"/>
                                                 <constraint firstAttribute="bottom" secondItem="Z1x-pP-DSh" secondAttribute="bottom" constant="50" id="ud9-3y-8AW"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <size key="customSize" width="128" height="170"/>
                                         <connections>
-                                            <outlet property="addButton" destination="Gjy-Is-jca" id="2ra-3C-r7Z"/>
+                                            <outlet property="addLottieButton" destination="kKZ-Js-DsR" id="ko6-QH-Aci"/>
                                             <outlet property="cellImage" destination="Z1x-pP-DSh" id="alx-4C-wuE"/>
                                             <outlet property="cellView" destination="pkw-NK-Det" id="dnU-bA-ROb"/>
                                             <outlet property="nameLabel" destination="moP-7u-C72" id="KpO-KW-BNt"/>
@@ -168,48 +173,48 @@
                                         <rect key="frame" x="20" y="20" width="334" height="448"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="97u-CD-xjJ">
-                                        <rect key="frame" x="20" y="488" width="334" height="110"/>
+                                        <rect key="frame" x="20" y="478" width="334" height="67"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-ua-YJl">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="110"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-ua-YJl">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="67"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUf-FE-IIN">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="30.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="17"/>
                                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIc-US-OOR">
-                                                        <rect key="frame" x="0.0" y="39.5" width="167" height="31"/>
+                                                        <rect key="frame" x="0.0" y="25" width="167" height="17"/>
                                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8F8-4w-bLr">
-                                                        <rect key="frame" x="0.0" y="79.5" width="167" height="30.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="167" height="17"/>
                                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-Hx-I1F">
-                                                <rect key="frame" x="175" y="0.0" width="159" height="110"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-Hx-I1F">
+                                                <rect key="frame" x="175" y="0.0" width="159" height="67"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-DM-Pc6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="31.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-DM-Pc6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="17"/>
                                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLc-PM-lAz">
-                                                        <rect key="frame" x="0.0" y="39.5" width="159" height="31"/>
+                                                        <rect key="frame" x="0.0" y="25" width="159" height="17"/>
                                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdV-v9-jyN">
-                                                        <rect key="frame" x="0.0" y="78.5" width="159" height="31.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="159" height="17"/>
                                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -256,9 +261,9 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="97u-CD-xjJ" secondAttribute="bottom" constant="20" id="6aX-sQ-chY"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="97u-CD-xjJ" secondAttribute="bottom" constant="10" id="6aX-sQ-chY"/>
                                     <constraint firstAttribute="trailing" secondItem="97u-CD-xjJ" secondAttribute="trailing" constant="20" id="Xug-ER-PTx"/>
-                                    <constraint firstItem="97u-CD-xjJ" firstAttribute="top" secondItem="AIF-kh-Cqh" secondAttribute="bottom" constant="20" id="cAZ-dZ-nfx"/>
+                                    <constraint firstItem="97u-CD-xjJ" firstAttribute="top" secondItem="AIF-kh-Cqh" secondAttribute="bottom" constant="10" id="cAZ-dZ-nfx"/>
                                     <constraint firstItem="MLs-rN-o13" firstAttribute="centerX" secondItem="idm-Bj-wEB" secondAttribute="centerX" id="flX-bP-the"/>
                                     <constraint firstAttribute="bottom" secondItem="MLs-rN-o13" secondAttribute="bottom" constant="150" id="gCg-s1-TQY"/>
                                     <constraint firstItem="97u-CD-xjJ" firstAttribute="leading" secondItem="idm-Bj-wEB" secondAttribute="leading" constant="20" id="iO7-Kr-kd4"/>

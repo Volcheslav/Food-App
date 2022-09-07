@@ -14,6 +14,6 @@
 
 ## Tech Stack
 
-**Pods:** Realm, SwiftLint, ParseSwift
+**Pods:** Lottie, Realm, SwiftLint, ParseSwift
 
 **Patterns:** Delegation, Singleton

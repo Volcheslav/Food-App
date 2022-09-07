@@ -3,6 +3,7 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/24/22.
+import Lottie
 import UIKit
 
 final class MainScreenCollectionViewCell: UICollectionViewCell {
@@ -14,9 +15,6 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
         didSet {
             self.nameLabel.text = (self.name ?? "NONAME")§
             self.nameLabel.textColor = .white
-            self.addButton.layer.cornerRadius = self.addButton.frame.height / 2
-            self.addButton.backgroundColor = .black
-            self.addButton.tintColor = .white
         }
     }
     var price: Double? {
@@ -36,13 +34,20 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
     
     var tagButtonAdd: Int = 0 {
         didSet {
-            self.addButton.tag = tagButtonAdd
+            self.addLottieButton.tag = tagButtonAdd
+        }
+    }
+    var animationName: String = "" {
+        didSet {
+            DispatchQueue.main.async {
+                self.addLottieButton.animation = Animation.named(self.animationName)
+            }
         }
     }
     
     // MARK: Outlets
     
-    @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private weak var addLottieButton: AnimatedButton!
     @IBOutlet private weak var cellImage: UIImageView!
     @IBOutlet private weak var cellView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
@@ -50,7 +55,7 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
     
     // MARK: Actions
     
-    @IBAction private func addToCart(_ sender: UIButton) {
+    @IBAction private func addInCart(_ sender: AnimatedButton) {
         guard let name = self.name,
               let imageName = self.nameImage,
               let price = self.price else {
@@ -58,5 +63,4 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
         }
         cellDelegate?.didPressButtonAdd(sender.tag, name: name, price: price, imageName: imageName)
     }
-    
-}
+    }

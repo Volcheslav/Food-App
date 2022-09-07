@@ -4,6 +4,7 @@
 //
 //  Created by VironIT on 8/3/22.
 //  swiftlint:disable force_try implicit_getter
+
 import RealmSwift
 import UIKit
 
@@ -16,6 +17,7 @@ final class MainScreenViewController: UIViewController {
     private let plistName: String = "Menu"
     private let plistType: String = "plist"
     private let plistHeadersName: String = "MenuHeaders"
+    private let cellLottieButtonName = "addLottieButton"
     private enum CellValuesName: String {
         case name
         case imageName
@@ -194,6 +196,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.name = cellData[indexPath.row][MainScreenViewController.CellValuesName.name.rawValue] as? String
         cell.price = cellData[indexPath.row][MainScreenViewController.CellValuesName.price.rawValue] as? Double
         cell.nameImage = cellData[indexPath.row][MainScreenViewController.CellValuesName.imageName.rawValue] as? String
+        cell.animationName = self.cellLottieButtonName
         
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
