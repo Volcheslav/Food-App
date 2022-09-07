@@ -54,9 +54,11 @@ final class UserProfileViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
+        self.animateButtonPush(button: sender)
         animateHideEmailTextfield()
     }
     @IBAction private func loginAction(_ sender: UICustomButton) {
+        self.animateButtonPush(button: sender)
         guard usernameTextField.hasText, passwordTextField.hasText else {
             self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
             return
@@ -69,7 +71,7 @@ final class UserProfileViewController: UIViewController {
     }
     
     @IBAction private func signUpAction(_ sender: UICustomButton) {
-        
+        self.animateButtonPush(button: sender)
         if self.loginButton.isHidden {
             guard usernameTextField.hasText, passwordTextField.hasText, emailTextField.hasText else {
                 self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
@@ -91,6 +93,7 @@ final class UserProfileViewController: UIViewController {
     }
     // swiftlint:disable force_try
     @IBAction private func logoutAction(_ sender: UICustomButton) {
+        self.animateButtonPush(button: sender)
         self.showLogoutAlert(title: ("LOGOUT_MESSAGE")§)
         let realm = try! Realm()
         try! realm.write {
@@ -363,6 +366,15 @@ final class UserProfileViewController: UIViewController {
         self.view.frame.origin.y = 0
     }
     
+    // MARK: - Button animate
+
+    private func animateButtonPush(button: UICustomButton) {
+        UIView.animate(
+            withDuration: 0.3,
+            animations: { button.transform = .init(scaleX: 0.9, y: 0.8) },
+            completion: { _ in button.transform = .identity }
+        )
+    }
 }
 
 // MARK: - Keyboard extension

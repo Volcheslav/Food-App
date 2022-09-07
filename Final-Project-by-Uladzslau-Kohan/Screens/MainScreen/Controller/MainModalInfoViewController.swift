@@ -27,6 +27,7 @@ final class MainModalInfoViewController: UIViewController {
     @IBOutlet private weak var addToCartButton: UICustomButton!
     
     @IBAction private func addToCart(_ sender: UICustomButton) {
+        self.animateButtonPush()
         controllerDelegate?.didPressModalButtonAdd(sender.tag, name: self.name, price: self.price, imageName: self.imageName)
         ShowAlerts.showAddAlert(name: self.name, viewController: self)
     }
@@ -52,6 +53,18 @@ final class MainModalInfoViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.addToCartButton.isHidden = ParseUserData.current == nil
+    }
+    
+    private func animateButtonPush() {
+        UIView.animate(
+            withDuration: 0.3,
+            animations: { [unowned self] in
+                self.addToCartButton.transform = .init(scaleX: 0.9, y: 0.8)
+            },
+            completion: { [unowned self] _ in
+                self.addToCartButton.transform = .identity
+            }
+        )
     }
 
 }

@@ -17,7 +17,7 @@ final class MainScreenViewController: UIViewController {
     private let plistName: String = "Menu"
     private let plistType: String = "plist"
     private let plistHeadersName: String = "MenuHeaders"
-    private let cellLottieButtonName = "addLottieButton"
+    private let cellLottieButtonName = "plusAdd"
     private enum CellValuesName: String {
         case name
         case imageName

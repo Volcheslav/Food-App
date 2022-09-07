@@ -29,7 +29,7 @@
 		5347F57128B79EE500995448 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57028B79EE500995448 /* CartViewController.swift */; };
 		5347F57728B7B8FA00995448 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5347F57628B7B8FA00995448 /* CartTableViewCell.swift */; };
 		534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */; };
-		536613F728C8C13000716338 /* addLottieButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 536613F628C8C13000716338 /* addLottieButton.json */; };
+		5366140128C8D09500716338 /* plusAdd.json in Resources */ = {isa = PBXBuildFile; fileRef = 5366140028C8D09400716338 /* plusAdd.json */; };
 		53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D83289ABD6D002755A4 /* AppDelegate.swift */; };
 		53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D85289ABD6D002755A4 /* SceneDelegate.swift */; };
 		53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D87289ABD6D002755A4 /* MainScreenController.swift */; };
@@ -71,7 +71,7 @@
 		5347F57028B79EE500995448 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		5347F57628B7B8FA00995448 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		534CBD6A28BCDEBA001D1004 /* CartCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCellDelegateProtocol.swift; sourceTree = "<group>"; };
-		536613F628C8C13000716338 /* addLottieButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = addLottieButton.json; sourceTree = "<group>"; };
+		5366140028C8D09400716338 /* plusAdd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plusAdd.json; sourceTree = "<group>"; };
 		53D99D80289ABD6D002755A4 /* Final-Project-by-Uladzslau-Kohan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final-Project-by-Uladzslau-Kohan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D99D83289ABD6D002755A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D99D85289ABD6D002755A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		536613F528C8C11A00716338 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				536613F628C8C13000716338 /* addLottieButton.json */,
+				5366140028C8D09400716338 /* plusAdd.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -414,8 +414,8 @@
 				5339718C28C613F000A61C22 /* Menu.plist in Resources */,
 				53D99D90289ABD6F002755A4 /* LaunchScreen.storyboard in Resources */,
 				533DE14328C7A86C009DA2A9 /* Buran USSR.ttf in Resources */,
-				536613F728C8C13000716338 /* addLottieButton.json in Resources */,
 				53D99D8D289ABD6F002755A4 /* Assets.xcassets in Resources */,
+				5366140128C8D09500716338 /* plusAdd.json in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,
 				53D99D8B289ABD6D002755A4 /* MainScreen.storyboard in Resources */,
 				533DE14028C7A864009DA2A9 /* Natasha.ttf in Resources */,

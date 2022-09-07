@@ -39,6 +39,7 @@ final class CartViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
+        self.animateButtonPush()
         if self.cartTableView.visibleCells.isEmpty {
             self.showEmptyCartAlert()
         } else {
@@ -153,7 +154,22 @@ final class CartViewController: UIViewController {
         }
         self.getCartArray()
     }
+    
+    // MARK: - Button animate
+
+    private func animateButtonPush() {
+        UIView.animate(
+            withDuration: 0.3,
+            animations: { [unowned self] in
+                self.deleteButton.transform = .init(scaleX: 0.9, y: 0.8)
+            },
+            completion: { [unowned self] _ in
+                self.deleteButton.transform = .identity
+            }
+        )
+    }
 }
+
 // MARK: - Extension table control
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {

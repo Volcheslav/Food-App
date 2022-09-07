@@ -41,6 +41,9 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
         didSet {
             DispatchQueue.main.async {
                 self.addLottieButton.animation = Animation.named(self.animationName)
+                self.addLottieButton.backgroundColor = .white
+                self.addLottieButton.layer.cornerRadius = self.addLottieButton.frame.height / 2
+                self.addLottieButton.layer.masksToBounds = true
             }
         }
     }
