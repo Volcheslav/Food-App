@@ -147,7 +147,9 @@
                             <constraint firstItem="2Wk-Tw-8Ln" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oJV-B2-FWG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Main" image="star" catalog="system" selectedImage="star.fill" id="h5V-3u-8eY"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="star" catalog="system" selectedImage="star.fill" id="h5V-3u-8eY">
+                        <color key="badgeColor" red="1" green="0.54525703189999997" blue="0.00132973236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="greetingLabel" destination="mR4-iZ-6KR" id="Qbc-R5-Bvh"/>
@@ -318,6 +320,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.54525703189999997" blue="0.00132973236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.54525703189999997" blue="0.00132973236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FY6-3S-qMA"/>

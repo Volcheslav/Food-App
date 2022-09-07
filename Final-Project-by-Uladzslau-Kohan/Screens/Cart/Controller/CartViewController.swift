@@ -27,6 +27,7 @@ final class CartViewController: UIViewController {
             guard let whPrice = order.map({ $0.map { $0.0.price * Double($0.1) } })?.reduce(0, +) else { return }
             self.priceLabel.text = String(format: "%.2f", whPrice)
             self.priceLabel.sizeToFit()
+            self.wholePrice = whPrice
         }
     }
     var wholePrice: Double?
@@ -42,13 +43,18 @@ final class CartViewController: UIViewController {
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
         if self.cartTableView.visibleCells.isEmpty {
-            self.showEmptyCartAlert()
+            self.showNoActionAlert(title: ("ALERT")§, message: ("CART_IS_EMPTY")§)
         } else {
-            self.showClearCartAlert(tableView: self.cartTableView) }
+            self.showClearCartAlert(tableView: self.cartTableView, title: ("ALERT")§, message: ("DELETE_ALL_ALERT_MESSAGE")§) }
     }
     
     @IBAction private func uploadOrderAction(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
+        if self.cartTableView.visibleCells.isEmpty {
+            self.showNoActionAlert(title: ("ALERT")§, message: ("CART_IS_EMPTY")§)
+        } else {
+            self.sendOrder() }
+        
     }
     // MARK: - ViewLoad functions
     
@@ -79,11 +85,11 @@ final class CartViewController: UIViewController {
     
     // MARK: - Alert windows
     
-    func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String) {
+    func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String, title: String, message: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let attributes = ShowAlerts.setAtributes(
-            title: ("ALERT")§,
-            message: ("DELETE_ALERT_MESSAGE")§,
+            title: title,
+            message: message,
             titleFont: self.alertFont,
             messageFont: self.alertFont,
             titleFontSize: self.alertTitleFontSize,
@@ -100,11 +106,11 @@ final class CartViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func showClearCartAlert(tableView: UITableView) {
+    func showClearCartAlert(tableView: UITableView, title: String, message: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let attributes = ShowAlerts.setAtributes(
-            title: ("ALERT")§,
-            message: ("DELETE_ALL_ALERT_MESSAGE")§,
+            title: title,
+            message: message,
             titleFont: self.alertFont,
             messageFont: self.alertFont,
             titleFontSize: self.alertTitleFontSize,
@@ -121,11 +127,11 @@ final class CartViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func showEmptyCartAlert() {
+    func showNoActionAlert(title: String, message: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let attributes = ShowAlerts.setAtributes(
-            title: ("ALERT")§,
-            message: ("CART_IS_EMPTY")§,
+            title: title,
+            message: message,
             titleFont: self.alertFont,
             messageFont: self.alertFont,
             titleFontSize: self.alertTitleFontSize,
@@ -158,6 +164,27 @@ final class CartViewController: UIViewController {
             self.realm.deleteAll()
         }
         self.getCartArray()
+    }
+    
+    // MARK: - Order action
+    
+    private func sendOrder() {
+        let cartUpload = CartUpload()
+        guard let stringCardNumber = ParseUserData.current?.creditCardnumder else {
+            self.showNoActionAlert(title: ("ALERT")§, message: ("CREDIT_ALERT")§)
+            return
+        }
+        guard let cardNumber = Int(stringCardNumber),
+              let whPrice = self.wholePrice else { return }
+        let orderNames = self.order.map { $0.map { "\($0.0.name) \($0.1)" } }!
+        let result = cartUpload.uploadOrder(name: orderNames, price: whPrice, userName: ParseUserData.current!.username!, cardNumber: cardNumber, alert: self.showNoActionAlert)
+        if result {
+            self.showNoActionAlert(title: ("SUCCESS")§, message: ("ORERD_SENT")§)
+            self.deletAllRealm()
+            self.cartTableView.reloadData()
+        } else {
+            self.showNoActionAlert(title: ("ALERT")§, message: ("ORDER_ERRORS")§)
+        }
     }
     
     // MARK: - Button animate
@@ -197,7 +224,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
               let name = cell.name else { return }
         
         if editingStyle == .delete {
-            self.showDeleteAlert(tableView: tableView, indexPath: indexPath, name: name)
+            self.showDeleteAlert(tableView: tableView, indexPath: indexPath, name: name, title: ("ALERT")§, message: ("DELETE_ALERT_MESSAGE")§)
             
         }
     }

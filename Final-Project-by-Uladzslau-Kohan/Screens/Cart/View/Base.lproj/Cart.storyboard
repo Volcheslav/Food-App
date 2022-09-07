@@ -238,7 +238,9 @@
                             <constraint firstItem="102-eS-0SG" firstAttribute="top" secondItem="yLV-5G-DNH" secondAttribute="bottom" constant="5" id="ys2-lK-Q4B"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="cart.fill" id="UTh-YH-K8k"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" catalog="system" selectedImage="cart.fill" id="UTh-YH-K8k">
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="cartTableView" destination="yLV-5G-DNH" id="eUH-wb-kX0"/>
                         <outlet property="deleteButton" destination="JPf-6D-Tr8" id="FOT-FQ-hCA"/>

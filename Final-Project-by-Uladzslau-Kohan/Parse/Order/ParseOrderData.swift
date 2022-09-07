@@ -21,4 +21,6 @@ struct ParseOrder: ParseObject {
     // MARK: Order details
     var name: [String]?
     var price: Double?
+    var userName: String?
+    var cardNumber: Int?
 }

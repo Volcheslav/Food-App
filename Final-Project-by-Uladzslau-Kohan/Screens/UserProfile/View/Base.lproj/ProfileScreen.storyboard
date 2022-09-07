@@ -49,11 +49,11 @@
                                         <rect key="frame" x="20" y="182" width="324" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hae-Fn-8N1" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="U6J-QL-I9o"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="person.fill.badge.plus" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
@@ -72,11 +72,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-HB-U9w" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="115" y="0.0" width="89" height="40"/>
+                                                <rect key="frame" x="119" y="0.0" width="81" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="yfi-gl-EUi"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="backward" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,11 +97,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zww-jr-lcm" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="229.5" y="0.0" width="94.5" height="40"/>
+                                                <rect key="frame" x="237.5" y="0.0" width="86.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Qe5-Co-9BO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button" image="person.fill.checkmark" catalog="system"/>
                                                 <userDefinedRuntimeAttributes>
@@ -195,8 +195,8 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-Jx-zaP" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                        <rect key="frame" x="156.5" y="783" width="101" height="30"/>
-                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="20"/>
+                                        <rect key="frame" x="166" y="783" width="82" height="30"/>
+                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button" image="arrowshape.turn.up.backward.fill" catalog="system"/>
                                         <userDefinedRuntimeAttributes>
@@ -261,16 +261,16 @@
     </scenes>
     <designables>
         <designable name="Cya-HB-U9w">
-            <size key="intrinsicContentSize" width="89" height="18"/>
+            <size key="intrinsicContentSize" width="81" height="18"/>
         </designable>
         <designable name="TIu-Jx-zaP">
-            <size key="intrinsicContentSize" width="101" height="22"/>
+            <size key="intrinsicContentSize" width="82" height="21.5"/>
         </designable>
         <designable name="hae-Fn-8N1">
-            <size key="intrinsicContentSize" width="89.5" height="25.5"/>
+            <size key="intrinsicContentSize" width="81.5" height="25.5"/>
         </designable>
         <designable name="zww-jr-lcm">
-            <size key="intrinsicContentSize" width="94.5" height="21.5"/>
+            <size key="intrinsicContentSize" width="86.5" height="21.5"/>
         </designable>
     </designables>
     <resources>

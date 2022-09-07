@@ -126,6 +126,10 @@
 "LOGIN_CART" = "Log in to add something to your cart";
 "CART_IS_EMPTY" = "Your cart is empty!";
 "UPLOAD_ORDER" = "Send order";
+"SUCCESS" = "Success";
+"ORERD_SENT" = "Order has been sent";
+"ORDER_ERRORS" = "Some errors in your order";
+"CREDIT_ALERT" = "If you want to do orders here, you must register your credit card";
 
 // MARK: Profile Info
 
