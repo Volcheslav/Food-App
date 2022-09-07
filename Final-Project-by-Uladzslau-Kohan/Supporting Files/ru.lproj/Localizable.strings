@@ -77,6 +77,7 @@
 "ENTER_YOUR_PASSWORD" = "Введите пароль";
 "ENTER_YOUR_LOGIN" = "Введите логин";
 "ENTER_YOUR_EMAIL" = "Введите свой email";
+"ENTER_YOUR_DATA" = "Введите ваши данные";
 "LOGIN" = "Войти";
 "SIGN_UP" = "Регистрация";
 "SIGNED_UP" = "Зарегистрирован";
@@ -93,6 +94,7 @@
 "LOGGED_OUT" = "Пользователь вышел";
 "LOG_OUT" = "Выйти";
 "LOGOUT_MESSAGE" = "Вы действительно хотите выйти?";
+
 
 // MARK: Profile view cell
 

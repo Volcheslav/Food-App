@@ -49,7 +49,7 @@
                                         <rect key="frame" x="20" y="182" width="324" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hae-Fn-8N1" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="U6J-QL-I9o"/>
                                                 </constraints>
@@ -72,7 +72,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cya-HB-U9w" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="121" y="0.0" width="77" height="40"/>
+                                                <rect key="frame" x="115" y="0.0" width="89" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="yfi-gl-EUi"/>
                                                 </constraints>
@@ -97,7 +97,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zww-jr-lcm" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="241.5" y="0.0" width="82.5" height="40"/>
+                                                <rect key="frame" x="229.5" y="0.0" width="94.5" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Qe5-Co-9BO"/>
                                                 </constraints>
@@ -148,16 +148,16 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mG1-i4-Vsm">
-                                                            <rect key="frame" x="25" y="25" width="364" height="20"/>
+                                                            <rect key="frame" x="25" y="26.5" width="364" height="17"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoD-BX-gaC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="49" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCX-ql-05z">
-                                                                    <rect key="frame" x="322" y="0.0" width="42" height="20"/>
+                                                                    <rect key="frame" x="315" y="0.0" width="49" height="17"/>
                                                                     <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIu-Jx-zaP" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                        <rect key="frame" x="163.5" y="783" width="87" height="30"/>
+                                        <rect key="frame" x="156.5" y="783" width="101" height="30"/>
                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="20"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button" image="arrowshape.turn.up.backward.fill" catalog="system"/>
@@ -261,16 +261,16 @@
     </scenes>
     <designables>
         <designable name="Cya-HB-U9w">
-            <size key="intrinsicContentSize" width="77" height="20"/>
+            <size key="intrinsicContentSize" width="89" height="18"/>
         </designable>
         <designable name="TIu-Jx-zaP">
-            <size key="intrinsicContentSize" width="87" height="24"/>
+            <size key="intrinsicContentSize" width="101" height="22"/>
         </designable>
         <designable name="hae-Fn-8N1">
-            <size key="intrinsicContentSize" width="77.5" height="25.5"/>
+            <size key="intrinsicContentSize" width="89.5" height="25.5"/>
         </designable>
         <designable name="zww-jr-lcm">
-            <size key="intrinsicContentSize" width="82.5" height="21.5"/>
+            <size key="intrinsicContentSize" width="94.5" height="21.5"/>
         </designable>
     </designables>
     <resources>

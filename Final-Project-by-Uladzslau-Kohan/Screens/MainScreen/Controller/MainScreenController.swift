@@ -49,7 +49,7 @@ final class MainScreenViewController: UIViewController {
         section.orthogonalScrollingBehavior = .groupPaging
         
         // Header
-        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(300))
         let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
         section.boundarySupplementaryItems = [headerItem]
 
@@ -242,21 +242,13 @@ extension MainScreenViewController: MainScreenCellDelegate {
 
 extension MainScreenViewController {
     func  readFromPlist(section: String) -> [[String:Any]] {
-        guard let path = Bundle.main.path(forResource: "Menu", ofType: "plist") else { return [] }
-        let url = URL(fileURLWithPath: path)
-        let data = try! Data(contentsOf: url)
-        
-        guard let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String:Any] else { return [] }
+        let plist = self.readBasePlist()
         guard let menu = plist[section] as? [[String:Any]] else { return [] }
         return menu
     }
     
     func readHeadersFromPlist() -> [String] {
-        guard let path = Bundle.main.path(forResource: "Menu", ofType: "plist") else { return [] }
-        let url = URL(fileURLWithPath: path)
-        let data = try! Data(contentsOf: url)
-        
-        guard let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [String:Any] else { return [] }
+        let plist = self.readBasePlist()
         guard let headers = plist["MenuHeaders"] as? [String] else { return [] }
         return headers
     }

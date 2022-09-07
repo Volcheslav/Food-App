@@ -9,9 +9,22 @@ import UIKit
 
 final class UserProfileViewController: UIViewController {
     
+    // MARK: - Table properties
+    
     private let tableNameHeaderHeigt: CGFloat = 100
     private let tableInfoHeaderHeigh: CGFloat = 60
     private let tableRowHeight: CGFloat = 70
+    private let numberOfsections: Int = 2
+    private let numberOfCellsFirstSect: Int = 2
+    private let numberOfCellsSecondSect: Int = 5
+    private let alertFont: String = "Natasha"
+    private let alertTitleFontSize: CGFloat = 23
+    private let alertMessageFontSize: CGFloat = 20
+    private let headerLabelFont: String = "Buran USSR"
+    private let cellIdentifier: String = "profileCell"
+    
+    // MARK: - Cells data array
+    
     private var cellsNames: [(String, String?)] {
         get {
             [
@@ -19,7 +32,7 @@ final class UserProfileViewController: UIViewController {
                 ("P_CELL_EMIAL", ParseUserData.current?.email),
                 ("P_CELL_NAME", ParseUserData.current?.name),
                 ("P_CELL_SURNAME", ParseUserData.current?.surname),
-                ("P_CELL_AGE", String(ParseUserData.current?.age ?? 0)),
+                ("P_CELL_AGE", ParseUserData.current?.age == nil ? nil : String((ParseUserData.current?.age)!)),
                 ("P_CELL_PHONE", ParseUserData.current?.phoneNumber),
                 ("P_CELL_CARD_NUMBER", ParseUserData.current?.creditCardnumder)
             ]
@@ -265,7 +278,7 @@ final class UserProfileViewController: UIViewController {
     private func showLogoutAlert(title: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addCancelAction()
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
         let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: { [weak self] _ in
             self?.logout()
         })
@@ -276,7 +289,14 @@ final class UserProfileViewController: UIViewController {
     
     private func showAlertMessage(title: String, message: String?) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: message, titleFont: "Natasha", messageFont: "Natasha", titleFontSize: 20, messageFontSize: 20)
+        let attributes = ShowAlerts.setAtributes(
+            title: title,
+            message: message,
+            titleFont: self.alertFont,
+            messageFont: self.alertFont,
+            titleFontSize: self.alertTitleFontSize,
+            messageFontSize: self.alertMessageFontSize
+        )
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         alert.setValue(attributes?.last, forKey: "attributedMessage")
         
@@ -286,7 +306,7 @@ final class UserProfileViewController: UIViewController {
     
     private func showSuccessAlert(title: String, viewController: UIViewController) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         viewController.present(alert, animated: true, completion: nil)
         let when = DispatchTime.now() + 1.0
@@ -297,11 +317,11 @@ final class UserProfileViewController: UIViewController {
     
     private func showEditAlert(title: String, indexPath: IndexPath) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
         alert.addCancelAction()
-        alert.addTextField(configurationHandler: { $0.placeholder = "Enter data" })
+        alert.addTextField(configurationHandler: { $0.placeholder = ("ENTER_YOUR_DATA")§; $0.font = UIFont(name: self.alertFont, size: 15) })
         alert.setValue(attributes?.first, forKey: "attributedTitle")
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: {[weak self] _ in
+        let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: {[weak self] _ in
             guard alert.textFields!.first!.hasText else {
                 self?.showEditAlert(title: title, indexPath: indexPath)
                 return }
@@ -314,7 +334,7 @@ final class UserProfileViewController: UIViewController {
     
     private func showIncorrectAlert(title: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: "Natasha", messageFont: nil, titleFontSize: 20, messageFontSize: nil)
+        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
         alert.addCancelAction()
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         self.present(alert, animated: true, completion: nil)
@@ -362,9 +382,9 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
         let sectionNumber: Int
         switch section {
         case 0:
-            sectionNumber = 2
+            sectionNumber = self.numberOfCellsFirstSect
         case 1:
-            sectionNumber = 5
+            sectionNumber = self.numberOfCellsSecondSect
         default:
             sectionNumber = 0
         }
@@ -382,9 +402,10 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             DispatchQueue.main.async {
                 label.text = "\(("HELLO")§), \(ParseUserData.current?.username ?? "John Doe")"
             }
-            label.font = UIFont(name: "Buran USSR", size: 36)
+            label.font = UIFont(name: self.headerLabelFont, size: 36)
             label.textColor = .white
             label.textAlignment = .center
+            label.numberOfLines = 0
             headerView.addSubview(label)
             label.center = headerView.center
             headerView.layer.cornerRadius = 45
@@ -396,7 +417,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
             let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableInfoHeaderHeigh))
             let label = UILabel(frame: .init(x: 0, y: 0, width: headerView.frame.width - 10, height: headerView.frame.width - 10))
             label.text = "\(("USER_DATA")§)"
-            label.font = UIFont(name: "Buran USSR", size: 30)
+            label.font = UIFont(name: self.headerLabelFont, size: 30)
             label.textColor = .white
             label.textAlignment = .center
             headerView.addSubview(label)
@@ -422,7 +443,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return self.numberOfsections
     }
     
     // MARK: Table edit
@@ -435,8 +456,8 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
     // MARK: - Cell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "profileCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? UserProfileTableViewCell else { return .init() }
+       
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? UserProfileTableViewCell else { return .init() }
         switch indexPath.section {
         case 0:
             cell.cellName = (cellsNames[indexPath.row].0)§
