@@ -296,7 +296,7 @@ final class UserProfileViewController: UIViewController {
         
     }
     
-    // MARK: - Get user data function
+    // MARK: - Get user data Query
     
     private func getUserOrders() {
         guard let user = ParseUserData.current else { return }
