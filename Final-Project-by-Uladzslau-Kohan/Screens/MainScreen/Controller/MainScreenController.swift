@@ -4,7 +4,7 @@
 //
 //  Created by VironIT on 8/3/22.
 //  swiftlint:disable force_try implicit_getter
-
+import ParseSwift
 import RealmSwift
 import UIKit
 
@@ -84,6 +84,20 @@ final class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let user = ParseUserData.current {
+            let constraint2: QueryConstraint = "userID" == user.objectId
+            let query = ParseOrder.query(constraint2)
+            query.find() { result in
+                switch result {
+                case .success(let order):
+                    print(order.map { $0.name })
+                case .failure(_):
+                    print("error")
+                }
+                
+            }
+        }
+        
         items = realm.objects(CartItem.self)
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self

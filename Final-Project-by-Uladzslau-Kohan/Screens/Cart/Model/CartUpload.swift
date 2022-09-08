@@ -12,7 +12,7 @@ class CartUpload {
     func uploadOrder(name: [String], price: Double, userName: String, cardNumber: Int) -> Bool {
         var ended = true
         guard let user = ParseUserData.current else { return false }
-        let order = ParseOrder(name: name, price: price, userName: userName, cardNumber: cardNumber, user: user)
+        let order = ParseOrder(name: name, price: price, userName: userName, cardNumber: cardNumber, userID: user.objectId)
         order.save(completion: { result in
                 switch result {
                 case .success(_):
