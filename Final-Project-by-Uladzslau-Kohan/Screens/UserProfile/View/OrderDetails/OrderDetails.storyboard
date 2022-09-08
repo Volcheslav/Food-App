@@ -16,7 +16,7 @@
         <!--Order Details View Controller-->
         <scene sceneID="0eZ-ZI-abn">
             <objects>
-                <viewController id="fIc-kM-sfi" customClass="OrderDetailsViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderDetails" modalTransitionStyle="flipHorizontal" id="fIc-kM-sfi" customClass="OrderDetailsViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJV-Ts-Vki">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                         <rect key="frame" x="3" y="3" width="368" height="580"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="v3K-g9-8dV">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="order" id="v3K-g9-8dV" customClass="OrderDetailsViewCell" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="368" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v3K-g9-8dV" id="xiP-tR-vGx">
@@ -55,6 +55,9 @@
                                                 <color key="value" red="0.32285057109999998" green="0.17637479510000001" blue="0.0041067471229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="whu-Iu-qUy" kind="unwind" unwindAction="goOrdersList:" id="uZE-87-czW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,8 +82,13 @@
                             <constraint firstItem="2Wk-PX-Y6J" firstAttribute="bottom" secondItem="rtP-p1-v0U" secondAttribute="bottom" constant="100" id="hdf-md-o6i"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButtn" destination="1GB-Fz-qbH" id="Gqn-r1-c2P"/>
+                        <outlet property="orderDetailsTableView" destination="NQr-DD-Cbt" id="BOs-Kx-BsE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kmb-dZ-pS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="whu-Iu-qUy" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="272" y="120"/>
         </scene>

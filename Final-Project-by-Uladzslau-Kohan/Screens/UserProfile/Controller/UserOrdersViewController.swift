@@ -9,13 +9,15 @@ import UIKit
 
 class UserOrdersViewController: UIViewController {
     
-    var orderData: [ParseOrder]?
+    var ordersData: [ParseOrder]?
     
     // MARK: - Constants
     
     private let orderNibName: String = "OrderViewCell"
     private let cellID: String = "OrderCell"
-    
+    private let ordersDetailsStoryboardName: String = "OrderDetails"
+    private let ordersDetailsVCIdentifier: String = "orderDetails"
+
     // MARK: - Outlets
 
     @IBOutlet private weak var noOrdersLabel: UILabel!
@@ -42,7 +44,7 @@ class UserOrdersViewController: UIViewController {
     }
     
     private func showNoOrdersLabel() {
-        guard let orders = self.orderData else {
+        guard let orders = self.ordersData else {
             self.noOrdersLabel.text = ("NO_ORDERS")§
             self.noOrdersLabel.isHidden = false
             self.backgroundImage.isHidden = false
@@ -58,11 +60,26 @@ class UserOrdersViewController: UIViewController {
         }
     }
     
+    // MARK: - Show order details page
+    
+    private func showOrdersDetailsPage(orderData: ParseOrder) {
+        let storybord = UIStoryboard(name: self.ordersDetailsStoryboardName, bundle: nil)
+        guard let viewController = storybord.instantiateViewController(identifier: self.ordersDetailsVCIdentifier) as? OrderDetailsViewController else {
+            return
+        }
+        viewController.orderData = orderData
+        viewController.modalPresentationStyle = .overCurrentContext
+        show(viewController, sender: nil)
+    }
+    
+    @IBAction private func goOrdersList(_ sender: UIStoryboardSegue) {
+    }
+    
 }
 
 extension UserOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let cellNumber = self.orderData?.count  else {
+        guard let cellNumber = self.ordersData?.count  else {
             return 0
         }
         return cellNumber
@@ -70,7 +87,7 @@ extension UserOrdersViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID) as? OrderViewCell,
-              let order = self.orderData,
+              let order = self.ordersData,
               let date = order[indexPath.row].createdAt else { return .init() }
         let dtFormatter = DateFormatter()
         dtFormatter.dateFormat = "dd-MM-yy HH:mm"
@@ -80,6 +97,10 @@ extension UserOrdersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dataValue = formattedDateTime
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.showOrdersDetailsPage(orderData: self.ordersData?[indexPath.row] ?? .init())
     }
     
 }
