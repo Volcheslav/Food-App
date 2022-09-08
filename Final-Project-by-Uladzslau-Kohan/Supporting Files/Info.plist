@@ -8,6 +8,7 @@
 	<array>
 		<string>Buran USSR.ttf</string>
 		<string>Natasha.ttf</string>
+		<string>FluorineLite.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

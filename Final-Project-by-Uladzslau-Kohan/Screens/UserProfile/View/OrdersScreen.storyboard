@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="FluorineLite.ttf">
+            <string>FluorineLite</string>
+        </array>
         <array key="Natasha.ttf">
             <string>Natasha</string>
         </array>
@@ -59,14 +62,31 @@
                                             <segue destination="DVJ-Bz-wnS" kind="unwind" unwindAction="goUserProfile:" id="peB-xn-K1Z"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pageBig" translatesAutoresizingMaskIntoConstraints="NO" id="ZH3-Df-cvf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="585"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zns-ju-CY0">
+                                        <rect key="frame" x="20" y="285" width="334" height="48"/>
+                                        <fontDescription key="fontDescription" name="FluorineLite" family="Fluorine Lite" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="zns-ju-CY0" firstAttribute="leading" secondItem="6lE-Nd-xw2" secondAttribute="leading" constant="20" id="2rF-I6-9X5"/>
                                     <constraint firstAttribute="trailing" secondItem="Edd-8g-8oK" secondAttribute="trailing" constant="5" id="5uj-qg-nuP"/>
+                                    <constraint firstItem="Edd-8g-8oK" firstAttribute="top" secondItem="ZH3-Df-cvf" secondAttribute="bottom" id="7Bd-Tp-e4p"/>
                                     <constraint firstAttribute="bottom" secondItem="Edd-8g-8oK" secondAttribute="bottom" constant="2" id="AUi-Rc-NIh"/>
                                     <constraint firstAttribute="bottom" secondItem="nWU-zN-FW6" secondAttribute="bottom" constant="35" id="CP1-ar-YSY"/>
+                                    <constraint firstItem="zns-ju-CY0" firstAttribute="centerX" secondItem="6lE-Nd-xw2" secondAttribute="centerX" id="CkW-x2-vJW"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZH3-Df-cvf" secondAttribute="trailing" id="Cyi-iQ-XBQ"/>
+                                    <constraint firstItem="ZH3-Df-cvf" firstAttribute="leading" secondItem="6lE-Nd-xw2" secondAttribute="leading" id="HDu-R9-MKu"/>
                                     <constraint firstItem="Edd-8g-8oK" firstAttribute="leading" secondItem="6lE-Nd-xw2" secondAttribute="leading" constant="5" id="KnY-XM-rG3"/>
+                                    <constraint firstAttribute="trailing" secondItem="zns-ju-CY0" secondAttribute="trailing" constant="20" id="Xm6-1N-Ood"/>
                                     <constraint firstAttribute="trailing" secondItem="nWU-zN-FW6" secondAttribute="trailing" constant="5" id="boe-r3-IAR"/>
+                                    <constraint firstItem="ZH3-Df-cvf" firstAttribute="top" secondItem="6lE-Nd-xw2" secondAttribute="top" id="fQi-ps-doW"/>
+                                    <constraint firstItem="zns-ju-CY0" firstAttribute="centerY" secondItem="6lE-Nd-xw2" secondAttribute="centerY" id="gc1-Wb-RBe"/>
                                     <constraint firstItem="nWU-zN-FW6" firstAttribute="top" secondItem="6lE-Nd-xw2" secondAttribute="top" constant="5" id="np6-ih-1TD"/>
                                     <constraint firstItem="nWU-zN-FW6" firstAttribute="leading" secondItem="6lE-Nd-xw2" secondAttribute="leading" constant="5" id="ugw-gq-hEO"/>
                                     <constraint firstItem="Edd-8g-8oK" firstAttribute="top" secondItem="nWU-zN-FW6" secondAttribute="bottom" constant="2" id="ve4-4f-tjK"/>
@@ -85,6 +105,8 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Edd-8g-8oK" id="14m-eo-S77"/>
+                        <outlet property="backgroundImage" destination="ZH3-Df-cvf" id="aMc-wC-6iJ"/>
+                        <outlet property="noOrdersLabel" destination="zns-ju-CY0" id="I3b-af-Sf7"/>
                         <outlet property="ordersTableView" destination="nWU-zN-FW6" id="4QV-rT-aK6"/>
                     </connections>
                 </viewController>
@@ -100,6 +122,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="pageBig" width="714" height="556"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

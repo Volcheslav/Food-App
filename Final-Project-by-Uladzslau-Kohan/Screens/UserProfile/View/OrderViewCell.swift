@@ -9,8 +9,16 @@ import UIKit
 
 class OrderViewCell: UITableViewCell {
     
-    var dataName: String?
-    var dataValue: String?
+    var dataName: String? {
+        didSet {
+            self.dataNameLabel.text = self.dataName
+        }
+    }
+    var dataValue: String? {
+        didSet {
+            self.dataValueLabel.text = self.dataValue
+        }
+    }
 
     @IBOutlet private weak var dataNameLabel: UILabel!
     @IBOutlet private weak var dataValueLabel: UILabel!

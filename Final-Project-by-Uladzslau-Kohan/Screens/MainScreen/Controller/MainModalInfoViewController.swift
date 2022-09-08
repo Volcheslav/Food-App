@@ -40,6 +40,7 @@ final class MainModalInfoViewController: UIViewController {
         self.productPriceLabel.text = String(price)
         self.productCaloriesLabel.text = String(caloreis)
         self.productImageView.image = UIImage(named: imageName)
+        self.modalView.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
         self.modalView.layer.cornerRadius = 25
         self.modalView.layer.masksToBounds = true
         self.nameLabel.text = ("MODAL_MAIN_NAME")§

@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Natasha.ttf">
-            <string>Natasha</string>
+        <array key="FluorineLite.ttf">
+            <string>FluorineLite</string>
         </array>
     </customFonts>
     <objects>
@@ -29,14 +29,14 @@
                         <rect key="frame" x="45" y="3" width="456" height="91"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-j7-qOy">
-                                <rect key="frame" x="0.0" y="0.0" width="399" height="91"/>
-                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                <rect key="frame" x="0.0" y="0.0" width="405.5" height="91"/>
+                                <fontDescription key="fontDescription" name="FluorineLite" family="Fluorine Lite" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-8Z-man">
-                                <rect key="frame" x="407" y="0.0" width="49" height="91"/>
-                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                <rect key="frame" x="413.5" y="0.0" width="42.5" height="91"/>
+                                <fontDescription key="fontDescription" name="FluorineLite" family="Fluorine Lite" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>

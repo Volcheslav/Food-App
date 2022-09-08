@@ -37,6 +37,7 @@
 		5366140128C8D09500716338 /* plusAdd.json in Resources */ = {isa = PBXBuildFile; fileRef = 5366140028C8D09400716338 /* plusAdd.json */; };
 		5366140A28C8DC8300716338 /* ParseOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366140928C8DC8300716338 /* ParseOrderData.swift */; };
 		5366140D28C8E6D100716338 /* CartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366140C28C8E6D100716338 /* CartUpload.swift */; };
+		53A9D29928CA23B900BDFBA0 /* FluorineLite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53A9D29828CA23B900BDFBA0 /* FluorineLite.ttf */; };
 		53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D83289ABD6D002755A4 /* AppDelegate.swift */; };
 		53D99D86289ABD6D002755A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D85289ABD6D002755A4 /* SceneDelegate.swift */; };
 		53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D99D87289ABD6D002755A4 /* MainScreenController.swift */; };
@@ -86,6 +87,7 @@
 		5366140028C8D09400716338 /* plusAdd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plusAdd.json; sourceTree = "<group>"; };
 		5366140928C8DC8300716338 /* ParseOrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseOrderData.swift; sourceTree = "<group>"; };
 		5366140C28C8E6D100716338 /* CartUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartUpload.swift; sourceTree = "<group>"; };
+		53A9D29828CA23B900BDFBA0 /* FluorineLite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FluorineLite.ttf; sourceTree = "<group>"; };
 		53D99D80289ABD6D002755A4 /* Final-Project-by-Uladzslau-Kohan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final-Project-by-Uladzslau-Kohan.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53D99D83289ABD6D002755A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53D99D85289ABD6D002755A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				533DE13F28C7A864009DA2A9 /* Natasha.ttf */,
 				533DE14228C7A86C009DA2A9 /* Buran USSR.ttf */,
+				53A9D29828CA23B900BDFBA0 /* FluorineLite.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				53D99D90289ABD6F002755A4 /* LaunchScreen.storyboard in Resources */,
 				533DE14328C7A86C009DA2A9 /* Buran USSR.ttf in Resources */,
 				53D99D8D289ABD6F002755A4 /* Assets.xcassets in Resources */,
+				53A9D29928CA23B900BDFBA0 /* FluorineLite.ttf in Resources */,
 				533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */,
 				5366140128C8D09500716338 /* plusAdd.json in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,

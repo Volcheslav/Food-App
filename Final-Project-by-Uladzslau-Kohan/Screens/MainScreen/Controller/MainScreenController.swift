@@ -4,7 +4,6 @@
 //
 //  Created by VironIT on 8/3/22.
 //  swiftlint:disable force_try implicit_getter
-import ParseSwift
 import RealmSwift
 import UIKit
 
@@ -84,24 +83,11 @@ final class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let user = ParseUserData.current {
-            let constraint2: QueryConstraint = "userID" == user.objectId
-            let query = ParseOrder.query(constraint2)
-            query.find() { result in
-                switch result {
-                case .success(let order):
-                    print(order.map { $0.name })
-                case .failure(_):
-                    print("error")
-                }
-                
-            }
-        }
-        
         items = realm.objects(CartItem.self)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
         self.mainFirstCollection.delegate = self
         self.mainFirstCollection.dataSource = self
-        self.mainFirstCollection.backgroundColor = .lightGray
+        self.mainFirstCollection.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
         self.mainFirstCollection.layer.cornerRadius = 20
         self.mainFirstCollection.layer.masksToBounds = true
         self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
@@ -214,7 +200,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         
         cell.layer.cornerRadius = 30
         cell.layer.masksToBounds = true
-        cell.backgroundColor = .darkGray
+        cell.backgroundView = UIImageView(image: UIImage(named: "cellBackground"))
         cell.tagButtonAdd = indexPath.row
         return cell
     }

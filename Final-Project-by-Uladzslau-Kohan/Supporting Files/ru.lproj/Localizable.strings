@@ -94,6 +94,7 @@
 "LOGGED_OUT" = "Пользователь вышел";
 "LOG_OUT" = "Выйти";
 "LOGOUT_MESSAGE" = "Вы действительно хотите выйти?";
+"TO_ORDERS" = "к истории заказов";
 
 
 // MARK: Profile view cell
@@ -133,4 +134,6 @@
 
 // MARK: Orders page
 
-"ORDERS_BACK" = "Back";
+"ORDERS_BACK" = "Назад";
+"DATE" = "Дата:";
+"NO_ORDERS" = "Пока тут ничего нет :( Давай, зайди в меню и закажи себе что-нибудь. Хорошего дня!";

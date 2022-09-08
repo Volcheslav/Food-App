@@ -4,6 +4,7 @@
 //
 //  Created by VironIT on 8/31/22.
 // swiftlint: disable: implicit_getter
+import ParseSwift
 import RealmSwift
 import UIKit
 
@@ -18,6 +19,7 @@ final class UserProfileViewController: UIViewController {
     private let numberOfCellsFirstSect: Int = 2
     private let numberOfCellsSecondSect: Int = 5
     private let alertFont: String = "Natasha"
+    private let alertTextFieldFont = "Buran USSR"
     private let alertTitleFontSize: CGFloat = 23
     private let alertMessageFontSize: CGFloat = 20
     private let headerLabelFont: String = "Buran USSR"
@@ -40,9 +42,12 @@ final class UserProfileViewController: UIViewController {
             ]
         }
     }
+    
+    private var userOrder: [ParseOrder]?
     // MARK: - Outlets
     
     @IBOutlet private weak var profileInfoTable: UITableView!
+    @IBOutlet private weak var toOrdersButton: UICustomButton!
     @IBOutlet private weak var logoutButton: UICustomButton!
     @IBOutlet private weak var signUpButton: UICustomButton!
     @IBOutlet private weak var loginButton: UICustomButton!
@@ -55,13 +60,9 @@ final class UserProfileViewController: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction private func goToOrders(_ sender: UIButton) {
-        let storybord = UIStoryboard(name: self.ordersStoryboardName, bundle: nil)
-        guard let viewController = storybord.instantiateViewController(identifier: self.ordersVCIdentifier) as? UserOrdersViewController else {
-            return
-        }
-        viewController.modalPresentationStyle = .overCurrentContext
-        show(viewController, sender: nil)
+    @IBAction private func goToOrders(_ sender: UICustomButton) {
+        self.animateButtonPush(button: sender)
+        self.showOrdersPage()
     }
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
@@ -116,8 +117,7 @@ final class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.initializeHideKeyboard()
-        
+    
         self.profileInfoTable.allowsSelection = true
         self.profileInfoTable.isUserInteractionEnabled = true
         self.profileInfoTable.delegate = self
@@ -133,6 +133,7 @@ final class UserProfileViewController: UIViewController {
         self.emailTextField.keyboardType = .emailAddress
         self.loginButton.setTitle(("LOGIN")§, for: .normal)
         self.signUpButton.setTitle(("SIGN_UP")§, for: .normal)
+        self.toOrdersButton.setTitle(("TO_ORDERS")§, for: .normal)
         self.backTologinButton.setTitle(("PROFILE_BACK_TO_LOGIN")§, for: .normal)
         self.logoutButton.setTitle(("LOG_OUT")§, for: .normal)
         
@@ -146,6 +147,7 @@ final class UserProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.getUserOrders()
         let user: ParseUserData? = ParseUserData.current
         self.loginPasswordView.isHidden = user != nil
         self.profileInfoView.isHidden = user == nil
@@ -166,6 +168,7 @@ final class UserProfileViewController: UIViewController {
                 self?.showAlertMessage(title: ("ERROR")§, message: "\(error)")
             }
         })
+        self.userOrder = nil
         self.profileInfoView.isHidden = true
         self.loginPasswordView.isHidden = false
     }
@@ -187,6 +190,7 @@ final class UserProfileViewController: UIViewController {
                                 switch result {
                                 case .success(_):
                                     self?.successEnter()
+                                    self?.getUserOrders()
                                 case .failure(_):
                                     self?.showAlertMessage(title: ("ERROR")§, message: ("PROFILE_NOT_VALID_REGISTRATION")§)
                                 }})
@@ -292,6 +296,35 @@ final class UserProfileViewController: UIViewController {
         
     }
     
+    // MARK: - Get user data function
+    
+    private func getUserOrders() {
+        guard let user = ParseUserData.current else { return }
+        let constraint2: QueryConstraint = "userID" == user.objectId
+        let query = ParseOrder.query(constraint2)
+        
+        query.find { result in
+            switch result {
+            case .success(let tempOrder):
+                self.userOrder = tempOrder
+            case .failure(_):
+                self.userOrder = nil
+            }
+        }
+    }
+    
+    // MARK: - Show orders page
+    
+    private func showOrdersPage() {
+        let storybord = UIStoryboard(name: self.ordersStoryboardName, bundle: nil)
+        guard let viewController = storybord.instantiateViewController(identifier: self.ordersVCIdentifier) as? UserOrdersViewController else {
+            return
+        }
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.orderData = self.userOrder
+        show(viewController, sender: nil)
+    }
+    
     // MARK: - Alert functions
     
     private func showLogoutAlert(title: String) {
@@ -338,7 +371,7 @@ final class UserProfileViewController: UIViewController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
         alert.addCancelAction()
-        alert.addTextField(configurationHandler: { $0.placeholder = ("ENTER_YOUR_DATA")§; $0.font = UIFont(name: self.alertFont, size: 15) })
+        alert.addTextField(configurationHandler: { $0.placeholder = ("ENTER_YOUR_DATA")§; $0.font = UIFont(name: self.alertTextFieldFont, size: 15) })
         alert.setValue(attributes?.first, forKey: "attributedTitle")
         let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: {[weak self] _ in
             guard alert.textFields!.first!.hasText else {
@@ -359,16 +392,7 @@ final class UserProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     // MARK: - Keybord functions
-    //
-    //    private func initializeHideKeyboard() {
-    //        let tap = UITapGestureRecognizer(
-    //            target: self,
-    //            action: #selector(dismissMyKeyboard)
-    //        )
-    //        tap.cancelsTouchesInView = false
-    //        view.addGestureRecognizer(tap)
-    //    }
-    //
+ 
     @objc private func dismissMyKeyboard() {
         view.endEditing(true)
     }

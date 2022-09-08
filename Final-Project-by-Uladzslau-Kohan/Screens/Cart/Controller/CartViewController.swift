@@ -60,6 +60,8 @@ final class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.cartTableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        self.cartTableView.backgroundView?.alpha = 0.5
         self.deleteButton.setTitle(("DELETE_ALL")§, for: .normal)
         self.uploarOrderButton.setTitle(("UPLOAD_ORDER")§, for: .normal)
         items = realm.objects(CartItem.self)
