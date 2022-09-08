@@ -284,7 +284,7 @@ final class UserProfileViewController: UIViewController {
                 case .success(_):
                     self?.profileInfoTable.reloadRows(at: [indexPath], with: .automatic)
                 case .failure(let error):
-                    print(error.message)
+                    self?.showIncorrectAlert(title: error.message)
                 }
                 
             })

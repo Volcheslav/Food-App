@@ -7,6 +7,11 @@
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Natasha.ttf">
+            <string>Natasha</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -17,19 +22,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="506" height="97"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="page" translatesAutoresizingMaskIntoConstraints="NO" id="n3J-YX-P7y">
+                        <rect key="frame" x="0.0" y="0.0" width="506" height="97"/>
+                    </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ibf-Q6-NvY" userLabel="Labels Stack">
-                        <rect key="frame" x="5" y="3" width="496" height="91"/>
+                        <rect key="frame" x="45" y="3" width="456" height="91"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXT-j7-qOy">
-                                <rect key="frame" x="0.0" y="0.0" width="446.5" height="91"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="0.0" y="0.0" width="399" height="91"/>
+                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-8Z-man">
-                                <rect key="frame" x="454.5" y="0.0" width="41.5" height="91"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="407" y="0.0" width="49" height="91"/>
+                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -37,8 +45,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="Ibf-Q6-NvY" secondAttribute="bottom" constant="3" id="3pi-Jq-P7T"/>
+                    <constraint firstAttribute="bottom" secondItem="n3J-YX-P7y" secondAttribute="bottom" id="7gC-5p-MgK"/>
+                    <constraint firstAttribute="trailing" secondItem="n3J-YX-P7y" secondAttribute="trailing" id="Axy-Or-L7n"/>
                     <constraint firstAttribute="trailing" secondItem="Ibf-Q6-NvY" secondAttribute="trailing" constant="5" id="Dd1-It-hLT"/>
-                    <constraint firstItem="Ibf-Q6-NvY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="ajb-Ts-SAd"/>
+                    <constraint firstItem="Ibf-Q6-NvY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="45" id="ajb-Ts-SAd"/>
+                    <constraint firstItem="n3J-YX-P7y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="crW-Rs-lLX"/>
+                    <constraint firstItem="n3J-YX-P7y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="n6q-ld-jeK"/>
                     <constraint firstItem="Ibf-Q6-NvY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="zQ1-4U-RZ4"/>
                 </constraints>
             </tableViewCellContentView>
@@ -50,4 +62,7 @@
             <point key="canvasLocation" x="91.304347826086968" y="105.46875"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="page" width="400" height="70"/>
+    </resources>
 </document>
