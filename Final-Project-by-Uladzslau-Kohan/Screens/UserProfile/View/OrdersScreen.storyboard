@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Natasha.ttf">
+            <string>Natasha</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--User Orders View Controller-->
+        <scene sceneID="wGZ-0O-jxy">
+            <objects>
+                <viewController storyboardIdentifier="ordersModal" modalTransitionStyle="crossDissolve" id="D8s-uy-vC0" customClass="UserOrdersViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c8l-zt-izx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-Nd-xw2">
+                                <rect key="frame" x="20" y="144" width="374" height="618"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-zN-FW6">
+                                        <rect key="frame" x="5" y="5" width="364" height="578"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderCell" id="RjB-8G-wTB">
+                                                <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RjB-8G-wTB" id="gsb-Jy-zIt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-8g-8oK" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="585" width="364" height="31"/>
+                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.32285057109999998" green="0.17637479510000001" blue="0.0041067471229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="DVJ-Bz-wnS" kind="unwind" unwindAction="goUserProfile:" id="peB-xn-K1Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Edd-8g-8oK" secondAttribute="trailing" constant="5" id="5uj-qg-nuP"/>
+                                    <constraint firstAttribute="bottom" secondItem="Edd-8g-8oK" secondAttribute="bottom" constant="2" id="AUi-Rc-NIh"/>
+                                    <constraint firstAttribute="bottom" secondItem="nWU-zN-FW6" secondAttribute="bottom" constant="35" id="CP1-ar-YSY"/>
+                                    <constraint firstItem="Edd-8g-8oK" firstAttribute="leading" secondItem="6lE-Nd-xw2" secondAttribute="leading" constant="5" id="KnY-XM-rG3"/>
+                                    <constraint firstAttribute="trailing" secondItem="nWU-zN-FW6" secondAttribute="trailing" constant="5" id="boe-r3-IAR"/>
+                                    <constraint firstItem="nWU-zN-FW6" firstAttribute="top" secondItem="6lE-Nd-xw2" secondAttribute="top" constant="5" id="np6-ih-1TD"/>
+                                    <constraint firstItem="nWU-zN-FW6" firstAttribute="leading" secondItem="6lE-Nd-xw2" secondAttribute="leading" constant="5" id="ugw-gq-hEO"/>
+                                    <constraint firstItem="Edd-8g-8oK" firstAttribute="top" secondItem="nWU-zN-FW6" secondAttribute="bottom" constant="2" id="ve4-4f-tjK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wa3-qa-mV1"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="wa3-qa-mV1" firstAttribute="trailing" secondItem="6lE-Nd-xw2" secondAttribute="trailing" constant="20" id="D10-QD-n8a"/>
+                            <constraint firstItem="6lE-Nd-xw2" firstAttribute="top" secondItem="wa3-qa-mV1" secondAttribute="top" constant="100" id="cHL-yM-ldQ"/>
+                            <constraint firstItem="6lE-Nd-xw2" firstAttribute="leading" secondItem="wa3-qa-mV1" secondAttribute="leading" constant="20" id="vOj-TW-Ev8"/>
+                            <constraint firstItem="wa3-qa-mV1" firstAttribute="bottom" secondItem="6lE-Nd-xw2" secondAttribute="bottom" constant="100" id="zcP-Ff-dqR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="Edd-8g-8oK" id="14m-eo-S77"/>
+                        <outlet property="ordersTableView" destination="nWU-zN-FW6" id="4QV-rT-aK6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0TG-0i-Nzt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="DVJ-Bz-wnS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="121"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Edd-8g-8oK">
+            <size key="intrinsicContentSize" width="56" height="27"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

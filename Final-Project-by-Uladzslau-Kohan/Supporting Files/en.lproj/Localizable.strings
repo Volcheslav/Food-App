@@ -137,3 +137,7 @@
 "CONTACTS" = "Contacts";
 "ADDRESS" = "Address";
 
+// MARK: Orders page
+
+"ORDERS_BACK" = "Back";
+

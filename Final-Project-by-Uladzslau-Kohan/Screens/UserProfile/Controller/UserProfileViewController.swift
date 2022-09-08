@@ -22,6 +22,8 @@ final class UserProfileViewController: UIViewController {
     private let alertMessageFontSize: CGFloat = 20
     private let headerLabelFont: String = "Buran USSR"
     private let cellIdentifier: String = "profileCell"
+    private let ordersStoryboardName: String = "OrdersScreen"
+    private let ordersVCIdentifier: String = "ordersModal"
     
     // MARK: - Cells data array
     
@@ -52,6 +54,15 @@ final class UserProfileViewController: UIViewController {
     @IBOutlet private weak var profileInfoView: UIView!
     
     // MARK: - Actions
+    
+    @IBAction private func goToOrders(_ sender: UIButton) {
+        let storybord = UIStoryboard(name: self.ordersStoryboardName, bundle: nil)
+        guard let viewController = storybord.instantiateViewController(identifier: self.ordersVCIdentifier) as? UserOrdersViewController else {
+            return
+        }
+        viewController.modalPresentationStyle = .overCurrentContext
+        show(viewController, sender: nil)
+    }
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
@@ -198,6 +209,11 @@ final class UserProfileViewController: UIViewController {
         self.usernameTextField.text = nil
         self.passwordTextField.text = nil
         self.animateHideEmailTextfield()
+    }
+    
+    // MARK: - Unwined segue
+    
+    @IBAction private func goUserProfile(_ sender: UIStoryboardSegue) {
     }
     
     // MARK: - Textfield and button apear animations
