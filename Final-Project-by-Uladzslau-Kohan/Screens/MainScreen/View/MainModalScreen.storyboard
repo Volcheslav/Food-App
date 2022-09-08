@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Natasha.ttf">
+            <string>Natasha</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main Modal Info View Controller-->
+        <scene sceneID="qG7-b4-pJd">
+            <objects>
+                <viewController storyboardIdentifier="mainModal" modalTransitionStyle="crossDissolve" id="dO8-SS-NDb" customClass="MainModalInfoViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6e0-3K-VuD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idm-Bj-wEB">
+                                <rect key="frame" x="20" y="144" width="374" height="618"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AIF-kh-Cqh">
+                                        <rect key="frame" x="20" y="20" width="334" height="448"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="97u-CD-xjJ">
+                                        <rect key="frame" x="20" y="478" width="334" height="130"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-ua-YJl">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="130"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUf-FE-IIN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="38"/>
+                                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIc-US-OOR">
+                                                        <rect key="frame" x="0.0" y="46" width="167" height="38"/>
+                                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8F8-4w-bLr">
+                                                        <rect key="frame" x="0.0" y="92" width="167" height="38"/>
+                                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-Hx-I1F">
+                                                <rect key="frame" x="175" y="0.0" width="159" height="130"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ade-DM-Pc6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="159" height="38"/>
+                                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLc-PM-lAz">
+                                                        <rect key="frame" x="0.0" y="46" width="159" height="38"/>
+                                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdV-v9-jyN">
+                                                        <rect key="frame" x="0.0" y="92" width="159" height="38"/>
+                                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLs-rN-o13" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                        <rect key="frame" x="141" y="428" width="92.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="mZ4-Nt-sO3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="button" image="cart.fill" catalog="system"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="0.3954433692893401" green="0.097942495695973714" blue="0.069282614200249532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="1" green="0.1792423646337884" blue="0.14038995793990861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                                <point key="value" x="0.0" y="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                                <point key="value" x="0.0" y="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addToCart:" destination="dO8-SS-NDb" eventType="touchUpInside" id="hdu-ZZ-YMq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="97u-CD-xjJ" secondAttribute="bottom" constant="10" id="6aX-sQ-chY"/>
+                                    <constraint firstAttribute="trailing" secondItem="97u-CD-xjJ" secondAttribute="trailing" constant="20" id="Xug-ER-PTx"/>
+                                    <constraint firstItem="97u-CD-xjJ" firstAttribute="top" secondItem="AIF-kh-Cqh" secondAttribute="bottom" constant="10" id="cAZ-dZ-nfx"/>
+                                    <constraint firstItem="MLs-rN-o13" firstAttribute="centerX" secondItem="idm-Bj-wEB" secondAttribute="centerX" id="flX-bP-the"/>
+                                    <constraint firstAttribute="bottom" secondItem="MLs-rN-o13" secondAttribute="bottom" constant="150" id="gCg-s1-TQY"/>
+                                    <constraint firstItem="97u-CD-xjJ" firstAttribute="leading" secondItem="idm-Bj-wEB" secondAttribute="leading" constant="20" id="iO7-Kr-kd4"/>
+                                    <constraint firstAttribute="trailing" secondItem="AIF-kh-Cqh" secondAttribute="trailing" constant="20" id="nf6-Bc-UPb"/>
+                                    <constraint firstAttribute="bottom" secondItem="AIF-kh-Cqh" secondAttribute="bottom" constant="150" id="pov-Us-zjG"/>
+                                    <constraint firstItem="AIF-kh-Cqh" firstAttribute="top" secondItem="idm-Bj-wEB" secondAttribute="top" constant="20" id="tSR-f7-tY8"/>
+                                    <constraint firstItem="AIF-kh-Cqh" firstAttribute="leading" secondItem="idm-Bj-wEB" secondAttribute="leading" constant="20" id="vKI-FT-49w"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QSU-3y-mjl"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="idm-Bj-wEB" firstAttribute="leading" secondItem="QSU-3y-mjl" secondAttribute="leading" constant="20" id="ZQg-hd-d6A"/>
+                            <constraint firstItem="QSU-3y-mjl" firstAttribute="bottom" secondItem="idm-Bj-wEB" secondAttribute="bottom" constant="100" id="fyd-yM-uPz"/>
+                            <constraint firstItem="idm-Bj-wEB" firstAttribute="top" secondItem="QSU-3y-mjl" secondAttribute="top" constant="100" id="k1D-GF-52l"/>
+                            <constraint firstItem="QSU-3y-mjl" firstAttribute="trailing" secondItem="idm-Bj-wEB" secondAttribute="trailing" constant="20" id="pkt-Ou-HtR"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mex-3C-6wE" appends="YES" id="amF-LQ-J0S"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="addToCartButton" destination="MLs-rN-o13" id="bxM-bO-qkq"/>
+                        <outlet property="caloriesLabel" destination="8F8-4w-bLr" id="rHR-2A-UUO"/>
+                        <outlet property="modalView" destination="idm-Bj-wEB" id="ZxL-dr-Aft"/>
+                        <outlet property="nameLabel" destination="tUf-FE-IIN" id="XRl-If-yUh"/>
+                        <outlet property="priceLabel" destination="tIc-US-OOR" id="Bac-1u-3Hf"/>
+                        <outlet property="productCaloriesLabel" destination="KdV-v9-jyN" id="U32-ME-QWT"/>
+                        <outlet property="productImageView" destination="AIF-kh-Cqh" id="smi-xi-4FC"/>
+                        <outlet property="productNameLabel" destination="ade-DM-Pc6" id="hnQ-EV-0cC"/>
+                        <outlet property="productPriceLabel" destination="CLc-PM-lAz" id="3kP-fs-WHE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vc9-vO-xcc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gmM-ep-tKR" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="mex-3C-6wE">
+                    <connections>
+                        <segue destination="gmM-ep-tKR" kind="unwind" unwindAction="goMainScreen:" id="O88-kt-1qF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1642.0289855072465" y="25.446428571428569"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="MLs-rN-o13">
+            <size key="intrinsicContentSize" width="92.5" height="23"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

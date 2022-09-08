@@ -11,7 +11,7 @@ import UIKit
 final class MainScreenViewController: UIViewController {
     
     private let cellIdentifier: String = "mainCell"
-    private let storyboardID: String = "MainScreen"
+    private let storyboardID: String = "MainModalScreen"
     private let modalVCIdentifeir: String = "mainModal"
     private let headerNibName: String = "HeaderSupplementaryView"
     private let plistName: String = "Menu"
