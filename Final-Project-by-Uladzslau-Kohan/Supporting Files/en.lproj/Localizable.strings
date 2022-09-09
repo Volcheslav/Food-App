@@ -143,3 +143,5 @@
 "ORDERS_BACK" = "Back";
 "DATE" = "Date:";
 "NO_ORDERS" = "No orders now, pleace go to our menu and buy something. Have a good day!";
+"ORDER_DETAILS" = "Order details";
+"SUM" = "Sum:";

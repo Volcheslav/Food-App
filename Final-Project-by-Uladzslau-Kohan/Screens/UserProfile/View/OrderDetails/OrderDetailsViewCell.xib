@@ -23,32 +23,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Cez-WO-DWn">
-                        <rect key="frame" x="10" y="2" width="300" height="40"/>
+                        <rect key="frame" x="25" y="2" width="270" height="40"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXv-4t-zTy">
-                                <rect key="frame" x="0.0" y="0.0" width="142" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="127" height="40"/>
                                 <fontDescription key="fontDescription" name="FluorineLite" family="Fluorine Lite" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRj-pU-9UK">
-                                <rect key="frame" x="150" y="0.0" width="150" height="40"/>
+                                <rect key="frame" x="135" y="0.0" width="135" height="40"/>
                                 <fontDescription key="fontDescription" name="FluorineLite" family="Fluorine Lite" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Cez-WO-DWn" secondAttribute="trailing" constant="10" id="Axa-7R-Zo9"/>
+                    <constraint firstAttribute="trailing" secondItem="Cez-WO-DWn" secondAttribute="trailing" constant="25" id="Axa-7R-Zo9"/>
                     <constraint firstAttribute="bottom" secondItem="Cez-WO-DWn" secondAttribute="bottom" constant="2" id="BXY-20-bPl"/>
                     <constraint firstItem="Cez-WO-DWn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="YN7-e0-HWD"/>
-                    <constraint firstItem="Cez-WO-DWn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="egu-ke-z1A"/>
+                    <constraint firstItem="Cez-WO-DWn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="egu-ke-z1A"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="nameLabel" destination="cXv-4t-zTy" id="SL2-in-R4d"/>
                 <outlet property="numberLabel" destination="PRj-pU-9UK" id="SHd-Gl-UqU"/>

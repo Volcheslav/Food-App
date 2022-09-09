@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OrderDetailsViewCell: UITableViewCell {
+final class OrderDetailsViewCell: UITableViewCell {
     
     var name: String? {
         didSet {

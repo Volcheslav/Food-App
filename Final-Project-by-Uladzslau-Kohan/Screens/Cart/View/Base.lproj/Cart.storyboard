@@ -67,17 +67,17 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="topRight" distribution="fillProportionally" alignment="firstBaseline" spacing="21" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-AK-dTY" userLabel="PriceNumberStack">
-                                                    <rect key="frame" x="296" y="24" width="110" height="19"/>
+                                                    <rect key="frame" x="296" y="26" width="110" height="15"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwD-mp-qfS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="46" height="19"/>
-                                                            <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="19"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLG-Pi-eGc">
-                                                            <rect key="frame" x="67" y="0.0" width="43" height="19"/>
-                                                            <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="19"/>
+                                                            <rect key="frame" x="65.5" y="0.0" width="44.5" height="15"/>
+                                                            <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>

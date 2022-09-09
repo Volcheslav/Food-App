@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6lE-Nd-xw2">
-                                <rect key="frame" x="20" y="144" width="374" height="618"/>
+                                <rect key="frame" x="20" y="144" width="374" height="598"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-zN-FW6">
-                                        <rect key="frame" x="5" y="5" width="364" height="578"/>
+                                        <rect key="frame" x="5" y="5" width="364" height="558"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="orderCell" id="RjB-8G-wTB">
@@ -42,7 +42,7 @@
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edd-8g-8oK" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="585" width="364" height="31"/>
+                                        <rect key="frame" x="5" y="565" width="364" height="31"/>
                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -63,10 +63,10 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pageBig" translatesAutoresizingMaskIntoConstraints="NO" id="ZH3-Df-cvf">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="585"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="565"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zns-ju-CY0">
-                                        <rect key="frame" x="20" y="285" width="334" height="48"/>
+                                        <rect key="frame" x="20" y="275" width="334" height="48"/>
                                         <fontDescription key="fontDescription" name="FluorineLite" family="Fluorine Lite" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -100,12 +100,13 @@
                             <constraint firstItem="wa3-qa-mV1" firstAttribute="trailing" secondItem="6lE-Nd-xw2" secondAttribute="trailing" constant="20" id="D10-QD-n8a"/>
                             <constraint firstItem="6lE-Nd-xw2" firstAttribute="top" secondItem="wa3-qa-mV1" secondAttribute="top" constant="100" id="cHL-yM-ldQ"/>
                             <constraint firstItem="6lE-Nd-xw2" firstAttribute="leading" secondItem="wa3-qa-mV1" secondAttribute="leading" constant="20" id="vOj-TW-Ev8"/>
-                            <constraint firstItem="wa3-qa-mV1" firstAttribute="bottom" secondItem="6lE-Nd-xw2" secondAttribute="bottom" constant="100" id="zcP-Ff-dqR"/>
+                            <constraint firstItem="wa3-qa-mV1" firstAttribute="bottom" secondItem="6lE-Nd-xw2" secondAttribute="bottom" constant="120" id="zcP-Ff-dqR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Edd-8g-8oK" id="14m-eo-S77"/>
                         <outlet property="backgroundImage" destination="ZH3-Df-cvf" id="aMc-wC-6iJ"/>
+                        <outlet property="modalView" destination="6lE-Nd-xw2" id="6l8-Th-c5Z"/>
                         <outlet property="noOrdersLabel" destination="zns-ju-CY0" id="I3b-af-Sf7"/>
                         <outlet property="ordersTableView" destination="nWU-zN-FW6" id="4QV-rT-aK6"/>
                     </connections>

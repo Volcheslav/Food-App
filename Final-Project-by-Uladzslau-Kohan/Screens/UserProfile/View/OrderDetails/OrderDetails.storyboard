@@ -16,30 +16,31 @@
         <!--Order Details View Controller-->
         <scene sceneID="0eZ-ZI-abn">
             <objects>
-                <viewController storyboardIdentifier="orderDetails" modalTransitionStyle="flipHorizontal" id="fIc-kM-sfi" customClass="OrderDetailsViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="orderDetails" modalTransitionStyle="crossDissolve" id="fIc-kM-sfi" customClass="OrderDetailsViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CJV-Ts-Vki">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtP-p1-v0U">
-                                <rect key="frame" x="20" y="144" width="374" height="618"/>
+                                <rect key="frame" x="15" y="124" width="384" height="738"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NQr-DD-Cbt">
-                                        <rect key="frame" x="3" y="3" width="368" height="580"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NQr-DD-Cbt">
+                                        <rect key="frame" x="3" y="35" width="378" height="700"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="order" id="v3K-g9-8dV" customClass="OrderDetailsViewCell" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="368" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="28" width="378" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v3K-g9-8dV" id="xiP-tR-vGx">
-                                                    <rect key="frame" x="0.0" y="0.0" width="368" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1GB-Fz-qbH" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="586" width="364" height="29"/>
+                                        <rect key="frame" x="5" y="3" width="374" height="32"/>
                                         <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
                                         <state key="normal" title="Button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,13 +63,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="1GB-Fz-qbH" firstAttribute="top" secondItem="rtP-p1-v0U" secondAttribute="top" constant="3" id="Ei8-Nd-nxH"/>
                                     <constraint firstAttribute="trailing" secondItem="1GB-Fz-qbH" secondAttribute="trailing" constant="5" id="Gv5-aK-2RA"/>
-                                    <constraint firstAttribute="bottom" secondItem="1GB-Fz-qbH" secondAttribute="bottom" constant="3" id="Khj-10-1L6"/>
+                                    <constraint firstItem="NQr-DD-Cbt" firstAttribute="top" secondItem="1GB-Fz-qbH" secondAttribute="bottom" id="IS8-e6-Snd"/>
                                     <constraint firstItem="NQr-DD-Cbt" firstAttribute="leading" secondItem="rtP-p1-v0U" secondAttribute="leading" constant="3" id="Ne8-yA-Zbu"/>
-                                    <constraint firstItem="NQr-DD-Cbt" firstAttribute="top" secondItem="rtP-p1-v0U" secondAttribute="top" constant="3" id="Oox-oi-OSi"/>
-                                    <constraint firstAttribute="bottom" secondItem="NQr-DD-Cbt" secondAttribute="bottom" constant="35" id="RbB-9e-gAB"/>
+                                    <constraint firstItem="NQr-DD-Cbt" firstAttribute="top" secondItem="rtP-p1-v0U" secondAttribute="top" constant="35" id="Oox-oi-OSi"/>
+                                    <constraint firstAttribute="bottom" secondItem="NQr-DD-Cbt" secondAttribute="bottom" constant="3" id="RbB-9e-gAB"/>
                                     <constraint firstItem="1GB-Fz-qbH" firstAttribute="leading" secondItem="rtP-p1-v0U" secondAttribute="leading" constant="5" id="TGD-IG-K1s"/>
-                                    <constraint firstItem="1GB-Fz-qbH" firstAttribute="top" secondItem="NQr-DD-Cbt" secondAttribute="bottom" constant="3" id="Z2n-bD-4MY"/>
                                     <constraint firstAttribute="trailing" secondItem="NQr-DD-Cbt" secondAttribute="trailing" constant="3" id="uHa-su-6ks"/>
                                 </constraints>
                             </view>
@@ -76,14 +77,15 @@
                         <viewLayoutGuide key="safeArea" id="2Wk-PX-Y6J"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rtP-p1-v0U" firstAttribute="leading" secondItem="2Wk-PX-Y6J" secondAttribute="leading" constant="20" id="5a4-3d-Vqm"/>
-                            <constraint firstItem="rtP-p1-v0U" firstAttribute="top" secondItem="2Wk-PX-Y6J" secondAttribute="top" constant="100" id="GDN-H1-3XJ"/>
-                            <constraint firstItem="2Wk-PX-Y6J" firstAttribute="trailing" secondItem="rtP-p1-v0U" secondAttribute="trailing" constant="20" id="Nah-98-T6B"/>
-                            <constraint firstItem="2Wk-PX-Y6J" firstAttribute="bottom" secondItem="rtP-p1-v0U" secondAttribute="bottom" constant="100" id="hdf-md-o6i"/>
+                            <constraint firstItem="rtP-p1-v0U" firstAttribute="leading" secondItem="2Wk-PX-Y6J" secondAttribute="leading" constant="15" id="5a4-3d-Vqm"/>
+                            <constraint firstItem="rtP-p1-v0U" firstAttribute="top" secondItem="2Wk-PX-Y6J" secondAttribute="top" constant="80" id="GDN-H1-3XJ"/>
+                            <constraint firstItem="2Wk-PX-Y6J" firstAttribute="trailing" secondItem="rtP-p1-v0U" secondAttribute="trailing" constant="15" id="Nah-98-T6B"/>
+                            <constraint firstItem="2Wk-PX-Y6J" firstAttribute="bottom" secondItem="rtP-p1-v0U" secondAttribute="bottom" id="hdf-md-o6i"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButtn" destination="1GB-Fz-qbH" id="Gqn-r1-c2P"/>
+                        <outlet property="modalView" destination="rtP-p1-v0U" id="udB-9k-9D6"/>
                         <outlet property="orderDetailsTableView" destination="NQr-DD-Cbt" id="BOs-Kx-BsE"/>
                     </connections>
                 </viewController>

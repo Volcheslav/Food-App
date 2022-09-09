@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserOrdersViewController: UIViewController {
+final class UserOrdersViewController: UIViewController {
     
     var ordersData: [ParseOrder]?
     
@@ -20,6 +20,7 @@ class UserOrdersViewController: UIViewController {
 
     // MARK: - Outlets
 
+    @IBOutlet private weak var modalView: UIView!
     @IBOutlet private weak var noOrdersLabel: UILabel!
     @IBOutlet private weak var backgroundImage: UIImageView!
     @IBOutlet private weak var backButton: UICustomButton!
@@ -70,9 +71,15 @@ class UserOrdersViewController: UIViewController {
         viewController.orderData = orderData
         viewController.modalPresentationStyle = .overCurrentContext
         show(viewController, sender: nil)
+        UIView.animate(withDuration: 0.6, animations: {[weak self] in
+            self?.modalView.alpha = 0
+        })
     }
     
     @IBAction private func goOrdersList(_ sender: UIStoryboardSegue) {
+        UIView.animate(withDuration: 0.6, animations: {[weak self] in
+            self?.modalView.alpha = 1
+        })
     }
     
 }
@@ -95,6 +102,7 @@ extension UserOrdersViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.dataName = "\(indexPath.row + 1). \(("DATE")§)"
         cell.dataValue = formattedDateTime
+        cell.selectionStyle = .none
 
         return cell
     }
