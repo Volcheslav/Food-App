@@ -30,6 +30,7 @@ final class ReviewScreenViewController: UIViewController {
             self.star5Image
         ]
     }
+    
     @IBAction private func addReviewAction(_ sender: UICustomButton) {
         self.showReviewAddPage()
     }
@@ -41,6 +42,7 @@ final class ReviewScreenViewController: UIViewController {
         self.addReviewButton.setTitle(("ADD_REVIEW")§, for: .normal)
         
         self.stars.forEach {
+           
             $0.image = UIImage(named: self.starImageName)
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.changeColor(_:)))
             $0.addGestureRecognizer(tap)

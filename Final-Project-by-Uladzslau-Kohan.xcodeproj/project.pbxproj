@@ -16,6 +16,7 @@
 		533AD20928CF389400ACCA9A /* ReviewScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533AD20B28CF389400ACCA9A /* ReviewScreen.storyboard */; };
 		533AD21928CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */; };
 		533AD21C28CF592200ACCA9A /* ReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */; };
+		533AD22028CF5EB400ACCA9A /* ParseReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */; };
 		533B34B828C9FDC00014C34B /* MainModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */; };
 		533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34BF28CA00860014C34B /* OrdersScreen.storyboard */; };
 		533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B34C228CA00B60014C34B /* UserOrdersViewController.swift */; };
@@ -74,6 +75,7 @@
 		533AD21028CF38AF00ACCA9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
 		533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewDetailsScreen.storyboard; sourceTree = "<group>"; };
 		533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
+		533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseReviewData.swift; sourceTree = "<group>"; };
 		533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainModalScreen.storyboard; sourceTree = "<group>"; };
 		533B34BF28CA00860014C34B /* OrdersScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrdersScreen.storyboard; sourceTree = "<group>"; };
 		533B34C228CA00B60014C34B /* UserOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +278,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		533AD21E28CF5E8E00ACCA9A /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		533DE13E28C7A857009DA2A9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +397,7 @@
 		5366140628C8DC3100716338 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				533AD21E28CF5E8E00ACCA9A /* Review */,
 				5366140828C8DC5B00716338 /* Order */,
 				5340FEDF28BF7DEC001F967D /* User */,
 			);
@@ -644,6 +655,7 @@
 				53A9D2A628CA444900BDFBA0 /* OrderDetailsViewController.swift in Sources */,
 				533D44E528C0CC4500AF6619 /* UserProfileTableViewCell.swift in Sources */,
 				53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */,
+				533AD22028CF5EB400ACCA9A /* ParseReviewData.swift in Sources */,
 				5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */,
 				533DE13728C7668B009DA2A9 /* CustomView.swift in Sources */,
 				533AD20728CF387F00ACCA9A /* ReviewScreenViewController.swift in Sources */,

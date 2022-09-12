@@ -403,7 +403,7 @@ final class UserProfileViewController: UIViewController {
     // MARK: - Keybord functions
  
     @objc private func dismissMyKeyboard() {
-        view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
