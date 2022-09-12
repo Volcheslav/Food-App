@@ -5,20 +5,21 @@
 //  Created by VironIT on 9/12/22.
 //
 
+import ParseSwift
 import UIKit
 
-final class ReviewDetailsViewController: UIViewController {
+final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
     
     private let starImageName: String = "star"
     private let starFillImageName: String = "starFill"
     private let unwinedSegueID: String = "goReviewsMain"
     private let inset: CGFloat = 15
+    private let alertFont: String = "Natasha"
 
-    
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var modalView: UIView!
     @IBOutlet private weak var greetLabel: UILabel!
-    @IBOutlet private weak var reviewTextField: UITextField!
+    @IBOutlet private weak var reviewTextView: UITextView!
     @IBOutlet private weak var star1Image: UIImageView!
     @IBOutlet private weak var star2Image: UIImageView!
     @IBOutlet private weak var star3Image: UIImageView!
@@ -39,7 +40,7 @@ final class ReviewDetailsViewController: UIViewController {
     @IBOutlet private weak var addReviewButton: UICustomButton!
     
     @IBAction private func addReviewAction(_ sender: UICustomButton) {
-        self.performSegue(withIdentifier: self.unwinedSegueID, sender: self)
+        self.reviewPrepare()
     }
     
     override func viewDidLoad() {
@@ -48,7 +49,6 @@ final class ReviewDetailsViewController: UIViewController {
         self.view.isOpaque = false
         self.cancelButton.setTitle(("CANCEL")§, for: .normal)
         self.addReviewButton.setTitle(("SEND_REVIEW")§, for: .normal)
-        self.reviewTextField.delegate = self
         self.stars.forEach {
             $0.isUserInteractionEnabled = true
             $0.image = UIImage(named: self.starImageName)
@@ -57,8 +57,11 @@ final class ReviewDetailsViewController: UIViewController {
         }
         self.initializeHideKeyboard()
         
-        self.heightConstraint.constant = self.greetLabel.frame.height + self.reviewTextField.frame.height + self.star1Image.frame.height + self.cancelButton.frame.height + self.inset * 5
-        
+        self.heightConstraint.constant = self.greetLabel.frame.height + self.reviewTextView.frame.height + self.star1Image.frame.height + self.cancelButton.frame.height + self.inset * 5
+        self.modalView.layer.cornerRadius = 20
+        self.modalView.layer.masksToBounds = true
+        self.reviewTextView.layer.cornerRadius = 10
+        self.greetLabel.text = ("YOUR_REVIEW")§
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -118,15 +121,71 @@ final class ReviewDetailsViewController: UIViewController {
     @objc func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
     }
-
-}
-
-// MARK: - Keyboard extension
-
-extension ReviewDetailsViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    // MARK: - Add a review
+    
+    private func reviewSave(text: String, mark: Int, username: String, userID: String) {
+        var review = ParseReviewData()
+        review.mark = mark
+        review.userID = userID
+        review.username = username
+        review.reviewText = text
+        // swiftlint:disable empty_enum_arguments
+        review.save(completion: { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.showAddAlert(title: "SUCCESS")
+                self?.performSegue(withIdentifier: self!.unwinedSegueID, sender: self)
+            case .failure(let error):
+                self?.showAlertWithCancel(title: "ALERT", message: error.message)
+            }
+        })
     }
+    
+    private func reviewPrepare() {
+        guard let user = ParseUserData.current else {
+            self.showAlertWithCancel(title: "ALERT", message: ("MUST_REGISTER")§)
+            return
+        }
+        guard let text = self.reviewTextView.text else { return }
+        guard !text.isEmpty else {
+            self.showAlertWithCancel(title: "ALERT", message: ("EMPTY_TEXT")§)
+            return
+        }
+        var mark: Int = 0
+        self.stars.forEach {
+            if $0.image == UIImage(named: self.starFillImageName) {
+                mark += 1
+            }
+        }
+        guard mark != 0 else {
+            self.showAlertWithCancel(title: "ALERT", message: ("ADD_MARK")§)
+            return
+        }
+        self.reviewSave(text: text, mark: mark, username: user.username!, userID: user.objectId!)
+        
+    }
+    // swiftlint:enable empty_enum_arguments
+    // MARK: Alerts
+    
+    private func showAddAlert(title: String) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attribure = ShowAlerts.setAtributes(title: (title)§, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: 23, messageFontSize: nil)
+        alert.setValue(attribure?.first, forKey: "attributedTitle")
+        self.present(alert, animated: true, completion: nil)
+        let when = DispatchTime.now() + 0.5
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    private func showAlertWithCancel(title: String, message: String) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attribure = ShowAlerts.setAtributes(title: (title)§, message: message, titleFont: self.alertFont, messageFont: self.alertFont, titleFontSize: 22, messageFontSize: 20)
+        alert.setValue(attribure?.first, forKey: "attributedTitle")
+        alert.setValue(attribure?.last, forKey: "attributedMessage")
+        alert.addCancelAction()
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }

@@ -150,3 +150,7 @@
 
 "ADD_REVIEW" = "Write a review about us!";
 "SEND_REVIEW" = "Send your review";
+"YOUR_REVIEW" = "Your review:";
+"MUST_REGISTER" = "To add a review you must log in!";
+"EMPTY_TEXT" = "Textfield is empty. Write something!";
+"ADD_MARK" = "Tap on stars to add your mark!";

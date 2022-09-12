@@ -21,6 +21,7 @@ struct ParseReviewData: ParseObject {
     // MARK: Review Details
     
     var userID: String?
-    var review: String?
+    var reviewText: String?
     var mark: Int?
+    var username: String?
 }
