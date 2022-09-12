@@ -25,36 +25,36 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Z67-pI-ltg" userLabel="Stars stack">
                                 <rect key="frame" x="10" y="54" width="394" height="50"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bg6-ds-Irr">
-                                        <rect key="frame" x="0.0" y="-0.5" width="72.5" height="50"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Bg6-ds-Irr">
+                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="50"/>
                                         <color key="tintColor" red="1" green="0.1033729961" blue="0.092840424209999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="1k0-Qf-qrr"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y4H-yq-8hb">
-                                        <rect key="frame" x="80.5" y="-0.5" width="72.5" height="50"/>
+                                    <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="y4H-yq-8hb">
+                                        <rect key="frame" x="80.5" y="0.0" width="72.5" height="50"/>
                                         <color key="tintColor" red="1" green="0.1033729961" blue="0.092840424209999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="zOq-XA-36B"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-8i-N3c">
-                                        <rect key="frame" x="161" y="-0.5" width="72" height="50"/>
+                                    <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="HGF-8i-N3c">
+                                        <rect key="frame" x="161" y="0.0" width="72" height="50"/>
                                         <color key="tintColor" red="1" green="0.1033729961" blue="0.092840424209999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="A2f-q9-Hyv"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Had-LM-msv">
-                                        <rect key="frame" x="241" y="-0.5" width="72.5" height="50"/>
+                                    <imageView clipsSubviews="YES" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Had-LM-msv">
+                                        <rect key="frame" x="241" y="0.0" width="72.5" height="50"/>
                                         <color key="tintColor" red="1" green="0.1033729961" blue="0.092840424209999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aHc-1n-nTP"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-sJ-N6c">
-                                        <rect key="frame" x="321.5" y="-0.5" width="72.5" height="50"/>
+                                    <imageView clipsSubviews="YES" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="zl5-sJ-N6c">
+                                        <rect key="frame" x="321.5" y="0.0" width="72.5" height="50"/>
                                         <color key="tintColor" red="1" green="0.1033729961" blue="0.092840424209999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="eQM-3O-NIK"/>
@@ -124,12 +124,12 @@
     </scenes>
     <designables>
         <designable name="2R1-XW-Vt6">
-            <size key="intrinsicContentSize" width="56" height="27"/>
+            <size key="intrinsicContentSize" width="46" height="30"/>
         </designable>
     </designables>
     <resources>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

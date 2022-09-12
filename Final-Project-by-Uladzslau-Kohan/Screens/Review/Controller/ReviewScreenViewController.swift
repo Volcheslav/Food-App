@@ -46,14 +46,9 @@ final class ReviewScreenViewController: UIViewController {
         self.reviewsTableView.delegate = self
         self.reviewsTableView.dataSource = self
         self.addReviewButton.setTitle(("ADD_REVIEW")§, for: .normal)
-        self.stars.forEach {
-            $0.image = UIImage(named: self.starImageName)
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.changeColor(_:)))
-            $0.addGestureRecognizer(tap)
-        }
         self.reviewsTableView.register(UINib(nibName: self.reviewNibName, bundle: nil), forCellReuseIdentifier: self.cellID)
         self.reviewsTableView.rowHeight = UITableView.automaticDimension
-        self.reviewsTableView.estimatedRowHeight = 300
+       // self.reviewsTableView.estimatedRowHeight = 100
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,6 +65,7 @@ final class ReviewScreenViewController: UIViewController {
             case .success(let tempOrder):
                 self.reviews = tempOrder
                 self.reviewsTableView.reloadData()
+                self.showStars()
                 // print(self.reviews)
             case .failure(_):
                 self.reviews = nil
@@ -80,6 +76,7 @@ final class ReviewScreenViewController: UIViewController {
     // MARK: - Unwined segue
     
     @IBAction private func goReviewsMain(_ sender: UIStoryboardSegue) {
+        self.getReviews()
     }
     
     // MARK: - Show modal vc
@@ -94,36 +91,14 @@ final class ReviewScreenViewController: UIViewController {
         show(viewController, sender: nil)
     }
     
-    // MARK: - Stars controller
+    // MARK: - Stars
     
-    @objc private func changeColor(_ sender : UITapGestureRecognizer) {
-        guard let view = sender.view else { return }
-        if self.stars[view.tag].image == UIImage(named: self.starFillImageName) {
-            for i in view.tag..<self.stars.count {
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.5, animations: {
-                        [weak self] in
-                        self?.stars[i].alpha = 0
-                        self?.stars[i].image = UIImage(named: self!.starImageName)
-                        self?.stars[i].alpha = 1
-                    }
-                    )
-                }
-            }
-        } else {
-            for i in 0...view.tag {
-                DispatchQueue.main.async {
-                    UIView.animate(withDuration: 0.5, animations: {
-                        [weak self] in
-                        self?.stars[i].alpha = 0
-                        self?.stars[i].image = UIImage(named: self!.starFillImageName)
-                        self?.stars[i].alpha = 1
-                    }
-                    )
-                }
-                
-            }
-        }
+    private func showStars() {
+        guard let reviewArr = self.reviews else { return }
+        let marksAvg = Double(reviewArr.map { $0.mark ?? 0 }.reduce(0, +)) / Double(reviewArr.count)
+        let stars = Int(marksAvg.rounded())
+        self.stars.prefix(stars).forEach { $0.image = UIImage(named: self.starFillImageName) }
+        self.stars.suffix(5 - stars).forEach { $0.image = UIImage(named: self.starImageName) }
     }
 }
 
@@ -139,6 +114,14 @@ extension ReviewScreenViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID) as? ReviewTableViewCell else {
             return .init() }
+        guard let reviewsArray = self.reviews else { return .init() }
+        cell.username = reviewsArray[indexPath.row].username
+        cell.mark = reviewsArray[indexPath.row].mark
         return cell
     }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        guard let height = tableView.cellForRow(at: indexPath)?.contentView.frame.height else { return 0 }
+//        return height
+//    }
 }

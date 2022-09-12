@@ -73,8 +73,6 @@
 		5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCellDelegateProtocol.swift; sourceTree = "<group>"; };
 		533AD20628CF387F00ACCA9A /* ReviewScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenViewController.swift; sourceTree = "<group>"; };
 		533AD20A28CF389400ACCA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReviewScreen.storyboard; sourceTree = "<group>"; };
-		533AD20E28CF389D00ACCA9A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
-		533AD21028CF38AF00ACCA9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
 		533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewDetailsScreen.storyboard; sourceTree = "<group>"; };
 		533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
 		533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseReviewData.swift; sourceTree = "<group>"; };
@@ -120,6 +118,8 @@
 		53D99D8C289ABD6F002755A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53D99D8F289ABD6F002755A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53D99D91289ABD6F002755A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53E71EF328CF905800201B3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
+		53E71EF528CF908700201B3C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
 		53E9ED2428BE4B3F0028EEAA /* MainModalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModalInfoViewController.swift; sourceTree = "<group>"; };
 		53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAlerts.swift; sourceTree = "<group>"; };
 		540ABA2FF314FEF7079C652F /* Pods_Final_Project_by_Uladzslau_Kohan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project_by_Uladzslau_Kohan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -714,8 +714,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				533AD20A28CF389400ACCA9A /* Base */,
-				533AD20E28CF389D00ACCA9A /* ru */,
-				533AD21028CF38AF00ACCA9A /* en */,
+				53E71EF328CF905800201B3C /* en */,
+				53E71EF528CF908700201B3C /* ru */,
 			);
 			name = ReviewScreen.storyboard;
 			sourceTree = "<group>";
