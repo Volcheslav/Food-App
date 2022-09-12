@@ -46,16 +46,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="120"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bkq-gK-NS0">
-                                                    <rect key="frame" x="10" y="130" width="108" height="35"/>
+                                                    <rect key="frame" x="10" y="124" width="108" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atx-oh-Hjh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="108" height="20"/>
                                                             <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moP-7u-C72">
-                                                            <rect key="frame" x="0.0" y="19" width="108" height="16"/>
+                                                            <rect key="frame" x="0.0" y="22" width="108" height="19"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -176,6 +176,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FY6-3S-qMA"/>
                         <segue destination="3lD-rx-ZYx" kind="relationship" relationship="viewControllers" id="v9d-nd-GU3"/>
                         <segue destination="CLc-8j-Jsw" kind="relationship" relationship="viewControllers" id="Yrb-Wm-DOs"/>
+                        <segue destination="4fg-7U-12V" kind="relationship" relationship="viewControllers" id="iWq-Rq-PN2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2J1-rc-ygs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -201,6 +202,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lih-6y-h36" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1124" y="371"/>
+        </scene>
+        <!--ReviewScreen-->
+        <scene sceneID="VjD-Id-Reb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReviewScreen" id="4fg-7U-12V" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="nw8-Qq-k9T"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="woo-uU-rOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565" y="-441"/>
         </scene>
     </scenes>
     <resources>

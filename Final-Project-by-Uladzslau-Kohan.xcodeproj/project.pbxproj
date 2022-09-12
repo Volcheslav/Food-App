@@ -12,6 +12,8 @@
 		5339A99128BE20D80079DD3D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5339A99328BE20D80079DD3D /* Localizable.strings */; };
 		5339A99E28BE24A90079DD3D /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5339A9A028BE24A90079DD3D /* Cart.storyboard */; };
 		5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */; };
+		533AD20728CF387F00ACCA9A /* ReviewScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD20628CF387F00ACCA9A /* ReviewScreenViewController.swift */; };
+		533AD20928CF389400ACCA9A /* ReviewScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533AD20B28CF389400ACCA9A /* ReviewScreen.storyboard */; };
 		533B34B828C9FDC00014C34B /* MainModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */; };
 		533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34BF28CA00860014C34B /* OrdersScreen.storyboard */; };
 		533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B34C228CA00B60014C34B /* UserOrdersViewController.swift */; };
@@ -64,6 +66,10 @@
 		5339A9A228BE24B30079DD3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Cart.strings; sourceTree = "<group>"; };
 		5339A9A428BE24E60079DD3D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Cart.strings; sourceTree = "<group>"; };
 		5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCellDelegateProtocol.swift; sourceTree = "<group>"; };
+		533AD20628CF387F00ACCA9A /* ReviewScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenViewController.swift; sourceTree = "<group>"; };
+		533AD20A28CF389400ACCA9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReviewScreen.storyboard; sourceTree = "<group>"; };
+		533AD20E28CF389D00ACCA9A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
+		533AD21028CF38AF00ACCA9A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReviewScreen.strings; sourceTree = "<group>"; };
 		533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainModalScreen.storyboard; sourceTree = "<group>"; };
 		533B34BF28CA00860014C34B /* OrdersScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrdersScreen.storyboard; sourceTree = "<group>"; };
 		533B34C228CA00B60014C34B /* UserOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		533630B428AE7F0400DB692C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				533AD1FF28CF37E100ACCA9A /* Review */,
 				5340FEEE28BFA3DA001F967D /* UserProfile */,
 				5347F56728B79BCD00995448 /* Cart */,
 				533630B528AE7F2D00DB692C /* MainScreen */,
@@ -226,6 +233,39 @@
 				533D1D0828B8ECBF00217919 /* MenuData.swift */,
 				53E9ED2F28BE653E0028EEAA /* MainAlerts.swift */,
 				5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		533AD1FF28CF37E100ACCA9A /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				533AD20228CF37FC00ACCA9A /* Model */,
+				533AD20128CF37F500ACCA9A /* View */,
+				533AD20028CF37EC00ACCA9A /* Controller */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		533AD20028CF37EC00ACCA9A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				533AD20628CF387F00ACCA9A /* ReviewScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		533AD20128CF37F500ACCA9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				533AD20B28CF389400ACCA9A /* ReviewScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		533AD20228CF37FC00ACCA9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				533AD20928CF389400ACCA9A /* ReviewScreen.storyboard in Resources */,
 				53A9D2A328CA441200BDFBA0 /* OrderDetails.storyboard in Resources */,
 				533B34B828C9FDC00014C34B /* MainModalScreen.storyboard in Resources */,
 				5340FEF928BFC5D4001F967D /* ProfileScreen.storyboard in Resources */,
@@ -598,6 +639,7 @@
 				53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */,
 				5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */,
 				533DE13728C7668B009DA2A9 /* CustomView.swift in Sources */,
+				533AD20728CF387F00ACCA9A /* ReviewScreenViewController.swift in Sources */,
 				5344CE1C28B64F200079C8F7 /* MainScreenCollectionViewCell.swift in Sources */,
 				5340FEDD28BF7AF4001F967D /* ParseKeys.swift in Sources */,
 				53D99D84289ABD6D002755A4 /* AppDelegate.swift in Sources */,
@@ -638,6 +680,16 @@
 				5339A9A428BE24E60079DD3D /* ru */,
 			);
 			name = Cart.storyboard;
+			sourceTree = "<group>";
+		};
+		533AD20B28CF389400ACCA9A /* ReviewScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				533AD20A28CF389400ACCA9A /* Base */,
+				533AD20E28CF389D00ACCA9A /* ru */,
+				533AD21028CF38AF00ACCA9A /* en */,
+			);
+			name = ReviewScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		5340FEFB28BFC5D4001F967D /* ProfileScreen.storyboard */ = {
