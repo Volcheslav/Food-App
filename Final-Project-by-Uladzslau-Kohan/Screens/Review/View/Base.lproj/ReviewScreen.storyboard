@@ -109,6 +109,7 @@
                     <tabBarItem key="tabBarItem" title="Item" image="list.bullet.rectangle" catalog="system" selectedImage="list.bullet.rectangle" id="INF-gT-vZi"/>
                     <connections>
                         <outlet property="addReviewButton" destination="2R1-XW-Vt6" id="f6l-XQ-A1M"/>
+                        <outlet property="reviewsTableView" destination="gLF-Gw-m6x" id="jmC-kK-7xo"/>
                         <outlet property="star1Image" destination="Bg6-ds-Irr" id="bhG-DJ-CbM"/>
                         <outlet property="star2Image" destination="y4H-yq-8hb" id="whx-ax-WXl"/>
                         <outlet property="star3Image" destination="HGF-8i-N3c" id="sat-96-vq4"/>

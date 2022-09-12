@@ -17,6 +17,8 @@
 		533AD21928CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */; };
 		533AD21C28CF592200ACCA9A /* ReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */; };
 		533AD22028CF5EB400ACCA9A /* ParseReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */; };
+		533AD22528CF881900ACCA9A /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD22328CF881900ACCA9A /* ReviewTableViewCell.swift */; };
+		533AD22628CF881900ACCA9A /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533AD22428CF881900ACCA9A /* ReviewTableViewCell.xib */; };
 		533B34B828C9FDC00014C34B /* MainModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */; };
 		533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34BF28CA00860014C34B /* OrdersScreen.storyboard */; };
 		533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B34C228CA00B60014C34B /* UserOrdersViewController.swift */; };
@@ -76,6 +78,8 @@
 		533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewDetailsScreen.storyboard; sourceTree = "<group>"; };
 		533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
 		533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseReviewData.swift; sourceTree = "<group>"; };
+		533AD22328CF881900ACCA9A /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		533AD22428CF881900ACCA9A /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainModalScreen.storyboard; sourceTree = "<group>"; };
 		533B34BF28CA00860014C34B /* OrdersScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrdersScreen.storyboard; sourceTree = "<group>"; };
 		533B34C228CA00B60014C34B /* UserOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 			children = (
 				533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */,
 				533AD20B28CF389400ACCA9A /* ReviewScreen.storyboard */,
+				533AD22328CF881900ACCA9A /* ReviewTableViewCell.swift */,
+				533AD22428CF881900ACCA9A /* ReviewTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */,
 				5366140128C8D09500716338 /* plusAdd.json in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,
+				533AD22628CF881900ACCA9A /* ReviewTableViewCell.xib in Resources */,
 				53D99D8B289ABD6D002755A4 /* MainScreen.storyboard in Resources */,
 				53A9D2AB28CA4CDB00BDFBA0 /* OrderDetailsViewCell.xib in Resources */,
 				533DE14028C7A864009DA2A9 /* Natasha.ttf in Resources */,
@@ -655,6 +662,7 @@
 				53A9D2A628CA444900BDFBA0 /* OrderDetailsViewController.swift in Sources */,
 				533D44E528C0CC4500AF6619 /* UserProfileTableViewCell.swift in Sources */,
 				53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */,
+				533AD22528CF881900ACCA9A /* ReviewTableViewCell.swift in Sources */,
 				533AD22028CF5EB400ACCA9A /* ParseReviewData.swift in Sources */,
 				5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */,
 				533DE13728C7668B009DA2A9 /* CustomView.swift in Sources */,
