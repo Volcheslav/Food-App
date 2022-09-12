@@ -84,13 +84,7 @@ final class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         items = realm.objects(CartItem.self)
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
-        self.mainFirstCollection.delegate = self
-        self.mainFirstCollection.dataSource = self
-        self.mainFirstCollection.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
-        self.mainFirstCollection.layer.cornerRadius = 20
-        self.mainFirstCollection.layer.masksToBounds = true
-        self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
+        self.setScreenProperties()
         self.mainFirstCollection.register(UINib(nibName: self.headerNibName, bundle: nil), forSupplementaryViewOfKind: "header", withReuseIdentifier: self.headerNibName)
     }
     
@@ -134,6 +128,18 @@ final class MainScreenViewController: UIViewController {
     // MARK: - Navigtion
     
     @IBAction private func goMainScreen(_ sender: UIStoryboardSegue) {
+    }
+    
+    // MARK: - Set screen properties
+    
+    private func setScreenProperties() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
+        self.mainFirstCollection.delegate = self
+        self.mainFirstCollection.dataSource = self
+        self.mainFirstCollection.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
+        self.mainFirstCollection.layer.cornerRadius = 20
+        self.mainFirstCollection.layer.masksToBounds = true
+        self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
     }
 }
 

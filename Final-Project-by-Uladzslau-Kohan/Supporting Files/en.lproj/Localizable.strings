@@ -145,3 +145,8 @@
 "NO_ORDERS" = "No orders now, please go to our menu and buy something. Have a good day!";
 "ORDER_DETAILS" = "Order details";
 "SUM" = "Sum:";
+
+// MARK: Reviw page
+
+"ADD_REVIEW" = "Write a review about us!";
+"SEND_REVIEW" = "Send your review";

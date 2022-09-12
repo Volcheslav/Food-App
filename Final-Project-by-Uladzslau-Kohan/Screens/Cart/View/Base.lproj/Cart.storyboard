@@ -37,19 +37,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JH2-rv-FmD" userLabel="NameButtonsStack">
-                                                    <rect key="frame" x="5" y="10.5" width="55" height="46"/>
+                                                    <rect key="frame" x="5" y="11.5" width="49" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzI-UP-jST">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55" height="19"/>
-                                                            <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="19"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="49" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="left" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="klE-Py-s1H" userLabel="ButtonsStack">
-                                                            <rect key="frame" x="0.0" y="24" width="48" height="22"/>
+                                                            <rect key="frame" x="0.0" y="22" width="48" height="22"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7T-ug-QCI">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="22"/>
+                                                                    <color key="tintColor" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" image="plus.circle" catalog="system"/>
                                                                     <connections>
                                                                         <action selector="addOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="ruP-he-M90"/>
@@ -57,6 +58,7 @@
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbk-d1-Flh">
                                                                     <rect key="frame" x="28" y="0.0" width="20" height="22"/>
+                                                                    <color key="tintColor" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <state key="normal" image="minus.circle" catalog="system"/>
                                                                     <connections>
                                                                         <action selector="removeOneAction:" destination="dkh-h8-XQD" eventType="touchUpInside" id="WzQ-vO-E19"/>

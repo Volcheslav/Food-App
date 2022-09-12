@@ -117,29 +117,8 @@ final class UserProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.profileInfoTable.allowsSelection = true
-        self.profileInfoTable.isUserInteractionEnabled = true
-        self.profileInfoTable.delegate = self
-        self.profileInfoTable.dataSource = self
         
-        self.loginPasswordView.isHidden = true
-        self.loginPasswordView.layer.cornerRadius = 20
-        self.loginPasswordView.layer.masksToBounds = true
-        
-        self.passwordTextField.placeholder = ("ENTER_YOUR_PASSWORD")§
-        self.usernameTextField.placeholder = ("ENTER_YOUR_LOGIN")§
-        self.emailTextField.placeholder = ("ENTER_YOUR_EMAIL")§
-        self.emailTextField.keyboardType = .emailAddress
-        self.loginButton.setTitle(("LOGIN")§, for: .normal)
-        self.signUpButton.setTitle(("SIGN_UP")§, for: .normal)
-        self.toOrdersButton.setTitle(("TO_ORDERS")§, for: .normal)
-        self.backTologinButton.setTitle(("PROFILE_BACK_TO_LOGIN")§, for: .normal)
-        self.logoutButton.setTitle(("LOG_OUT")§, for: .normal)
-        
-        self.passwordTextField.delegate = self
-        self.usernameTextField.delegate = self
-        self.emailTextField.delegate = self
+        self.setScreenProperties()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -155,6 +134,36 @@ final class UserProfileViewController: UIViewController {
         self.emailTextField.isHidden = true
         self.backTologinButton.isHidden = true
         self.profileInfoTable.reloadData()
+    }
+    
+    // MARK: - Screen properties
+    
+    private func setScreenProperties() {
+        self.profileInfoTable.allowsSelection = true
+        self.profileInfoTable.isUserInteractionEnabled = true
+        self.profileInfoTable.delegate = self
+        self.profileInfoTable.dataSource = self
+        
+        self.loginPasswordView.isHidden = true
+        self.loginPasswordView.layer.cornerRadius = 20
+        self.loginPasswordView.layer.masksToBounds = true
+        
+        self.passwordTextField.placeholder = ("ENTER_YOUR_PASSWORD")§
+        self.usernameTextField.placeholder = ("ENTER_YOUR_LOGIN")§
+        self.emailTextField.placeholder = ("ENTER_YOUR_EMAIL")§
+        self.emailTextField.keyboardType = .emailAddress
+        self.passwordTextField.autocorrectionType = .no
+        self.usernameTextField.autocorrectionType = .no
+        self.emailTextField.autocorrectionType = .no
+        self.loginButton.setTitle(("LOGIN")§, for: .normal)
+        self.signUpButton.setTitle(("SIGN_UP")§, for: .normal)
+        self.toOrdersButton.setTitle(("TO_ORDERS")§, for: .normal)
+        self.backTologinButton.setTitle(("PROFILE_BACK_TO_LOGIN")§, for: .normal)
+        self.logoutButton.setTitle(("LOG_OUT")§, for: .normal)
+        
+        self.passwordTextField.delegate = self
+        self.usernameTextField.delegate = self
+        self.emailTextField.delegate = self
     }
     
     // MARK: - Login, SignUp, Logout

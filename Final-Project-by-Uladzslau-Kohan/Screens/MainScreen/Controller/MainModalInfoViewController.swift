@@ -34,21 +34,7 @@ final class MainModalInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
-        view.isOpaque = false
-        self.productNameLabel.text = (name)§
-        self.productPriceLabel.text = String(price)
-        self.productCaloriesLabel.text = String(caloreis)
-        self.productImageView.image = UIImage(named: imageName)
-        self.modalView.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
-        self.modalView.layer.cornerRadius = 25
-        self.modalView.layer.masksToBounds = true
-        self.nameLabel.text = ("MODAL_MAIN_NAME")§
-        self.priceLabel.text = ("MODAL_MAIN_PRICE")§
-        self.caloriesLabel.text = ("MODAL_MAIN_CALORIES")§
-        self.addToCartButton.setTitle(("MODAL_MAIN_ADD_TO_CART")§, for: .normal)
-        self.productCaloriesLabel.isHidden = caloriesLabelState
-        self.caloriesLabel.isHidden = caloriesLabelState
+        self.setScreenProperties()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +52,26 @@ final class MainModalInfoViewController: UIViewController {
                 self.addToCartButton.transform = .identity
             }
         )
+    }
+    
+    // MARK: - Set screen properties
+    
+    private func setScreenProperties() {
+        self.view.backgroundColor = .clear
+        self.view.isOpaque = false
+        self.productNameLabel.text = (name)§
+        self.productPriceLabel.text = String(price)
+        self.productCaloriesLabel.text = String(caloreis)
+        self.productImageView.image = UIImage(named: imageName)
+        self.modalView.backgroundColor = UIColor(patternImage: UIImage(named: "background") ?? .init())
+        self.modalView.layer.cornerRadius = 25
+        self.modalView.layer.masksToBounds = true
+        self.nameLabel.text = ("MODAL_MAIN_NAME")§
+        self.priceLabel.text = ("MODAL_MAIN_PRICE")§
+        self.caloriesLabel.text = ("MODAL_MAIN_CALORIES")§
+        self.addToCartButton.setTitle(("MODAL_MAIN_ADD_TO_CART")§, for: .normal)
+        self.productCaloriesLabel.isHidden = caloriesLabelState
+        self.caloriesLabel.isHidden = caloriesLabelState
     }
 
 }

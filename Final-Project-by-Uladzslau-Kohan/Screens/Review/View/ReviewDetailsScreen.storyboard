@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Natasha.ttf">
+            <string>Natasha</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Review Details View Controller-->
+        <scene sceneID="JtA-U8-pTB">
+            <objects>
+                <viewController storyboardIdentifier="reviewDetails" id="BJm-as-dFc" customClass="ReviewDetailsViewController" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BYp-bH-d7i">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAd-xN-v34">
+                                <rect key="frame" x="20" y="274" width="374" height="358"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wkH-9u-oKM">
+                                        <rect key="frame" x="10" y="313" width="354" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np4-Is-diz" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="35"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="6CA-G5-V8C" kind="unwind" identifier="goReviewsMain" unwindAction="goReviewsMain:" id="0At-Xf-pUW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J9U-g6-XkS" customClass="UICustomButton" customModule="Final_Project_by_Uladzslau_Kohan" customModuleProvider="target">
+                                                <rect key="frame" x="185" y="0.0" width="169" height="35"/>
+                                                <fontDescription key="fontDescription" name="Natasha" family="Natasha" pointSize="15"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                        <color key="value" red="1" green="0.0" blue="0.0093617555430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                        <color key="value" red="0.39544336930000001" green="0.097942495700000007" blue="0.069282614199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="addReviewAction:" destination="BJm-as-dFc" eventType="touchUpInside" id="a9Y-Hm-Wdw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Ibe-9Z-2hh"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wkH-9u-oKM" secondAttribute="bottom" constant="10" id="K6Q-f7-Z6G"/>
+                                    <constraint firstAttribute="trailing" secondItem="wkH-9u-oKM" secondAttribute="trailing" constant="10" id="Tj3-XC-03m"/>
+                                    <constraint firstItem="wkH-9u-oKM" firstAttribute="leading" secondItem="pAd-xN-v34" secondAttribute="leading" constant="10" id="d5L-Jh-cxe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JSg-eU-K09"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JSg-eU-K09" firstAttribute="trailing" secondItem="pAd-xN-v34" secondAttribute="trailing" constant="20" id="FFT-la-zub"/>
+                            <constraint firstItem="pAd-xN-v34" firstAttribute="top" secondItem="JSg-eU-K09" secondAttribute="top" constant="230" id="HD8-O1-jU0"/>
+                            <constraint firstItem="JSg-eU-K09" firstAttribute="bottom" secondItem="pAd-xN-v34" secondAttribute="bottom" constant="230" id="kCx-AA-Yfr"/>
+                            <constraint firstItem="pAd-xN-v34" firstAttribute="leading" secondItem="JSg-eU-K09" secondAttribute="leading" constant="20" id="lBs-B7-ee3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addReviewButton" destination="J9U-g6-XkS" id="wCU-2V-o4q"/>
+                        <outlet property="cancelButton" destination="np4-Is-diz" id="1Qh-8b-yhS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9R-G8-eUx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="6CA-G5-V8C" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1398.5507246376812" y="-474.10714285714283"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="J9U-g6-XkS">
+            <size key="intrinsicContentSize" width="56" height="27"/>
+        </designable>
+        <designable name="np4-Is-diz">
+            <size key="intrinsicContentSize" width="56" height="27"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

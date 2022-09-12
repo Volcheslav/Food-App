@@ -30,8 +30,8 @@ final class UserOrdersViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        view.isOpaque = false
+        self.view.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        self.view.isOpaque = false
         self.ordersTableView.backgroundView = UIImageView(image: UIImage(named: "tablePage"))
         self.ordersTableView.delegate = self
         self.ordersTableView.dataSource = self
