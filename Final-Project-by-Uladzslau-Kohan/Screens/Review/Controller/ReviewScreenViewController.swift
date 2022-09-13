@@ -121,6 +121,7 @@ extension ReviewScreenViewController: UITableViewDelegate, UITableViewDataSource
         cell.username = reviewsArray[indexPath.row].username
         cell.mark = reviewsArray[indexPath.row].mark
         cell.review = reviewsArray[indexPath.row].reviewText
+        cell.isUserInteractionEnabled = false
         return cell
     }
 }
