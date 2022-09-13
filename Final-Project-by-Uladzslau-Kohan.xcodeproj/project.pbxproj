@@ -17,8 +17,6 @@
 		533AD21928CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */; };
 		533AD21C28CF592200ACCA9A /* ReviewDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */; };
 		533AD22028CF5EB400ACCA9A /* ParseReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */; };
-		533AD22528CF881900ACCA9A /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533AD22328CF881900ACCA9A /* ReviewTableViewCell.swift */; };
-		533AD22628CF881900ACCA9A /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533AD22428CF881900ACCA9A /* ReviewTableViewCell.xib */; };
 		533B34B828C9FDC00014C34B /* MainModalScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */; };
 		533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533B34BF28CA00860014C34B /* OrdersScreen.storyboard */; };
 		533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B34C228CA00B60014C34B /* UserOrdersViewController.swift */; };
@@ -44,6 +42,8 @@
 		5366140128C8D09500716338 /* plusAdd.json in Resources */ = {isa = PBXBuildFile; fileRef = 5366140028C8D09400716338 /* plusAdd.json */; };
 		5366140A28C8DC8300716338 /* ParseOrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366140928C8DC8300716338 /* ParseOrderData.swift */; };
 		5366140D28C8E6D100716338 /* CartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5366140C28C8E6D100716338 /* CartUpload.swift */; };
+		5370B86D28D08968002013F3 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370B86B28D08968002013F3 /* ReviewCell.swift */; };
+		5370B86E28D08968002013F3 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5370B86C28D08968002013F3 /* ReviewCell.xib */; };
 		53A9D29928CA23B900BDFBA0 /* FluorineLite.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53A9D29828CA23B900BDFBA0 /* FluorineLite.ttf */; };
 		53A9D2A328CA441200BDFBA0 /* OrderDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A9D2A228CA441200BDFBA0 /* OrderDetails.storyboard */; };
 		53A9D2A628CA444900BDFBA0 /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9D2A528CA444900BDFBA0 /* OrderDetailsViewController.swift */; };
@@ -76,8 +76,6 @@
 		533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReviewDetailsScreen.storyboard; sourceTree = "<group>"; };
 		533AD21B28CF592200ACCA9A /* ReviewDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailsViewController.swift; sourceTree = "<group>"; };
 		533AD21F28CF5EB400ACCA9A /* ParseReviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseReviewData.swift; sourceTree = "<group>"; };
-		533AD22328CF881900ACCA9A /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
-		533AD22428CF881900ACCA9A /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		533B34B728C9FDC00014C34B /* MainModalScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainModalScreen.storyboard; sourceTree = "<group>"; };
 		533B34BF28CA00860014C34B /* OrdersScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrdersScreen.storyboard; sourceTree = "<group>"; };
 		533B34C228CA00B60014C34B /* UserOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +103,8 @@
 		5366140028C8D09400716338 /* plusAdd.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = plusAdd.json; sourceTree = "<group>"; };
 		5366140928C8DC8300716338 /* ParseOrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseOrderData.swift; sourceTree = "<group>"; };
 		5366140C28C8E6D100716338 /* CartUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartUpload.swift; sourceTree = "<group>"; };
+		5370B86B28D08968002013F3 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		5370B86C28D08968002013F3 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 		53A9D29828CA23B900BDFBA0 /* FluorineLite.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FluorineLite.ttf; sourceTree = "<group>"; };
 		53A9D2A228CA441200BDFBA0 /* OrderDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrderDetails.storyboard; sourceTree = "<group>"; };
 		53A9D2A528CA444900BDFBA0 /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
@@ -271,8 +271,8 @@
 			children = (
 				533AD21828CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard */,
 				533AD20B28CF389400ACCA9A /* ReviewScreen.storyboard */,
-				533AD22328CF881900ACCA9A /* ReviewTableViewCell.swift */,
-				533AD22428CF881900ACCA9A /* ReviewTableViewCell.xib */,
+				5370B86B28D08968002013F3 /* ReviewCell.swift */,
+				5370B86C28D08968002013F3 /* ReviewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -567,6 +567,7 @@
 			files = (
 				533AD21928CF58FC00ACCA9A /* ReviewDetailsScreen.storyboard in Resources */,
 				533AD20928CF389400ACCA9A /* ReviewScreen.storyboard in Resources */,
+				5370B86E28D08968002013F3 /* ReviewCell.xib in Resources */,
 				53A9D2A328CA441200BDFBA0 /* OrderDetails.storyboard in Resources */,
 				533B34B828C9FDC00014C34B /* MainModalScreen.storyboard in Resources */,
 				5340FEF928BFC5D4001F967D /* ProfileScreen.storyboard in Resources */,
@@ -578,7 +579,6 @@
 				533B34C028CA00860014C34B /* OrdersScreen.storyboard in Resources */,
 				5366140128C8D09500716338 /* plusAdd.json in Resources */,
 				5339A99128BE20D80079DD3D /* Localizable.strings in Resources */,
-				533AD22628CF881900ACCA9A /* ReviewTableViewCell.xib in Resources */,
 				53D99D8B289ABD6D002755A4 /* MainScreen.storyboard in Resources */,
 				53A9D2AB28CA4CDB00BDFBA0 /* OrderDetailsViewCell.xib in Resources */,
 				533DE14028C7A864009DA2A9 /* Natasha.ttf in Resources */,
@@ -662,7 +662,6 @@
 				53A9D2A628CA444900BDFBA0 /* OrderDetailsViewController.swift in Sources */,
 				533D44E528C0CC4500AF6619 /* UserProfileTableViewCell.swift in Sources */,
 				53D99D88289ABD6D002755A4 /* MainScreenController.swift in Sources */,
-				533AD22528CF881900ACCA9A /* ReviewTableViewCell.swift in Sources */,
 				533AD22028CF5EB400ACCA9A /* ParseReviewData.swift in Sources */,
 				5339A9C128BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift in Sources */,
 				533DE13728C7668B009DA2A9 /* CustomView.swift in Sources */,
@@ -677,6 +676,7 @@
 				533AD21C28CF592200ACCA9A /* ReviewDetailsViewController.swift in Sources */,
 				53E9ED2528BE4B3F0028EEAA /* MainModalInfoViewController.swift in Sources */,
 				533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */,
+				5370B86D28D08968002013F3 /* ReviewCell.swift in Sources */,
 				5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */,
 				533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */,
 				534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */,

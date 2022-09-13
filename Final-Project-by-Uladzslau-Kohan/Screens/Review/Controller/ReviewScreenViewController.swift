@@ -13,10 +13,11 @@ final class ReviewScreenViewController: UIViewController {
     private let starFillImageName: String = "starFill"
     private let modalStoryboardName: String = "ReviewDetailsScreen"
     private let modalVCIdentifier: String = "reviewDetails"
-    private let reviewNibName: String = "ReviewTableViewCell"
-    private let cellID: String = "ReviewTableViewCell"
     private var reviews: [ParseReviewData]?
     
+    private let reviewNibName: String = "ReviewCell"
+    private let cellID: String = "ReviewCell"
+ 
     @IBOutlet private weak var addReviewButton: UICustomButton!
     @IBOutlet private weak var star1Image: UIImageView!
     @IBOutlet private weak var star2Image: UIImageView!
@@ -46,9 +47,11 @@ final class ReviewScreenViewController: UIViewController {
         self.reviewsTableView.delegate = self
         self.reviewsTableView.dataSource = self
         self.addReviewButton.setTitle(("ADD_REVIEW")§, for: .normal)
-        self.reviewsTableView.register(UINib(nibName: self.reviewNibName, bundle: nil), forCellReuseIdentifier: self.cellID)
+      
         self.reviewsTableView.rowHeight = UITableView.automaticDimension
-       // self.reviewsTableView.estimatedRowHeight = 100
+        self.reviewsTableView.estimatedRowHeight = 600
+        
+        self.reviewsTableView.register(UINib(nibName: self.reviewNibName, bundle: nil), forCellReuseIdentifier: self.cellID)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -112,16 +115,12 @@ extension ReviewScreenViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID) as? ReviewTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellID) as? ReviewCell else {
             return .init() }
         guard let reviewsArray = self.reviews else { return .init() }
         cell.username = reviewsArray[indexPath.row].username
         cell.mark = reviewsArray[indexPath.row].mark
+        cell.review = reviewsArray[indexPath.row].reviewText
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        guard let height = tableView.cellForRow(at: indexPath)?.contentView.frame.height else { return 0 }
-//        return height
-//    }
 }

@@ -1,17 +1,19 @@
 //
-//  ReviewTableViewCell.swift
+//  ReviewCell.swift
 //  Final-Project-by-Uladzslau-Kohan
 //
-//  Created by VironIT on 9/12/22.
+//  Created by VironIT on 9/13/22.
 //
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+class ReviewCell: UITableViewCell {
     
     var mark: Int? {
         didSet {
-            self.starsArray.prefix(mark!).forEach { $0.image = UIImage(named: "starFill") }
+            guard let mark = self.mark else { return }
+            self.starsArray.prefix(mark).forEach { $0.image = UIImage(named: "starFill") }
+            self.starsArray.suffix(5 - mark).forEach { $0.image = UIImage(named: "star") }
         }
     }
     var username: String? {
@@ -20,7 +22,17 @@ class ReviewTableViewCell: UITableViewCell {
         }
     }
     
-    @IBOutlet private weak var labelImageStack: UIStackView!
+    var review: String? {
+        didSet {
+            guard let review = self.review else {
+                self.reviewLabel.text = "no info"
+                return
+            }
+            self.reviewLabel.text = review
+        }
+    }
+    
+    @IBOutlet private weak var reviewLabel: UILabel!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var star1Image: UIImageView!
     @IBOutlet private weak var star2Image: UIImageView!
@@ -37,16 +49,16 @@ class ReviewTableViewCell: UITableViewCell {
             self.star5Image
         ]
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.layer.cornerRadius = 20
-        self.contentView.layer.masksToBounds = true
-        self.contentView.backgroundColor = .systemGray2
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-      //  contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0))
-     //   contentView.frame = CGRect(x: 0, y: 0, width: contentView.frame.width, height: 20 + self.labelImageStack.frame.height)
-    }
 }
