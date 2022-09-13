@@ -7,9 +7,9 @@
 
 import UIKit
 
-open class AppAlerts {
+ class AppAlerts {
     
-    static var shared = AppAlerts()
+    static let shared = AppAlerts()
 
     func showAddAlert(title: String, viewController: UIViewController, font: String, fontSize: CGFloat) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
@@ -49,5 +49,5 @@ open class AppAlerts {
          
      }
     
-    private init(){}
+    private init() {}
 }

@@ -15,6 +15,8 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
     private let unwinedSegueID: String = "goReviewsMain"
     private let inset: CGFloat = 15
     private let alertFont: String = "Natasha"
+    private let alertTitleSize: CGFloat = 23
+    private let alertMessageSize: CGFloat = 20
 
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var modalView: UIView!
@@ -149,7 +151,14 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
         }
         guard let text = self.reviewTextView.text else { return }
         guard !text.isEmpty else {
-            self.showAlertWithCancel(title: "ALERT", message: ("EMPTY_TEXT")§)
+            AppAlerts.shared.showAlertWithCancel(
+                title: "ALERT",
+                message: "EMPTY_TEXT",
+                viewController: self,
+                font: self.alertFont,
+                titleFontSize: self.alertTitleSize,
+                messageFontSize: self.alertMessageSize
+            )
             return
         }
         var mark: Int = 0
@@ -159,7 +168,14 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
             }
         }
         guard mark != 0 else {
-            self.showAlertWithCancel(title: "ALERT", message: ("ADD_MARK")§)
+            AppAlerts.shared.showAlertWithCancel(
+                title: "ALERT",
+                message: "ADD_MARK",
+                viewController: self,
+                font: self.alertFont,
+                titleFontSize: self.alertTitleSize,
+                messageFontSize: self.alertMessageSize
+            )
             return
         }
         self.reviewSave(text: text, mark: mark, username: user.username!, userID: user.objectId!)
