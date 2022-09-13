@@ -133,32 +133,25 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
         review.username = username
         review.reviewText = text
         // swiftlint:disable empty_enum_arguments
-        review.save(completion: { [weak self] result in
+        review.save(completion: { [unowned self] result in
             switch result {
             case .success(_):
-                self?.showAddAlert(title: "SUCCESS")
-                self?.performSegue(withIdentifier: self!.unwinedSegueID, sender: self)
+                self.showDisaperAlert(title: "SUCCESS", font: self.alertFont, titleFontSize: self.alertTitleSize)
+                self.performSegue(withIdentifier: self.unwinedSegueID, sender: self)
             case .failure(let error):
-                self?.showAlertWithCancel(title: "ALERT", message: error.message)
+                self.showAlertWithCancelButn(title: "ALERT", message: error.message, font: self.alertFont, titleFontSize: self.alertTitleSize, messageFontSize: self.alertMessageSize)
             }
         })
     }
     
     private func reviewPrepare() {
         guard let user = ParseUserData.current else {
-            self.showAlertWithCancel(title: "ALERT", message: ("MUST_REGISTER")§)
+            self.showAlertWithCancelButn(title: "ALERT", message: "MUST_REGISTER", font: self.alertFont, titleFontSize: self.alertTitleSize, messageFontSize: self.alertMessageSize)
             return
         }
         guard let text = self.reviewTextView.text else { return }
         guard !text.isEmpty else {
-            AppAlerts.shared.showAlertWithCancel(
-                title: "ALERT",
-                message: "EMPTY_TEXT",
-                viewController: self,
-                font: self.alertFont,
-                titleFontSize: self.alertTitleSize,
-                messageFontSize: self.alertMessageSize
-            )
+            self.showAlertWithCancelButn(title: "ALERT", message: "EMPTY_TEXT", font: self.alertFont, titleFontSize: self.alertTitleSize, messageFontSize: self.alertMessageSize)
             return
         }
         var mark: Int = 0
@@ -168,40 +161,11 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
             }
         }
         guard mark != 0 else {
-            AppAlerts.shared.showAlertWithCancel(
-                title: "ALERT",
-                message: "ADD_MARK",
-                viewController: self,
-                font: self.alertFont,
-                titleFontSize: self.alertTitleSize,
-                messageFontSize: self.alertMessageSize
-            )
+            self.showAlertWithCancelButn(title: "ALERT", message: "ADD_MARK", font: self.alertFont, titleFontSize: self.alertTitleSize, messageFontSize: self.alertMessageSize)
             return
         }
         self.reviewSave(text: text, mark: mark, username: user.username!, userID: user.objectId!)
         
     }
     // swiftlint:enable empty_enum_arguments
-    // MARK: Alerts
-    
-    private func showAddAlert(title: String) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attribure = ShowAlerts.setAtributes(title: (title)§, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: 23, messageFontSize: nil)
-        alert.setValue(attribure?.first, forKey: "attributedTitle")
-        self.present(alert, animated: true, completion: nil)
-        let when = DispatchTime.now() + 0.5
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            alert.dismiss(animated: true, completion: nil)
-        }
-    }
-    
-    private func showAlertWithCancel(title: String, message: String) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attribure = ShowAlerts.setAtributes(title: (title)§, message: message, titleFont: self.alertFont, messageFont: self.alertFont, titleFontSize: 22, messageFontSize: 20)
-        alert.setValue(attribure?.first, forKey: "attributedTitle")
-        alert.setValue(attribure?.last, forKey: "attributedMessage")
-        alert.addCancelAction()
-        self.present(alert, animated: true, completion: nil)
-    }
-
 }

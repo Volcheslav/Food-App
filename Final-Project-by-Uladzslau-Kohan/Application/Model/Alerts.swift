@@ -31,7 +31,7 @@ import UIKit
         viewController.present(alert, animated: true, completion: nil)
     }
     
-    private func setAtributes(title: String?, message: String?, titleFont: String?, messageFont: String?, titleFontSize: CGFloat?, messageFontSize: CGFloat?) -> [NSAttributedString]? {
+    func setAtributes(title: String?, message: String?, titleFont: String?, messageFont: String?, titleFontSize: CGFloat?, messageFontSize: CGFloat?) -> [NSAttributedString]? {
          guard let title = title,
                let titleFont = titleFont,
                let titleFontSize = titleFontSize else { return nil }
@@ -50,4 +50,27 @@ import UIKit
      }
     
     private init() {}
+}
+
+extension UIViewController {
+    
+    func showAlertWithCancelButn(title: String, message: String, font: String, titleFontSize: CGFloat, messageFontSize: CGFloat) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attribure = AppAlerts.shared.setAtributes(title: (title)§, message: (message)§, titleFont: font, messageFont: font, titleFontSize: titleFontSize, messageFontSize: messageFontSize)
+        alert.setValue(attribure?.first, forKey: "attributedTitle")
+        alert.setValue(attribure?.last, forKey: "attributedMessage")
+        alert.addCancelAction()
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showDisaperAlert(title: String, font: String, titleFontSize: CGFloat) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        let attribure = AppAlerts.shared.setAtributes(title: (title)§, message: nil, titleFont: font, messageFont: nil, titleFontSize: titleFontSize, messageFontSize: nil)
+        alert.setValue(attribure?.first, forKey: "attributedTitle")
+        self.present(alert, animated: true, completion: nil)
+        let when = DispatchTime.now() + 0.6
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
 }
