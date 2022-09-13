@@ -10,26 +10,6 @@ import UIKit
  class AppAlerts {
     
     static let shared = AppAlerts()
-
-//    func showAddAlert(title: String, viewController: UIViewController, font: String, fontSize: CGFloat) {
-//        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-//        let attribure = setAtributes(title: (title)§, message: nil, titleFont: font, messageFont: nil, titleFontSize: fontSize, messageFontSize: nil)
-//        alert.setValue(attribure?.first, forKey: "attributedTitle")
-//        viewController.present(alert, animated: true, completion: nil)
-//        let when = DispatchTime.now() + 0.5
-//        DispatchQueue.main.asyncAfter(deadline: when) {
-//            alert.dismiss(animated: true, completion: nil)
-//        }
-//    }
-//
-//    func showAlertWithCancel(title: String, message: String, viewController: UIViewController, font: String, titleFontSize: CGFloat, messageFontSize: CGFloat) {
-//        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-//        let attribure = setAtributes(title: (title)§, message: (message)§, titleFont: font, messageFont: font, titleFontSize: titleFontSize, messageFontSize: messageFontSize)
-//        alert.setValue(attribure?.first, forKey: "attributedTitle")
-//        alert.setValue(attribure?.last, forKey: "attributedMessage")
-//        alert.addCancelAction()
-//        viewController.present(alert, animated: true, completion: nil)
-//    }
     
     func setAtributes(title: String?, message: String?, titleFont: String?, messageFont: String?, titleFontSize: CGFloat?, messageFontSize: CGFloat?) -> [NSAttributedString]? {
          guard let title = title,
