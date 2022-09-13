@@ -43,7 +43,7 @@ final class CartViewController: UIViewController {
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
         if self.cartTableView.visibleCells.isEmpty {
-            self.showNoActionAlert(title: ("ALERT")§, message: ("CART_IS_EMPTY")§)
+            self.showAlertWithCancelButn(title: "ALERT", message: "CART_IS_EMPTY", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         } else {
             self.showClearCartAlert(tableView: self.cartTableView, title: ("ALERT")§, message: ("DELETE_ALL_ALERT_MESSAGE")§) }
     }
@@ -51,7 +51,7 @@ final class CartViewController: UIViewController {
     @IBAction private func uploadOrderAction(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
         if self.cartTableView.visibleCells.isEmpty {
-            self.showNoActionAlert(title: ("ALERT")§, message: ("CART_IS_EMPTY")§)
+            self.showAlertWithCancelButn(title: "ALERT", message: "CART_IS_EMPTY", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         } else {
             self.sendOrder() }
         
@@ -89,7 +89,7 @@ final class CartViewController: UIViewController {
     
     func showDeleteAlert(tableView: UITableView, indexPath: IndexPath, name: String, title: String, message: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(
+        let attributes = AppAlerts.shared.setAtributes(
             title: title,
             message: message,
             titleFont: self.alertFont,
@@ -110,7 +110,7 @@ final class CartViewController: UIViewController {
     
     func showClearCartAlert(tableView: UITableView, title: String, message: String) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(
+        let attributes = AppAlerts.shared.setAtributes(
             title: title,
             message: message,
             titleFont: self.alertFont,
@@ -126,22 +126,6 @@ final class CartViewController: UIViewController {
             tableView.reloadData()
         })
         alert.addAction(ok)
-        self.present(alert, animated: true)
-    }
-    
-    func showNoActionAlert(title: String, message: String) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(
-            title: title,
-            message: message,
-            titleFont: self.alertFont,
-            messageFont: self.alertFont,
-            titleFontSize: self.alertTitleFontSize,
-            messageFontSize: self.alertMessageFontSize
-        )
-        alert.setValue(attributes?.first, forKey: "attributedTitle")
-        alert.setValue(attributes?.last, forKey: "attributedMessage")
-        alert.addCancelAction()
         self.present(alert, animated: true)
     }
     
@@ -173,7 +157,7 @@ final class CartViewController: UIViewController {
     private func sendOrder() {
         let cartUpload = CartUpload()
         guard let stringCardNumber = ParseUserData.current?.creditCardnumder else {
-            self.showNoActionAlert(title: ("ALERT")§, message: ("CREDIT_ALERT")§)
+            self.showAlertWithCancelButn(title: "ALERT", message: "CREDIT_ALERT", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
             return
         }
         guard let cardNumber = Int(stringCardNumber),
@@ -181,11 +165,11 @@ final class CartViewController: UIViewController {
         let orderNames = self.order.map { $0.map { "\($0.0.name) \($0.1)" } }!
         let result = cartUpload.uploadOrder(name: orderNames, price: whPrice, userName: ParseUserData.current!.username!, cardNumber: cardNumber)
         if result {
-            self.showNoActionAlert(title: ("SUCCESS")§, message: ("ORERD_SENT")§)
+            self.showAlertWithCancelButn(title: "SUCCESS", message: "ORERD_SENT", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
             self.deletAllRealm()
             self.cartTableView.reloadData()
         } else {
-            self.showNoActionAlert(title: ("ALERT")§, message: ("ORDER_ERRORS")§)
+            self.showAlertWithCancelButn(title: "ALERT", message: "ORDER_ERRORS", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         }
     }
     
@@ -227,7 +211,6 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         
         if editingStyle == .delete {
             self.showDeleteAlert(tableView: tableView, indexPath: indexPath, name: name, title: ("ALERT")§, message: ("DELETE_ALERT_MESSAGE")§)
-            
         }
     }
     

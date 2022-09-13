@@ -9,6 +9,9 @@ import UIKit
 
 final class MainModalInfoViewController: UIViewController {
     
+    private let alertFont: String = "Natasha"
+    private let alertTitleSize: CGFloat = 23
+    
     weak var controllerDelegate: MainScreenCellDelegate?
     var name: String = ""
     var price: Double = 0
@@ -29,7 +32,7 @@ final class MainModalInfoViewController: UIViewController {
     @IBAction private func addToCart(_ sender: UICustomButton) {
         self.animateButtonPush()
         controllerDelegate?.didPressModalButtonAdd(sender.tag, name: self.name, price: self.price, imageName: self.imageName)
-        ShowAlerts.showAddAlert(name: self.name, viewController: self)
+        self.showDisaperAlert(title: "\((self.name)§) \(("ADDED")§)", font: self.alertFont, titleFontSize: self.alertTitleSize)
     }
     
     override func viewDidLoad() {

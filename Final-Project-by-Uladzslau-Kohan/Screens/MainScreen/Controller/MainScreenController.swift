@@ -1,7 +1,6 @@
 //
 //  ViewController.swift
 //  Final-Project-by-Uladzslau-Kohan
-//
 //  Created by VironIT on 8/3/22.
 //  swiftlint:disable force_try implicit_getter
 import RealmSwift
@@ -16,7 +15,10 @@ final class MainScreenViewController: UIViewController {
     private let plistName: String = "Menu"
     private let plistType: String = "plist"
     private let plistHeadersName: String = "MenuHeaders"
-    private let cellLottieButtonName = "plusAdd"
+    private let cellLottieButtonName: String = "plusAdd"
+    private let alertFont: String = "Natasha"
+    private let alertTitleSize: CGFloat = 23
+    private let alertMessageSize: CGFloat = 20
     private enum CellValuesName: String {
         case name
         case imageName
@@ -141,6 +143,10 @@ final class MainScreenViewController: UIViewController {
         self.mainFirstCollection.layer.masksToBounds = true
         self.mainFirstCollection.collectionViewLayout = self.compositionalLayout
     }
+    
+    private func goToSecPage() {
+        self.tabBarController?.selectedIndex = 2
+    }
 }
 
 // MARK: - Cells configure
@@ -254,11 +260,12 @@ extension MainScreenViewController: MainScreenCellDelegate {
     
     func didPressButtonAdd(_ tag: Int, name: String, price: Double, imageName: String) {
         guard ParseUserData.current != nil else {
-            ShowAlerts.showLoginAlert(title: ("ALERT")§, message: ("REGISTR_ALERT")§, viewController: self)
+            
+            self.showActionAlert(title: "ALERT", message: "REGISTR_ALERT", font: self.alertFont, titleFontSize: self.alertTitleSize, messageFontSize: self.alertMessageSize, okAction: self.goToSecPage)
             return
         }
         addToRealm(name: name, imageName: imageName, price: price)
-        ShowAlerts.showAddAlert(name: name, viewController: self)
+        self.showDisaperAlert(title:"\((name)§) \(("ADDED")§)", font: self.alertFont, titleFontSize: self.alertTitleSize)
     }
 }
 // swiftlint:disable force_try

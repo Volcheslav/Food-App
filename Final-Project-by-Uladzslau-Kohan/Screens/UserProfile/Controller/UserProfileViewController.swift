@@ -3,7 +3,8 @@
 //  Final-Project-by-Uladzslau-Kohan
 //
 //  Created by VironIT on 8/31/22.
-// swiftlint: disable: implicit_getter
+// swiftlint:disable implicit_getter
+// swiftlint:disable line_length
 import ParseSwift
 import RealmSwift
 import UIKit
@@ -72,7 +73,13 @@ final class UserProfileViewController: UIViewController {
     @IBAction private func loginAction(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
         guard usernameTextField.hasText, passwordTextField.hasText else {
-            self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
+            self.showAlertWithCancelButn(
+                title: "PROFILE_NOT_VALID_DATA",
+                message: "PROFILE_NOT_VALID_MESSAGE",
+                font: self.alertFont,
+                titleFontSize: self.alertTitleFontSize,
+                messageFontSize: self.alertMessageFontSize
+            )
             return
         }
         self.dismissMyKeyboard()
@@ -86,11 +93,23 @@ final class UserProfileViewController: UIViewController {
         self.animateButtonPush(button: sender)
         if self.loginButton.isHidden {
             guard usernameTextField.hasText, passwordTextField.hasText, emailTextField.hasText else {
-                self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_MESSAGE")§)
+                self.showAlertWithCancelButn(
+                    title: "PROFILE_NOT_VALID_DATA",
+                    message: "PROFILE_NOT_VALID_MESSAGE",
+                    font: self.alertFont,
+                    titleFontSize: self.alertTitleFontSize,
+                    messageFontSize: self.alertMessageFontSize
+                )
                 return
             }
             guard emailTextField.text!.isValidEmail() else {
-                self.showAlertMessage(title: ("PROFILE_NOT_VALID_DATA")§, message: ("PROFILE_NOT_VALID_EMIAL")§)
+                self.showAlertWithCancelButn(
+                    title: "PROFILE_NOT_VALID_DATA",
+                    message: "PROFILE_NOT_VALID_EMIAL",
+                    font: self.alertFont,
+                    titleFontSize: self.alertTitleFontSize,
+                    messageFontSize: self.alertMessageFontSize
+                )
                 return
             }
             self.dismissMyKeyboard()
@@ -106,7 +125,7 @@ final class UserProfileViewController: UIViewController {
     // swiftlint:disable force_try
     @IBAction private func logoutAction(_ sender: UICustomButton) {
         self.animateButtonPush(button: sender)
-        self.showLogoutAlert(title: ("LOGOUT_MESSAGE")§)
+        self.showActionAlert(title: "LOGOUT_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize, okAction: self.logout)
         let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
@@ -169,12 +188,13 @@ final class UserProfileViewController: UIViewController {
     // MARK: - Login, SignUp, Logout
     // swiftlint: disable: empty_enum_arguments
     private func logout() {
-        ParseUserData.logout(completion: {[weak self] result in
+        ParseUserData.logout(completion: {[unowned self] result in
             switch result {
             case .success():
-                self?.showSuccessAlert(title: ("LOGGED_OUT")§, viewController: self!)
+                self.showDisaperAlert(title: "LOGGED_OUT", font: self.alertFont, titleFontSize: self.alertTitleFontSize)
             case .failure(let error):
-                self?.showAlertMessage(title: ("ERROR")§, message: "\(error)")
+                self.showActionAlert(title: "ERROR", message: "\(error)", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize, okAction: self.logout)
+                
             }
         })
         self.userOrder = nil
@@ -184,24 +204,25 @@ final class UserProfileViewController: UIViewController {
     
     private func signUp(login: String, email: String?, password: String) {
         let newUser = ParseUserData(username: login, email: email, password: password)
-        newUser.signup {[weak self] result in
+        newUser.signup {[unowned self] result in
             switch result {
             case .success(_):
-                self?.successSignUp()
+                self.successSignUp()
             case .failure(let error):
-                self?.showAlertMessage(title: ("ERROR")§, message: "\(error.message)")
+                self.showAlertWithCancelButn(title: "ERROR", message: "\(error.message)", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
             }
         }
     }
     
     private func loginUser(login: String, password: String) {
-        ParseUserData.login(username: login, password: password, completion: {[weak self] result in
+        ParseUserData.login(username: login, password: password, completion: {[unowned self] result in
                                 switch result {
                                 case .success(_):
-                                    self?.successEnter()
-                                    self?.getUserOrders()
+                                    self.successEnter()
+                                    self.getUserOrders()
                                 case .failure(_):
-                                    self?.showAlertMessage(title: ("ERROR")§, message: ("PROFILE_NOT_VALID_REGISTRATION")§)
+                                    self.showAlertWithCancelButn(title: "ERROR", message: "PROFILE_NOT_VALID_REGISTRATION", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
+                                    
                                 }})
     }
     
@@ -212,12 +233,12 @@ final class UserProfileViewController: UIViewController {
         self.passwordTextField.text = nil
         self.loginPasswordView.isHidden = true
         self.profileInfoView.isHidden = false
-        self.showSuccessAlert(title: "\(("SUCCESS")§) \(ParseUserData.current?.username ?? "John Doe") \(("LOGGED_IN")§)", viewController: self)
+        self.showDisaperAlert(title: "\(("SUCCESS")§) \(ParseUserData.current?.username ?? "John Doe") \(("LOGGED_IN")§)", font: self.alertFont, titleFontSize: self.alertTitleFontSize)
         
     }
     
     private func successSignUp() {
-        self.showAlertMessage(title: ("SUCCESS")§, message: ("SIGNED_UP")§)
+        self.showAlertWithCancelButn(title: "SUCCESS", message: "SIGNED_UP", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         self.emailTextField.text = nil
         self.usernameTextField.text = nil
         self.passwordTextField.text = nil
@@ -261,43 +282,48 @@ final class UserProfileViewController: UIViewController {
         case 0:
             if editableData.isValidNameSurname() {
                 user.name = editableData } else {
-                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
                     return
                 }
         case 1:
             if editableData.isValidNameSurname() {
                 user.surname = editableData } else {
-                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
+
                     return
                 }
         case 2:
             if editableData.isValidAge() {
                 user.age = UInt(editableData)! } else {
-                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
+
                     return
                 }
         case 3:
             if editableData.isValidPhoneNumber() {
                 user.phoneNumber = editableData } else {
-                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
+
                     return
                 }
         case 4:
             if editableData.isValidCardNumber() {
                 user.creditCardnumder = editableData } else {
-                    self.showIncorrectAlert(title: ("PROFILE_NOT_VALID_MESSAGE")§)
+                    self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
+
                     return
                 }
         default:
             break
         }
         DispatchQueue.main.async {
-            user.save(completion: {[weak self] result in
+            user.save(completion: {[unowned self] result in
                 switch result {
                 case .success(_):
-                    self?.profileInfoTable.reloadRows(at: [indexPath], with: .automatic)
+                    self.profileInfoTable.reloadRows(at: [indexPath], with: .automatic)
                 case .failure(let error):
-                    self?.showIncorrectAlert(title: error.message)
+                    self.showAlertWithCancelButn(title: error.message, message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
+
                 }
                 
             })
@@ -336,49 +362,9 @@ final class UserProfileViewController: UIViewController {
     
     // MARK: - Alert functions
     
-    private func showLogoutAlert(title: String) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        alert.addCancelAction()
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
-        let okAction = UIAlertAction(title: ("OK")§, style: .default, handler: { [weak self] _ in
-            self?.logout()
-        })
-        alert.setValue(attributes?.first, forKey: "attributedTitle")
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func showAlertMessage(title: String, message: String?) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(
-            title: title,
-            message: message,
-            titleFont: self.alertFont,
-            messageFont: self.alertFont,
-            titleFontSize: self.alertTitleFontSize,
-            messageFontSize: self.alertMessageFontSize
-        )
-        alert.setValue(attributes?.first, forKey: "attributedTitle")
-        alert.setValue(attributes?.last, forKey: "attributedMessage")
-        
-        alert.addCancelAction()
-        self.present(alert, animated: true)
-    }
-    
-    private func showSuccessAlert(title: String, viewController: UIViewController) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
-        alert.setValue(attributes?.first, forKey: "attributedTitle")
-        viewController.present(alert, animated: true, completion: nil)
-        let when = DispatchTime.now() + 1.0
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            alert.dismiss(animated: true, completion: nil)
-        }
-    }
-    
     private func showEditAlert(title: String, indexPath: IndexPath) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
+        let attributes = AppAlerts.shared.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
         alert.addCancelAction()
         alert.addTextField(configurationHandler: { $0.placeholder = ("ENTER_YOUR_DATA")§; $0.font = UIFont(name: self.alertTextFieldFont, size: 15) })
         alert.setValue(attributes?.first, forKey: "attributedTitle")
@@ -393,13 +379,6 @@ final class UserProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func showIncorrectAlert(title: String) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-        let attributes = ShowAlerts.setAtributes(title: title, message: nil, titleFont: self.alertFont, messageFont: nil, titleFontSize: self.alertTitleFontSize, messageFontSize: nil)
-        alert.addCancelAction()
-        alert.setValue(attributes?.first, forKey: "attributedTitle")
-        self.present(alert, animated: true, completion: nil)
-    }
     // MARK: - Keybord functions
  
     @objc private func dismissMyKeyboard() {

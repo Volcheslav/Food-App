@@ -154,3 +154,4 @@
 "MUST_REGISTER" = "To add a review you must log in!";
 "EMPTY_TEXT" = "Textfield is empty. Write something!";
 "ADD_MARK" = "Tap on stars to add your mark!";
+"ADDED" = "Added";
