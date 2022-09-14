@@ -14,13 +14,13 @@ class CartUpload {
         guard let user = ParseUserData.current else { return false }
         let order = ParseOrder(name: name, price: price, userName: userName, cardNumber: cardNumber, userID: user.objectId)
         order.save(completion: { result in
-                switch result {
-                case .success(_):
-                    break
-                case .failure(_):
-                    ended = false
-                }
-            })
+            switch result {
+            case .success(_):
+                break
+            case .failure(_):
+                ended = false
+            }
+        })
         return ended
     }
 }

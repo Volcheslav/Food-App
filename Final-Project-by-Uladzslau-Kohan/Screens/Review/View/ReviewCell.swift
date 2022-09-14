@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewCell: UITableViewCell {
+final class ReviewCell: UITableViewCell {
     
     var mark: Int? {
         didSet {
@@ -32,6 +32,8 @@ class ReviewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Outlets
+    
     @IBOutlet private weak var reviewLabel: UILabel!
     @IBOutlet private weak var usernameLabel: UILabel!
     @IBOutlet private weak var star1Image: UIImageView!
@@ -49,16 +51,4 @@ class ReviewCell: UITableViewCell {
             self.star5Image
         ]
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

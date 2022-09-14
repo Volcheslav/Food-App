@@ -28,7 +28,7 @@ final class OrderDetailsViewController: UIViewController {
         self.view.backgroundColor = .clear
         self.backButtn.setTitle(("ORDERS_BACK")§, for: .normal)
         self.orderDetailsTableView.register(UINib(nibName: self.orderNibName, bundle: nil), forCellReuseIdentifier: self.cellID)
-    
+        
     }
 }
 
@@ -57,21 +57,21 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
     // MARK: Custon header
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableHeaderHeight))
-            let label = UILabel()
-            let backImage = UIImageView()
-            backImage.frame = .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableHeaderHeight)
-            backImage.image = UIImage(named: "header")
-            label.frame = .init(x: 25, y: 25, width: headerView.frame.width - 25, height: headerView.frame.height)
-            label.text = ("ORDER_DETAILS")§
-            label.font = UIFont(name: self.headerLabelFont, size: 36)
-            label.textColor = .black
-            label.textAlignment = .left
-            label.numberOfLines = 1
-            headerView.addSubview(backImage)
-            headerView.addSubview(label)
-            headerView.backgroundColor = .clear
-            return headerView
+        let headerView = UIView(frame: .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableHeaderHeight))
+        let label = UILabel()
+        let backImage = UIImageView()
+        backImage.frame = .init(x: 0, y: 0, width: tableView.frame.width, height: self.tableHeaderHeight)
+        backImage.image = UIImage(named: "header")
+        label.frame = .init(x: 25, y: 25, width: headerView.frame.width - 25, height: headerView.frame.height)
+        label.text = ("ORDER_DETAILS")§
+        label.font = UIFont(name: self.headerLabelFont, size: 36)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        headerView.addSubview(backImage)
+        headerView.addSubview(label)
+        headerView.backgroundColor = .clear
+        return headerView
         
     }
     

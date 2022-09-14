@@ -24,8 +24,10 @@ final class OrderDetailsViewCell: UITableViewCell {
             }
         }
     }
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var numberLabel: UILabel!
-        
+    
 }

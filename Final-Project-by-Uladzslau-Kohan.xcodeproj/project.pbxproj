@@ -22,7 +22,7 @@
 		533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B34C228CA00B60014C34B /* UserOrdersViewController.swift */; };
 		533B34C728CA03300014C34B /* OrderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B34C528CA03300014C34B /* OrderViewCell.swift */; };
 		533B34C828CA03300014C34B /* OrderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533B34C628CA03300014C34B /* OrderViewCell.xib */; };
-		533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D1D0828B8ECBF00217919 /* MenuData.swift */; };
+		533D1D0928B8ECBF00217919 /* StringOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D1D0828B8ECBF00217919 /* StringOperator.swift */; };
 		533D44E528C0CC4500AF6619 /* UserProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */; };
 		533DE13128C762B9009DA2A9 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533DE12F28C762B9009DA2A9 /* HeaderViewCell.swift */; };
 		533DE13228C762B9009DA2A9 /* HeaderSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533DE13028C762B9009DA2A9 /* HeaderSupplementaryView.xib */; };
@@ -81,7 +81,7 @@
 		533B34C228CA00B60014C34B /* UserOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOrdersViewController.swift; sourceTree = "<group>"; };
 		533B34C528CA03300014C34B /* OrderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewCell.swift; sourceTree = "<group>"; };
 		533B34C628CA03300014C34B /* OrderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderViewCell.xib; sourceTree = "<group>"; };
-		533D1D0828B8ECBF00217919 /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
+		533D1D0828B8ECBF00217919 /* StringOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringOperator.swift; sourceTree = "<group>"; };
 		533D44E428C0CC4500AF6619 /* UserProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewCell.swift; sourceTree = "<group>"; };
 		533DE12F28C762B9009DA2A9 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		533DE13028C762B9009DA2A9 /* HeaderSupplementaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSupplementaryView.xib; sourceTree = "<group>"; };
@@ -170,6 +170,7 @@
 		533630AD28AE767800DB692C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				537663E428D0A2E5008F47DA /* Alerts.swift */,
 				531C999928B4EDC00039C9A0 /* CustomButton.swift */,
 				533DE13628C7668B009DA2A9 /* CustomView.swift */,
 				53D99D8E289ABD6F002755A4 /* LaunchScreen.storyboard */,
@@ -180,8 +181,8 @@
 		533630AE28AE768200DB692C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				533D1D0828B8ECBF00217919 /* StringOperator.swift */,
 				5340FEDC28BF7AF4001F967D /* ParseKeys.swift */,
-				537663E428D0A2E5008F47DA /* Alerts.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,7 +242,6 @@
 		533630B828AE7F4700DB692C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				533D1D0828B8ECBF00217919 /* MenuData.swift */,
 				5339A9C028BE322A0079DD3D /* MainScreenCellDelegateProtocol.swift */,
 			);
 			path = Model;
@@ -280,6 +280,7 @@
 		533AD20228CF37FC00ACCA9A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				533AD21E28CF5E8E00ACCA9A /* Review */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +344,7 @@
 		5340FEF128BFA428001F967D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5366140628C8DC3100716338 /* Parse */,
 				533FEB1128C215BA00FE88FC /* UserProfileStringExtensions.swift */,
 			);
 			path = Model;
@@ -403,7 +405,6 @@
 		5366140628C8DC3100716338 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				533AD21E28CF5E8E00ACCA9A /* Review */,
 				5366140828C8DC5B00716338 /* Order */,
 				5340FEDF28BF7DEC001F967D /* User */,
 			);
@@ -489,7 +490,6 @@
 			children = (
 				533630AB28AE766500DB692C /* Application */,
 				533630B428AE7F0400DB692C /* Screens */,
-				5366140628C8DC3100716338 /* Parse */,
 				5347F56328B7869700995448 /* Realm */,
 				533630AF28AE76A100DB692C /* Supporting Files */,
 			);
@@ -678,7 +678,7 @@
 				533B34C328CA00B60014C34B /* UserOrdersViewController.swift in Sources */,
 				5370B86D28D08968002013F3 /* ReviewCell.swift in Sources */,
 				5347F56528B786CB00995448 /* MenuRealmModel.swift in Sources */,
-				533D1D0928B8ECBF00217919 /* MenuData.swift in Sources */,
+				533D1D0928B8ECBF00217919 /* StringOperator.swift in Sources */,
 				534CBD6B28BCDEBA001D1004 /* CartCellDelegateProtocol.swift in Sources */,
 				531C999A28B4EDC00039C9A0 /* CustomButton.swift in Sources */,
 				5366140A28C8DC8300716338 /* ParseOrderData.swift in Sources */,

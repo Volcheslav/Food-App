@@ -17,7 +17,9 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
     private let alertFont: String = "Natasha"
     private let alertTitleSize: CGFloat = 23
     private let alertMessageSize: CGFloat = 20
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet private weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet private weak var modalView: UIView!
     @IBOutlet private weak var greetLabel: UILabel!
@@ -27,6 +29,8 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet private weak var star3Image: UIImageView!
     @IBOutlet private weak var star4Image: UIImageView!
     @IBOutlet private weak var star5Image: UIImageView!
+    @IBOutlet private  weak var cancelButton: UICustomButton!
+    @IBOutlet private weak var addReviewButton: UICustomButton!
     
     private var stars: [UIImageView] {
         [
@@ -38,15 +42,26 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
         ]
     }
     
-    @IBOutlet private  weak var cancelButton: UICustomButton!
-    @IBOutlet private weak var addReviewButton: UICustomButton!
+    // MARK: - Actions
     
     @IBAction private func addReviewAction(_ sender: UICustomButton) {
+        self.addReviewButton.animateButton()
         self.reviewPrepare()
     }
     
+    // MARK: - Load functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setScreenProperties()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    // MARK: - Load interface functions
+    
+    private func setScreenProperties() {
         self.view.backgroundColor = UIColor(white: 0, alpha: 0.5)
         self.view.isOpaque = false
         self.cancelButton.setTitle(("CANCEL")§, for: .normal)
@@ -64,9 +79,6 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
         self.modalView.layer.masksToBounds = true
         self.reviewTextView.layer.cornerRadius = 10
         self.greetLabel.text = ("YOUR_REVIEW")§
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     // MARK: - Stars controller
@@ -102,7 +114,7 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
     }
     
     // MARK: Hiding keybord functions
-
+    
     private func initializeHideKeyboard() {
         let tap = UITapGestureRecognizer(
             target: self,
@@ -110,7 +122,7 @@ final class ReviewDetailsViewController: UIViewController, UITextViewDelegate {
         )
         self.view.addGestureRecognizer(tap)
     }
-
+    
     @objc private func dismissMyKeyboard() {
         self.view.endEditing(true)
     }

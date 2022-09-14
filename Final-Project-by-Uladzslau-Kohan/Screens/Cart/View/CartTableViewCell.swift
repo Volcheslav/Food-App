@@ -10,7 +10,7 @@ final class CartTableViewCell: UITableViewCell {
     // MARK: Variables
     
     weak var cellDelegate: MyCellDelegate?
-
+    
     var name: String? {
         didSet {
             self.nameLabel.text = (self.name ?? "noname")§

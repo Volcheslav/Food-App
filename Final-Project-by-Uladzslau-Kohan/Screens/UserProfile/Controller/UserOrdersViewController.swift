@@ -17,9 +17,9 @@ final class UserOrdersViewController: UIViewController {
     private let cellID: String = "OrderCell"
     private let ordersDetailsStoryboardName: String = "OrderDetails"
     private let ordersDetailsVCIdentifier: String = "orderDetails"
-
+    
     // MARK: - Outlets
-
+    
     @IBOutlet private weak var modalView: UIView!
     @IBOutlet private weak var noOrdersLabel: UILabel!
     @IBOutlet private weak var backgroundImage: UIImageView!
@@ -27,7 +27,7 @@ final class UserOrdersViewController: UIViewController {
     @IBOutlet private weak var ordersTableView: UITableView!
     
     // MARK: - Load View functions
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(white: 0, alpha: 0.5)
@@ -103,7 +103,7 @@ extension UserOrdersViewController: UITableViewDelegate, UITableViewDataSource {
         cell.dataName = "\(indexPath.row + 1). \(("DATE")§)"
         cell.dataValue = formattedDateTime
         cell.selectionStyle = .none
-
+        
         return cell
     }
     

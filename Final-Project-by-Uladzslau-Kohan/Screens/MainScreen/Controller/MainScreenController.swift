@@ -52,7 +52,7 @@ final class MainScreenViewController: UIViewController {
         
         let fraction: CGFloat = 1 / 2
         let inset: CGFloat = 5
-
+        
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(fraction), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -70,11 +70,11 @@ final class MainScreenViewController: UIViewController {
         let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(300))
         let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
         section.boundarySupplementaryItems = [headerItem]
-
+        
         return UICollectionViewCompositionalLayout(section: section)
-
+        
     }()
-
+    
     // swiftlint:enable force_try
     // MARK: Outlets
     
@@ -162,14 +162,14 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: self.headerNibName, for: indexPath) as? HeaderSupplementaryView else {
-                return HeaderSupplementaryView()
-            }
-            
-        headerView.name = (plistHeaders?[indexPath.section] ?? "noname")§
-            
-            return headerView
+            return HeaderSupplementaryView()
         }
-
+        
+        headerView.name = (plistHeaders?[indexPath.section] ?? "noname")§
+        
+        return headerView
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -195,7 +195,7 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         case 0:
             cellData = self.plistBurgerItems ?? []
         case 1:
-             cellData = self.plistDrinksItems ?? []
+            cellData = self.plistDrinksItems ?? []
         case 2:
             cellData = self.plistRollItems ?? []
         case 3:
@@ -217,13 +217,15 @@ extension MainScreenViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    // MARK: - Cell Selection
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var cellData: [[String:Any]] = []
         switch indexPath.section {
         case 0:
             cellData = self.plistBurgerItems ?? []
         case 1:
-             cellData = self.plistDrinksItems ?? []
+            cellData = self.plistDrinksItems ?? []
         case 2:
             cellData = self.plistRollItems ?? []
         case 3:
@@ -260,7 +262,6 @@ extension MainScreenViewController: MainScreenCellDelegate {
     
     func didPressButtonAdd(_ tag: Int, name: String, price: Double, imageName: String) {
         guard ParseUserData.current != nil else {
-            
             self.showActionAlert(title: "ALERT", message: "REGISTR_ALERT", font: self.alertFont, titleFontSize: self.alertTitleSize, messageFontSize: self.alertMessageSize, okAction: self.goToSecPage)
             return
         }

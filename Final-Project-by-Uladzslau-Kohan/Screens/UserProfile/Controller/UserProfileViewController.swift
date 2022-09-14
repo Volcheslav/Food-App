@@ -43,8 +43,8 @@ final class UserProfileViewController: UIViewController {
             ]
         }
     }
-    
     private var userOrder: [ParseOrder]?
+    
     // MARK: - Outlets
     
     @IBOutlet private weak var profileInfoTable: UITableView!
@@ -62,16 +62,16 @@ final class UserProfileViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func goToOrders(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.toOrdersButton.animateButton()
         self.showOrdersPage()
     }
     
     @IBAction private func goBackToLogin(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.backTologinButton.animateButton()
         animateHideEmailTextfield()
     }
     @IBAction private func loginAction(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.loginButton.animateButton()
         guard usernameTextField.hasText, passwordTextField.hasText else {
             self.showAlertWithCancelButn(
                 title: "PROFILE_NOT_VALID_DATA",
@@ -90,7 +90,7 @@ final class UserProfileViewController: UIViewController {
     }
     
     @IBAction private func signUpAction(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.signUpButton.animateButton()
         if self.loginButton.isHidden {
             guard usernameTextField.hasText, passwordTextField.hasText, emailTextField.hasText else {
                 self.showAlertWithCancelButn(
@@ -124,7 +124,7 @@ final class UserProfileViewController: UIViewController {
     }
     // swiftlint:disable force_try
     @IBAction private func logoutAction(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.logoutButton.animateButton()
         self.showActionAlert(title: "LOGOUT_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize, okAction: self.logout)
         let realm = try! Realm()
         try! realm.write {
@@ -289,28 +289,28 @@ final class UserProfileViewController: UIViewController {
             if editableData.isValidNameSurname() {
                 user.surname = editableData } else {
                     self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
-
+                    
                     return
                 }
         case 2:
             if editableData.isValidAge() {
                 user.age = UInt(editableData)! } else {
                     self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
-
+                    
                     return
                 }
         case 3:
             if editableData.isValidPhoneNumber() {
                 user.phoneNumber = editableData } else {
                     self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
-
+                    
                     return
                 }
         case 4:
             if editableData.isValidCardNumber() {
                 user.creditCardnumder = editableData } else {
                     self.showAlertWithCancelButn(title: "PROFILE_NOT_VALID_MESSAGE", message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
-
+                    
                     return
                 }
         default:
@@ -323,7 +323,7 @@ final class UserProfileViewController: UIViewController {
                     self.profileInfoTable.reloadRows(at: [indexPath], with: .automatic)
                 case .failure(let error):
                     self.showAlertWithCancelButn(title: error.message, message: "", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
-
+                    
                 }
                 
             })
@@ -380,7 +380,7 @@ final class UserProfileViewController: UIViewController {
     }
     
     // MARK: - Keybord functions
- 
+    
     @objc private func dismissMyKeyboard() {
         self.view.endEditing(true)
     }
@@ -392,16 +392,6 @@ final class UserProfileViewController: UIViewController {
     
     @objc func keyboardWillHide(notification: NSNotification) {
         self.view.frame.origin.y = 0
-    }
-    
-    // MARK: - Button animate
-
-    private func animateButtonPush(button: UICustomButton) {
-        UIView.animate(
-            withDuration: 0.3,
-            animations: { button.transform = .init(scaleX: 0.9, y: 0.8) },
-            completion: { _ in button.transform = .identity }
-        )
     }
 }
 
@@ -496,7 +486,7 @@ extension UserProfileViewController: UITableViewDataSource, UITableViewDelegate 
     // MARK: - Cell
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? UserProfileTableViewCell else { return .init() }
         switch indexPath.section {
         case 0:

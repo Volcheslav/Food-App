@@ -18,7 +18,7 @@ final class HeaderSupplementaryView: UICollectionViewCell {
             }
         }
     }
-
+    
     @IBOutlet private weak var headerLabel: UILabel!
     
 }

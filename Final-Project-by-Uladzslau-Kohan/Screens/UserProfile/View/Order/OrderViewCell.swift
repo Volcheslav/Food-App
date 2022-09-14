@@ -19,7 +19,9 @@ final class OrderViewCell: UITableViewCell {
             self.dataValueLabel.text = self.dataValue
         }
     }
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet private weak var dataNameLabel: UILabel!
     @IBOutlet private weak var dataValueLabel: UILabel!
     

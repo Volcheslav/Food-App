@@ -41,7 +41,7 @@ final class CartViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction private func deleteAllAction(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.deleteButton.animateButton()
         if self.cartTableView.visibleCells.isEmpty {
             self.showAlertWithCancelButn(title: "ALERT", message: "CART_IS_EMPTY", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         } else {
@@ -49,7 +49,7 @@ final class CartViewController: UIViewController {
     }
     
     @IBAction private func uploadOrderAction(_ sender: UICustomButton) {
-        self.animateButtonPush(button: sender)
+        self.uploarOrderButton.animateButton()
         if self.cartTableView.visibleCells.isEmpty {
             self.showAlertWithCancelButn(title: "ALERT", message: "CART_IS_EMPTY", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         } else {
@@ -172,16 +172,6 @@ final class CartViewController: UIViewController {
             self.showAlertWithCancelButn(title: "ALERT", message: "ORDER_ERRORS", font: self.alertFont, titleFontSize: self.alertTitleFontSize, messageFontSize: self.alertMessageFontSize)
         }
     }
-    
-    // MARK: - Button animate
-
-    private func animateButtonPush(button: UICustomButton) {
-        UIView.animate(
-            withDuration: 0.3,
-            animations: { button.transform = .init(scaleX: 0.9, y: 0.8) },
-            completion: { _ in button.transform = .identity }
-        )
-    }
 }
 
 // MARK: - Extension table control
@@ -234,7 +224,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = .systemGray3
         return headerView
     }
-
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.headerHeight
     }

@@ -66,4 +66,4 @@ final class MainScreenCollectionViewCell: UICollectionViewCell {
         }
         cellDelegate?.didPressButtonAdd(sender.tag, name: name, price: price, imageName: imageName)
     }
-    }
+}

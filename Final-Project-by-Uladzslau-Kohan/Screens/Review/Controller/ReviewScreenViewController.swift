@@ -14,10 +14,11 @@ final class ReviewScreenViewController: UIViewController {
     private let modalStoryboardName: String = "ReviewDetailsScreen"
     private let modalVCIdentifier: String = "reviewDetails"
     private var reviews: [ParseReviewData]?
-    
     private let reviewNibName: String = "ReviewCell"
     private let cellID: String = "ReviewCell"
- 
+    
+    // MARK: - Outlets
+    
     @IBOutlet private weak var addReviewButton: UICustomButton!
     @IBOutlet private weak var star1Image: UIImageView!
     @IBOutlet private weak var star2Image: UIImageView!
@@ -36,7 +37,10 @@ final class ReviewScreenViewController: UIViewController {
         ]
     }
     
+    // MARK: - Actions
+    
     @IBAction private func addReviewAction(_ sender: UICustomButton) {
+        self.addReviewButton.animateButton()
         self.showReviewAddPage()
     }
     
@@ -47,7 +51,7 @@ final class ReviewScreenViewController: UIViewController {
         self.reviewsTableView.delegate = self
         self.reviewsTableView.dataSource = self
         self.addReviewButton.setTitle(("ADD_REVIEW")§, for: .normal)
-      
+        
         self.reviewsTableView.rowHeight = UITableView.automaticDimension
         self.reviewsTableView.estimatedRowHeight = 600
         
@@ -56,7 +60,7 @@ final class ReviewScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-            self.getReviews()
+        self.getReviews()
     }
     
     // MARK: - Get user review Query
@@ -69,7 +73,7 @@ final class ReviewScreenViewController: UIViewController {
                 self.reviews = tempOrder
                 self.reviewsTableView.reloadData()
                 self.showStars()
-                // print(self.reviews)
+            // print(self.reviews)
             case .failure(_):
                 self.reviews = nil
             }
