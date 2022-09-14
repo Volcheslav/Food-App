@@ -16,4 +16,4 @@
 
 **Pods:** Lottie, Realm, SwiftLint, ParseSwift
 
-**Patterns:** Delegation, Singleton
+**Patterns:** Delegation, Singleton, Observer
